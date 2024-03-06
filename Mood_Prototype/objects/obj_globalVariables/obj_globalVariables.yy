@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_demon",
+  "%Name":"obj_globalVariables",
   "eventList":[],
   "managed":true,
-  "name":"obj_demon",
+  "name":"obj_globalVariables",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_demon",
-    "path":"sprites/spr_demon/spr_demon.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
