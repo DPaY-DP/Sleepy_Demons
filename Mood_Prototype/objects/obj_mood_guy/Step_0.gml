@@ -66,4 +66,27 @@ if (l5D4AB96D_0)
 	/// @DnDArgument : "value_relative" "1"
 	/// @DnDArgument : "instvar" "1"
 	y += 2;
+
+	/// @DnDAction : YoYo Games.Common.Execute_Code
+	/// @DnDVersion : 1
+	/// @DnDHash : 470C82BD
+	/// @DnDParent : 5D4AB96D
+	/// @DnDArgument : "code" "// simple weapon holding$(13_10)	self.current_weapon.x = x$(13_10)	self.current_weapon.y = y$(13_10)	self.current_weapon.image_angle = point_direction(x,y,mouse_x,mouse_y)$(13_10)		$(13_10)$(13_10)$(13_10)	$(13_10)$(13_10)// makes the player turn the direction of the cursor $(13_10)	if x-50 < mouse_x$(13_10)	{$(13_10)	    image_xscale = 1$(13_10)	}else if x+50 > mouse_x$(13_10)	{$(13_10)	    image_xscale = -1$(13_10)	}$(13_10)	$(13_10)$(13_10)		$(13_10)$(13_10)$(13_10) "
+	// simple weapon holding
+		self.current_weapon.x = x
+		self.current_weapon.y = y
+		self.current_weapon.image_angle = point_direction(x,y,mouse_x,mouse_y)
+			
+	
+	
+		
+	
+	// makes the player turn the direction of the cursor 
+		if x-50 < mouse_x
+		{
+		    image_xscale = 1
+		}else if x+50 > mouse_x
+		{
+		    image_xscale = -1
+		}
 }
