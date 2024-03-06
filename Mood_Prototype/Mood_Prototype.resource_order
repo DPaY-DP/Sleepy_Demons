@@ -18,11 +18,12 @@
   ],
   "ResourceOrderSettings":[
     {"name":"obj_demon","order":6,"path":"objects/obj_demon/obj_demon.yy",},
-    {"name":"Room_Mood","order":1,"path":"rooms/Room_Mood/Room_Mood.yy",},
-    {"name":"obj_mood_guy","order":7,"path":"objects/obj_mood_guy/obj_mood_guy.yy",},
-    {"name":"spr_marshmallow","order":10,"path":"sprites/spr_marshmallow/spr_marshmallow.yy",},
     {"name":"obj_marshmallow","order":8,"path":"objects/obj_marshmallow/obj_marshmallow.yy",},
-    {"name":"spr_mood_guy","order":7,"path":"sprites/spr_mood_guy/spr_mood_guy.yy",},
+    {"name":"obj_mood_guy","order":7,"path":"objects/obj_mood_guy/obj_mood_guy.yy",},
+    {"name":"obj_globalVariables","order":9,"path":"objects/obj_globalVariables/obj_globalVariables.yy",},
+    {"name":"Room_Mood","order":1,"path":"rooms/Room_Mood/Room_Mood.yy",},
     {"name":"spr_demon","order":8,"path":"sprites/spr_demon/spr_demon.yy",},
+    {"name":"spr_marshmallow","order":10,"path":"sprites/spr_marshmallow/spr_marshmallow.yy",},
+    {"name":"spr_mood_guy","order":7,"path":"sprites/spr_mood_guy/spr_mood_guy.yy",},
   ],
 }
