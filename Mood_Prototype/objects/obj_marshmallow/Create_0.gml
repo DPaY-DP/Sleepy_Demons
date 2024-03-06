@@ -10,3 +10,9 @@ direction = point_direction(x, y, mouse_x, mouse_y);
 /// @DnDHash : 7E413787
 /// @DnDArgument : "speed" "5"
 speed = 5;
+
+/// @DnDAction : YoYo Games.Instances.Sprite_Rotate
+/// @DnDVersion : 1
+/// @DnDHash : 4719B65A
+/// @DnDArgument : "angle" "direction"
+image_angle = direction;
