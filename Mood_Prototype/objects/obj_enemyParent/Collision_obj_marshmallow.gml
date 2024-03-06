@@ -40,12 +40,22 @@ if(enemyHPCurrent == enemyHPMax)
 	/// @DnDArgument : "var" "executable"
 	executable = true;
 
+	/// @DnDAction : YoYo Games.Instances.Set_Sprite
+	/// @DnDVersion : 1
+	/// @DnDHash : 08DC6C6E
+	/// @DnDParent : 65EA523F
+	/// @DnDArgument : "spriteind" "spr_enemyDemonSmallExecute"
+	/// @DnDSaveInfo : "spriteind" "spr_enemyDemonSmallExecute"
+	sprite_index = spr_enemyDemonSmallExecute;
+	image_index = 0;
+
 	/// @DnDAction : YoYo Games.Instances.Set_Alarm
 	/// @DnDVersion : 1
 	/// @DnDHash : 51545A67
 	/// @DnDParent : 65EA523F
 	/// @DnDArgument : "steps" "5 * room_speed"
-	alarm_set(0, 5 * room_speed);
+	/// @DnDArgument : "alarm" "1"
+	alarm_set(1, 5 * room_speed);
 }
 
 /// @DnDAction : YoYo Games.Instances.Destroy_Instance
