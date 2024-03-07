@@ -1,11 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_marshmallow",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_globalVariables",
+  "eventList":[],
   "managed":true,
-  "name":"obj_marshmallow",
+  "name":"obj_globalVariables",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -28,11 +26,8 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
-  "spriteId":{
-    "name":"spr_marshmallow",
-    "path":"sprites/spr_marshmallow/spr_marshmallow.yy",
-  },
+  "solid":false,
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

@@ -1,17 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"obj_marshmallow",
+  "%Name":"obj_enemyDemonSmall",
   "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_marshmallow","path":"objects/obj_marshmallow/obj_marshmallow.yy",},"eventNum":0,"eventType":4,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_marshmallow",
+  "name":"obj_enemyDemonSmall",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_enemyParent",
+    "path":"objects/obj_enemyParent/obj_enemyParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -28,10 +32,10 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
+  "solid":false,
   "spriteId":{
-    "name":"spr_marshmallow",
-    "path":"sprites/spr_marshmallow/spr_marshmallow.yy",
+    "name":"spr_enemyDemonSmall",
+    "path":"sprites/spr_enemyDemonSmall/spr_enemyDemonSmall.yy",
   },
   "spriteMaskId":null,
   "visible":true,
