@@ -1,12 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_enemyDemonSmall",
+  "%Name":"obj_enemyDemonBig",
   "eventList":[
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":{"name":"obj_marshmallow","path":"objects/obj_marshmallow/obj_marshmallow.yy",},"eventNum":0,"eventType":4,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_enemyDemonSmall",
+  "name":"obj_enemyDemonBig",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -34,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemyDemonSmall",
-    "path":"sprites/spr_enemyDemonSmall/spr_enemyDemonSmall.yy",
+    "name":"spr_enemyDemonBig",
+    "path":"sprites/spr_enemyDemonBig/spr_enemyDemonBig.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -64,3 +64,15 @@ if(!(executable == true))
 		speed = 0;
 	}
 }
+
+/// @DnDAction : YoYo Games.Common.Else
+/// @DnDVersion : 1
+/// @DnDHash : 115CF5DA
+else
+{
+	/// @DnDAction : YoYo Games.Movement.Set_Speed
+	/// @DnDVersion : 1
+	/// @DnDHash : 6CCA0545
+	/// @DnDParent : 115CF5DA
+	speed = 0;
+}
