@@ -27,6 +27,5 @@
     {"name":"spr_marshmallow","order":10,"path":"sprites/spr_marshmallow/spr_marshmallow.yy",},
     {"name":"spr_mood_guy","order":7,"path":"sprites/spr_mood_guy/spr_mood_guy.yy",},
     {"name":"spr_UI_finisher","order":11,"path":"sprites/spr_UI_finisher/spr_UI_finisher.yy",},
-    {"name":"Sprite5","order":12,"path":"sprites/Sprite5/Sprite5.yy",},
   ],
 }

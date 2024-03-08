@@ -44,7 +44,6 @@
     {"id":{"name":"spr_marshmallow","path":"sprites/spr_marshmallow/spr_marshmallow.yy",},},
     {"id":{"name":"spr_mood_guy","path":"sprites/spr_mood_guy/spr_mood_guy.yy",},},
     {"id":{"name":"spr_UI_finisher","path":"sprites/spr_UI_finisher/spr_UI_finisher.yy",},},
-    {"id":{"name":"Sprite5","path":"sprites/Sprite5/Sprite5.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",

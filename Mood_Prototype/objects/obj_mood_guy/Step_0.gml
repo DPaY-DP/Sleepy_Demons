@@ -67,17 +67,3 @@ if (l5D4AB96D_0)
 	/// @DnDArgument : "instvar" "1"
 	y += 2;
 }
-
-/// @DnDAction : YoYo Games.Common.Execute_Code
-/// @DnDVersion : 1
-/// @DnDHash : 010F783B
-/// @DnDArgument : "code" "/// @description Execute Code$(13_10)// makes the player turn the direction of the cursor $(13_10)    if x-50 < mouse_x$(13_10)    {$(13_10)        image_xscale = 1$(13_10)    }else if x+50 > mouse_x$(13_10)    {$(13_10)        image_xscale = -1$(13_10)    }"
-/// @description Execute Code
-// makes the player turn the direction of the cursor 
-    if x-50 < mouse_x
-    {
-        image_xscale = 1
-    }else if x+50 > mouse_x
-    {
-        image_xscale = -1
-    }

@@ -17,12 +17,17 @@ if(!(draw_me == noone))
 	/// @DnDVersion : 1
 	/// @DnDHash : 5FBAA566
 	/// @DnDParent : 64060F44
-	/// @DnDArgument : "code" "/// @description Self$(13_10)if(point_distance(x,y,draw_me.x,draw_me.y) <=range+55)$(13_10){$(13_10)	draw_self();$(13_10)	player_near = draw_me;$(13_10)	instance_create_depth(x,y,0,obj_kill_demon);$(13_10)}$(13_10)"
+	/// @DnDArgument : "code" "/// @description Self$(13_10)//Wenn Spieler nah genug an den betäubten Gegner kommt, dann füre Code aus$(13_10)if(point_distance(x,y,draw_me.x,draw_me.y) <=range+55)$(13_10){$(13_10)	draw_self(); //Zeichnet seinen Sprite über betäubtebten Gegner$(13_10)	player_near = draw_me;$(13_10)	instance_create_depth(x,y,0,obj_kill_demon); //Damit Extra Objekt damit nicht alle Ggner mit einer Taste ggelöscht werden können$(13_10)}$(13_10)else$(13_10){$(13_10)	instance_destroy(obj_kill_demon);$(13_10)}"
 	/// @description Self
+	//Wenn Spieler nah genug an den betäubten Gegner kommt, dann füre Code aus
 	if(point_distance(x,y,draw_me.x,draw_me.y) <=range+55)
 	{
-		draw_self();
+		draw_self(); //Zeichnet seinen Sprite über betäubtebten Gegner
 		player_near = draw_me;
-		instance_create_depth(x,y,0,obj_kill_demon);
+		instance_create_depth(x,y,0,obj_kill_demon); //Damit Extra Objekt damit nicht alle Ggner mit einer Taste ggelöscht werden können
+	}
+	else
+	{
+		instance_destroy(obj_kill_demon);
 	}
 }
