@@ -1,1 +1,0 @@
-instance_create_depth(x,y,-15,obj_finisher);
