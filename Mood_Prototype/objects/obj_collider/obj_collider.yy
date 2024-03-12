@@ -1,15 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_marshmallow",
-  "eventList":[
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":true,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_collider",
+  "eventList":[],
   "managed":true,
-  "name":"obj_marshmallow",
+  "name":"obj_collider",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Admin",
+    "path":"folders/Objects/Admin.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,9 +28,12 @@
   "resourceVersion":"2.0",
   "solid":true,
   "spriteId":{
-    "name":"spr_marshmallow",
-    "path":"sprites/spr_marshmallow/spr_marshmallow.yy",
+    "name":"spr_colliderMask",
+    "path":"sprites/spr_colliderMask/spr_colliderMask.yy",
   },
-  "spriteMaskId":null,
-  "visible":true,
+  "spriteMaskId":{
+    "name":"spr_colliderMask",
+    "path":"sprites/spr_colliderMask/spr_colliderMask.yy",
+  },
+  "visible":false,
 }

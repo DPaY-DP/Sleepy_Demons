@@ -11,3 +11,11 @@ y += (down - up) * spd;
 weaponObject.x = x;
 weaponObject.y = y;
 weaponObject.image_angle = point_direction(x,y,mouse_x,mouse_y);
+
+
+
+
+
+
+
+
