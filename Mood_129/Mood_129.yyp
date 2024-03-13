@@ -42,6 +42,7 @@
     {"id":{"name":"obj_bulletPyjama","path":"objects/obj_bulletPyjama/obj_bulletPyjama.yy",},},
     {"id":{"name":"obj_collider","path":"objects/obj_collider/obj_collider.yy",},},
     {"id":{"name":"OBJ_enemy","path":"objects/OBJ_enemy/OBJ_enemy.yy",},},
+    {"id":{"name":"Room_testLevel","path":"rooms/Room_testLevel/Room_testLevel.yy",},},
     {"id":{"name":"obj_enemyDemonBig","path":"objects/obj_enemyDemonBig/obj_enemyDemonBig.yy",},},
     {"id":{"name":"obj_enemyDemonSmall","path":"objects/obj_enemyDemonSmall/obj_enemyDemonSmall.yy",},},
     {"id":{"name":"obj_gun","path":"objects/obj_gun/obj_gun.yy",},},
@@ -65,6 +66,7 @@
   ],
   "RoomOrderNodes": [
     {"roomId":{"name":"Room_Mood","path":"rooms/Room_Mood/Room_Mood.yy",},},
+    {"roomId":{"name":"Room_testLevel","path":"rooms/Room_testLevel/Room_testLevel.yy",},},
   ],
   "templateType": "game",
   "TextureGroups": [

@@ -23,6 +23,7 @@
   "ResourceOrderSettings": [
     {"name":"obj_bulletPyjama","order":1,"path":"objects/obj_bulletPyjama/obj_bulletPyjama.yy",},
     {"name":"OBJ_enemy","order":2,"path":"objects/OBJ_enemy/OBJ_enemy.yy",},
+    {"name":"Room_testLevel","order":2,"path":"rooms/Room_testLevel/Room_testLevel.yy",},
     {"name":"obj_enemyDemonSmall","order":1,"path":"objects/obj_enemyDemonSmall/obj_enemyDemonSmall.yy",},
     {"name":"obj_gun","order":8,"path":"objects/obj_gun/obj_gun.yy",},
     {"name":"obj_player","order":1,"path":"objects/obj_player/obj_player.yy",},
