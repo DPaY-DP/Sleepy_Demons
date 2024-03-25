@@ -1,0 +1,2 @@
+Notes:
+ - bullet collision with wall is not forgiving enough
