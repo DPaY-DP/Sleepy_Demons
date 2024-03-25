@@ -1,18 +1,18 @@
 {
   "resourceType": "GMRoom",
   "resourceVersion": "1.0",
-  "name": "Room_testLevel",
+  "name": "Room_02",
   "creationCodeFile": "",
   "inheritCode": false,
   "inheritCreationOrder": false,
   "inheritLayers": false,
   "instanceCreationOrder": [
-    {"name":"inst_7A91BB59","path":"rooms/Room_testLevel/Room_testLevel.yy",},
+    {"name":"inst_7A91BB59","path":"rooms/Room_02/Room_02.yy",},
   ],
   "isDnd": false,
   "layers": [
     {"resourceType":"GMRInstanceLayer","resourceVersion":"1.0","name":"Instances","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7A91BB59","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":672.0,"y":768.0,},
+        {"resourceType":"GMRInstance","resourceVersion":"1.0","name":"inst_7A91BB59","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"rotation":-90.0,"scaleX":1.0,"scaleY":1.0,"x":192.0,"y":768.0,},
       ],"layers":[],"properties":[],"userdefinedDepth":false,"visible":true,},
     {"resourceType":"GMRTileLayer","resourceVersion":"1.1","name":"Tiles","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"properties":[],"tiles":{"SerialiseHeight":47,"SerialiseWidth":47,"TileCompressedData":[
 -26,-2147483648,-14,0,-34,-2147483648,12,12,13,14,15,12,13,14,15,12,13,14,15,-35,-2147483648,12,20,21,22,23,20,21,22,23,20,21,22,23,-29,-2147483648,24,20,21,20,21,20,21,28,29,30,31,
