@@ -1,0 +1,19 @@
+Bugs:
+
+
+
+To-Do:
+
+
+
+Backlog / Nice to Have:
+- Enemy collision with walls
+- Extendo Catcher
+
+
+
+Waiting on:
+
+
+
+Notes:

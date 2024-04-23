@@ -1,0 +1,1 @@
+obj_managerMinigame.babySleep = true;
