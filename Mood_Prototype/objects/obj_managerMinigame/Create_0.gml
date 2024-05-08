@@ -71,6 +71,7 @@ switch (game)
 						
 												instance_create_depth(_xSpawn, _ySpawn, depth - 10, obj_blanket, { size : _size });
 												instance_create_depth(_xSpawn * 3, _ySpawn, depth - 5, obj_demonbaby, { size : _size });
+												instance_create_depth(_xSpawn * 3, _ySpawn, depth - 4, obj_bed, { size : _size });
 							break;
 	
 							case "lightswitch":	switchesActivated = 0;

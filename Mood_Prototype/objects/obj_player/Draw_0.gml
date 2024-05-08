@@ -73,12 +73,12 @@ if (_numberWeapons > 0)
 		{
 			case "nitequil":	var _newX = x + (right - left) * spd;
 								var _newY = y + (down - up) * spd;
-								var gun_x = x + lengthdir_x(gunDistance, image_angle + gunAngle);
-								var gun_y = y + lengthdir_y(gunDistance, image_angle + gunAngle);
+								var gun_x = x + lengthdir_x(gunDistance, image_angle );
+								var gun_y = y + lengthdir_y(gunDistance, image_angle );
 								var range_x = gun_x + lengthdir_x(rangeHitscan, image_angle);
 								var range_y = gun_y + lengthdir_y(rangeHitscan, image_angle);
 								
-								var target = collision_line(gun_x, gun_y, range_x, range_y, OBJ_target, true, true);
+								var target = collision_rectangle(gun_x, gun_y, range_x, range_y, OBJ_target, true, true);
 			
 								if (firstShot) || (timerWeapon > intervalNitequil)
 								{

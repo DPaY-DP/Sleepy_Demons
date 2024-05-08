@@ -15,7 +15,7 @@ intervalNitequilCharge = 1;
 intervalPyjamaCharge = 90;
 
 gunDistance = 28.6;
-gunAngle = -29;
+gunAngle = 330;
 
 rangeHitscan = 500;
 

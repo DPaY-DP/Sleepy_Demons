@@ -81,6 +81,7 @@ switch (game)
 						{
 							instance_destroy(obj_blanket);
 							instance_destroy(obj_demonbaby);
+							instance_destroy(obj_bed);
 							instance_destroy(enemy);
 							instance_destroy();
 						}
