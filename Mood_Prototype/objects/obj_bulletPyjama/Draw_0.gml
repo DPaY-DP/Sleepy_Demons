@@ -6,6 +6,8 @@ if (instance_position(x, y, obj_enemyDemonSaboteurBig)) with (instance_place(x, 
 	vulnerable = true;
 	image_index = 1;
 }
-if (instance_position(x, y, obj_wall)) instance_destroy();
+
+if (place_meeting(x, y, obj_wall)) ||
+   (place_meeting(x, y, obj_wallPlayer)) instance_destroy();
 
 draw_self();

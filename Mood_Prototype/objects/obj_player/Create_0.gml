@@ -22,3 +22,5 @@ rangeHitscan = 500;
 //##NEW
 //room
 inRoom = instance_place(x, y, obj_room);
+booster_cd = 0;
+booster_speed = 0;

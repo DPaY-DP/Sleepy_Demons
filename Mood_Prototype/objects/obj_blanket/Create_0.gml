@@ -15,7 +15,7 @@ stateIdle = new State();
 stateIdle.run = function()
 {
 	if  (mouse_on_me_center_gui()) &&
-		(mouse_check_button_released(mb_left))
+		(mouse_check_button_pressed(mb_left))
 		switch_state(stateGrab);
 }
 
@@ -28,8 +28,11 @@ stateGrab.start = function()
 stateGrab.run = function()
 {
 	x = device_mouse_x_to_gui(0) - xOffset;
+	if (x < xStart) x = xStart;
 	
-	if (x - xprevious > sensBlanket) switch_state(stateReturn);
+	if (x - xprevious > sensBlanket) ||
+	   (!mouse_check_button(mb_left))
+		switch_state(stateReturn);
 }
 stateGrab.stop = function()
 {
@@ -45,6 +48,10 @@ stateReturn.run = function()
 		sensBlanket += 15;
 		switch_state(stateIdle);
 	}
+	
+	if  (mouse_on_me_center_gui()) &&
+		(mouse_check_button_pressed(mb_left))
+		switch_state(stateGrab);
 }
 
 stateLocked = new State();

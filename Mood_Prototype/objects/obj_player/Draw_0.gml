@@ -14,15 +14,28 @@ inRoom = instance_place(x, y, obj_room);
 if (inRoom != noone) var _spd = spd - 2.5 * (inRoom.floodAmount);
 else var _spd = spd;
 
+if (place_meeting(x,y, obj_booster)) booster_cd = 10;
+if (booster_cd > 0)
+{
+	booster_speed = 5;
+	booster_cd =  booster_cd - .1 ;
+}
+else
+{
+	booster_speed = 0;
+}
 
 //movement
 var dir = point_direction(x, y, mouse_x, mouse_y);
 
-var _newX = x + (right - left) * _spd;
-var _newY = y + (down - up) * _spd;
+var _newX = x + (right - left) * (_spd + booster_speed);
+var _newY = y + (down - up) * (_spd + booster_speed);
 
-if (!place_meeting(_newX, y, OBJ_collider)) x = _newX;
-if (!place_meeting(x, _newY, OBJ_collider)) y = _newY;
+if (!instance_exists(obj_managerMinigame))
+{
+	if (!place_meeting(_newX, y, OBJ_collider)) x = _newX;
+	if (!place_meeting(x, _newY, OBJ_collider)) y = _newY;
+}
 
 image_angle = dir;
 
@@ -128,8 +141,8 @@ if (_numberWeapons > 0)
 										}
 									}
 									
-									draw_line_color(x + lengthdir_x(gunDistance, image_angle + gunAngle), y + lengthdir_y(gunDistance, image_angle + gunAngle), contact_x, contact_y, #662D91, #662D91);
-									
+									draw_line_width_color(x + lengthdir_x(gunDistance, image_angle + gunAngle), y + lengthdir_y(gunDistance, image_angle + gunAngle), contact_x, contact_y, 3,  #662D91, #662D91);
+									//draw_sprite_ext(spr_bulletNitequil)
 									timerWeapon = 0;
 								}
 			break;
@@ -170,4 +183,7 @@ inRoom = instance_place(x, y, obj_room);
 if (keyboard_check_pressed(ord("I"))) with (obj_enemyDemonSaboteur) switch_state(stateExecutable);
 if (keyboard_check_pressed(ord("B"))) instance_create_depth(view_get_wport(0) / 2, view_get_hport(0) / 2, depth, obj_bhop);
 
-draw_debug(firstShot)
+if (global.debugmode)
+{
+	draw_debug(firstShot);
+}

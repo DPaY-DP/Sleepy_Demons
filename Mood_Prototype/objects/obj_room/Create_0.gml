@@ -22,19 +22,19 @@ floodMax = 1;
 //method
 get_navmesh = function()
 {
-	var _iterations = 0;
 	var _weightRooms = array_create(instance_number(obj_room), undefined);
 	_weightRooms[numberRoom] = 0;
 	
 	var _lengthConnections = array_length(connectedTo);
 	var _checkNext = [noone, []];
+	var _iterations = 0;
 	for (var i = 0; i < _lengthConnections; i++)
 	{
 		var _dataConnector = connectedTo[i].connector;
 		var _numberRoom = connectedTo[i].room.numberRoom;
 		
 		if (!_dataConnector.sabotaged)
-		if (_weightRooms[_numberRoom] == undefined) 
+		if (_weightRooms[_numberRoom] == undefined)
 		{
 			_weightRooms[_numberRoom] = _iterations + 1;
 			array_push(_checkNext[_iterations + 1], connectedTo[i].room);

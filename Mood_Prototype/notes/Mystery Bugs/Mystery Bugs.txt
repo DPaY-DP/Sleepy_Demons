@@ -1,0 +1,36 @@
+ERROR01:
+############################################################################################
+ERROR in
+action number 1
+of Draw Event
+for object obj_enemyDemonSaboteurBig:
+
+Unable to find instance for object index 100006
+ at gml_Script_anon@4348@gml_Object_obj_enemyDemonSaboteurBig_Create_0 (line 216) -                      roomWeights = myLeader.roomWeights;
+############################################################################################
+gml_Script_anon@4348@gml_Object_obj_enemyDemonSaboteurBig_Create_0 (line 216)
+gml_Script_anon@279@setup_state_machine_setup_state_machine (line 22) -               _toState.start();
+gml_Script_anon@3456@gml_Object_obj_enemyDemonSaboteurBig_Create_0 (line 177) -        if (timerIdle <= 0) switch_state(stateSeek);
+gml_Object_obj_enemyDemonSaboteurBig_Draw_0 (line 3) - state.run();
+
+	STATUS:		presumed fixed
+				needs testing		
+
+
+ERROR02:
+############################################################################################
+ERROR in
+action number 1
+of Draw Event
+for object obj_enemyDemonSaboteur:
+
+Push :: Execution Error - Variable Index [0] out of range [0] - -7._waypoints(100448,0)
+ at gml_Script_anon@695@gml_Object_obj_enemyDemonSaboteur_Create_0 (line 74) -                      _checkRoom = _waypoints[_numberWaypoint].room;                     //THIS LINE SOMETIMES CAUSES A 
+############################################################################################
+gml_Script_anon@695@gml_Object_obj_enemyDemonSaboteur_Create_0 (line 74)
+gml_Script_anon@4636@gml_Object_obj_enemyDemonSaboteur_Create_0 (line 225) -                      waypoints = get_waypoints();
+gml_Script_anon@279@setup_state_machine_setup_state_machine (line 22) -               _toState.start();
+gml_Script_anon@3678@gml_Object_obj_enemyDemonSaboteur_Create_0 (line 184) -        if (timerIdle <= 0) switch_state(stateSeek);
+gml_Object_obj_enemyDemonSaboteur_Draw_0 (line 3) - state.run();
+
+	STATUS:		issue not found yet

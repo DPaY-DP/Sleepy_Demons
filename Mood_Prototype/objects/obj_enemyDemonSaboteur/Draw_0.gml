@@ -1,7 +1,7 @@
+draw_self();
+
 state.run();
 timerState++;
-
-draw_self();
 
 var _scale = 5;
 var _border = 5;

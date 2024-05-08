@@ -1,3 +1,6 @@
+image_xscale = 1.4;
+image_yscale = 1.4;
+
 image_speed = 0;
 
 var _viewWidth = view_get_wport(0);
