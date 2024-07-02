@@ -1,0 +1,2 @@
+shadows = [];
+shadowsMax = 8;

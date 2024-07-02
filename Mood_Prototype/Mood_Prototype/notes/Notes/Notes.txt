@@ -1,0 +1,20 @@
+Bugs:
+- ERROR03: sometimes enemies can sabotage alone		unchanged
+- ERROR05: square hole holes can overlap			unchanged, unable to change with place_meeting ?!
+- ERROR04: you can shoot through tunnels			should be fixed
+
+
+To-Do:
+
+
+
+Backlog / Nice to Have:
+- Enemy collision with walls
+- Extendo Catcher
+
+
+
+Notes:
+- second Use case for pyjama launcher: right click to fire a harmless propelling projectile behind you
+- second use case for nitequil launcher: right click to fire a slowing dart (primarily for big guys)
+- freeze weapon or object to affect flooded rooms (turn them into ice to skate on)

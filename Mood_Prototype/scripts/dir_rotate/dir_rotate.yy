@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "dir_rotate",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Conversion Functions",
-    "path": "folders/Scripts/General Functions/Conversion Functions.yy",
+  "$GMScript":"",
+  "%Name":"dir_rotate",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"dir_rotate",
+  "parent":{
+    "name":"Conversion Functions",
+    "path":"folders/Scripts/General Functions/Conversion Functions.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

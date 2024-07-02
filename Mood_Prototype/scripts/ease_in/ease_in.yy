@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "ease_in",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Easing Functions",
-    "path": "folders/Scripts/General Functions/Easing Functions.yy",
+  "$GMScript":"",
+  "%Name":"ease_in",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"ease_in",
+  "parent":{
+    "name":"Easing Functions",
+    "path":"folders/Scripts/General Functions/Easing Functions.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

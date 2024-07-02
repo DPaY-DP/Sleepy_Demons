@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "flick",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Logic Functions",
-    "path": "folders/Scripts/General Functions/Logic Functions.yy",
+  "$GMScript":"",
+  "%Name":"flick",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"flick",
+  "parent":{
+    "name":"Logic Functions",
+    "path":"folders/Scripts/General Functions/Logic Functions.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

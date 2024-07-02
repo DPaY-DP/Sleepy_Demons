@@ -1,0 +1,45 @@
+spd = 15;
+
+timerAlive = 0;
+timerDespawn = 60;
+
+timerDraw = 0;
+
+xStart = x;
+yStart = y;
+
+boundary = 200;
+
+active = true;
+
+drawExplosion = false;
+
+timerExplode = 45;
+segmentExplode = timerExplode / 3;
+
+explode = function()
+{
+	show_debug_message("sus")
+	
+	image_alpha = 0;
+	spd = 0;
+	
+	drawExplosion = true;
+	active = false;
+	
+	var _list = ds_list_create();
+	var _numberHits = collision_circle_list(x, y, area / 2, obj_targetDummy, false, false, _list, false);
+	
+	var _arrayHit = list_to_array(_list);
+	ds_list_destroy(_list);
+	
+	for (var i = 0; i < _numberHits; i++)
+	{
+		var _hit = _arrayHit[i];
+
+		instance_create_layer(_hit.x, _hit.y, "Overlay", obj_damageNumber, { damage : damage, color : c_red });
+
+		_hit.x += lengthdir_x(punch * 3, point_direction(x, y, _hit.x, _hit.y));
+		_hit.y += lengthdir_y(punch * 3, point_direction(x, y, _hit.x, _hit.y));
+	}
+}

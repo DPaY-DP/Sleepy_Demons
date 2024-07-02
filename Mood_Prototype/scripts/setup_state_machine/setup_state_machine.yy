@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "setup_state_machine",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "State Machine Functions",
-    "path": "folders/Scripts/General Functions/State Machine Functions.yy",
+  "$GMScript":"",
+  "%Name":"setup_state_machine",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"setup_state_machine",
+  "parent":{
+    "name":"State Machine Functions",
+    "path":"folders/Scripts/General Functions/State Machine Functions.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

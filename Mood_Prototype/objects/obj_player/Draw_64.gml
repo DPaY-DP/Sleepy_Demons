@@ -1,0 +1,2 @@
+draw_text_simple(20, 20, $"hvel: {hvel}", { size : 1, halign : fa_left, valign : fa_top, color : c_white, font : Font1 });
+draw_text_simple(20, 40, $"vvel: {vvel}", { size : 1, halign : fa_left, valign : fa_top, color : c_white, font : Font1 });

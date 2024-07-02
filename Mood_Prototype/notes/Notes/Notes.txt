@@ -5,6 +5,8 @@ Bugs:
 
 
 To-Do:
+- railgun hitbox funky
+- movement glitchy around corners (collision issue)
 
 
 

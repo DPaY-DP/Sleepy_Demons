@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "statbar_draw_vertical",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Quick Game Element Functions",
-    "path": "folders/Scripts/General Functions/Quick Game Element Functions.yy",
+  "$GMScript":"",
+  "%Name":"statbar_draw_vertical",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"statbar_draw_vertical",
+  "parent":{
+    "name":"Quick Game Element Functions",
+    "path":"folders/Scripts/General Functions/Quick Game Element Functions.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

@@ -1,14 +1,14 @@
 {
-  "resourceType": "GMPath",
-  "resourceVersion": "1.0",
-  "name": "pathTrackerRight",
-  "closed": false,
-  "kind": 1,
-  "parent": {
-    "name": "Paths",
-    "path": "folders/Objects/MGames/Horseshoe/Paths.yy",
+  "$GMPath":"",
+  "%Name":"pathTrackerRight",
+  "closed":false,
+  "kind":1,
+  "name":"pathTrackerRight",
+  "parent":{
+    "name":"Paths",
+    "path":"folders/Objects/MGames/Horseshoe/Paths.yy",
   },
-  "points": [
+  "points":[
     {"speed":100.0,"x":0.0,"y":9.0,},
     {"speed":100.0,"x":0.0,"y":50.0,},
     {"speed":100.0,"x":9.0,"y":59.0,},
@@ -17,5 +17,7 @@
     {"speed":100.0,"x":41.0,"y":48.0,},
     {"speed":100.0,"x":41.0,"y":9.0,},
   ],
-  "precision": 4,
+  "precision":4,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
 }

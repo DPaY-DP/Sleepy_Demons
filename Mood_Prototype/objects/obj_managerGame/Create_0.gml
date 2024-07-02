@@ -12,6 +12,3 @@ if (variable_global_exists("countEnv")) global.countEnv = 0;
 
 //rooms
 timerLoss = 0;
-
-//DEBUG
-global.debugmode = false;
