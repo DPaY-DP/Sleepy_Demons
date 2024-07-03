@@ -17,24 +17,17 @@ if (_hacc != 0)
 		hvel *= 0.65;
 	}
 	
-	
-	
 	if (sign(_hacc) == 1)
 	{
 		if (hvel + _hacc < velMax) hvel += _hacc;
 		else if (hvel < velMax) hvel = velMax;
 	}
 	
-	
-	
 	if (sign(_hacc) == -1) 
 	{
 		if (hvel + _hacc > -velMax) hvel += _hacc;
 		else if (hvel > -velMax) hvel = -velMax;
 	}
-	
-	
-	
 }
 else hvel *= 0.65;
 
@@ -63,18 +56,15 @@ else vvel *= 0.65;
 if (!place_meeting(x + hvel, y, obj_wall)) x += hvel;
 else
 {
-	x = floor(x);
-	hvel = floor(hvel);
+	x = round(x);
+	hvel = round(hvel);
 	
-	var _doEffect = false;
-	if (abs(hvel) >= 10) 
-	{
-		_doEffect = true;
-	}
+	//var _doEffect = false;
+	//if (abs(hvel) >= 10) _doEffect = true;
 
 	while (!place_meeting(x + sign(hvel), y, obj_wall)) x += sign(hvel);
 	
-	if (_doEffect) do_effect_dust(x + sign(hvel) * sprite_width / 2, y);
+	//if (_doEffect) do_effect_dust(x + sign(hvel) * sprite_width / 2, y);
 	
 	hvel = 0;
 }
@@ -84,18 +74,15 @@ else
 if (!place_meeting(x, y + vvel, obj_wall)) y += vvel;
 else
 {
-	y = floor(y);
-	vvel = floor(vvel);
+	y = round(y);
+	vvel = round(vvel);
 	
-	var _doEffect = false;
-	if (abs(vvel) >= 10) 
-	{
-		_doEffect = true;
-	}
+	//var _doEffect = false;
+	//if (abs(vvel) >= 10) _doEffect = true;
 
 	while (!place_meeting(x, y + sign(vvel), obj_wall)) y += sign(vvel);
 	
-	if (_doEffect) do_effect_dust(x, y + sign(vvel) * sprite_height / 2);
+	//if (_doEffect) do_effect_dust(x, y + sign(vvel) * sprite_height / 2);
 	
 	vvel = 0;
 }

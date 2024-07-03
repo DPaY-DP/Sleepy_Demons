@@ -34,6 +34,8 @@ global.weaponData = [
 		
 		launch : 200,
 		
+		spd : 15,
+		
 		damage : 4,
 		firerate : 60,
 		projectile : obj_projectileAOE,
@@ -67,9 +69,18 @@ global.weaponData = [
 	{
 		name : "puddle",
 		
-		damage : 5,
+		punch : 30,
+		
+		area : 300,
+		range : 500,
+		
+		spd : 20,
+		
+		damage : 0,
 		firerate : 60,
-		projectile : obj_projectileBullet,
+		projectile : obj_projectileAOEEffect,
+		
+		length : 120,
 	},
 	{
 		name : "repair",

@@ -34,6 +34,8 @@ if (_numberWeapons > 0)
 	{
 		case "nitequil": if (key_primary) && (timerFireRate <= 0)
 						{
+							audio_play_sound(snd_pistol, 0, 0, 1.5);
+							
 							instance_create_depth(x, y, depth + 1, _weapon.projectile, { image_angle : image_angle, punch : _weapon.punch, 
 								damage : _weapon.damage });
 							obj_player.x -= lengthdir_x(_weapon.punch, image_angle);
@@ -55,8 +57,10 @@ if (_numberWeapons > 0)
 		
 		case "pyjama":	if (key_primary) && (timerFireRate <= 0)
 						{
+							audio_play_sound(snd_rocketLaunch, 0, 0);
+							
 							instance_create_depth(x, y, depth + 1, _weapon.projectile, { image_angle : image_angle, punch : _weapon.punch, 
-								damage : _weapon.damage, area : _weapon.area, range : _weapon.range });
+								damage : _weapon.damage, area : _weapon.area, range : _weapon.range, spd : _weapon.spd });
 							obj_player.hvel -= lengthdir_x(_weapon.punch, image_angle);
 							obj_player.vvel -= lengthdir_y(_weapon.punch, image_angle);
 							timerFireRate = _weapon.firerate;
@@ -68,7 +72,7 @@ if (_numberWeapons > 0)
 							if (timerLaunch == 0)
 							{
 								instance_create_depth(x, y, depth + 1, _weapon.projectile, { image_angle : image_angle, punch : _weapon.punch, 
-									damage : _weapon.damage, area : _weapon.area, range : 0 });
+									damage : _weapon.damage, area : _weapon.area, range : 0, spd : _weapon.spd });
 								
 								obj_player.hvel -= lengthdir_x(_weapon.launch, image_angle);
 								obj_player.vvel -= lengthdir_y(_weapon.launch, image_angle);
@@ -81,6 +85,7 @@ if (_numberWeapons > 0)
 		case "railgun":	if (key_primary) && (timerFireRate <= 0) && (!ability)
 						{
 							audio_play_sound(snd_railgun_full, 0, 0);
+							
 							ability = true;
 							delay = _weapon.delay;
 						}
@@ -122,6 +127,7 @@ if (_numberWeapons > 0)
 							{
 								burst--;
 								audio_play_sound(snd_prowler2, 0, 0);
+								
 								instance_create_depth(x, y, depth + 1, _weapon.projectile, { image_angle : image_angle, last : (burst == 0), punch : _weapon.punch, damage : _weapon.damage });
 								obj_player.hvel -= lengthdir_x(_weapon.punch, image_angle);
 								obj_player.vvel -= lengthdir_y(_weapon.punch, image_angle);
@@ -139,31 +145,42 @@ if (_numberWeapons > 0)
 							
 		break;
 		
-		case "puddle":	
+		case "puddle":	if (key_primary) && (timerFireRate <= 0)
+						{
+							audio_play_sound(snd_rocketLaunch, 0, 0, 0.5);
+							
+							instance_create_depth(x, y, depth + 1, _weapon.projectile, { image_angle : image_angle, punch : _weapon.punch, 
+								damage : _weapon.damage, area : _weapon.area, range : _weapon.range, spd : _weapon.spd, length : _weapon.length });
+							obj_player.hvel -= lengthdir_x(_weapon.punch, image_angle);
+							obj_player.vvel -= lengthdir_y(_weapon.punch, image_angle);
+							timerFireRate = _weapon.firerate;
+						}
 							
 		break;
 		
 		case "repair":	if (key_primary_held)
 						{
-								var _dirBarrel = point_direction(0, 32, _weapon.xBarrel, _weapon.yBarrel);
-								var _distBarrel = point_distance(0, 32, _weapon.xBarrel, _weapon.yBarrel);
+							var _dirBarrel = point_direction(0, 32, _weapon.xBarrel, _weapon.yBarrel);
+							var _distBarrel = point_distance(0, 32, _weapon.xBarrel, _weapon.yBarrel);
 								
-								var _x = x + lengthdir_x(_distBarrel, _dirBarrel + image_angle);
-								var _y = y + lengthdir_y(_distBarrel, _dirBarrel + image_angle);
+							var _x = x + lengthdir_x(_distBarrel, _dirBarrel + image_angle);
+							var _y = y + lengthdir_y(_distBarrel, _dirBarrel + image_angle);
 								
-								if (timerFireRate <= 0)
-								{
-									instance_create_depth(_x, _y, depth + 1, _weapon.projectile, { dir : image_angle, damage : _weapon.damage + irandom(2) });
-									obj_player.hvel -= lengthdir_x(_weapon.punch, image_angle);
-									obj_player.vvel -= lengthdir_y(_weapon.punch, image_angle);
-									timerFireRate = _weapon.firerate;
-								}
-								else
-								{
-									instance_create_depth(_x, _y, depth + 1, _weapon.projectile, { dir : image_angle + random_range(-10, 10), damage : 0 });
-									obj_player.hvel -= lengthdir_x(_weapon.punch, image_angle);
-									obj_player.vvel -= lengthdir_y(_weapon.punch, image_angle);
-								}
+							if (timerFireRate <= 0)
+							{
+								audio_play_sound(snd_repairgun, 0, 0);
+								
+								instance_create_depth(_x, _y, depth + 1, _weapon.projectile, { dir : image_angle, damage : _weapon.damage + irandom(2) });
+								obj_player.hvel -= lengthdir_x(_weapon.punch, image_angle);
+								obj_player.vvel -= lengthdir_y(_weapon.punch, image_angle);
+								timerFireRate = _weapon.firerate;
+							}
+							else
+							{
+								instance_create_depth(_x, _y, depth + 1, _weapon.projectile, { dir : image_angle + random_range(-10, 10), damage : 0 });
+								obj_player.hvel -= lengthdir_x(_weapon.punch, image_angle);
+								obj_player.vvel -= lengthdir_y(_weapon.punch, image_angle);
+							}
 						}
 		
 		break;

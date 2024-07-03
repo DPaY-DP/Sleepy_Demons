@@ -1,5 +1,3 @@
-spd = 15;
-
 timerAlive = 0;
 timerDespawn = 60;
 
@@ -18,8 +16,8 @@ timerExplode = 45;
 segmentExplode = timerExplode / 3;
 
 explode = function()
-{
-	show_debug_message("sus")
+{	
+	audio_play_sound(snd_rocketExplode, 0, 0);
 	
 	image_alpha = 0;
 	spd = 0;

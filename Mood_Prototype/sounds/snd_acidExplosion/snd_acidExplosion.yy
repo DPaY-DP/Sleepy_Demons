@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"charge_up",
+  "%Name":"snd_acidExplosion",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":2.396122,
-  "name":"charge_up",
+  "duration":0.705306,
+  "name":"snd_acidExplosion",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"charge_up.wav",
+  "soundFile":"snd_acidExplosion.mp3",
   "type":0,
   "volume":1.0,
 }
