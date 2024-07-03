@@ -15,6 +15,8 @@ drawExplosion = false;
 timerExplode = 45;
 segmentExplode = timerExplode / 3;
 
+show_debug_message(image_angle)
+
 explode = function()
 {	
 	audio_play_sound(snd_rocketExplode, 0, 0);

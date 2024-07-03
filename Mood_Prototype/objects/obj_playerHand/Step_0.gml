@@ -29,63 +29,63 @@ if (animate)
 	
 	switch(_frameReal)
 	{
-		case 0:		obj_player.x -= lengthdir_x(1, dir);
-					obj_player.y -= lengthdir_y(1, dir);
+		case 0:		obj_player.hvel -= lengthdir_x(1, dir);
+					obj_player.vvel -= lengthdir_y(1, dir);
 					
-					obj_player.image_angle += 5;
+					obj_player.orientation += 5;
 		break;
 		
-		case 1:		obj_player.x -= lengthdir_x(3, dir);
-					obj_player.y -= lengthdir_y(3, dir);
+		case 1:		obj_player.hvel -= lengthdir_x(3, dir);
+					obj_player.vvel -= lengthdir_y(3, dir);
 					
-					obj_player.image_angle += 5;
+					obj_player.orientation += 5;
 		break;
 		
-		case 2:		obj_player.x -= lengthdir_x(5, dir);
-					obj_player.y -= lengthdir_y(5, dir);
+		case 2:		obj_player.hvel -= lengthdir_x(5, dir);
+					obj_player.vvel -= lengthdir_y(5, dir);
 					
-					obj_player.image_angle += 5;
+					obj_player.orientation += 5;
 		break;
 		
-		case 3:		obj_player.x -= lengthdir_x(8, dir);
-					obj_player.y -= lengthdir_y(8, dir);
+		case 3:		obj_player.hvel -= lengthdir_x(8, dir);
+					obj_player.vvel -= lengthdir_y(8, dir);
 					
-					obj_player.image_angle += 5;
+					obj_player.orientation += 5;
 		break;
 		
 		case 4:		
 		break;
 		
-		case 5:		obj_player.x += lengthdir_x(30, dir);
-					obj_player.y += lengthdir_y(30, dir);
+		case 5:		obj_player.hvel += lengthdir_x(30, dir);
+					obj_player.vvel += lengthdir_y(30, dir);
 					
-					obj_player.image_angle -= 20;
+					obj_player.orientation -= 20;
 		break;
 		
-		case 6:		obj_player.x += lengthdir_x(15, dir);
-					obj_player.y += lengthdir_y(15, dir);
+		case 6:		obj_player.hvel += lengthdir_x(15, dir);
+					obj_player.vvel += lengthdir_y(15, dir);
 					
-					obj_player.image_angle -= 5;
+					obj_player.orientation -= 5;
 		break;
 		
-		case 7:		obj_player.x += lengthdir_x(7, dir);
-					obj_player.y += lengthdir_y(7, dir);
+		case 7:		obj_player.hvel += lengthdir_x(7, dir);
+					obj_player.vvel += lengthdir_y(7, dir);
 		break;
 		
-		case 8:		obj_player.x += lengthdir_x(3, dir);
-					obj_player.y += lengthdir_y(3, dir);
+		case 8:		obj_player.hvel += lengthdir_x(3, dir);
+					obj_player.vvel += lengthdir_y(3, dir);
 		break;
 		
-		case 9:		obj_player.x -= lengthdir_x(3, dir);
-					obj_player.y -= lengthdir_y(3, dir);
+		case 9:		obj_player.hvel -= lengthdir_x(3, dir);
+					obj_player.vvel -= lengthdir_y(3, dir);
 		break;
 		
-		case 10:	obj_player.x -= lengthdir_x(3, dir);
-					obj_player.y -= lengthdir_y(3, dir);
+		case 10:	obj_player.hvel -= lengthdir_x(3, dir);
+					obj_player.vvel -= lengthdir_y(3, dir);
 		break;
 		
-		case 11:	obj_player.x -= lengthdir_x(3, dir);
-					obj_player.y -= lengthdir_y(3, dir);
+		case 11:	obj_player.hvel -= lengthdir_x(3, dir);
+					obj_player.vvel -= lengthdir_y(3, dir);
 		break;
 	}
 }

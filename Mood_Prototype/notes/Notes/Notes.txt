@@ -4,15 +4,9 @@ Bugs:
 - ERROR04: you can shoot through tunnels			should be fixed
 
 
-To-Do:
-- railgun hitbox funky
-- movement glitchy around corners (collision issue)
-
-
 
 Backlog / Nice to Have:
 - Enemy collision with walls
-- Extendo Catcher
 
 
 

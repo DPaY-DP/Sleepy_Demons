@@ -28,7 +28,25 @@ else
 
 timerAlive++;
 
-if (x > room_width + boundary) || (x < -boundary) || (y > room_height + boundary) || (y < -boundary)
+if (!active) exit;
+if (place_meeting(x, y, obj_wall)) || (x > room_width + boundary) || (x < -boundary) || (y > room_height + boundary) || (y < -boundary)
 {
-	instance_destroy();
+	active = false;
+
+	retract = true;
+
+	audio_play_sound(snd_extendoCatch, 0, 0);
+}
+
+var _enemy = instance_place(x, y, obj_targetDummy)
+if (_enemy != noone)
+{
+	active = false;
+
+	_enemy.caught = id;
+	target = _enemy.id;
+
+	retract = true;
+
+	audio_play_sound(snd_extendoCatch, 0, 0);	
 }

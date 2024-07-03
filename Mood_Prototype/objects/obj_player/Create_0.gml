@@ -1,12 +1,15 @@
 	//values
+//draw
+orientation = 0;
+
 //movement
 acc = 1.25;
 dir = 0;
 
 vel = 0;
 
-factorVelDecStanding = 0.65;
-factorVelDecWalking = 0.55;
+frictionStanding = 0.65;
+frictionWalking = 0.55;
 			//knockback is LESS effective while moving to incentivize the player to keep moving
 			//instead of standing still like an idiot
 

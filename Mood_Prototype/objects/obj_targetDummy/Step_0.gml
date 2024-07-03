@@ -3,7 +3,7 @@ var _yTo = currentWaypoint[1];
 
 var _dir = point_direction(x, y, _xTo, _yTo);
 	
-image_angle = _dir;
+//image_angle = _dir;
 
 if (slowed) spd = spdSlowed;
 else spd = spdNormal;

@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_dummy",
-    "path":"sprites/spr_dummy/spr_dummy.yy",
+    "name":"Spr_Pablo",
+    "path":"sprites/Spr_Pablo/Spr_Pablo.yy",
   },
   "spriteMaskId":null,
   "visible":true,

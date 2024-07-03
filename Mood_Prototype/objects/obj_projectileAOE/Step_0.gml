@@ -9,7 +9,7 @@ if (x > room_width + boundary) || (x < -boundary) || (y > room_height + boundary
 }
 
 if (active)
-if (point_distance(x, y, xStart, yStart) > range)
+if (point_distance(x, y, xStart, yStart) > range) || (place_meeting(x, y, obj_wall))
 {
 	explode();
 }

@@ -20,6 +20,6 @@ else
 	{
 		var _alpha = 1 - i / _iterations;
 	
-		draw_sprite_simple(sprite_index, 0, x - lengthdir_x(_dist * i, image_angle), y - lengthdir_y(_dist * i, image_angle), { alpha : _alpha });
+		draw_sprite_simple(sprite_index, 0, x - lengthdir_x(_dist * i, image_angle), y - lengthdir_y(_dist * i, image_angle), { alpha : _alpha, angle : image_angle });
 	}
 }

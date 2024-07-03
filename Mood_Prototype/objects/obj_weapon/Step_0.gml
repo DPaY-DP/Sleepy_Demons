@@ -38,12 +38,12 @@ if (_numberWeapons > 0)
 							
 							instance_create_depth(x, y, depth + 1, _weapon.projectile, { image_angle : image_angle, punch : _weapon.punch, 
 								damage : _weapon.damage });
-							obj_player.x -= lengthdir_x(_weapon.punch, image_angle);
-							obj_player.y -= lengthdir_y(_weapon.punch, image_angle);
+							obj_player.hvel -= lengthdir_x(_weapon.punch, image_angle);
+							obj_player.vvel -= lengthdir_y(_weapon.punch, image_angle);
 							timerFireRate = _weapon.firerate;
 						}
 						
-						if (key_secondary)
+						if (key_secondary) && (timerFireRate <= 0)
 						{
 							instance_create_depth(x, y, depth + 1, obj_projectileDart, { image_angle : image_angle, punch : _weapon.punch, 
 								damage : 0 });
