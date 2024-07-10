@@ -12,8 +12,8 @@
   "name":"obj_playerMomentum",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"#Old",
+    "path":"folders/Objects/#Old.yy",
   },
   "parentObjectId":null,
   "persistent":false,

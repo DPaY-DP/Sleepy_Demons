@@ -10,8 +10,8 @@
   "name":"obj_dummyEnv",
   "overriddenProperties":[],
   "parent":{
-    "name":"Temporarly",
-    "path":"folders/Objects/Temporarly.yy",
+    "name":"New",
+    "path":"folders/Objects/New.yy",
   },
   "parentObjectId":null,
   "persistent":false,

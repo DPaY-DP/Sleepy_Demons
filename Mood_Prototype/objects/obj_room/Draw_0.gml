@@ -1,10 +1,10 @@
 draw_self();
 
-var _lengthConnected = array_length(connectedTo);
+var _lengthConnected = array_length(doors);
 for (var i = 0; i < _lengthConnected; i++)
 {
 	var _color = c_black;
-	if (connectedTo[i].connector.object_index == obj_tunnel) _color = #AFA010;
+	if (doors[i].door.object_index == obj_tunnel) _color = #AFA010;
 }
 
 if (flood)

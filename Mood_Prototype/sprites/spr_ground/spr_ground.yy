@@ -19,7 +19,6 @@
   "height":32,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"2b13eae9-28f8-4c0c-9d26-6153c106a932","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"2b13eae9-28f8-4c0c-9d26-6153c106a932","opacity":31.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"abfd9358-132e-43d2-947a-4e77cb7e929c","blendMode":0,"displayName":"default","isLocked":false,"name":"abfd9358-132e-43d2-947a-4e77cb7e929c","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_ground",

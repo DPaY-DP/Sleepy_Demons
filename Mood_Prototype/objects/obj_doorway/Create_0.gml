@@ -1,26 +1,70 @@
-//get point data
+//immutable values
+	//get center
 xCenter = x + sprite_width / 2;
 yCenter = y + sprite_height / 2;
 
-if (!variable_global_exists("countDoor")) global.countDoor = 0;
-numberDoor = global.countDoor++;
+	//get rooms
+rooms = [];
 
-sabotaged = false;
+var _list = ds_list_create();
+instance_place_list(x, y, obj_room, _list, false);
+rooms = list_to_array(_list);
+ds_list_destroy(_list);																								 
+																													 
+	//get entrypoints
+entries = [];
 
-
-
-//connect rooms
-var _idRooms = [];
-
-with (obj_room)
-if (instance_place(x, y, other.id))
+if (round(sprite_width / sprite_height) >= 1)									// orientation: 0 = vertical, 1 = horizontal
+{				
+	entries[0] = {
+		x : xCenter + (sprite_width / 2) * sign(rooms[0].x - x),		//the x position of the entry point into this doorway is
+																			//the xCenter of the door PLUS or MINUS half it's sprite_width.
+																			//if the door is to the right of the room, it is MINUS
+																			//to the left it's PLUS (that's what sign(x - _door.x) does)
+																				
+		y : yCenter,														//the y position of the entry point into the doorway is
+	};																		//always just yCenter (or xCenter on vertical doors)
+		
+	entries[1] = {
+		x : xCenter + (sprite_width / 2) * sign(rooms[1].x - x),
+		y : yCenter,												
+	};																		
+}
+else
 {
-	array_push(_idRooms, id);
+	entries[0] = {
+			x : xCenter,
+			y : yCenter + (sprite_height / 2) * sign(rooms[0].y - y),
+		};
+		
+	entries[1] = {
+			x : xCenter,
+			y : yCenter + (sprite_height / 2) * sign(rooms[1].y - y),
+		};
 }
 
-array_push(_idRooms[0].connectedTo, { connector : id, room : _idRooms[1] });
-array_push(_idRooms[1].connectedTo, { connector : id, room : _idRooms[0] });
+	//give rooms connector data
+array_push(rooms[0].doors, {
+	door : id,
+	toRoom : rooms[1],
+	entrypoint : entries[0],
+	exitpoint : entries[1],
+})
 
+array_push(rooms[1].doors, {
+	door : id,
+	toRoom : rooms[0],
+	entrypoint : entries[1],
+	exitpoint : entries[0],
+})
 
-//set visuals
+	//set depth
 depth += 50;
+
+
+//methods
+get_exit = function(_entryStruct)
+{
+	if (_entryStruct == entries[0]) return entries[1];
+	return entries[0];
+}

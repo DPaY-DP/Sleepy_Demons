@@ -9,8 +9,8 @@
   "name":"obj_bulletPyjama",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bullets",
-    "path":"folders/Objects/Bullets.yy",
+    "name":"#Old",
+    "path":"folders/Objects/#Old.yy",
   },
   "parentObjectId":null,
   "persistent":false,

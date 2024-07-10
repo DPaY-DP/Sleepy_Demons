@@ -1,7 +1,7 @@
 //inherited values and behavior
 vulnerable = false;
 
-spd = spdEnemies * 0.65;
+spd = 4 * 0.65;
 
 slotsize = 1;
 
