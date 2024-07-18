@@ -14,7 +14,7 @@ ds_list_destroy(_list);
 	//get entrypoints
 entries = [];
 
-if (round(sprite_width / sprite_height) >= 1)									// orientation: 0 = vertical, 1 = horizontal
+if (sprite_width / sprite_height >= 1)									// orientation: 0 = vertical, 1 = horizontal
 {				
 	entries[0] = {
 		x : xCenter + (sprite_width / 2) * sign(rooms[0].x - x),		//the x position of the entry point into this doorway is
@@ -45,14 +45,14 @@ else
 
 	//give rooms connector data
 array_push(rooms[0].doors, {
-	door : id,
+	object : id,
 	toRoom : rooms[1],
 	entrypoint : entries[0],
 	exitpoint : entries[1],
 })
 
 array_push(rooms[1].doors, {
-	door : id,
+	object : id,
 	toRoom : rooms[0],
 	entrypoint : entries[1],
 	exitpoint : entries[0],

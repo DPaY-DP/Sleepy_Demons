@@ -1,5 +1,5 @@
 //immutable values
-	//get room points (for randomWalk and other navmesh calculations)
+	//get room points (for RandomTarget and other navmesh calculations)
 points = [];
 
 		//room entry points
@@ -13,7 +13,14 @@ for (var i = 0; i < _length; i++)
 xCenter = x + sprite_width / 2;
 yCenter = y + sprite_height / 2;
 
-array_push(points, { x : xCenter, y : yCenter });
+var _centerpoint = 
+{
+	x : xCenter,
+	y : yCenter,
+}
+
+array_push(points, _centerpoint);
+centerpoint = _centerpoint;
 
 		//corner points
 var _cornerOffset = 32;

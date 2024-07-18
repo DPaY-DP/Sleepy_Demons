@@ -1,6 +1,9 @@
 //state machine
+show_debug_message($"state {state.name} run")
 state.run();
 timerState++;
+
+
 
 
 

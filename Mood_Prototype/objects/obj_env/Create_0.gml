@@ -11,7 +11,6 @@ stage = 0;
 distInteract = 200;
 
 beingSabotaged = false;
-broken = false;
 dead = false;
 
 hpDrain = 0;
@@ -38,7 +37,9 @@ switch_stage = function(_change)
 		break;
 		
 		case 3:		hpDrain = 0.3;
-					broken = true;
 		break;
 	}
 }
+
+
+//this shit is still bugged!!!

@@ -5,12 +5,6 @@ Bugs:
 
 
 
-Backlog / Nice to Have:
-- Enemy collision with walls
-
-
-
 Notes:
-- second Use case for pyjama launcher: right click to fire a harmless propelling projectile behind you
-- second use case for nitequil launcher: right click to fire a slowing dart (primarily for big guys)
-- freeze weapon or object to affect flooded rooms (turn them into ice to skate on)
+- For collision / unstuckment: Give every collider corner / navpoints. If stuck on object for too long, insert closest navpoint into navmesh
+	> Raycast from every point to next point. If collider in the way, add navpoints to navmesh.

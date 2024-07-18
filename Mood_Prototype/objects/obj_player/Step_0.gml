@@ -88,7 +88,7 @@ else vvel *= frictionStanding;
 
 
 ////collision
-if (!place_meeting(x + hvel, y, obj_wall)) x += hvel;
+if (!place_meeting(x + hvel, y, obj_wall)) x += round(hvel);
 else
 {
 	x = round(x);
@@ -113,7 +113,7 @@ else
 
 
 
-if (!place_meeting(x, y + vvel, obj_wall)) y += vvel;
+if (!place_meeting(x, y + vvel, obj_wall)) y += round(vvel);
 else
 {
 	y = round(y);
