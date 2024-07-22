@@ -1,5 +1,5 @@
 var _list = ds_list_create();
-var _numberHits = collision_circle_list(x, y, area / 2, obj_targetDummy, false, false, _list, false);
+var _numberHits = collision_circle_list(x, y, area / 2, OBJ_enemy, false, false, _list, false);
 	
 var _arrayHit = list_to_array(_list);
 ds_list_destroy(_list);

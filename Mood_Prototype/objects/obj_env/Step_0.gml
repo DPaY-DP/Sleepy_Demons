@@ -1,20 +1,48 @@
 global.envHP -= hpDrain;
 
 
-if	(stage > 0) && 
-	(point_distance(x, y, obj_player.x, obj_player.y) < distInteract)
+if	(hp < hpMax) && 
+	(point_distance(x, y, obj_player.x, obj_player.y) < distInteract) &&
+	(obj_player.inRoom == inRoom)
 {
-	if (keyboard_check(ord("E"))) hp += 2;
+	if (keyboard_check(ord("E"))) hp += obj_player.spdRepair;
 }
 
-if (hp > hpStage) && (stage != 0)
+var _numberSaboteurs = 0;
+
+var _length = array_length(members);
+for (var i = 0; i < _length; i++)
 {
-	switch_stage(-1)	//minus heals
-	hp = 0;
+	var _member = members[i];
+	if (_member.inSaboPosition) _numberSaboteurs++;
+	continue;
+	
+	var _dist = point_distance(x, y, _member.x, _member.y);
+		
+	if (_dist < members[i].distSabotage) _numberSaboteurs++;
 }
 
-if (hp < 0) && (stage != stageMax)
+if (_numberSaboteurs >= membersSabo)
+for (var i = 0; i < _length; i++)
+{
+	var _member = members[i];
+	
+	hp -= _member.envDamage;
+}
+
+if (hp >= hpMax)
+{
+	if (stage < stageMax)
+	{
+		switch_stage(1)
+		hp = 0;
+	}
+}
+
+if (hp < 0) && (stage > 0)
 {	
-	switch_stage(1);	//plus damages
-	hp = hpStage;
+	switch_stage(-1);
+	hp = hpMax;
 }
+
+hp = clamp(hp, 0, hpMax);

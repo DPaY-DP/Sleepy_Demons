@@ -38,7 +38,7 @@ if (place_meeting(x, y, obj_wall)) || (x > room_width + boundary) || (x < -bound
 	audio_play_sound(snd_extendoCatch, 0, 0);
 }
 
-var _enemy = instance_place(x, y, obj_targetDummy)
+var _enemy = instance_place(x, y, OBJ_enemy)
 if (_enemy != noone)
 {
 	active = false;

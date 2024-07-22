@@ -16,7 +16,8 @@ global.weaponData = [
 	{
 		name : "nitequil",
 		
-		punch : 5,
+		recoil : 5,
+		punch : 12,
 		
 		damage : 6,
 		firerate : 30,
@@ -27,7 +28,8 @@ global.weaponData = [
 	{
 		name : "pyjama",
 		
-		punch : 20,
+		recoil : 20,
+		punch : 40,
 		
 		area : 200,
 		range : 500,
@@ -48,7 +50,8 @@ global.weaponData = [
 		xBarrel : 39,
 		yBarrel : 47,
 		
-		punch : 50,
+		recoil : 50,
+		punch : 120,
 		
 		damage : 15,
 		firerate : 60,
@@ -60,7 +63,8 @@ global.weaponData = [
 		burst : 3,
 		burstrate : 3,
 		
-		punch : 8,
+		recoil : 8,
+		punch : 15,
 		
 		damage : 3,
 		firerate : 15,
@@ -69,7 +73,8 @@ global.weaponData = [
 	{
 		name : "puddle",
 		
-		punch : 30,
+		recoil : 30,
+		punch : 55,
 		
 		area : 300,
 		range : 500,
@@ -92,7 +97,8 @@ global.weaponData = [
 		firerate : 10,
 		projectile : obj_projectileRepair,
 		
-		punch : 1.4,
+		recoil : 1.4,
+		punch : 2,
 	},
 	{
 		name : "catcher",
@@ -101,7 +107,8 @@ global.weaponData = [
 		firerate : 60,
 		projectile : obj_projectileNet,
 		
-		punch : 10,
+		recoil : 10,
+		punch : 16,
 	},
 ]
 

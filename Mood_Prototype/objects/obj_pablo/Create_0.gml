@@ -1,5 +1,4 @@
-//immutable values
-	//movement
+#region IMMUTABLE VALUES
 acc = 0.5;
 hvel = 0;
 vvel = 0;
@@ -20,16 +19,24 @@ distanceUnstuck = 10;
 xLast = x;
 yLast = y;
 
-distSabotage = 32;
-envDamage = 1;
-
-
-
-//game values
-inRoom = instance_place(x, y, obj_room);					//must start in room !!
-
+envDamage = 0.2;
 
 rangePlayerFlee = 120;
+
+hpMax = 100;
+#endregion
+
+
+#region GAME VALUES
+inRoom = instance_place(x, y, obj_room);					//must start in room !!
+
+target = undefined;
+inSaboPosition = false;
+
+hp = hpMax;
+hpLast = hpMax;
+#endregion
+
 
 
 //spaghetti code
@@ -56,9 +63,11 @@ get_slowed = function(_length)
 caught = undefined;
 
 
+#region CONSTRUCTORS
+#endregion
 
 
-//methods
+#region METHODS
 movement_and_navigation = function(_xTo, _yTo)
 {
 	var _dir = undefined;
@@ -162,7 +171,7 @@ movement_and_navigation = function(_xTo, _yTo)
 	else vvel *= fric;
 
 	////collision
-	if (!place_meeting(x + hvel, y, obj_wall)) 
+	if (!place_meeting(x + hvel, y, OBJ_collider)) 
 	{
 		x += round(hvel);
 	}
@@ -175,7 +184,7 @@ movement_and_navigation = function(_xTo, _yTo)
 		if (abs(hvel) >= 10) _doEffect = true;
 
 		var _loop = 1;
-		while (!place_meeting(x + sign(hvel), y, obj_wall)) && (_loop < 1000)
+		while (!place_meeting(x + sign(hvel), y, OBJ_collider)) && (_loop < 1000)
 		{
 			x += sign(hvel);
 		
@@ -183,7 +192,7 @@ movement_and_navigation = function(_xTo, _yTo)
 			//show_debug_message($"Resolving collision, loop {_loop}, x = {x}");
 			_loop++;
 			
-			if (_loop == 1000) show_message($"loop overflow obj_pablo, x: {x}, hvel : {hvel}");
+			if (_loop == 1000) if (global.debugmode) show_message($"X-collision loop overflow!\n\nPablo {id} in room {inRoom.number}\n x: {x}, y: {y}, hvel : {hvel}");
 		}
 	
 		if (_doEffect) do_effect_dust(x + sign(hvel) * sprite_width / 2, y);
@@ -191,7 +200,7 @@ movement_and_navigation = function(_xTo, _yTo)
 		hvel = 0;
 	}
 
-	if (!place_meeting(x, y + vvel, obj_wall)) 
+	if (!place_meeting(x, y + vvel, OBJ_collider)) 
 	{
 		y += round(vvel);
 	}
@@ -204,7 +213,7 @@ movement_and_navigation = function(_xTo, _yTo)
 		if (abs(vvel) >= 10) _doEffect = true;
 
 		var _loop = 1;
-		while (!place_meeting(x, y + sign(vvel), obj_wall)) && (_loop < 1000)
+		while (!place_meeting(x, y + sign(vvel), OBJ_collider)) && (_loop < 1000)
 		{
 			y += sign(vvel);
 		
@@ -212,7 +221,7 @@ movement_and_navigation = function(_xTo, _yTo)
 			//show_debug_message($"Resolving collision, loop {_loop}, y = {y}");
 			_loop++;
 			
-			if (_loop == 1000) show_message($"loop overflow obj_pablo, x: {x}, hvel : {hvel}");
+			if (_loop == 1000) if (global.debugmode) show_message($"Y-collision loop overflow!\n\nPablo {id} in room {inRoom.number}\n x: {x}, y: {y}, vvel : {vvel}");
 		}
 	
 		if (_doEffect) do_effect_dust(x, y + sign(vvel) * sprite_height / 2);
@@ -226,66 +235,132 @@ movement_and_navigation = function(_xTo, _yTo)
 	return _return
 }
 
-
-get_navmesh = function(_idInRoom, _idTargetRoom)	//Limitation:
-{													//this implementation does NOT check for length of the way, just takes the first route it finds.
+get_navmesh = function(_idInRoom, _idTargetRoom)
+{
+	//show_debug_message($"\n\n	##########\n	Beginning navmesh calculations\n	##########\n\n	From room {_idInRoom.number} to room {_idTargetRoom.number}\n\n");
+	
 	if (_idInRoom == _idTargetRoom) return [_idInRoom.centerpoint];
 	
-	var _iterations = 0;
+	var _checked = array_create(global.countRooms, false);
+	_checked[_idInRoom.number] = true;
 	
-	var _navMesh = [];
+	//establish routes array by taking all doors of first room
+	var _routes = [];
+	var _lengthDoorsStartRoom = array_length(_idInRoom.doors);
+	for (var i = 0; i < _lengthDoorsStartRoom; i++)
+	{
+		var _door = _idInRoom.doors[i];
+		array_push(_routes, [_door.entrypoint, _door.exitpoint, _door.toRoom]);
+	}
 	
-	var _arrayDoors = array_create(global.countRooms, array_create(0, 0));
-	_arrayDoors[_iterations] = ds_clone(_idInRoom.doors);
-	
-	var _roomsVisited = array_create(global.countRooms, 0);
-	_roomsVisited[_idInRoom.number] = true;
+	var _whilesafe = 0;
+	while (true)
+	{
+		//iterate through routes
+		var _forsafe = 0;
+		var _lengthRoutes = array_length(_routes);
 		
-	do
-	{		
-		var _currentDoor = array_shift(_arrayDoors[_iterations]);
-		var _currentRoom = _currentDoor.toRoom;
-		
-		array_push(_navMesh, _currentDoor.entrypoint);
-		array_push(_navMesh, _currentDoor.exitpoint);
-		array_push(_navMesh, _currentRoom.centerpoint);
-		
-		if (_currentRoom == _idTargetRoom)
+		show_debug_message($"\nall routes:											{_routes}")
+		for (var dbg = 0; dbg < _lengthRoutes; dbg++)
 		{
-			array_pop(_navMesh);
-			return _navMesh;
+			show_debug_message($"	{_routes[dbg]}; room #{array_last(_routes[dbg]).number}")
 		}
 		
-		_roomsVisited[_currentRoom.number] = true;
-		
-		_iterations++;
-		
-		var _length = array_length(_currentRoom.doors);
-		for (var i = 0; i < _length; i++)
+		for (var i = 0; i < _lengthRoutes; i++)
 		{
-			var _door = _currentRoom.doors[i];
+			//get current route; current room and doors
+			var _currentRoute = _routes[i];
+			//show_debug_message($"\nloop {i}, currentRoute: {_currentRoute}");
+			var _currentRoom = array_pop(_currentRoute);
+			//show_debug_message($"currentRoom: {_currentRoom}");
 			
-			if (_roomsVisited[_door.toRoom.number]) continue;
-			array_push(_arrayDoors[_iterations], _door);
-		}
-		
-		while (array_length(_arrayDoors[_iterations]) == 0)
-		{
-			repeat(3) array_pop(_navMesh);
-			_iterations--;
-			
-			if (_iterations < 0) 
+			if (_currentRoom == _idTargetRoom)
 			{
-				show_debug_message("get_navmesh could not find a route and has returned false.")
-				return [];
+				//show_debug_message("Found it!");
+				return _currentRoute
+			}
+			
+			var _currentDoors = _currentRoom.doors;
+			//show_debug_message($"currentDoors: {_currentDoors}");
+			
+			_checked[_currentRoom.number] = true;
+			
+			var _deadEnd = true;
+			var _modifyRoute = true;
+			//iterate through connected rooms of current route room
+			var _lengthDoorsCurrentRoom = array_length(_currentDoors);
+			for (var l = 0; l < _lengthDoorsCurrentRoom; l++)
+			{
+				//get current door and corresponding room
+				var _currentDoor = _currentDoors[l];
+				var _idToRoom = _currentDoor.toRoom;
+				
+				//show_debug_message($"\nChecking if room has been travelled to: {_checked} for room {_idToRoom.number}");
+				
+				if (_checked[_idToRoom.number]) 
+				{
+					//show_debug_message($"		Has been travelled, looping"); 
+					continue;
+				}
+				
+				var _copyRoute = ds_clone(_currentRoute);
+				array_push(_copyRoute, _currentDoor.entrypoint);
+				array_push(_copyRoute, _currentDoor.exitpoint);
+				array_push(_copyRoute, _idToRoom);
+					
+				if (_modifyRoute) 
+				{
+					_routes[i] = _copyRoute;
+					_modifyRoute = true;
+					
+					//show_debug_message($"		Appended Route: {_copyRoute}")
+				}
+				else 
+				{
+					array_push(_routes, _copyRoute);
+					//show_debug_message($"		Pushed new Route: {_copyRoute}")
+				}
+				
+				if (_idToRoom == _idTargetRoom)
+				{
+					array_pop(_routes[i]);
+					return _routes[i]
+				}
+				
+				_deadEnd = false;
+			}
+			
+			if (_deadEnd) 
+			{
+				//show_debug_message("		Dead End Detected")
+				//show_debug_message($"\n			DELETING FROM ARRAY _routes:\n		Before: {_routes}");
+				array_delete(_routes, i, 1);
+				_lengthRoutes--;
+				i--;
+				//show_debug_message($"		After: {_routes}");
+			}
+			
+			_forsafe++;
+			if (_forsafe > 100)
+			{
+				//show_message("overflow FOR");
+				break;
 			}
 		}
+		
+		_whilesafe++;
+		if (_whilesafe > 100)
+		{
+			//show_message("overflow WHILE");
+			break;
+		}
 	}
-	until(false)
 }
 
 walk_navmesh = function(_dist)
 {
+	//show_debug_message($"\n		walking navmesh: {navmesh}")
+	
 	var _xNav = navmesh[0].x;
 	var _yNav = navmesh[0].y;
 	
@@ -324,15 +399,15 @@ walk_navmesh = function(_dist)
 					xLast = x;
 					yLast = y;
 					
-					lastPoint = undefined;
-					show_message("navigating back to previous waypoint");
+					//lastPoint = undefined;
+					if (global.debugmode) show_message($"Pablo {id} in room {inRoom.number}\nNavigating back to previous waypoint:\n{lastPoint}");
 				}
 				else 
 				{
 					iterationsUnstuck = 0;
 					xLast = x;
 					yLast = y;
-					show_message("trying to navigate to a fallback point that is not defined");
+					if (global.debugmode) show_message($"Pablo {id} in room {inRoom.number}\ntrying to navigate to a fallback point that is not defined");
 				}
 			}
 		}
@@ -345,14 +420,6 @@ walk_navmesh = function(_dist)
 		}
 	}
 }
-
-
-update_inRoom = function()
-{
-	var _room = instance_place(x, y, obj_room);
-	if (_room != undefined) inRoom = _room;
-}
-
 
 do_effect_dust = function(_x, _y)
 {
@@ -388,9 +455,42 @@ do_effect_dust = function(_x, _y)
 	alarm[1] = _lifeMax;
 }
 
+#endregion
 
-//state machine
+
+#region STATE MACHINE
 setup_state_machine();
+
+statePlaying = new State("Playing");
+statePlaying.start = function()
+{
+	timerPlaying = 20 * 60;
+	timerPlaying += irandom(300);
+	timerReady = 5 * 60;
+}
+statePlaying.run = function()
+{
+	if (timerPlaying > 0) timerPlaying--;
+	else
+	{
+		if (timerReady > 0) timerReady--;
+		else switch_state(stateSeek);
+	}
+	
+	if (obj_player.inRoom == inRoom)
+	{
+		timerPlaying = 0;
+	
+		var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
+		if (_distPlayer < rangePlayerFlee) switch_state(stateFlee);
+	}
+	
+	if (hp != hpLast) switch_state(stateFlee);
+}
+statePlaying.stop = function()
+{
+}
+
 
 stateWalk = new State("Walk");
 stateWalk.start = function()
@@ -399,15 +499,15 @@ stateWalk.start = function()
 stateWalk.run = function()
 {
 	walk_navmesh(distanceWaypoint);
-	inRoom = instance_place(x, y, obj_room);
 	
-	show_debug_message(navmesh)
+	var _updateRoom = instance_place(x, y, obj_room);
+	if (_updateRoom != noone) inRoom = _updateRoom;
 	
 	if (array_length(navmesh) == 0) 
 	{
 		switch (intent)
 		{
-			case "sabotage": switch_state(stateSabotage);
+			case "sabotage": switch_state(stateWait);
 			break;
 			
 			case "random": switch_state(stateRandomTarget);
@@ -418,8 +518,13 @@ stateWalk.run = function()
 		}
 	}
 	
+	//show_debug_message(navmesh)
+	
 	var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
-	if (_distPlayer < rangePlayerFlee) && (intent != "recover") switch_state(stateFlee);
+	if (_distPlayer < rangePlayerFlee) && (intent != "recover") &&
+	(obj_player.inRoom == inRoom) switch_state(stateFlee);
+	
+	if (hp != hpLast) switch_state(stateFlee);
 }
 stateWalk.stop = function()
 {
@@ -430,9 +535,18 @@ stateSeek = new State("Seek");
 stateSeek.start = function()
 {	
 	//select env object
+		//get total number of env objects
 	var _number = instance_number(obj_env);
 	var _envs = [];
+		
+		//if there are none, begin random walk
+	if (_number == 0)
+	{
+		switch_state(stateRandomTarget);
+		exit;
+	}
 	
+		//add all env objects into an array and shuffle	
 	for (var i = 0; i < _number; i++)
 	{
 		_envs[i] = instance_find(obj_env, i);
@@ -441,27 +555,32 @@ stateSeek.start = function()
 	
 	do
 	{
+		//get random env object (last from shuffled array)
 		var _tryEnv = array_pop(_envs);
 		
-		if	(_tryEnv.stage < _tryEnv.stageMax) ||
-			((_tryEnv.stage == _tryEnv.stageMax) && (_tryEnv.hp < _tryEnv.hpMax))
+		//see if it is a valid sabotage target (hp remaining)
+		if	(_tryEnv.stage > 0) ||
+			((_tryEnv.stage == 0) && (_tryEnv.hp < _tryEnv.hpMax))
 		{
-			break;
+			//if valid, attempt to join
+			if (_tryEnv.add_member(id)) break;
+			else _tryEnv = undefined;
 		}
 		else _tryEnv = undefined;
 	}
 	until (array_length(_envs) == 0)
 	
+	//if no valid env objects could be found or none of them had spaces remaining,
+	//begin randomwalk
 	if (_tryEnv == undefined) 
 	{
 		switch_state(stateRandomTarget);
 		exit;
 	}
 	
-	envSeek = _tryEnv;
-	var _room = envSeek.inRoom;
+	target = _tryEnv;
 	
-	navmesh = get_navmesh(inRoom, _room);
+	navmesh = get_navmesh(inRoom, target.inRoom);
 	if (array_length(navmesh) == 0) switch_state(stateRandomTarget);
 	else 
 	{
@@ -469,14 +588,17 @@ stateSeek.start = function()
 		switch_state(stateWalk);
 	}
 }
-stateSeek.run = function()
-{
-}
 
 
 stateRandomTarget = new State("RandomTarget");
 stateRandomTarget.start = function()
 {	
+	if (target != undefined) 
+	{
+		target.void_member(id);
+		target = undefined;
+	}
+	
 	if (instance_number(obj_room) > 1)
 	{
 		do var _roomSeek = instance_find(obj_room, irandom(instance_number(obj_room) - 1));
@@ -489,15 +611,17 @@ stateRandomTarget.start = function()
 	
 	intent = "random";
 	switch_state(stateWalk);
-	
-	show_debug_message(state.name)
 }
 
 
 stateFlee = new State("Flee");
 stateFlee.start = function()
 {
-	show_debug_message($"inRoom: {inRoom}")
+	if (target != undefined) 
+	{
+		target.void_member(id);
+		target = undefined;
+	}
 	
 	var _doors = inRoom.doors;
 	var _lengthDoors = array_length(_doors);
@@ -530,10 +654,45 @@ stateFlee.start = function()
 	intent = "recover";
 	switch_state(stateWalk);
 }
-stateFlee.run = function()
+
+
+stateWait = new State("Wait");
+stateWait.start = function()
 {
+	
 }
-stateFlee.stop = function()
+stateWait.run = function()
+{
+	var _updateRoom = instance_place(x, y, obj_room);
+	if (_updateRoom != noone) inRoom = _updateRoom;
+	
+	var _dist = point_distance(x, y, target.pointMeet.x, target.pointMeet.y);
+	
+	movement_and_navigation(target.pointMeet.x, target.pointMeet.y);
+	
+	var _length = array_length(target.members);
+	var _beginSabo = true;
+	
+	if (_length >= target.membersSabo)
+	{
+		for (var i = 0; i < _length; i++)
+		{
+			if (target.members[i].inRoom != inRoom)
+			{
+				_beginSabo = false;
+				break;
+			}
+		}
+	}
+	else _beginSabo = false;
+	
+	if (_beginSabo) switch_state(stateSabotage);
+	
+	var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
+	if (_distPlayer < rangePlayerFlee) &&
+	(obj_player.inRoom == inRoom) switch_state(stateFlee);
+}
+stateWait.stop = function()
 {
 }
 
@@ -542,46 +701,57 @@ stateSabotage = new State("Sabotage");
 stateSabotage.start = function()
 {
 	timerCackle = 300;
+	
+	pointSabo = target.get_point_sabo(id);
+	inSaboPosition = false;
 }
 stateSabotage.run = function()
 {
-	var _dist = point_distance(x, y, envSeek.x, envSeek.y);
+	var _updateRoom = instance_place(x, y, obj_room);
+	if (_updateRoom != noone) inRoom = _updateRoom;
 	
-	if (_dist > distSabotage) movement_and_navigation(envSeek.x, envSeek.y);
-	else
+	var _dist = point_distance(x, y, pointSabo.x, pointSabo.y);
+	if (_dist > 20) 
 	{
-		if (envSeek.stage < envSeek.stageMax) envSeek.hp -= envDamage;
-		else
-		{
-			timerCackle--;
-			if (timerCackle == 0) switch_state(stateSeek);
-		}
+		movement_and_navigation(pointSabo.x, pointSabo.y);
+		inSaboPosition = false;
+	}
+	else inSaboPosition = true;
+	
+	if ((target.stage == 0) && (target.hp == 0))
+	{
+		timerCackle--;
+		if (timerCackle == 0) switch_state(stateSeek);
 	}
 	
 	var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
-	if (_distPlayer < rangePlayerFlee) switch_state(stateFlee);
+	if (_distPlayer < rangePlayerFlee) &&
+	(obj_player.inRoom == inRoom) switch_state(stateFlee);
 }
 stateSabotage.stop = function()
 {
+	inSaboPosition = false;
+	
+	target.void_member(id);
+	target = undefined;
 }
 
 
 stateRecover = new State("Recover");
 stateRecover.start = function()
 {
-	timerRecover = 300;
+	timerRecover = 120;
 }
 stateRecover.run = function()
-{
+{	
 	timerRecover--;
 	if (timerRecover <= 0) switch_state(stateSeek);
-	
-	inRoom = instance_place(x, y, obj_room);
+
 	if (inRoom == obj_player.inRoom) switch_state(stateFlee);
 }
 stateRecover.stop = function()
 {
 }
 
-
 alarm[0] = 2;
+#endregion

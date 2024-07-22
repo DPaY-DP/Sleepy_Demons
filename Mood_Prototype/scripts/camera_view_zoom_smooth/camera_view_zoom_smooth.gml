@@ -5,7 +5,7 @@ function camera_view_zoom_smooth(camera, startX, startY, newX, newY, startWidth,
 	
 	if ((!move) && (resize)) || ((move) && (!resize))
 	{
-		show_debug_message("##ERROR## Misaligned:\nmove: " + string(move) + "\nresize: " + string(resize));
+		//show_debug_message("##ERROR## Misaligned:\nmove: " + string(move) + "\nresize: " + string(resize));
 	}
 	
 	if (move && resize) return true

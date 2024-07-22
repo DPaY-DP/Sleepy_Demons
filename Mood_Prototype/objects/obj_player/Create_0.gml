@@ -1,29 +1,28 @@
-	//values
-//draw
-orientation = 0;
-
-//movement
+#region IMMUTABLE VALUES
 acc = 1.25;
-dir = 0;
+velMax = 7;
 
-vel = 0;
-
-frictionStanding = 0.65;
-frictionWalking = 0.55;
+frictionStanding = 0.75;
+frictionWalking = 0.5;
 			//knockback is LESS effective while moving to incentivize the player to keep moving
 			//instead of standing still like an idiot
 
+spdRepair = 1;
+#endregion
+
+
+#region GAME VALUES
+orientation = 0;
+
+dir = 0;
+
+vel = 0;
 hvel = 0;
 vvel = 0;
-
-velMax = 7;
-
-
-//weapon
-instance_create_depth(x, y, depth - 1, obj_weapon);
+#endregion
 
 
-//methods
+#region METHODS
 do_effect_dust = function(_x, _y)
 {
 	var _lifeMax = 20;
@@ -57,3 +56,16 @@ do_effect_dust = function(_x, _y)
 	
 	alarm[0] = _lifeMax;
 }
+#endregion
+
+
+#region SPAWNING AND SETUP
+instance_create_depth(x, y, depth - 2, obj_playerHand);
+instance_create_depth(x, y, depth - 1, obj_weapon);
+#endregion
+
+#region DEBUG
+global.debugmode = true;
+
+draw_set_font(Font1)
+#endregion

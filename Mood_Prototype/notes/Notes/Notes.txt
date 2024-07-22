@@ -1,5 +1,5 @@
 Bugs:
-- ERROR03: sometimes enemies can sabotage alone		unchanged
+- ERROR03: sometimes enemies can sabotage alone		fixed / reworked
 - ERROR05: square hole holes can overlap			unchanged, unable to change with place_meeting ?!
 - ERROR04: you can shoot through tunnels			should be fixed
 
@@ -8,3 +8,12 @@ Bugs:
 Notes:
 - For collision / unstuckment: Give every collider corner / navpoints. If stuck on object for too long, insert closest navpoint into navmesh
 	> Raycast from every point to next point. If collider in the way, add navpoints to navmesh.
+- Current party system enables unintended behavior where two enemies randomly pick two different env objects and will get stuck on them as they have no
+	prioritization for picking the one with an already established party.
+- Doors are currently defined by their dimensions, not by which rooms they connect
+- 2 doors CAN be implemented without crashes, but one of them gets ignored as the algorithm checks for length of room-chain not length of path 
+	(so one is always ignored, as the path through one or the other is the same length of rooms)
+
+
+- physics based movement for enemies is currently only supported when actively navigating. This needs to be fixes as, for example, enemies 
+	take no knockback during recovery.

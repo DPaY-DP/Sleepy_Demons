@@ -29,10 +29,3 @@ array_push(points, { x : x + sprite_width - _cornerOffset, y : y + sprite_height
 array_push(points, { x : x + _cornerOffset, y : y + sprite_height - _cornerOffset });
 array_push(points, { x : x + sprite_width - _cornerOffset, y : y + _cornerOffset });
 array_push(points, { x : x + _cornerOffset, y : y + _cornerOffset });
-
-			//debug
-var _length = array_length(points);
-for (var i = 0; i < _length; i++)
-{
-	instance_create_layer(points[i].x, points[i].y, "Debug", obj_debugdot, { image_blend : c_fuchsia });
-}	

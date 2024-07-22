@@ -102,7 +102,7 @@ else
 	{
 		x += sign(hvel);
 		
-		show_debug_message($"Resolving collision, loop {_loop}, x = {x}");
+		//show_debug_message($"Resolving collision, loop {_loop}, x = {x}");
 		_loop++;
 	}
 	
@@ -127,7 +127,7 @@ else
 	{
 		y += sign(vvel);
 		
-		show_debug_message($"Resolving collision, loop {_loop}, y = {y}");
+		//show_debug_message($"Resolving collision, loop {_loop}, y = {y}");
 		_loop++;
 	}
 	
@@ -138,4 +138,8 @@ else
 
 
 //DEBUG
-if (keyboard_check_pressed(ord("I"))) with (obj_enemyDemonSaboteur) switch_state(stateExecutable);
+if (keyboard_check_pressed(vk_f10)) 
+{
+	draw_set_font(Font1);
+	global.debugmode = (!global.debugmode);
+}

@@ -24,7 +24,7 @@ if (_numberWeapons > 0)
 						var _alpha = 0.8;
 						var i = 0;
 						
-						show_debug_message(image_angle)
+						//show_debug_message(image_angle)
 						
 						while (_alpha > 0)
 						{

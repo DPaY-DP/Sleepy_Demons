@@ -11,10 +11,7 @@
     "name":"Game Objects",
     "path":"folders/Objects/Game Objects.yy",
   },
-  "parentObjectId":{
-    "name":"OBJ_target",
-    "path":"objects/OBJ_target/OBJ_target.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

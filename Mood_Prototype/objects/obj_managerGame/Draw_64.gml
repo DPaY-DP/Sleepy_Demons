@@ -55,9 +55,3 @@ if (room == room_lose)
 	if (timerLoss > 100) draw_text_simple(view_get_wport(0) * 0.8, view_get_hport(0) * 0.35, "Get owned,\nidiot.", { size : 10, color : c_white });
 	if (timerLoss > 220) draw_text_simple(view_get_wport(0) * 0.5, view_get_hport(0) * 0.8, "(press R to restart)", { size : 6, color : c_white });
 }
-
-//###DEBUG
-if (keyboard_check_pressed(vk_escape)) game_end();
-if (keyboard_check_pressed(ord("R"))) game_restart();
-if (keyboard_check_pressed(vk_f9)) with (OBJ_enemy) instance_destroy();
-if (keyboard_check_pressed(vk_f7)) global.envHP = 0;

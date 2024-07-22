@@ -15,7 +15,7 @@ drawExplosion = false;
 timerExplode = 45;
 segmentExplode = timerExplode / 3;
 
-show_debug_message(image_angle)
+//show_debug_message(image_angle)
 
 explode = function()
 {	
@@ -28,7 +28,7 @@ explode = function()
 	active = false;
 	
 	var _list = ds_list_create();
-	var _numberHits = collision_circle_list(x, y, area / 2, obj_targetDummy, false, false, _list, false);
+	var _numberHits = collision_circle_list(x, y, area / 2, OBJ_enemy, false, false, _list, false);
 	
 	var _arrayHit = list_to_array(_list);
 	ds_list_destroy(_list);
@@ -39,7 +39,9 @@ explode = function()
 
 		instance_create_layer(_hit.x, _hit.y, "Overlay", obj_damageNumber, { damage : damage, color : c_red });
 
-		_hit.x += lengthdir_x(punch * 3, point_direction(x, y, _hit.x, _hit.y));
-		_hit.y += lengthdir_y(punch * 3, point_direction(x, y, _hit.x, _hit.y));
+		_hit.hvel += lengthdir_x(punch, point_direction(x, y, _hit.x, _hit.y));
+		_hit.vvel += lengthdir_y(punch, point_direction(x, y, _hit.x, _hit.y));
+		
+		_hit.hp -= damage;
 	}
 }

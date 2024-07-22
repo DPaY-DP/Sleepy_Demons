@@ -9,7 +9,7 @@ if (last)
 	other.hit = 0;
 }
 
-show_debug_message(other.hit);
+//show_debug_message(other.hit);
 
 var _color = c_red;
 if (comboEffect) 
@@ -20,5 +20,7 @@ if (comboEffect)
 
 instance_create_layer(other.x, other.y, "Overlay", obj_damageNumber, { damage : damage, color : _color });
 
-other.x += lengthdir_x(punch * 3, image_angle);
-other.y += lengthdir_y(punch * 3, image_angle);
+other.hvel += lengthdir_x(punch, image_angle);
+other.vvel += lengthdir_y(punch, image_angle);
+
+other.hp -= damage;

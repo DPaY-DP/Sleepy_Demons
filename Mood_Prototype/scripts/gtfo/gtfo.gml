@@ -22,7 +22,7 @@ function gtfo(_obj, _precision = 1)
 			
 		    if (!place_meeting(x, y, _obj)) 
 			{
-		        show_debug_message("Got the F out after " + string(_range / _precision) + " cycles");  
+		        //show_debug_message("Got the F out after " + string(_range / _precision) + " cycles");  
 		        return;
 			}
 	    }

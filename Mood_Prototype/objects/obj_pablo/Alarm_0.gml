@@ -1,1 +1,1 @@
-initialize_state(stateSeek);
+initialize_state(statePlaying);

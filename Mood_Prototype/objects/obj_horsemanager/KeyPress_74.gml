@@ -1,4 +1,4 @@
-show_debug_message("");
+//show_debug_message("");
 instance_create_depth(obj_player.x,obj_player.y,-3,obj_horseshoe);
 
 instance_create_depth(obj_horseshoe.x-44*5,obj_horseshoe.y+37*5,-2,obj_horseshoeColliderLeft);

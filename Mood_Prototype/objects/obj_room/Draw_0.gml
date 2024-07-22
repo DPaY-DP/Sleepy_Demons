@@ -15,6 +15,14 @@ else if (floodAmount > 0) floodAmount -= floodFactor * 2;
 
 draw_sprite_simple(spr_roomFlooded, 0, x, y, { xscale : sprite_width / 32, yscale : sprite_height / 32, alpha : 0.5 * floodAmount });
 
-
-	//draw_text_simple(x + 10, y + 10 + 32 * i, connectedTo[i].room.numberRoom, { halign: fa_left, valign : fa_top, color : _color });
+	
+if (global.debugmode)
+{
 	draw_text_simple(x + sprite_width / 2, y + sprite_height / 2, number, { color : c_red, halign : fa_left, valign : fa_top });
+	
+	var _length = array_length(points);
+	for (var i = 0; i < _length; i++)
+	{
+		draw_sprite_simple(spr_debugDot, 0, points[i].x, points[i].y, { color : c_fuchsia });
+	}
+}
