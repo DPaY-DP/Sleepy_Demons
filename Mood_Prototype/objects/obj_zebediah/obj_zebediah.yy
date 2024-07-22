@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_pablo",
+  "%Name":"obj_zebediah",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_pablo",
+  "name":"obj_zebediah",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemies",
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_pablo",
-    "path":"sprites/spr_pablo/spr_pablo.yy",
+    "name":"spr_zebediah",
+    "path":"sprites/spr_zebediah/spr_zebediah.yy",
   },
   "spriteMaskId":null,
   "visible":true,

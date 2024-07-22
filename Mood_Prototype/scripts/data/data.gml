@@ -19,7 +19,7 @@ global.weaponData = [
 		recoil : 5,
 		punch : 12,
 		
-		damage : 6,
+		damage : 100,
 		firerate : 30,
 		projectile : obj_projectileBullet,
 		

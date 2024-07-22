@@ -1,3 +1,6 @@
+#macro GUIWidth display_get_gui_width()
+#macro GUIHeight display_get_gui_height()
+
 //initialize game
 switch (game)
 {
@@ -6,8 +9,8 @@ switch (game)
 						spawnedScrews = false;
 						
 						//spawn tunnel and boards
-						var _portWidth = view_get_wport(0);
-						var _portHeight = view_get_hport(0);
+						var _portWidth = GUIWidth;
+						var _portHeight = GUIHeight;
 
 						instance_create_depth(_portWidth * 0.5, _portHeight * 0.5, depth - 5, obj_gametunnel);
 
@@ -31,13 +34,13 @@ switch (game)
 						}
 	break;
 	
-	case "finisher":	game = choose("horseshoe", "squarehole", "tuck", "lightswitch");
-	
+	case "finisher":	game = choose("horseshoe", "tuck", "lightswitch"); //"squarehole" (bugged piece of shit ?!?!?!?)
+						
 						switch (game)
 						{
 							case "horseshoe":	var _size = 5;
-												var _xSpawn = view_get_wport(0) / 2 + sprite_get_width(spr_horseshoe) * _size / 2;
-												var _ySpawn = view_get_hport(0) / 2 - sprite_get_height(spr_horseshoe) * _size / 2;
+												var _xSpawn = GUIWidth / 2 + sprite_get_width(spr_horseshoe) * _size / 2;
+												var _ySpawn = GUIHeight / 2 - sprite_get_height(spr_horseshoe) * _size / 2;
 	
 												instance_create_depth(_xSpawn, _ySpawn, depth - 10, obj_horseshoe, { size : _size });
 						
@@ -51,23 +54,23 @@ switch (game)
 							case "squarehole":	grabbedObject = noone;
 												formsLeft = 4;
 						
-												instance_create_depth(x, y, depth - 10, obj_form, { form : "circle" });
-												instance_create_depth(x, y, depth - 10, obj_form, { form : "square" });
-												instance_create_depth(x, y, depth - 10, obj_form, { form : "star" });
-												instance_create_depth(x, y, depth - 10, obj_form, { form : "triangle" });
-						
 												instance_create_depth(x, y, depth - 5, obj_hole, { form : "circle" });
 												instance_create_depth(x, y, depth - 5, obj_hole, { form : "square" });
 												instance_create_depth(x, y, depth - 5, obj_hole, { form : "star" });
 												instance_create_depth(x, y, depth - 5, obj_hole, { form : "triangle" });
+						
+												instance_create_depth(x, y, depth - 10, obj_form, { form : "circle" });
+												instance_create_depth(x, y, depth - 10, obj_form, { form : "square" });
+												instance_create_depth(x, y, depth - 10, obj_form, { form : "star" });
+												instance_create_depth(x, y, depth - 10, obj_form, { form : "triangle" });
 							break;
 	
 							case "tuck":		babySleep = false;
 												timerDespawn = 120;
 						
 												var _size = 5;
-												var _xSpawn = view_get_wport(0) / 4;
-												var _ySpawn = view_get_hport(0) / 2;
+												var _xSpawn = GUIWidth / 4;
+												var _ySpawn = GUIHeight / 2;
 						
 												instance_create_depth(_xSpawn, _ySpawn, depth - 10, obj_blanket, { size : _size });
 												instance_create_depth(_xSpawn * 3, _ySpawn, depth - 5, obj_demonbaby, { size : _size });
@@ -79,8 +82,8 @@ switch (game)
 						
 												repeat (totalSwitches)
 												{
-													var _x = view_get_wport(0) * 0.15 + random(view_get_wport(0) * 0.7);
-													var _y = view_get_hport(0) * 0.15 + random(view_get_hport(0) * 0.7);
+													var _x = GUIWidth * 0.15 + random(GUIWidth * 0.7);
+													var _y = GUIHeight * 0.15 + random(GUIHeight * 0.7);
 
 													instance_create_depth(_x, _y, depth - 20, obj_lightswitch);
 												}

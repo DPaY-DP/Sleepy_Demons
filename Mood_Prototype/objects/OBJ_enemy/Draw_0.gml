@@ -14,6 +14,16 @@ if (slowed)
 	draw_sprite_simple(spr_stun, floor(slowedStarFrame / 20), x, y - 20, { alpha : slowedStarAlpha });
 }
 
+if	(state.name = "Execute") && 
+	(point_distance(x, y, obj_player.x, obj_player.y) < 40) &&
+	(obj_player.inRoom == inRoom)
+{
+	if (keyboard_check_pressed(ord("E"))) && (!instance_exists(obj_managerMinigame))
+	{
+		instance_create_layer(x, y, "Overlay", obj_managerMinigame, { enemy : id, game : "finisher" });
+	}
+}
+
 //hp bar
 var _width = 64;
 var _height = 16;
@@ -24,7 +34,7 @@ var _yBar = y + 32;
 draw_set_color(c_dkgray);
 draw_rectangle(_xBar, _yBar, _xBar + _width, _yBar + _height, false);
 draw_set_color(c_red);
-draw_rectangle(_xBar, _yBar, _xBar + _width * (hp / hpMax), _yBar + _height, false);
+draw_rectangle(_xBar, _yBar, max(0, _xBar + _width * (hp / hpMax)), _yBar + _height, false);
 draw_set_color(c_white);
 
 if (global.debugmode)
@@ -47,6 +57,11 @@ if (global.debugmode)
 		if (timerCackle < 300) draw_text_simple(x, y + 64, "cackling", { color : c_red, size : 1 });
 		else if (inSaboPosition) draw_text_simple(x, y + 64, "READY", { color : c_red, size : 1 });
 		else draw_text_simple(x, y + 64, "not ready to sabotage", { color : c_red, size : 1 });
+	}
+	if (state.name == "Instigate") 
+	{
+		if (timerInstigate < 300) && (!done) draw_text_simple(x, y + 64, "active", { color : c_red, size : 1 });
+		if (done) draw_text_simple(x, y + 64, "catching breath", { color : c_red, size : 1 });
 	}
 	
 	draw_text_simple(x, y + 128, inRoom.number, { color : c_green, size : 1 });

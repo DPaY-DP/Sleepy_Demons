@@ -103,6 +103,7 @@
     {"name":"obj_wall","order":1,"path":"objects/obj_wall/obj_wall.yy",},
     {"name":"obj_wallPlayer","order":8,"path":"objects/obj_wallPlayer/obj_wallPlayer.yy",},
     {"name":"obj_weapon","order":9,"path":"objects/obj_weapon/obj_weapon.yy",},
+    {"name":"obj_zebediah","order":2,"path":"objects/obj_zebediah/obj_zebediah.yy",},
     {"name":"pathTrackerRight","order":1,"path":"paths/pathTrackerRight/pathTrackerRight.yy",},
     {"name":"room_lose","order":4,"path":"rooms/room_lose/room_lose.yy",},
     {"name":"room_template","order":19,"path":"rooms/room_template/room_template.yy",},
@@ -140,7 +141,6 @@
     {"name":"fps_to_frame","order":3,"path":"scripts/fps_to_frame/fps_to_frame.yy",},
     {"name":"frames_to_speed","order":4,"path":"scripts/frames_to_speed/frames_to_speed.yy",},
     {"name":"further_from_zero","order":3,"path":"scripts/further_from_zero/further_from_zero.yy",},
-    {"name":"gtfo","order":4,"path":"scripts/gtfo/gtfo.yy",},
     {"name":"in_array","order":10,"path":"scripts/in_array/in_array.yy",},
     {"name":"in_range","order":6,"path":"scripts/in_range/in_range.yy",},
     {"name":"is_even","order":4,"path":"scripts/is_even/is_even.yy",},
@@ -253,5 +253,6 @@
     {"name":"spr_wallPlayer","order":7,"path":"sprites/spr_wallPlayer/spr_wallPlayer.yy",},
     {"name":"spr_webSegment","order":50,"path":"sprites/spr_webSegment/spr_webSegment.yy",},
     {"name":"spr_win","order":17,"path":"sprites/spr_win/spr_win.yy",},
+    {"name":"spr_zebediah","order":61,"path":"sprites/spr_zebediah/spr_zebediah.yy",},
   ],
 }

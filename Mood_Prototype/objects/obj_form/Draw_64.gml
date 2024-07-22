@@ -1,8 +1,5 @@
 draw_self();
 
-var _mouseX = device_mouse_x_to_gui(0);
-var _mouseY = device_mouse_y_to_gui(0);
-
 if (obj_managerMinigame.grabbedObject == id)
 {
 	x = device_mouse_x_to_gui(0);
@@ -18,8 +15,6 @@ if (obj_managerMinigame.grabbedObject == id)
 			y = _hole.y;
 
 			image_speed = 1;
-			
-			if (_hole.form == "square") audio_play_sound(snd_squareHole, 0, 0, 1.0, 0.65, 1.0);
 
 			obj_managerMinigame.grabbedObject = noone;
 			obj_managerMinigame.formsLeft--;
