@@ -34,7 +34,7 @@ switch (game)
 						}
 	break;
 	
-	case "finisher":	game = choose("horseshoe", "tuck", "lightswitch"); //"squarehole" (bugged piece of shit ?!?!?!?)
+	case "finisher":	game = choose("horseshoe", "tuck", "lightswitch", "squarehole")
 						
 						switch (game)
 						{
@@ -82,8 +82,8 @@ switch (game)
 						
 												repeat (totalSwitches)
 												{
-													var _x = GUIWidth * 0.15 + random(GUIWidth * 0.7);
-													var _y = GUIHeight * 0.15 + random(GUIHeight * 0.7);
+													var _x = GUIWidth * 0.2 + random(GUIWidth * 0.6);
+													var _y = GUIHeight * 0.2 + random(GUIHeight * 0.6);
 
 													instance_create_depth(_x, _y, depth - 20, obj_lightswitch);
 												}

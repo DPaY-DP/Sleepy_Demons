@@ -8,7 +8,25 @@ var down = keyboard_check(ord("S"));
 orientation = point_direction(x, y, mouse_x, mouse_y);
 
 ////speed modification
-inRoom = instance_place(x, y, obj_room);
+var _updateRoom = instance_place(x, y, obj_room);
+if (_updateRoom != noone) inRoom = _updateRoom;
+
+if (inRoom.flood)
+{
+	acc = accWater;
+	velMax = velMaxWater;
+	
+	frictionStanding = frictionStandingWater;
+	frictionWalking = frictionWalkingWater;
+}
+else
+{
+	acc = accDefault;
+	velMax = velMaxDefault;
+
+	frictionStanding = frictionStandingDefault;
+	frictionWalking = frictionWalkingDefault;
+}
 
 	//flood behavior (remake)
 
@@ -134,12 +152,4 @@ else
 	if (_doEffect) do_effect_dust(x, y + sign(vvel) * sprite_height / 2);
 	
 	vvel = 0;
-}
-
-
-//DEBUG
-if (keyboard_check_pressed(vk_f10)) 
-{
-	draw_set_font(Font1);
-	global.debugmode = (!global.debugmode);
 }

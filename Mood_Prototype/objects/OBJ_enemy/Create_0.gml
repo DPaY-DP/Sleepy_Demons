@@ -519,6 +519,8 @@ stateWalk.run = function()
 	(obj_player.inRoom == inRoom) switch_state(stateFlee);
 	
 	if (hp != hpLast) switch_state(stateFlee);
+	
+	if (hp == 0) switch_state(stateExecute);
 }
 stateWalk.stop = function()
 {
@@ -689,6 +691,10 @@ stateWait.run = function()
 	var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
 	if (_distPlayer < rangePlayerFlee) &&
 	(obj_player.inRoom == inRoom) switch_state(stateFlee);
+	
+	if (hp != hpLast) switch_state(stateFlee);
+	
+	if (hp == 0) switch_state(stateExecute);
 }
 stateWait.stop = function()
 {
@@ -725,6 +731,10 @@ stateSabotage.run = function()
 	var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
 	if (_distPlayer < rangePlayerFlee) &&
 	(obj_player.inRoom == inRoom) switch_state(stateFlee);
+
+	if (hp != hpLast) switch_state(stateFlee);
+	
+	if (hp == 0) switch_state(stateExecute);
 }
 stateSabotage.stop = function()
 {
@@ -745,6 +755,10 @@ stateRecover.run = function()
 	if (timerRecover <= 0) switch_state(stateSeek);
 
 	if (inRoom == obj_player.inRoom) switch_state(stateFlee);
+	
+	if (hp != hpLast) switch_state(stateFlee);
+	
+	if (hp == 0) switch_state(stateExecute);
 }
 stateRecover.stop = function()
 {
@@ -754,11 +768,20 @@ stateRecover.stop = function()
 stateExecute = new State("Execute");
 stateExecute.start = function()
 {
+	if (target != undefined) 
+	{
+		if (target.object_index == obj_env) target.void_member(id);
+		else if (target.object_index == OBJ_enemy) target.targeted = false;
+		
+		target = undefined;
+	}
+	
 	timerRecover = intervalRecoverExecute;
 }
 stateExecute.run = function()
 {	
-	timerRecover--;
+	if (!instance_exists(obj_managerMinigame)) timerRecover--;		//this is a poor implementation, as it keeps ALL downed enemies from running
+																	//while a minigame is taking place.
 	if (timerRecover <= 0) 
 	{
 		hp = hpMax / 2;
@@ -768,7 +791,7 @@ stateExecute.run = function()
 	if	(point_distance(x, y, obj_player.x, obj_player.y) < 40) &&
 	(obj_player.inRoom == inRoom)
 	{
-		if (keyboard_check_pressed(ord("E"))) && (!instance_exists(obj_managerMinigame))
+		if (keyboard_check_pressed(ord("F"))) && (!instance_exists(obj_managerMinigame))
 		{
 			instance_create_layer(x, y, "Overlay", obj_managerMinigame, { enemy : id, game : "finisher" });
 		}
@@ -776,6 +799,14 @@ stateExecute.run = function()
 }
 stateExecute.stop = function()
 {
+}
+
+
+stateSleep = new State("Sleep");
+stateSleep.start = function()
+{
+	instance_create_depth(x, y, depth, obj_enemySleeping, { sprite_index : asset_get_index("spr_" + name + "Sleep") } );
+	instance_destroy();
 }
 
 alarm[0] = 2;

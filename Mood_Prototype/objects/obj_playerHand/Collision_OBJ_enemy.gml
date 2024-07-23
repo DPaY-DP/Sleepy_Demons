@@ -1,6 +1,4 @@
-if (!active) exit;
-
-active = false;
+if (other.hp == 0) exit;
 
 var _damage = 10;
 

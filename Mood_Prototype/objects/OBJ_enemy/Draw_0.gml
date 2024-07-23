@@ -18,9 +18,9 @@ if	(state.name = "Execute") &&
 	(point_distance(x, y, obj_player.x, obj_player.y) < 40) &&
 	(obj_player.inRoom == inRoom)
 {
-	if (keyboard_check_pressed(ord("E"))) && (!instance_exists(obj_managerMinigame))
+	if (!instance_exists(obj_managerMinigame))
 	{
-		instance_create_layer(x, y, "Overlay", obj_managerMinigame, { enemy : id, game : "finisher" });
+		draw_sprite_simple(spr_UI_button, 0, x, y - 16, { size : 0.8 });
 	}
 }
 

@@ -17,3 +17,36 @@ Notes:
 
 - physics based movement for enemies is currently only supported when actively navigating. This needs to be fixes as, for example, enemies 
 	take no knockback during recovery.
+
+
+
+
+Added this patch:
+ - loss state
+ - win state
+ - cleaned up loss event
+ - minimap
+ - env hp bar
+ - sleep state for enemies
+ - sleep animation
+ - crunched enemy code into parent object for ease of use
+ - fixed a bug with the square hole minigame (forms and holes will no longer spawn intersecting)
+ - removes bug where damage numbers show up on downed enemy
+ - removes bullets from room after being used
+ - consolidated all bullet projectiles into one parent object
+ - re-added flood room functionality
+ - added document on how to create levels
+ 
+ - added to state machine code (draw; drawGUI events);
+ 
+	To-DO current iteration:
+	- add sprites into rooms
+	
+
+Future Implementations:
+ - Consolidate all projectiles into parent objects
+ - Consolidate projectile functionality into the weapon object for ease of access and understanding
+ - add further enemy types
+ - re-add floor boosters
+ 
+ 

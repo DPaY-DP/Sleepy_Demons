@@ -46,7 +46,7 @@ switch (game)
 							
 								if (won)
 								{
-									instance_destroy(enemy);
+									with (enemy) switch_state(stateSleep);
 								}
 								else with (enemy) 
 								{
@@ -60,8 +60,9 @@ switch (game)
 	case "squarehole":	if (formsLeft <= 0) && (!instance_exists(obj_form))
 						{							
 							with (obj_hole) instance_destroy();
-							instance_destroy(enemy);
 							instance_destroy();
+							
+							with (enemy) switch_state(stateSleep);
 						}
 	break;
 	
@@ -70,16 +71,18 @@ switch (game)
 							instance_destroy(obj_blanket);
 							instance_destroy(obj_demonbaby);
 							instance_destroy(obj_bed);
-							instance_destroy(enemy);
 							instance_destroy();
+							
+							with (enemy) switch_state(stateSleep);
 						}
 	break;
 	
 	case "lightswitch":	if (switchesActivated == totalSwitches)
 						{
 							instance_destroy(obj_lightswitch);
-							instance_destroy(enemy);
 							instance_destroy();
+							
+							with (enemy) switch_state(stateSleep);
 						}
 	break;
 }

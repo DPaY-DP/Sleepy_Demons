@@ -1,17 +1,29 @@
 #region IMMUTABLE VALUES
-acc = 1.25;
-velMax = 7;
+accDefault = 1.25;
+velMaxDefault = 7;
 
-frictionStanding = 0.75;
-frictionWalking = 0.5;
+frictionStandingDefault = 0.75;
+frictionWalkingDefault = 0.5;
 			//knockback is LESS effective while moving to incentivize the player to keep moving
 			//instead of standing still like an idiot
+
+accWater = 0.99;
+velMaxWater = 5.5;
+
+frictionStandingWater = 0.55;
+frictionWalkingWater = 0.4;
 
 spdRepair = 1;
 #endregion
 
 
 #region GAME VALUES
+acc = accDefault;
+velMax = velMaxDefault;
+
+frictionStanding = frictionStandingDefault;
+frictionWalking = frictionWalkingDefault;
+
 orientation = 0;
 
 dir = 0;
@@ -65,7 +77,4 @@ instance_create_depth(x, y, depth - 1, obj_weapon);
 #endregion
 
 #region DEBUG
-global.debugmode = true;
-
-draw_set_font(Font1)
 #endregion

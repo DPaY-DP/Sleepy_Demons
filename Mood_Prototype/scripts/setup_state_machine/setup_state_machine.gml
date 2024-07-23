@@ -6,6 +6,8 @@ function setup_state_machine()
 	
 		start = _empty;
 		run = _empty;
+		draw = _empty;
+		drawGUI = _empty;
 		stop = _empty;
 		
 		name = argument[0];
