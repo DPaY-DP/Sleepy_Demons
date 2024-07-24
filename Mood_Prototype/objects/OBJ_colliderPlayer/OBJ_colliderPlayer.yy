@@ -1,11 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_doorway",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"OBJ_colliderPlayer",
+  "eventList":[],
   "managed":true,
-  "name":"obj_doorway",
+  "name":"OBJ_colliderPlayer",
   "overriddenProperties":[],
   "parent":{
     "name":"Game Objects",
@@ -29,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_doorway",
-    "path":"sprites/spr_doorway/spr_doorway.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

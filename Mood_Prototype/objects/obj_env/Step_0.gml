@@ -1,6 +1,5 @@
 global.envHP -= hpDrain;
 
-
 if	(hp < hpMax) && 
 	(point_distance(x, y, obj_player.x, obj_player.y) < distInteract) &&
 	(obj_player.inRoom == inRoom)
@@ -36,6 +35,11 @@ if (hp >= hpMax)
 	{
 		switch_stage(1)
 		hp = 0;
+	}
+	else 
+	{
+		//stage 3
+		hpDrain = 0;
 	}
 }
 

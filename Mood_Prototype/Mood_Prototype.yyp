@@ -72,7 +72,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.4.1.152",
+    "IDEVersion":"2024.6.2.162",
   },
   "name":"Mood_Prototype",
   "resources":[
@@ -89,6 +89,7 @@
     {"id":{"name":"obj_booster","path":"objects/obj_booster/obj_booster.yy",},},
     {"id":{"name":"OBJ_bullet","path":"objects/OBJ_bullet/OBJ_bullet.yy",},},
     {"id":{"name":"OBJ_collider","path":"objects/OBJ_collider/OBJ_collider.yy",},},
+    {"id":{"name":"OBJ_colliderPlayer","path":"objects/OBJ_colliderPlayer/OBJ_colliderPlayer.yy",},},
     {"id":{"name":"obj_damageNumber","path":"objects/obj_damageNumber/obj_damageNumber.yy",},},
     {"id":{"name":"obj_debugCollider","path":"objects/obj_debugCollider/obj_debugCollider.yy",},},
     {"id":{"name":"obj_debugdot","path":"objects/obj_debugdot/obj_debugdot.yy",},},

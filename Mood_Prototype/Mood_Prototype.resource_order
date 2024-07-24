@@ -65,6 +65,7 @@
     {"name":"obj_bhop","order":6,"path":"objects/obj_bhop/obj_bhop.yy",},
     {"name":"OBJ_bullet","order":11,"path":"objects/OBJ_bullet/OBJ_bullet.yy",},
     {"name":"OBJ_collider","order":2,"path":"objects/OBJ_collider/OBJ_collider.yy",},
+    {"name":"OBJ_colliderPlayer","order":9,"path":"objects/OBJ_colliderPlayer/OBJ_colliderPlayer.yy",},
     {"name":"obj_damageNumber","order":2,"path":"objects/obj_damageNumber/obj_damageNumber.yy",},
     {"name":"obj_debugCollider","order":9,"path":"objects/obj_debugCollider/obj_debugCollider.yy",},
     {"name":"obj_demonbaby","order":1,"path":"objects/obj_demonbaby/obj_demonbaby.yy",},

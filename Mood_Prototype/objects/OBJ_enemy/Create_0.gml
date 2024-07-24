@@ -240,7 +240,7 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 	for (var i = 0; i < _lengthDoorsStartRoom; i++)
 	{
 		var _door = _idInRoom.doors[i];
-		array_push(_routes, [_door.entrypoint, _door.exitpoint, _door.toRoom]);
+		if (!_door.object.sabotaged) array_push(_routes, [_door.entrypoint, _door.exitpoint, _door.toRoom]);
 	}
 	
 	var _whilesafe = 0;
@@ -287,7 +287,8 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 				
 				//show_debug_message($"\nChecking if room has been travelled to: {_checked} for room {_idToRoom.number}");
 				
-				if (_checked[_idToRoom.number]) 
+				if	(_currentDoor.object.sabotaged) ||
+					(_checked[_idToRoom.number]) 
 				{
 					//show_debug_message($"		Has been travelled, looping"); 
 					continue;
@@ -475,6 +476,8 @@ statePlaying.run = function()
 		var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
 		if (_distPlayer < rangePlayerFlee) switch_state(stateFlee);
 	}
+	
+	show_debug_message($"hp = {hp}; hpLast = {hpLast}");
 	
 	if (hp != hpLast) switch_state(stateFlee);
 }
@@ -795,6 +798,14 @@ stateExecute.run = function()
 		{
 			instance_create_layer(x, y, "Overlay", obj_managerMinigame, { enemy : id, game : "finisher" });
 		}
+	}
+}
+stateExecute.draw = function()
+{
+if	(point_distance(x, y, obj_player.x, obj_player.y) < 40) &&
+	(obj_player.inRoom == inRoom)
+	{
+		if (!instance_exists(obj_managerMinigame)) draw_sprite_simple(spr_UI_button, 0, x, y - 16, { size : 0.8 });
 	}
 }
 stateExecute.stop = function()

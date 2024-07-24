@@ -61,10 +61,7 @@ switch_stage = function(_change)
 	image_index = stage;
 	
 	switch (stage)
-	{
-		case 3:		hpDrain = 0;
-		break;
-		
+	{		
 		case 2:		hpDrain = 0.1;
 					inRoom.flood = false;
 		break;

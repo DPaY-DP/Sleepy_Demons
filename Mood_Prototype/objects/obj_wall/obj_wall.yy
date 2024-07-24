@@ -12,8 +12,8 @@
     "path":"folders/Objects/Game Objects.yy",
   },
   "parentObjectId":{
-    "name":"OBJ_collider",
-    "path":"objects/OBJ_collider/OBJ_collider.yy",
+    "name":"OBJ_colliderPlayer",
+    "path":"objects/OBJ_colliderPlayer/OBJ_colliderPlayer.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

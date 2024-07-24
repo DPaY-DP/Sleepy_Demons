@@ -1,4 +1,5 @@
 draw_self();
+state.draw();
 
 if (slowed)
 {
@@ -14,19 +15,11 @@ if (slowed)
 	draw_sprite_simple(spr_stun, floor(slowedStarFrame / 20), x, y - 20, { alpha : slowedStarAlpha });
 }
 
-if	(state.name = "Execute") && 
-	(point_distance(x, y, obj_player.x, obj_player.y) < 40) &&
-	(obj_player.inRoom == inRoom)
-{
-	if (!instance_exists(obj_managerMinigame))
-	{
-		draw_sprite_simple(spr_UI_button, 0, x, y - 16, { size : 0.8 });
-	}
-}
-
 //hp bar
 var _width = 64;
 var _height = 16;
+
+var _widthReal = _width * (hp / hpMax);
 
 var _xBar = x - _width / 2;
 var _yBar = y + 32;
@@ -34,7 +27,7 @@ var _yBar = y + 32;
 draw_set_color(c_dkgray);
 draw_rectangle(_xBar, _yBar, _xBar + _width, _yBar + _height, false);
 draw_set_color(c_red);
-draw_rectangle(_xBar, _yBar, max(0, _xBar + _width * (hp / hpMax)), _yBar + _height, false);
+if (_widthReal) draw_rectangle(_xBar, _yBar, _xBar + _widthReal, _yBar + _height, false);
 draw_set_color(c_white);
 
 if (global.debugmode)

@@ -106,7 +106,7 @@ else vvel *= frictionStanding;
 
 
 ////collision
-if (!place_meeting(x + hvel, y, obj_wall)) x += round(hvel);
+if (!place_meeting(x + hvel, y, OBJ_colliderPlayer)) x += round(hvel);
 else
 {
 	x = round(x);
@@ -116,7 +116,7 @@ else
 	if (abs(hvel) >= 10) _doEffect = true;
 
 	var _loop = 1;
-	while (!place_meeting(x + sign(hvel), y, obj_wall)) && (_loop < 1000)
+	while (!place_meeting(x + sign(hvel), y, OBJ_colliderPlayer)) && (_loop < 1000)
 	{
 		x += sign(hvel);
 		
@@ -131,7 +131,7 @@ else
 
 
 
-if (!place_meeting(x, y + vvel, obj_wall)) y += round(vvel);
+if (!place_meeting(x, y + vvel, OBJ_colliderPlayer)) y += round(vvel);
 else
 {
 	y = round(y);
@@ -141,7 +141,7 @@ else
 	if (abs(vvel) >= 10) _doEffect = true;
 
 	var _loop = 1;
-	while (!place_meeting(x, y + sign(vvel), obj_wall)) && (_loop < 1000)
+	while (!place_meeting(x, y + sign(vvel), OBJ_colliderPlayer)) && (_loop < 1000)
 	{
 		y += sign(vvel);
 		

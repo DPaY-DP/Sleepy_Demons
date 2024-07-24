@@ -1,4 +1,7 @@
 //immutable values
+	//
+sabotaged = false;
+
 	//get center
 xCenter = x + sprite_width / 2;
 yCenter = y + sprite_height / 2;
@@ -60,11 +63,3 @@ array_push(rooms[1].doors, {
 
 	//set depth
 depth += 50;
-
-
-//methods
-get_exit = function(_entryStruct)
-{
-	if (_entryStruct == entries[0]) return entries[1];
-	return entries[0];
-}
