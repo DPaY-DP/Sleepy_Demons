@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"dir_limit",
   "isCompatibility":false,
   "isDnD":false,

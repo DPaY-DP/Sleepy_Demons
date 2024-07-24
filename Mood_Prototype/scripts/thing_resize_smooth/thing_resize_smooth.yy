@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"thing_resize_smooth",
   "isCompatibility":false,
   "isDnD":false,

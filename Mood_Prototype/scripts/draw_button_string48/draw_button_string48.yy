@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"draw_button_string48",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"struct_copy_part",
   "isCompatibility":false,
   "isDnD":false,

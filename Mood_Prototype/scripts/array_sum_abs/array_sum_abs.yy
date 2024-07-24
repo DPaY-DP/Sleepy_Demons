@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"array_sum_abs",
   "isCompatibility":false,
   "isDnD":false,

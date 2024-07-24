@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"dir_split",
   "isCompatibility":false,
   "isDnD":false,

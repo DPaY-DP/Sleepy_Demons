@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"draw_sprite_size",
   "isCompatibility":false,
   "isDnD":false,

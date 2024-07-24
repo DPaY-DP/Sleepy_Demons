@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"mouse_in_area_gui",
   "isCompatibility":false,
   "isDnD":false,

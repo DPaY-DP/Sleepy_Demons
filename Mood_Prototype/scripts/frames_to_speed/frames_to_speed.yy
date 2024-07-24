@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"frames_to_speed",
   "isCompatibility":false,
   "isDnD":false,

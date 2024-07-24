@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"statbar_draw_vertical",
   "isCompatibility":false,
   "isDnD":false,

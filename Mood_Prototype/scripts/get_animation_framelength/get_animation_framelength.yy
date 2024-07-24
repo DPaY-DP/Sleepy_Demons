@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"get_animation_framelength",
   "isCompatibility":false,
   "isDnD":false,

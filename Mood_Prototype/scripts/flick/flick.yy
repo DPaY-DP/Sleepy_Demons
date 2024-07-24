@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"flick",
   "isCompatibility":false,
   "isDnD":false,
