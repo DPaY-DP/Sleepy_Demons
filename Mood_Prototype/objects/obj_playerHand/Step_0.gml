@@ -3,6 +3,7 @@ if (animate) array_insert(shadows, 0, { x : x, y : y, angle : image_angle, image
 if (array_length(shadows) == shadowsMax) array_pop(shadows);
 
 timerCooldown--;
+if (!instance_exists(obj_managerMinigame)) && (obj_player.state.name != "Lock")
 if (key_melee) && (timerCooldown <= 0)
 {
 	audio_play_sound(snd_punch2, 0, 0);

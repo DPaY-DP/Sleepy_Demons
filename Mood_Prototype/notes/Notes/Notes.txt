@@ -1,7 +1,11 @@
 Bugs:
-- ERROR03: sometimes enemies can sabotage alone		fixed / reworked
-- ERROR05: square hole holes can overlap			unchanged, unable to change with place_meeting ?!
-- ERROR04: you can shoot through tunnels			should be fixed
+- Enemies can be launched out of map with enough speed
+- Punch is ineffective when walking, but highly effective while standing (friction issue?)
+		>> issue is the movement and speed calculation where max walkspeed and max allspeed is the same. This results in odd behavior when the player is
+			"standing" (no movement input given) but still being moved around by other forces
+- Hitboxes on enemies seem too small
+- Minimap / ENV HP obscuring screen
+- slowness doesnt actually slow
 
 
 
@@ -18,29 +22,6 @@ Notes:
 - physics based movement for enemies is currently only supported when actively navigating. This needs to be fixes as, for example, enemies 
 	take no knockback during recovery.
 
-
-
-
-Added this patch:
- - loss state
- - win state
- - cleaned up loss event
- - minimap
- - env hp bar
- - sleep state for enemies
- - sleep animation
- - crunched enemy code into parent object for ease of use
- - fixed a bug with the square hole minigame (forms and holes will no longer spawn intersecting)
- - removes bug where damage numbers show up on downed enemy
- - removes bullets from room after being used
- - consolidated all bullet projectiles into one parent object
- - re-added flood room functionality
- - added document on how to create levels
- 
- - added to state machine code (draw; drawGUI events);
- 
-	To-DO current iteration:
-	- add sprites into rooms
 	
 
 Future Implementations:

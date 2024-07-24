@@ -2,6 +2,9 @@
 state.run();
 timerState++;
 
+hp = clamp(hp, 0, hpMax);
+hpLast = hp;
+
 
 //slowness spaghetti code
 if (slowed) spd = spdSlowed;

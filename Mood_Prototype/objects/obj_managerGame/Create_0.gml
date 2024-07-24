@@ -82,6 +82,7 @@ stateGame.drawGUI = function()
 stateLoss = new State();
 stateLoss.start = function()
 {
+	with (OBJ_agents) switch_state(stateLock);
 }
 stateLoss.run = function()
 {
@@ -105,6 +106,7 @@ stateLoss.drawGUI = function()
 stateWin = new State();
 stateWin.start = function()
 {
+	with (OBJ_agents) switch_state(stateLock);
 }
 stateWin.run = function()
 {

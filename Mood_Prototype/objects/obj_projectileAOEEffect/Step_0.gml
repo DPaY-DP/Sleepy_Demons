@@ -9,13 +9,13 @@ if (x > room_width + boundary) || (x < -boundary) || (y > room_height + boundary
 }
 
 if (active)
-if (point_distance(x, y, xStart, yStart) > range) || (place_meeting(x, y, obj_wall))
+if (point_distance(x, y, xStart, yStart) > range) || (place_meeting(x, y, OBJ_colliderPlayer))
 {
 	explode();
 }
 
-if (audioExplosion != undefined) && (!audio_is_playing(audioExplosion))
-{
-	audio_play_sound(snd_acidSizzle, 0, 0);
-	audioExplosion = undefined;
-}
+//if (audioExplosion != undefined) && (!audio_is_playing(audioExplosion))
+//{
+//	audio_play_sound(snd_acidSizzle, 0, 0);
+//	audioExplosion = undefined;
+//}

@@ -1,5 +1,3 @@
-event_inherited();
-
 //unique values
 name = "pablo";
 
@@ -19,3 +17,5 @@ rangePlayerFlee = 120;
 intervalCackle = 300;
 intervalRecoverFlee = 120;
 intervalRecoverExecute = 300;
+
+event_inherited();

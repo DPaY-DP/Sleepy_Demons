@@ -27,5 +27,5 @@ explode = function()
 	drawExplosion = true;
 	active = false;
 	
-	instance_create_depth(x, y, depth, obj_effectLingering, { area : area, length : length });
+	instance_create_layer(x, y, "Effects", obj_effectLingering, { area : area, length : length });
 }

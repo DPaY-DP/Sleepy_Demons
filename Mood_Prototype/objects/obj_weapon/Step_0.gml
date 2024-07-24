@@ -30,7 +30,7 @@ if (_numberWeapons > 0)
 	var _dir = point_direction(x, y, mouse_x, mouse_y);
 	
 	//functionality
-	if (!instance_exists(obj_managerMinigame))
+	if (!instance_exists(obj_managerMinigame)) && (obj_player.state.name != "Lock")
 	switch (_weapon.name)
 	{
 		case "nitequil": if (key_primary) && (timerFireRate <= 0)

@@ -802,8 +802,8 @@ stateExecute.run = function()
 }
 stateExecute.draw = function()
 {
-if	(point_distance(x, y, obj_player.x, obj_player.y) < 40) &&
-	(obj_player.inRoom == inRoom)
+	if	(point_distance(x, y, obj_player.x, obj_player.y) < 40) &&
+		(obj_player.inRoom == inRoom)
 	{
 		if (!instance_exists(obj_managerMinigame)) draw_sprite_simple(spr_UI_button, 0, x, y - 16, { size : 0.8 });
 	}
@@ -819,6 +819,8 @@ stateSleep.start = function()
 	instance_create_depth(x, y, depth, obj_enemySleeping, { sprite_index : asset_get_index("spr_" + name + "Sleep") } );
 	instance_destroy();
 }
+
+stateLock = new State();
 
 alarm[0] = 2;
 #endregion
