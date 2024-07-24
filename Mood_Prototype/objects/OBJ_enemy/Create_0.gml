@@ -161,7 +161,7 @@ movement_and_navigation = function(_xTo, _yTo)
 	else vvel *= fric;
 
 	////collision
-	if (!place_meeting(x + hvel, y, OBJ_collider)) 
+	if (!place_meeting(x + hvel, y, obj_wall)) 
 	{
 		x += round(hvel);
 	}
@@ -174,7 +174,7 @@ movement_and_navigation = function(_xTo, _yTo)
 		if (abs(hvel) >= 10) _doEffect = true;
 
 		var _loop = 1;
-		while (!place_meeting(x + sign(hvel), y, OBJ_collider)) && (_loop < 1000)
+		while (!place_meeting(x + sign(hvel), y, obj_wall)) && (_loop < 1000)
 		{
 			x += sign(hvel);
 		
@@ -190,7 +190,7 @@ movement_and_navigation = function(_xTo, _yTo)
 		hvel = 0;
 	}
 
-	if (!place_meeting(x, y + vvel, OBJ_collider)) 
+	if (!place_meeting(x, y + vvel, obj_wall)) 
 	{
 		y += round(vvel);
 	}
@@ -203,7 +203,7 @@ movement_and_navigation = function(_xTo, _yTo)
 		if (abs(vvel) >= 10) _doEffect = true;
 
 		var _loop = 1;
-		while (!place_meeting(x, y + sign(vvel), OBJ_collider)) && (_loop < 1000)
+		while (!place_meeting(x, y + sign(vvel), obj_wall)) && (_loop < 1000)
 		{
 			y += sign(vvel);
 		
