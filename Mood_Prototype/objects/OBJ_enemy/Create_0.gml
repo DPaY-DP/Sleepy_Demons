@@ -791,7 +791,7 @@ stateExecute.run = function()
 		switch_state(stateSeek);
 	}
 
-	if	(point_distance(x, y, obj_player.x, obj_player.y) < 40) &&
+	if	(point_distance(x, y, obj_player.x, obj_player.y) < rangeExecute) &&
 	(obj_player.inRoom == inRoom)
 	{
 		if (keyboard_check_pressed(ord("F"))) && (!instance_exists(obj_managerMinigame))
@@ -802,7 +802,7 @@ stateExecute.run = function()
 }
 stateExecute.draw = function()
 {
-	if	(point_distance(x, y, obj_player.x, obj_player.y) < 40) &&
+	if	(point_distance(x, y, obj_player.x, obj_player.y) < rangeExecute) &&
 		(obj_player.inRoom == inRoom)
 	{
 		if (!instance_exists(obj_managerMinigame)) draw_sprite_simple(spr_UI_button, 0, x, y - 16, { size : 0.8 });

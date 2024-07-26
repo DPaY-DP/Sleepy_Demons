@@ -52,8 +52,8 @@
   ],
   "name":"room_test_jointRooms",
   "parent":{
-    "name":"Rooms",
-    "path":"folders/Rooms.yy",
+    "name":"Test and Debug",
+    "path":"folders/Rooms/Test and Debug.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

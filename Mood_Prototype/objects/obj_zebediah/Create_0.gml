@@ -7,13 +7,14 @@ acc = 0.65;
 velMax = 6;
 fric = 0.9;
 
-hpMax = 50;
+hpMax = 18;
 
 hp = hpMax;
 hpLast = hpMax;
 
 envDamage = 0.05;
 
+rangeExecute = 80;
 rangePlayerFlee = 120;
 
 intervalCackle = 300;

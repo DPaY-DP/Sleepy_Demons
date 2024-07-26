@@ -1,3 +1,0 @@
-
-timergo = true;
-
