@@ -16,6 +16,8 @@ burst = 0;
 burstfire = 0;
 timer_burstfire = 0;
 
+burstId = 0;
+
 ability = 0;
 
 combo = [];

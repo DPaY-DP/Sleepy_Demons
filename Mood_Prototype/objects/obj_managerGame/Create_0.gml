@@ -2,6 +2,9 @@ randomize();
 global.envHPMax = 1000;
 global.envHP = global.envHPMax;
 
+drawEnvHP = false;
+if (instance_exists(obj_env)) drawEnvHP = true;
+
 global.debugtimer = 0;
 
 show_debug_message($"###### {sprite_get_speed(spr_bhop)}")
@@ -10,7 +13,7 @@ global.colorsDebug = [c_red, c_yellow, c_green, c_blue, c_fuchsia, c_aqua, c_mar
 
 
 //DEBUG
-global.debugmode = 1;
+global.debugmode = 0;
 
 draw_set_font(Font1)
 
@@ -76,7 +79,7 @@ stateGame.run = function()
 }
 stateGame.drawGUI = function()
 {
-	draw_hpbar();
+	if (drawEnvHP) draw_hpbar();
 	draw_minimap(0.2);
 }
 

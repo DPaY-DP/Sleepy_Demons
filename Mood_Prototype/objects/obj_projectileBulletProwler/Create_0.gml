@@ -5,34 +5,41 @@ spd = 60;
 
 iterationsInc = 10;
 
-hit = function()
+hit = function(_target)
 {
-	if (other.hp == 0) exit;
+	if (_target.hp == 0) exit;
 	
-	if (!variable_instance_exists(other.id, "hitCombo")) other.hitCombo = 0;
-
 	var _comboEffect = false;
-	
-	other.hitCombo++;
-	if (last)
+	if (first)
 	{
-		if (other.hitCombo >= 3) _comboEffect = true;
-		other.hitCombo = 0;
+		_target.hitCombo.burstId = burstId;
+		_target.hitCombo.hits = 0;
+		
+		_target.hitCombo.hits++;
 	}
+	else if (last)
+	{
+		if (_target.hitCombo.burstId == burstId)
+		{
+			_target.hitCombo.hits++;
+			if (_target.hitCombo.hits == burstGoal) _comboEffect = true;
+		}
+	}
+	else _target.hitCombo.hits++;
 
 	var _color = c_red;
 	if (_comboEffect) 
 	{
-		other.get_slowed(80);
+		_target.get_slowed(80);
 		_color = c_yellow;
 	}
 
-	instance_create_layer(other.x, other.y, "Overlay", obj_damageNumber, { damage : damage, color : _color });
+	instance_create_layer(_target.x, _target.y, "Overlay", obj_damageNumber, { damage : damage, color : _color });
 
-	other.hvel += lengthdir_x(punch, image_angle);
-	other.vvel += lengthdir_y(punch, image_angle);
+	_target.hvel += lengthdir_x(punch, image_angle);
+	_target.vvel += lengthdir_y(punch, image_angle);
 
-	other.hp -= damage;
+	_target.hp -= damage;
 
 	instance_destroy();
 }

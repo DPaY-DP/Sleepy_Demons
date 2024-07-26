@@ -38,13 +38,13 @@ if (place_meeting(x, y, obj_wall)) || (x > room_width + boundary) || (x < -bound
 	audio_play_sound(snd_extendoCatch, 0, 0);
 }
 
-var _enemy = instance_place(x, y, OBJ_enemy)
+var _enemy = instance_place(x, y, obj_enemyHitbox)
 if (_enemy != noone)
 {
 	active = false;
 
-	_enemy.caught = id;
-	target = _enemy.id;
+	_enemy.owner.caught = id;
+	target = _enemy.owner.id;
 
 	retract = true;
 

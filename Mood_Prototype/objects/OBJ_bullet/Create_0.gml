@@ -7,17 +7,17 @@ timerDraw = 0;
 boundary = 200;
 
 //methods
-hit = function()
+hit = function(_target)
 {
-	if (other.hp == 0) exit;
+	if (_target.hp == 0) exit;
 
 	var _color = c_red;
-	instance_create_layer(other.x, other.y, "Overlay", obj_damageNumber, { damage : damage, color : _color });
+	instance_create_layer(_target.x, _target.y, "Overlay", obj_damageNumber, { damage : damage, color : _color });
 
-	other.hvel += lengthdir_x(punch, image_angle);
-	other.vvel += lengthdir_y(punch, image_angle);
+	_target.hvel += lengthdir_x(punch, image_angle);
+	_target.vvel += lengthdir_y(punch, image_angle);
 
-	other.hp -= damage;
+	_target.hp -= damage;
 
 	instance_destroy();
 }

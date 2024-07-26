@@ -6,6 +6,8 @@ distanceUnstuck = 10;
 
 intervalUnstuck = 10;
 iterationsUnstuck = 0;
+
+myHitbox = instance_create_depth(x, y, depth, obj_enemyHitbox, { owner : id });
 #endregion
 
 
@@ -25,6 +27,8 @@ yLast = y;
 lastPoint = undefined;
 
 timerUnstuck = 0;
+
+hitCombo = { burstId : undefined, hits : 0 };
 #endregion
 
 

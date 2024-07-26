@@ -117,6 +117,7 @@ if (_numberWeapons > 0)
 						{
 							ability = true;
 							burst = _weapon.burst;
+							burstId++;
 						}
 						
 						if (ability)
@@ -129,7 +130,8 @@ if (_numberWeapons > 0)
 								burst--;
 								audio_play_sound(snd_prowler2, 0, 0);
 								
-								instance_create_depth(x, y, depth + 1, _weapon.projectile, { image_angle : image_angle, last : (burst == 0), punch : _weapon.punch, damage : _weapon.damage });
+								instance_create_depth(x, y, depth + 1, _weapon.projectile, { image_angle : image_angle, burstId : burstId, burstGoal : _weapon.burst,
+									first : (burst == _weapon.burst - 1), last : (burst == 0), punch : _weapon.punch, damage : _weapon.damage });
 								obj_player.hvel -= lengthdir_x(_weapon.recoil, image_angle);
 								obj_player.vvel -= lengthdir_y(_weapon.recoil, image_angle);
 								timerFireRate = _weapon.firerate;

@@ -1,0 +1,1 @@
+hit(other.owner);

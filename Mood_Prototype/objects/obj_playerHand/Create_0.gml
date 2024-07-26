@@ -10,4 +10,7 @@ timerCooldown = 0;
 frame = 0;
 animate = false;
 
+damage = 10;
+punch = 10;
+
 active = true;

@@ -3,9 +3,9 @@ Bugs:
 - Punch is ineffective when walking, but highly effective while standing (friction issue?)
 		>> issue is the movement and speed calculation where max walkspeed and max allspeed is the same. This results in odd behavior when the player is
 			"standing" (no movement input given) but still being moved around by other forces
-- Hitboxes on enemies seem too small
 - Minimap / ENV HP obscuring screen
 - slowness doesnt actually slow
+- hitscan doesnt pierce as intended
 
 
 
@@ -33,4 +33,3 @@ Future Implementations:
 
 
 Changes:
-[~] Fixed a bug that would cause using the prolwer smg to crash the game
