@@ -248,6 +248,7 @@
     {"id":{"name":"spr_ak","path":"sprites/spr_ak/spr_ak.yy",},},
     {"id":{"name":"spr_arrow","path":"sprites/spr_arrow/spr_arrow.yy",},},
     {"id":{"name":"spr_arrowGate","path":"sprites/spr_arrowGate/spr_arrowGate.yy",},},
+    {"id":{"name":"spr_background_text_UI","path":"sprites/spr_background_text_UI/spr_background_text_UI.yy",},},
     {"id":{"name":"spr_Background","path":"sprites/spr_Background/spr_Background.yy",},},
     {"id":{"name":"spr_bed","path":"sprites/spr_bed/spr_bed.yy",},},
     {"id":{"name":"spr_Bg_bar","path":"sprites/spr_Bg_bar/spr_Bg_bar.yy",},},
@@ -353,14 +354,15 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"children":[],"groupName":"tutorial",},
+    {"children":[
+        {"roomId":{"name":"room_tutorial_00_executie","path":"rooms/room_tutorial_00_executie/room_tutorial_00_executie.yy",},},
+        {"roomId":{"name":"room_tutorial_01_melee","path":"rooms/room_tutorial_01_melee/room_tutorial_01_melee.yy",},},
+        {"roomId":{"name":"room_tutorial_02_gun","path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},},
+      ],"groupName":"tutorial",},
     {"roomId":{"name":"room_template","path":"rooms/room_template/room_template.yy",},},
     {"roomId":{"name":"room_test2","path":"rooms/room_test2/room_test2.yy",},},
     {"roomId":{"name":"room_test_jointRooms","path":"rooms/room_test_jointRooms/room_test_jointRooms.yy",},},
     {"roomId":{"name":"room_weapons","path":"rooms/room_weapons/room_weapons.yy",},},
-    {"roomId":{"name":"room_tutorial_01_melee","path":"rooms/room_tutorial_01_melee/room_tutorial_01_melee.yy",},},
-    {"roomId":{"name":"room_tutorial_00_executie","path":"rooms/room_tutorial_00_executie/room_tutorial_00_executie.yy",},},
-    {"roomId":{"name":"room_tutorial_02_gun","path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
