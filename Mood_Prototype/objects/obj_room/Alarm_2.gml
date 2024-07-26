@@ -1,0 +1,1 @@
+show_debug_message($"\nroom {number}\ndoors: {doors}\npoints: {points}")

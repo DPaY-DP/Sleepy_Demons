@@ -18,11 +18,21 @@ draw_sprite_simple(spr_roomFlooded, 0, x, y, { xscale : sprite_width / 32, yscal
 	
 if (global.debugmode)
 {
-	draw_text_simple(x + sprite_width / 2, y + sprite_height / 2, number, { color : c_red, halign : fa_left, valign : fa_top });
+	var _color = c_fuchsia;
+	//var _color = global.colorsDebug[number];
+	
+	var _number = number;
+	//if (conjoined) _number = string(number) + "*";
+	
+	draw_text_simple(x + sprite_width / 2, y + sprite_height / 2, _number, { color : _color, halign : fa_left, valign : fa_top });
+	
+	if (mouse_on_me()) && (mouse_check_button_pressed(mb_left)) showDots = !showDots;
+	if (!showDots) exit;
 	
 	var _length = array_length(points);
+			//show_debug_message(points);
 	for (var i = 0; i < _length; i++)
 	{
-		draw_sprite_simple(spr_debugDot, 0, points[i].x, points[i].y, { color : c_fuchsia });
+		draw_sprite_simple(spr_debugDot, 0, points[i].x, points[i].y, { color : _color });
 	}
 }

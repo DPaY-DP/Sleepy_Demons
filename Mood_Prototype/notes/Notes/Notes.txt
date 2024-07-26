@@ -30,4 +30,7 @@ Future Implementations:
  - add further enemy types
  - re-add floor boosters
  
- 
+
+
+Changes:
+[~] Fixed a bug that would cause using the prolwer smg to crash the game

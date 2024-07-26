@@ -6,7 +6,7 @@
   "name":"statbar_draw",
   "parent":{
     "name":"Quick Game Element Functions",
-    "path":"folders/Scripts/General Functions/Quick Game Element Functions.yy",
+    "path":"folders/Scripts/General Functions (Outdated)/Quick Game Element Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

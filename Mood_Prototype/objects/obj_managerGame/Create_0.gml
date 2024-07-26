@@ -6,9 +6,11 @@ global.debugtimer = 0;
 
 show_debug_message($"###### {sprite_get_speed(spr_bhop)}")
 
+global.colorsDebug = [c_red, c_yellow, c_green, c_blue, c_fuchsia, c_aqua, c_maroon, c_olive, c_lime, c_navy, c_teal, c_orange, c_purple];
+
 
 //DEBUG
-global.debugmode = false;
+global.debugmode = 1;
 
 draw_set_font(Font1)
 

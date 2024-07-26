@@ -6,7 +6,7 @@
   "name":"thing_resize_smooth",
   "parent":{
     "name":"Movement Functions",
-    "path":"folders/Scripts/General Functions/Movement Functions.yy",
+    "path":"folders/Scripts/General Functions (Outdated)/Movement Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

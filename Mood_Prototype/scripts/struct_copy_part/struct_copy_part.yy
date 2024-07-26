@@ -6,7 +6,7 @@
   "name":"struct_copy_part",
   "parent":{
     "name":"Struct Functions",
-    "path":"folders/Scripts/General Functions/Struct Functions.yy",
+    "path":"folders/Scripts/General Functions (Outdated)/Struct Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -52,6 +52,7 @@ array_push(rooms[0].doors, {
 	toRoom : rooms[1],
 	entrypoint : entries[0],
 	exitpoint : entries[1],
+	append : [],
 })
 
 array_push(rooms[1].doors, {
@@ -59,6 +60,7 @@ array_push(rooms[1].doors, {
 	toRoom : rooms[0],
 	entrypoint : entries[1],
 	exitpoint : entries[0],
+	append : [],
 })
 
 	//set depth

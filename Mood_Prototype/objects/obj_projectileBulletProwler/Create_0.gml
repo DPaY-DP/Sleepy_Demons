@@ -9,7 +9,7 @@ hit = function()
 {
 	if (other.hp == 0) exit;
 	
-	if (variable_instance_exists(other.id, "hitCombo")) other.hitCombo = 0;
+	if (!variable_instance_exists(other.id, "hitCombo")) other.hitCombo = 0;
 
 	var _comboEffect = false;
 	

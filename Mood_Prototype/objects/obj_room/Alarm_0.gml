@@ -2,14 +2,7 @@
 	//get room points (for RandomTarget and other navmesh calculations)
 points = [];
 
-		//room entry points
-var _length = array_length(doors);
-for (var i = 0; i < _length; i++)
-{
-	array_push(points, doors[i].entrypoint);
-}
-
-		//center point
+		//center point					will always be points[0]
 xCenter = x + sprite_width / 2;
 yCenter = y + sprite_height / 2;
 
@@ -29,3 +22,10 @@ array_push(points, { x : x + sprite_width - _cornerOffset, y : y + sprite_height
 array_push(points, { x : x + _cornerOffset, y : y + sprite_height - _cornerOffset });
 array_push(points, { x : x + sprite_width - _cornerOffset, y : y + _cornerOffset });
 array_push(points, { x : x + _cornerOffset, y : y + _cornerOffset });
+
+		//room entry points
+var _length = array_length(doors);
+for (var i = 0; i < _length; i++)
+{
+	array_push(points, doors[i].entrypoint);
+}
