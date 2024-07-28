@@ -128,7 +128,7 @@ if (_numberWeapons > 0)
 							if (timer_burstfire <= 0)
 							{
 								burst--;
-								audio_play_sound(snd_prowler2, 0, 0);
+								audio_play_sound(snd_prowler2, 0, 0, 0.3);
 								
 								instance_create_depth(x, y, depth + 1, _weapon.projectile, { image_angle : image_angle, burstId : burstId, burstGoal : _weapon.burst,
 									first : (burst == _weapon.burst - 1), last : (burst == 0), punch : _weapon.punch, damage : _weapon.damage });

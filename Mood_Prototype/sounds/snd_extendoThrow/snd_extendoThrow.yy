@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_extendoThrow.wav",
   "type":0,
-  "volume":0.65,
+  "volume":0.29,
 }

@@ -167,6 +167,7 @@
     {"id":{"name":"room_tutorial_00_executie","path":"rooms/room_tutorial_00_executie/room_tutorial_00_executie.yy",},},
     {"id":{"name":"room_tutorial_01_melee","path":"rooms/room_tutorial_01_melee/room_tutorial_01_melee.yy",},},
     {"id":{"name":"room_tutorial_02_gun","path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},},
+    {"id":{"name":"room_tutorial_03_big_room","path":"rooms/room_tutorial_03_big_room/room_tutorial_03_big_room.yy",},},
     {"id":{"name":"array_append","path":"scripts/array_append/array_append.yy",},},
     {"id":{"name":"array_choose_iterate","path":"scripts/array_choose_iterate/array_choose_iterate.yy",},},
     {"id":{"name":"array_choose","path":"scripts/array_choose/array_choose.yy",},},
@@ -359,16 +360,17 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"children":[
+        {"roomId":{"name":"room_tutorial_03_big_room","path":"rooms/room_tutorial_03_big_room/room_tutorial_03_big_room.yy",},},
+        {"roomId":{"name":"room_tutorial_00_executie","path":"rooms/room_tutorial_00_executie/room_tutorial_00_executie.yy",},},
+        {"roomId":{"name":"room_tutorial_01_melee","path":"rooms/room_tutorial_01_melee/room_tutorial_01_melee.yy",},},
+        {"roomId":{"name":"room_tutorial_02_gun","path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},},
+      ],"groupName":"tutorial",},
+    {"children":[
         {"roomId":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
         {"roomId":{"name":"room_template","path":"rooms/room_template/room_template.yy",},},
         {"roomId":{"name":"room_test2","path":"rooms/room_test2/room_test2.yy",},},
         {"roomId":{"name":"room_test_jointRooms","path":"rooms/room_test_jointRooms/room_test_jointRooms.yy",},},
       ],"groupName":"debug",},
-    {"children":[
-        {"roomId":{"name":"room_tutorial_00_executie","path":"rooms/room_tutorial_00_executie/room_tutorial_00_executie.yy",},},
-        {"roomId":{"name":"room_tutorial_01_melee","path":"rooms/room_tutorial_01_melee/room_tutorial_01_melee.yy",},},
-        {"roomId":{"name":"room_tutorial_02_gun","path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},},
-      ],"groupName":"tutorial",},
   ],
   "templateType":"game",
   "TextureGroups":[

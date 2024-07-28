@@ -130,6 +130,7 @@
     {"name":"room_test2","order":1,"path":"rooms/room_test2/room_test2.yy",},
     {"name":"room_tutorial_01_melee","order":2,"path":"rooms/room_tutorial_01_melee/room_tutorial_01_melee.yy",},
     {"name":"room_tutorial_02_gun","order":1,"path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},
+    {"name":"room_tutorial_03_big_room","order":3,"path":"rooms/room_tutorial_03_big_room/room_tutorial_03_big_room.yy",},
     {"name":"array_choose_iterate","order":1,"path":"scripts/array_choose_iterate/array_choose_iterate.yy",},
     {"name":"array_find_first","order":2,"path":"scripts/array_find_first/array_find_first.yy",},
     {"name":"array_invert","order":3,"path":"scripts/array_invert/array_invert.yy",},
