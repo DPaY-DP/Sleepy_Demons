@@ -80,7 +80,7 @@ stateGame.run = function()
 stateGame.drawGUI = function()
 {
 	if (drawEnvHP) draw_hpbar();
-	draw_minimap(0.2);
+	//draw_minimap(0.2);
 }
 
 

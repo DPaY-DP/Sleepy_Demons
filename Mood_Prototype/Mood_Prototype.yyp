@@ -360,10 +360,10 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"children":[
+        {"roomId":{"name":"room_tutorial_02_gun","path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},},
         {"roomId":{"name":"room_tutorial_03_big_room","path":"rooms/room_tutorial_03_big_room/room_tutorial_03_big_room.yy",},},
         {"roomId":{"name":"room_tutorial_00_executie","path":"rooms/room_tutorial_00_executie/room_tutorial_00_executie.yy",},},
         {"roomId":{"name":"room_tutorial_01_melee","path":"rooms/room_tutorial_01_melee/room_tutorial_01_melee.yy",},},
-        {"roomId":{"name":"room_tutorial_02_gun","path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},},
       ],"groupName":"tutorial",},
     {"children":[
         {"roomId":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},

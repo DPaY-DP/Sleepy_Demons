@@ -821,6 +821,10 @@ stateSleep = new State("Sleep");
 stateSleep.start = function()
 {
 	instance_create_depth(x, y, depth, obj_enemySleeping, { sprite_index : asset_get_index("spr_" + name + "Sleep") } );
+	
+	myHitboxID = real(myHitbox);
+	
+	instance_destroy(myHitboxID);
 	instance_destroy();
 }
 
