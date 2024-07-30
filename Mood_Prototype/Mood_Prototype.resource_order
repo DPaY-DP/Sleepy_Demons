@@ -97,6 +97,7 @@
     {"name":"obj_horseshoeTrackerRight","order":5,"path":"objects/obj_horseshoeTrackerRight/obj_horseshoeTrackerRight.yy",},
     {"name":"obj_level_tutorial_gun","order":3,"path":"objects/obj_level_tutorial_gun/obj_level_tutorial_gun.yy",},
     {"name":"obj_level_tutorial_melee","order":6,"path":"objects/obj_level_tutorial_melee/obj_level_tutorial_melee.yy",},
+    {"name":"obj_level_tutorial_weapon_switch","order":8,"path":"objects/obj_level_tutorial_weapon_switch/obj_level_tutorial_weapon_switch.yy",},
     {"name":"obj_level_tutorial","order":7,"path":"objects/obj_level_tutorial/obj_level_tutorial.yy",},
     {"name":"obj_lightswitch","order":1,"path":"objects/obj_lightswitch/obj_lightswitch.yy",},
     {"name":"obj_managerMinigame","order":8,"path":"objects/obj_managerMinigame/obj_managerMinigame.yy",},

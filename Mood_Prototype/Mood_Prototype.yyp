@@ -126,6 +126,7 @@
     {"id":{"name":"obj_horseshoeTrackerRight","path":"objects/obj_horseshoeTrackerRight/obj_horseshoeTrackerRight.yy",},},
     {"id":{"name":"obj_level_tutorial_gun","path":"objects/obj_level_tutorial_gun/obj_level_tutorial_gun.yy",},},
     {"id":{"name":"obj_level_tutorial_melee","path":"objects/obj_level_tutorial_melee/obj_level_tutorial_melee.yy",},},
+    {"id":{"name":"obj_level_tutorial_weapon_switch","path":"objects/obj_level_tutorial_weapon_switch/obj_level_tutorial_weapon_switch.yy",},},
     {"id":{"name":"obj_level_tutorial","path":"objects/obj_level_tutorial/obj_level_tutorial.yy",},},
     {"id":{"name":"obj_lightswitch","path":"objects/obj_lightswitch/obj_lightswitch.yy",},},
     {"id":{"name":"obj_managerGame","path":"objects/obj_managerGame/obj_managerGame.yy",},},
@@ -360,8 +361,8 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"children":[
-        {"roomId":{"name":"room_tutorial_02_gun","path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},},
         {"roomId":{"name":"room_tutorial_03_big_room","path":"rooms/room_tutorial_03_big_room/room_tutorial_03_big_room.yy",},},
+        {"roomId":{"name":"room_tutorial_02_gun","path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},},
         {"roomId":{"name":"room_tutorial_00_executie","path":"rooms/room_tutorial_00_executie/room_tutorial_00_executie.yy",},},
         {"roomId":{"name":"room_tutorial_01_melee","path":"rooms/room_tutorial_01_melee/room_tutorial_01_melee.yy",},},
       ],"groupName":"tutorial",},
