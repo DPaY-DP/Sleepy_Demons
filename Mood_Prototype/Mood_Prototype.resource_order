@@ -129,6 +129,7 @@
     {"name":"room_shootingRange","order":4,"path":"rooms/room_shootingRange/room_shootingRange.yy",},
     {"name":"room_template","order":3,"path":"rooms/room_template/room_template.yy",},
     {"name":"room_test2","order":1,"path":"rooms/room_test2/room_test2.yy",},
+    {"name":"room_testTunnel","order":5,"path":"rooms/room_testTunnel/room_testTunnel.yy",},
     {"name":"room_tutorial_01_melee","order":2,"path":"rooms/room_tutorial_01_melee/room_tutorial_01_melee.yy",},
     {"name":"room_tutorial_02_gun_2","order":5,"path":"rooms/room_tutorial_02_gun_2/room_tutorial_02_gun_2.yy",},
     {"name":"room_tutorial_02_gun","order":1,"path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},

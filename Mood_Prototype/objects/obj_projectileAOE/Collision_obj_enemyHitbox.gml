@@ -1,3 +1,7 @@
+if (!active) exit;
+
+active = false;
+
 var _damage = damage * 2;
 
 other.owner.hp -= _damage;

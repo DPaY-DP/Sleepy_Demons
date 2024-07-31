@@ -642,6 +642,8 @@ stateFlee.start = function()
 		{
 			var _door = _doors[i];
 			
+			if (_door.object.sabotaged) continue;
+			
 			var _distMe = point_distance(x, y, _door.object.x, _door.object.y);
 			var _distPlayer = point_distance(obj_player.x, obj_player.y, _door.object.x, _door.object.y);
 			
@@ -666,7 +668,7 @@ stateFlee.start = function()
 stateWait = new State("Wait");
 stateWait.start = function()
 {
-	
+	timerWait = 600;
 }
 stateWait.run = function()
 {
@@ -702,6 +704,9 @@ stateWait.run = function()
 	if (hp != hpLast) switch_state(stateFlee);
 	
 	if (hp == 0) switch_state(stateExecute);
+	
+	if (timerWait > 0) timerWait--;
+	else switch_state(stateSeek);
 }
 stateWait.stop = function()
 {
@@ -822,9 +827,7 @@ stateSleep.start = function()
 {
 	instance_create_depth(x, y, depth, obj_enemySleeping, { sprite_index : asset_get_index("spr_" + name + "Sleep") } );
 	
-	myHitboxID = real(myHitbox);
-	
-	instance_destroy(myHitboxID);
+	instance_destroy(myHitbox);
 	instance_destroy();
 }
 
