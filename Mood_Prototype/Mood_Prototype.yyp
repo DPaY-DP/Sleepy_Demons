@@ -170,7 +170,6 @@
     {"id":{"name":"room_tutorial_02_gun_2","path":"rooms/room_tutorial_02_gun_2/room_tutorial_02_gun_2.yy",},},
     {"id":{"name":"room_tutorial_02_gun","path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},},
     {"id":{"name":"room_tutorial_03_big_room","path":"rooms/room_tutorial_03_big_room/room_tutorial_03_big_room.yy",},},
-    {"id":{"name":"room_tutorial_03_tunnel","path":"rooms/room_tutorial_03_tunnel/room_tutorial_03_tunnel.yy",},},
     {"id":{"name":"room_tutorial_04_big_room_with_env","path":"rooms/room_tutorial_04_big_room_with_env/room_tutorial_04_big_room_with_env.yy",},},
     {"id":{"name":"array_append","path":"scripts/array_append/array_append.yy",},},
     {"id":{"name":"array_choose_iterate","path":"scripts/array_choose_iterate/array_choose_iterate.yy",},},
@@ -364,10 +363,9 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"children":[
-        {"roomId":{"name":"room_tutorial_03_tunnel","path":"rooms/room_tutorial_03_tunnel/room_tutorial_03_tunnel.yy",},},
-        {"roomId":{"name":"room_tutorial_03_big_room","path":"rooms/room_tutorial_03_big_room/room_tutorial_03_big_room.yy",},},
         {"roomId":{"name":"room_tutorial_02_gun_2","path":"rooms/room_tutorial_02_gun_2/room_tutorial_02_gun_2.yy",},},
         {"roomId":{"name":"room_tutorial_00_executie","path":"rooms/room_tutorial_00_executie/room_tutorial_00_executie.yy",},},
+        {"roomId":{"name":"room_tutorial_03_big_room","path":"rooms/room_tutorial_03_big_room/room_tutorial_03_big_room.yy",},},
         {"roomId":{"name":"room_tutorial_04_big_room_with_env","path":"rooms/room_tutorial_04_big_room_with_env/room_tutorial_04_big_room_with_env.yy",},},
         {"roomId":{"name":"room_tutorial_02_gun","path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},},
         {"roomId":{"name":"room_tutorial_01_melee","path":"rooms/room_tutorial_01_melee/room_tutorial_01_melee.yy",},},
