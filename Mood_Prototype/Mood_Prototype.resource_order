@@ -134,6 +134,7 @@
     {"name":"room_tutorial_02_gun_2","order":5,"path":"rooms/room_tutorial_02_gun_2/room_tutorial_02_gun_2.yy",},
     {"name":"room_tutorial_02_gun","order":1,"path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},
     {"name":"room_tutorial_03_big_room","order":3,"path":"rooms/room_tutorial_03_big_room/room_tutorial_03_big_room.yy",},
+    {"name":"room_tutorial_03_tunnel","order":6,"path":"rooms/room_tutorial_03_tunnel/room_tutorial_03_tunnel.yy",},
     {"name":"room_tutorial_04_big_room_with_env","order":4,"path":"rooms/room_tutorial_04_big_room_with_env/room_tutorial_04_big_room_with_env.yy",},
     {"name":"array_choose_iterate","order":1,"path":"scripts/array_choose_iterate/array_choose_iterate.yy",},
     {"name":"array_find_first","order":2,"path":"scripts/array_find_first/array_find_first.yy",},
