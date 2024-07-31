@@ -30,7 +30,7 @@ hit = function(_target)
 	var _color = c_red;
 	if (_comboEffect) 
 	{
-		_target.get_slowed(80);
+		_target.get_slowed(120);
 		_color = c_yellow;
 	}
 

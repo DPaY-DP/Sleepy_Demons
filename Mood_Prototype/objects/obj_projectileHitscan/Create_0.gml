@@ -15,10 +15,7 @@ check_collision = function()
 {			
 	hits = ds_list_create();
 	instance_place_list(x, y, OBJ_enemy, hits, true);
-	show_debug_message(hits)
 	hits = list_to_array(hits);
-					
-	show_debug_message(hits)
 					
 	var _lengthHits = array_length(hits);					
 	for (var i = 0; i < _lengthHits; i++)

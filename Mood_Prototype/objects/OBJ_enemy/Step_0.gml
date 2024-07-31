@@ -7,8 +7,13 @@ hpLast = hp;
 
 
 //slowness spaghetti code
-if (slowed) spd = spdSlowed;
-else spd = spdNormal;
+if (timerSlowed > 0) timerSlowed--;
+else if (slowed)
+{
+	slowed = false;
+	acc = accDefault;
+	velMax = velMaxDefault;
+}
 
 //extendo net spaghetti code
 if (caught)

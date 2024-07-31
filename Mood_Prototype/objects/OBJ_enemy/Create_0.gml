@@ -38,8 +38,6 @@ hitCombo = { burstId : undefined, hits : 0 };
 hit = 0;
 
 	//slow / stun
-spdNormal = 4;
-spdSlowed = spdNormal * 0.5;
 
 slowed = false;
 intervalSlowed = 80;
@@ -51,6 +49,9 @@ get_slowed = function(_length)
 {
 	slowed = true;
 	timerSlowed = _length;
+	
+	acc = accSlowed;
+	velMax = velMaxSlowed;
 }
 
 	//extendo net
