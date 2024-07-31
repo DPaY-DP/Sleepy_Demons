@@ -364,6 +364,13 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"children":[
+        {"roomId":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
+        {"roomId":{"name":"room_template","path":"rooms/room_template/room_template.yy",},},
+        {"roomId":{"name":"room_test2","path":"rooms/room_test2/room_test2.yy",},},
+        {"roomId":{"name":"room_test_jointRooms","path":"rooms/room_test_jointRooms/room_test_jointRooms.yy",},},
+        {"roomId":{"name":"room_testTunnel","path":"rooms/room_testTunnel/room_testTunnel.yy",},},
+      ],"groupName":"debug",},
+    {"children":[
         {"roomId":{"name":"room_tutorial_04_big_room_with_env","path":"rooms/room_tutorial_04_big_room_with_env/room_tutorial_04_big_room_with_env.yy",},},
         {"roomId":{"name":"room_tutorial_02_gun_2","path":"rooms/room_tutorial_02_gun_2/room_tutorial_02_gun_2.yy",},},
         {"roomId":{"name":"room_tutorial_00_executie","path":"rooms/room_tutorial_00_executie/room_tutorial_00_executie.yy",},},
@@ -371,13 +378,6 @@
         {"roomId":{"name":"room_tutorial_02_gun","path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},},
         {"roomId":{"name":"room_tutorial_01_melee","path":"rooms/room_tutorial_01_melee/room_tutorial_01_melee.yy",},},
       ],"groupName":"tutorial",},
-    {"children":[
-        {"roomId":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
-        {"roomId":{"name":"room_template","path":"rooms/room_template/room_template.yy",},},
-        {"roomId":{"name":"room_test2","path":"rooms/room_test2/room_test2.yy",},},
-        {"roomId":{"name":"room_test_jointRooms","path":"rooms/room_test_jointRooms/room_test_jointRooms.yy",},},
-      ],"groupName":"debug",},
-    {"roomId":{"name":"room_testTunnel","path":"rooms/room_testTunnel/room_testTunnel.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

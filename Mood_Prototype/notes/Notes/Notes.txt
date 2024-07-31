@@ -5,7 +5,6 @@ Bugs:
 			"standing" (no movement input given) but still being moved around by other forces
 - Minimap / ENV HP obscuring screen
 - slowness doesnt actually slow
-- hitscan doesnt pierce as intended
 - demons will not re-check if a tunnel they are currently pathfinding to is sabotaged
 
 

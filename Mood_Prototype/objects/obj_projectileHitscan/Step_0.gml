@@ -9,6 +9,9 @@ switch(timerAlive++)
 			 
 	case 3 * 3:		image_yscale = size * 1.5;
 					image_xscale = 8;
+					
+					hits = ds_list_create();
+					instance_place_list(x, y, id, hits, false);
 	break;	 
 			 
 	case 4 * 3:		image_yscale = size * 0.5;
