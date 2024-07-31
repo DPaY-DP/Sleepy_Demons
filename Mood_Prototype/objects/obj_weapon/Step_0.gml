@@ -46,6 +46,8 @@ if (_numberWeapons > 0)
 						
 						if (key_secondary) && (timerFireRate <= 0)
 						{
+							audio_play_sound(snd_pistol2, 0, 0, 1.5);
+							
 							instance_create_depth(x, y, depth + 1, obj_projectileDart, { image_angle : image_angle, punch : _weapon.punch, 
 								damage : 0 });
 								
