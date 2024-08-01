@@ -538,6 +538,14 @@ stateWalk.stop = function()
 stateSeek = new State("Seek");
 stateSeek.start = function()
 {	
+	if (target != undefined) 
+	{
+		if (target.object_index == obj_env) target.void_member(id);
+		else if (target.object_index == OBJ_enemy) target.targeted = false;
+		
+		target = undefined;
+	}
+	
 	//select env object
 		//get total number of env objects
 	var _number = instance_number(obj_env);

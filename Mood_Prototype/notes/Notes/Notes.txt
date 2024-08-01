@@ -4,7 +4,6 @@ Bugs:
 		>> issue is the movement and speed calculation where max walkspeed and max allspeed is the same. This results in odd behavior when the player is
 			"standing" (no movement input given) but still being moved around by other forces
 - Minimap / ENV HP obscuring screen
-- slowness doesnt actually slow
 - demons will not re-check if a tunnel they are currently pathfinding to is sabotaged
 
 
