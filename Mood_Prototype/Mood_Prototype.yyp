@@ -408,12 +408,12 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"children":[
+        {"roomId":{"name":"room_tutorial_05_big_room","path":"rooms/room_tutorial_05_big_room/room_tutorial_05_big_room.yy",},},
         {"roomId":{"name":"room_tutorial_03_gun_trigger","path":"rooms/room_tutorial_03_gun_trigger/room_tutorial_03_gun_trigger.yy",},},
         {"roomId":{"name":"room_tutorial_06_big_room_with_env","path":"rooms/room_tutorial_06_big_room_with_env/room_tutorial_06_big_room_with_env.yy",},},
         {"roomId":{"name":"room_tutorial_02_gun","path":"rooms/room_tutorial_02_gun/room_tutorial_02_gun.yy",},},
         {"roomId":{"name":"room_tutorial_04_tunnel","path":"rooms/room_tutorial_04_tunnel/room_tutorial_04_tunnel.yy",},},
         {"roomId":{"name":"room_tutorial_00_executie","path":"rooms/room_tutorial_00_executie/room_tutorial_00_executie.yy",},},
-        {"roomId":{"name":"room_tutorial_05_big_room","path":"rooms/room_tutorial_05_big_room/room_tutorial_05_big_room.yy",},},
         {"roomId":{"name":"room_tutorial_01_melee","path":"rooms/room_tutorial_01_melee/room_tutorial_01_melee.yy",},},
       ],"groupName":"tutorial",},
     {"children":[

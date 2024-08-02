@@ -40,6 +40,7 @@ if (place_meeting(x, y, obj_wall)) || (x > room_width + boundary) || (x < -bound
 
 var _enemy = instance_place(x, y, obj_enemyHitbox)
 if (_enemy != noone)
+if (_enemy.owner.hp > 0)
 {
 	active = false;
 
