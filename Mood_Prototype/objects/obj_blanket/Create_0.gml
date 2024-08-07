@@ -5,8 +5,8 @@ xOffset = 0;
 
 sensBlanket = 30;
 
-image_xscale = size;
-image_yscale = size;
+image_xscale = size * global.GUIScale;
+image_yscale = size * global.GUIScale;
 
 
 setup_state_machine();

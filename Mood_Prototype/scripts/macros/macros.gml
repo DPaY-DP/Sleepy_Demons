@@ -14,3 +14,18 @@
 
 	#macro windowWidth window_get_width()
 	#macro windowHeight window_get_height()
+
+
+
+//Game
+
+	#macro keyMelee keyboard_check_pressed(ord("V")) || keyboard_check_pressed(ord("C"))
+
+	#macro keyPrimary mouse_check_button_pressed(mb_left)
+	#macro keyPrimaryHeld mouse_check_button(mb_left)
+	#macro keySecondary mouse_check_button_pressed(mb_right)
+	#macro keySecondaryHeld mouse_check_button(mb_right)
+	
+	#macro keyRepairHeld keyboard_check(ord("E"))
+	#macro keyExecute keyboard_check_pressed(ord("F"))
+	#macro keySabotage keyboard_check_pressed(ord("Q"))

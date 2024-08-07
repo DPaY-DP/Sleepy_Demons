@@ -34,15 +34,13 @@ switch (game)
 						}
 	break;
 	
-	case "finisher":	game = choose("horseshoe", "tuck", "lightswitch", "squarehole")
+	case "finisher":	game = choose("horseshoe"); //, "tuck", "lightswitch", "squarehole")
 						
 						switch (game)
 						{
 							case "horseshoe":	var _size = 5;
-												var _xSpawn = GUIWidth / 2 + sprite_get_width(spr_horseshoe) * _size / 2;
-												var _ySpawn = GUIHeight / 2 - sprite_get_height(spr_horseshoe) * _size / 2;
 	
-												instance_create_depth(_xSpawn, _ySpawn, depth - 10, obj_horseshoe, { size : _size });
+												instance_create_depth(0, 0, depth - 10, obj_horsemanager, { size : _size });
 						
 												gameover = false;
 												won = false;

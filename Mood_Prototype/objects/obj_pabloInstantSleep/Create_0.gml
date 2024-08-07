@@ -14,7 +14,7 @@ stateExecute.run = function()
 	if	(point_distance(x, y, obj_player.x, obj_player.y) < 40) &&
 	(obj_player.inRoom == inRoom)
 	{
-		if (keyboard_check_pressed(ord("F"))) && (!instance_exists(obj_managerMinigame))
+		if (keyExecute) && (!instance_exists(obj_managerMinigame))
 		{
 			instance_create_layer(x, y, "Overlay", obj_managerMinigame, { enemy : id, game : "finisher" });
 		}

@@ -1,0 +1,12 @@
+To-Do:
+ - change tutorial text display method
+
+
+Changes:
+ - Better melee hitbox
+ - Input changes Melee
+ - Input changes horseshoe
+ - (forms minigame) resized forms and holes to be slightly larger
+ - tunnel bumpers no longer visible
+ - minigames scale with window size (fullscreen enabled)
+ - fixed a bug that would allow tunnels to be sabotaged multiple times (for no further gain)

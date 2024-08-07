@@ -25,7 +25,7 @@
   ],
   "name":"spr_horseshoeColliderRight",
   "nineSlice":null,
-  "origin":2,
+  "origin":1,
   "parent":{
     "name":"Horseshoe",
     "path":"folders/Sprites/MGames/Horseshoe.yy",
@@ -83,7 +83,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":64,
+    "xorigin":32,
     "yorigin":0,
   },
   "swatchColours":null,

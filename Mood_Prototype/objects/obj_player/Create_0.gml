@@ -86,6 +86,8 @@ stateActive.start = function()
 }
 stateActive.run = function()
 {
+	if (instance_exists(obj_managerMinigame)) exit;
+	
 	//get inputs
 	var left = keyboard_check(ord("A"));
 	var right = keyboard_check(ord("D"));

@@ -28,7 +28,3 @@ Future Implementations:
  - Consolidate projectile functionality into the weapon object for ease of access and understanding
  - add further enemy types
  - re-add floor boosters
- 
-
-
-Changes:

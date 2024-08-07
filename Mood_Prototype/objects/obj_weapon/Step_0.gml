@@ -33,7 +33,7 @@ if (_numberWeapons > 0)
 	if (!instance_exists(obj_managerMinigame)) && (obj_player.state.name != "Lock")
 	switch (_weapon.name)
 	{
-		case "nitequil": if (key_primary) && (timerFireRate <= 0)
+		case "nitequil": if (keyPrimary) && (timerFireRate <= 0)
 						{
 							audio_play_sound(snd_pistol, 0, 0, 1.5);
 							
@@ -44,7 +44,7 @@ if (_numberWeapons > 0)
 							timerFireRate = _weapon.firerate;
 						}
 						
-						if (key_secondary) && (timerFireRate <= 0)
+						if (keySecondary) && (timerFireRate <= 0)
 						{
 							audio_play_sound(snd_pistol2, 0, 0, 1.5);
 							
@@ -58,7 +58,7 @@ if (_numberWeapons > 0)
 						
 		break;
 		
-		case "pyjama":	if (key_primary) && (timerFireRate <= 0)
+		case "pyjama":	if (keyPrimary) && (timerFireRate <= 0)
 						{
 							audio_play_sound(snd_rocketLaunch, 0, 0);
 							
@@ -69,7 +69,7 @@ if (_numberWeapons > 0)
 							timerFireRate = _weapon.firerate;
 						}
 						
-						if (key_secondary_held)
+						if (keySecondaryHeld)
 						{
 							timerLaunch--;
 							if (timerLaunch == 0)
@@ -85,7 +85,7 @@ if (_numberWeapons > 0)
 						}
 		break;
 		
-		case "railgun":	if (key_primary) && (timerFireRate <= 0) && (!ability)
+		case "railgun":	if (keyPrimary) && (timerFireRate <= 0) && (!ability)
 						{
 							audio_play_sound(snd_railgun_full, 0, 0);
 							
@@ -115,7 +115,7 @@ if (_numberWeapons > 0)
 						}
 		break;
 		
-		case "prowler":	if (key_primary) && (timerFireRate <= 0) && (!ability)
+		case "prowler":	if (keyPrimary) && (timerFireRate <= 0) && (!ability)
 						{
 							ability = true;
 							burst = _weapon.burst;
@@ -150,7 +150,7 @@ if (_numberWeapons > 0)
 							
 		break;
 		
-		case "puddle":	if (key_primary) && (timerFireRate <= 0)
+		case "puddle":	if (keyPrimary) && (timerFireRate <= 0)
 						{
 							audio_play_sound(snd_rocketLaunch, 0, 0, 0.5);
 							
@@ -163,7 +163,7 @@ if (_numberWeapons > 0)
 							
 		break;
 		
-		case "repair":	if (key_primary_held)
+		case "repair":	if (keyPrimaryHeld)
 						{
 							var _dirBarrel = point_direction(0, 32, _weapon.xBarrel, _weapon.yBarrel);
 							var _distBarrel = point_distance(0, 32, _weapon.xBarrel, _weapon.yBarrel);
@@ -190,7 +190,7 @@ if (_numberWeapons > 0)
 		
 		break;
 		
-		case "catcher":	if (key_primary) && (timerFireRate <= 0)
+		case "catcher":	if (keyPrimary) && (timerFireRate <= 0)
 						{
 							audio_play_sound(snd_extendoThrow, 0, 0);
 							

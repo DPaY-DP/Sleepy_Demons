@@ -12,18 +12,18 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a9e904c5-0700-4cff-8e9e-da4736a3ac1a","name":"a9e904c5-0700-4cff-8e9e-da4736a3ac1a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"e4e6a904-f1d1-4cb2-8d79-738ca944b69b","name":"e4e6a904-f1d1-4cb2-8d79-738ca944b69b","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":64,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"6b31bd9b-b4d7-419f-9189-1981c367d5ef","blendMode":0,"displayName":"default","isLocked":false,"name":"6b31bd9b-b4d7-419f-9189-1981c367d5ef","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"fabfb63f-8029-4a5e-846f-2f355d1f63dd","blendMode":0,"displayName":"default","isLocked":false,"name":"fabfb63f-8029-4a5e-846f-2f355d1f63dd","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_horseshoe",
   "nineSlice":null,
-  "origin":2,
+  "origin":1,
   "parent":{
     "name":"Horseshoe",
     "path":"folders/Sprites/MGames/Horseshoe.yy",
@@ -69,17 +69,17 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a9e904c5-0700-4cff-8e9e-da4736a3ac1a","path":"sprites/spr_horseshoe/spr_horseshoe.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"07467b56-f5d4-4750-a13c-e710f78b5aa3","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e4e6a904-f1d1-4cb2-8d79-738ca944b69b","path":"sprites/spr_horseshoe/spr_horseshoe.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"7cbdc25c-74cc-4a0e-bda7-b5135f3618be","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":64,
+    "xorigin":32,
     "yorigin":0,
   },
   "swatchColours":null,
-  "swfPrecision":2.525,
+  "swfPrecision":0.5,
   "textureGroupId":{
     "name":"Default",
     "path":"texturegroups/Default",

@@ -4,7 +4,7 @@ if	(hp < hpMax) &&
 	(point_distance(x, y, obj_player.x, obj_player.y) < distInteract) &&
 	(obj_player.inRoom == inRoom)
 {
-	if (keyboard_check(ord("E"))) hp += obj_player.spdRepair;
+	if (keyRepairHeld) hp += obj_player.spdRepair;
 }
 
 var _numberSaboteurs = 0;

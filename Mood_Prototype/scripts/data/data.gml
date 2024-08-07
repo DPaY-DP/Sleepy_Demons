@@ -2,15 +2,6 @@
 global.debugmode = false;
 
 
-//MACROS
-#macro key_melee keyboard_check_pressed(ord("C"))
-
-#macro key_primary mouse_check_button_pressed(mb_left)
-#macro key_primary_held mouse_check_button(mb_left)
-#macro key_secondary mouse_check_button_pressed(mb_right)
-#macro key_secondary_held mouse_check_button(mb_right)
-
-
 //WEAPONS
 global.weaponData = [
 	{
