@@ -5,10 +5,10 @@ timerState++;
 
 //###DEBUG
 global.debugtimer++;
-if (keyboard_check_pressed(vk_escape)) game_end();
+if (keyboard_check_pressed(vk_escape)) room_goto(room_main);
 if (keyboard_check_pressed(ord("R"))) 
 {
-	game_restart();
+	room_restart();
 	global.countRooms = 0;
 	global.countEnv = 0;
 }

@@ -140,6 +140,7 @@
     {"id":{"name":"obj_level_tutorial","path":"objects/obj_level_tutorial/obj_level_tutorial.yy",},},
     {"id":{"name":"obj_lightbulb","path":"objects/obj_lightbulb/obj_lightbulb.yy",},},
     {"id":{"name":"obj_lightswitch","path":"objects/obj_lightswitch/obj_lightswitch.yy",},},
+    {"id":{"name":"obj_main","path":"objects/obj_main/obj_main.yy",},},
     {"id":{"name":"obj_managerGame","path":"objects/obj_managerGame/obj_managerGame.yy",},},
     {"id":{"name":"obj_managerMinigame","path":"objects/obj_managerMinigame/obj_managerMinigame.yy",},},
     {"id":{"name":"obj_mgameSlider","path":"objects/obj_mgameSlider/obj_mgameSlider.yy",},},
@@ -175,6 +176,7 @@
     {"id":{"name":"ef_dust","path":"particles/ef_dust/ef_dust.yy",},},
     {"id":{"name":"pathTrackerLeft","path":"paths/pathTrackerLeft/pathTrackerLeft.yy",},},
     {"id":{"name":"pathTrackerRight","path":"paths/pathTrackerRight/pathTrackerRight.yy",},},
+    {"id":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
     {"id":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
     {"id":{"name":"room_template","path":"rooms/room_template/room_template.yy",},},
     {"id":{"name":"room_test_jointRooms","path":"rooms/room_test_jointRooms/room_test_jointRooms.yy",},},
@@ -408,6 +410,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"children":[
+        {"roomId":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
         {"roomId":{"name":"room_tutorial_05_big_room","path":"rooms/room_tutorial_05_big_room/room_tutorial_05_big_room.yy",},},
         {"roomId":{"name":"room_tutorial_03_gun_trigger","path":"rooms/room_tutorial_03_gun_trigger/room_tutorial_03_gun_trigger.yy",},},
         {"roomId":{"name":"room_tutorial_06_big_room_with_env","path":"rooms/room_tutorial_06_big_room_with_env/room_tutorial_06_big_room_with_env.yy",},},
