@@ -1,31 +1,31 @@
 levels =
 [
 	{
-		room : room_tutorial_00_executie,
+		room : room_tutorial_executie,
 		name : "00: Executie",
 	},
 	{
-		room : room_tutorial_01_melee,
+		room : room_tutorial_melee,
 		name : "01: Melee",
 	},
 	{
-		room : room_tutorial_02_gun,
+		room : room_tutorial_gun,
 		name : "02: Gun",
 	},
 	{
-		room : room_tutorial_03_gun_trigger,
+		room : room_tutorial_gun_trigger,
 		name : "03: Trigger",
 	},
 	{
-		room : room_tutorial_04_tunnel,
+		room : room_tutorial_tunnel,
 		name : "04: Tunnel",
 	},
 	{
-		room : room_tutorial_05_big_room,
+		room : room_tutorial_big_room,
 		name : "05: Big Room",
 	},
 	{
-		room : room_tutorial_06_big_room_with_env,
+		room : room_tutorial_big_room_with_env,
 		name : "06: Big Room + Env",
 	},
 ]
