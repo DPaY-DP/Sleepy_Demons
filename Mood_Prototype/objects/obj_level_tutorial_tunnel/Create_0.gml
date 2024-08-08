@@ -3,4 +3,3 @@ instance_deactivate_layer("Manager");
 instance_deactivate_layer("Light");
 
 instance_deactivate_object(OBJ_enemy);
-
