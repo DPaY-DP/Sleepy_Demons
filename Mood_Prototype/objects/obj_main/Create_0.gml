@@ -28,6 +28,10 @@ levels =
 		room : room_tutorial_big_room_with_env,
 		name : "06: Big Room + Env",
 	},
+	{
+		room : room_credtis,
+		name : "Credits",
+	},
 ]
 
 

@@ -411,8 +411,8 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"children":[
-        {"roomId":{"name":"room_credtis","path":"rooms/room_credtis/room_credtis.yy",},},
         {"roomId":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
+        {"roomId":{"name":"room_credtis","path":"rooms/room_credtis/room_credtis.yy",},},
         {"roomId":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
         {"roomId":{"name":"room_tutorial_executie","path":"rooms/room_tutorial_executie/room_tutorial_executie.yy",},},
         {"roomId":{"name":"room_tutorial_melee","path":"rooms/room_tutorial_melee/room_tutorial_melee.yy",},},
