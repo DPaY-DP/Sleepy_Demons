@@ -104,6 +104,7 @@
     {"id":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},},
     {"id":{"name":"OBJ_collider","path":"objects/OBJ_collider/OBJ_collider.yy",},},
     {"id":{"name":"OBJ_colliderPlayer","path":"objects/OBJ_colliderPlayer/OBJ_colliderPlayer.yy",},},
+    {"id":{"name":"obj_credits","path":"objects/obj_credits/obj_credits.yy",},},
     {"id":{"name":"obj_damageNumber","path":"objects/obj_damageNumber/obj_damageNumber.yy",},},
     {"id":{"name":"obj_debugdot","path":"objects/obj_debugdot/obj_debugdot.yy",},},
     {"id":{"name":"obj_debugDraw","path":"objects/obj_debugDraw/obj_debugDraw.yy",},},
@@ -134,6 +135,7 @@
     {"id":{"name":"obj_level_tutorial_big_room_env","path":"objects/obj_level_tutorial_big_room_env/obj_level_tutorial_big_room_env.yy",},},
     {"id":{"name":"obj_level_tutorial_gun","path":"objects/obj_level_tutorial_gun/obj_level_tutorial_gun.yy",},},
     {"id":{"name":"obj_level_tutorial_melee","path":"objects/obj_level_tutorial_melee/obj_level_tutorial_melee.yy",},},
+    {"id":{"name":"obj_level_tutorial_tunnel","path":"objects/obj_level_tutorial_tunnel/obj_level_tutorial_tunnel.yy",},},
     {"id":{"name":"obj_level_tutorial_weapon_switch","path":"objects/obj_level_tutorial_weapon_switch/obj_level_tutorial_weapon_switch.yy",},},
     {"id":{"name":"obj_level_tutorial","path":"objects/obj_level_tutorial/obj_level_tutorial.yy",},},
     {"id":{"name":"obj_lightbulb","path":"objects/obj_lightbulb/obj_lightbulb.yy",},},
@@ -172,6 +174,7 @@
     {"id":{"name":"obj_weapon","path":"objects/obj_weapon/obj_weapon.yy",},},
     {"id":{"name":"obj_zebediah","path":"objects/obj_zebediah/obj_zebediah.yy",},},
     {"id":{"name":"ef_dust","path":"particles/ef_dust/ef_dust.yy",},},
+    {"id":{"name":"room_credtis","path":"rooms/room_credtis/room_credtis.yy",},},
     {"id":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
     {"id":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
     {"id":{"name":"room_template","path":"rooms/room_template/room_template.yy",},},
@@ -408,6 +411,7 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"children":[
+        {"roomId":{"name":"room_credtis","path":"rooms/room_credtis/room_credtis.yy",},},
         {"roomId":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
         {"roomId":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
         {"roomId":{"name":"room_tutorial_executie","path":"rooms/room_tutorial_executie/room_tutorial_executie.yy",},},
