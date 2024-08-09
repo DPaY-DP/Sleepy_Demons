@@ -5,7 +5,6 @@ To-Do:
 Changes:
  - Better melee hitbox
  - Input changes Melee
- - Input changes horseshoe
  - (forms minigame) resized forms and holes to be slightly larger
  - tunnel bumpers no longer visible
  - minigames scale with window size (fullscreen enabled)

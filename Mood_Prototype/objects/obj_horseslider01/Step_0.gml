@@ -8,8 +8,7 @@ else
 {
 	if (directionMove == "up")
 	{
-		instance_create_depth(x, y, depth, obj_horseslider02, { size : size });
-		instance_destroy();
+		check_horse_collider();
 	}
 	else
 	{
@@ -25,3 +24,5 @@ else
 		}
 	}
 }
+
+if (mouse_check_button_pressed(mb_left)) || (keyboard_check_pressed(vk_space)) check_horse_collider();

@@ -34,7 +34,7 @@ switch (game)
 						}
 	break;
 	
-	case "finisher":	game = choose("horseshoe"); //, "tuck", "lightswitch", "squarehole")
+	case "finisher":	game = choose("horseshoe", "tuck", "lightswitch", "squarehole");
 						
 						switch (game)
 						{

@@ -39,20 +39,12 @@ switch (game)
 							timerDespawn++;
 							if (timerDespawn >= intervalDespawn)
 							{
-								instance_destroy(obj_horseshoe);
-								instance_destroy(obj_horseshoeColliderLeft);
-								instance_destroy(obj_horseshoeColliderRight);
+								instance_destroy(obj_horsemanager);
+								instance_destroy(obj_horsecollider);
+								instance_destroy(obj_horsecolliderCrit);
 								instance_destroy();
 							
-								if (won)
-								{
-									with (enemy) switch_state(stateSleep);
-								}
-								else with (enemy) 
-								{
-									hp = hpMax / 2;
-									switch_state(stateFlee);
-								}
+								with (enemy) switch_state(stateSleep);
 							}
 						}
 	break;

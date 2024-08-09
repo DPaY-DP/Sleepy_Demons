@@ -8,7 +8,7 @@ else
 {
 	if (directionMove == "up")
 	{
-		instance_destroy();
+		check_horse_collider();
 	}
 	else
 	{
@@ -25,4 +25,7 @@ else
 	}
 }
 
-show_debug_message(y)
+if (mouse_check_button_pressed(mb_left)) || (keyboard_check_pressed(vk_space)) check_horse_collider();
+
+
+show_debug_message($"x: {x}")
