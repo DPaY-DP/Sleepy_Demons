@@ -417,6 +417,7 @@
         {"roomId":{"name":"room_tutorial_big_room","path":"rooms/room_tutorial_big_room/room_tutorial_big_room.yy",},},
         {"roomId":{"name":"room_tutorial_big_room_with_env","path":"rooms/room_tutorial_big_room_with_env/room_tutorial_big_room_with_env.yy",},},
         {"roomId":{"name":"room_tutorial_tunnel","path":"rooms/room_tutorial_tunnel/room_tutorial_tunnel.yy",},},
+        {"roomId":{"name":"room_credtis","path":"rooms/room_credtis/room_credtis.yy",},},
       ],"groupName":"tutorial",},
     {"children":[
         {"roomId":{"name":"room_template","path":"rooms/room_template/room_template.yy",},},

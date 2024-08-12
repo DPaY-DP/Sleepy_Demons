@@ -17,16 +17,20 @@ levels =
 		name : "03: Trigger",
 	},
 	{
-		room : room_tutorial_tunnel,
-		name : "04: Tunnel",
-	},
-	{
 		room : room_tutorial_big_room,
-		name : "05: Big Room",
+		name : "04: Big Room",
 	},
 	{
 		room : room_tutorial_big_room_with_env,
-		name : "06: Big Room + Env",
+		name : "05: Big Room + Env",
+	},
+	{
+		room : room_tutorial_tunnel,
+		name : "06: Tunnel",
+	},
+	{
+		room : room_credtis,
+		name : "07: Credits",
 	},
 	{
 		room : room_credtis,
