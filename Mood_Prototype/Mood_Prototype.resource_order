@@ -139,6 +139,8 @@
     {"name":"obj_wallPlayer","order":8,"path":"objects/obj_wallPlayer/obj_wallPlayer.yy",},
     {"name":"obj_weapon","order":9,"path":"objects/obj_weapon/obj_weapon.yy",},
     {"name":"obj_zebediah","order":2,"path":"objects/obj_zebediah/obj_zebediah.yy",},
+    {"name":"room_combinded_easy","order":9,"path":"rooms/room_combinded_easy/room_combinded_easy.yy",},
+    {"name":"room_combined_middle","order":10,"path":"rooms/room_combined_middle/room_combined_middle.yy",},
     {"name":"room_credtis","order":8,"path":"rooms/room_credtis/room_credtis.yy",},
     {"name":"room_main","order":7,"path":"rooms/room_main/room_main.yy",},
     {"name":"room_shootingRange","order":4,"path":"rooms/room_shootingRange/room_shootingRange.yy",},

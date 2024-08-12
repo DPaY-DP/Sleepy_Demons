@@ -98,14 +98,17 @@ if (_numberWeapons > 0)
 							delay--;
 							if (delay == 0) 
 							{
+							
 								var _dirBarrel = point_direction(0, 32, _weapon.xBarrel, _weapon.yBarrel);
 								var _distBarrel = point_distance(0, 32, _weapon.xBarrel, _weapon.yBarrel);
 								
 								var _x = x + lengthdir_x(_distBarrel, _dirBarrel + image_angle);
 								var _y = y + lengthdir_y(_distBarrel, _dirBarrel + image_angle);
+							
 								
-								instance_create_depth(_x, _y, depth + 1, _weapon.projectile, { image_angle : image_angle, punch : _weapon.punch, damage : _weapon.damage, xBarrel : _weapon.xBarrel, yBarrel : _weapon.yBarrel });
+								instance_create_depth(_x, _y, depth + 1, _weapon.projectile, {image_angle : image_angle, punch : _weapon.punch, damage : _weapon.damage, xBarrel : _weapon.xBarrel, yBarrel : _weapon.yBarrel });
 								
+							
 								obj_player.hvel -= lengthdir_x(_weapon.recoil, image_angle);
 								obj_player.vvel -= lengthdir_y(_weapon.recoil, image_angle);
 							

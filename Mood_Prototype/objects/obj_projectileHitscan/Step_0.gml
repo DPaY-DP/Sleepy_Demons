@@ -27,6 +27,8 @@ switch(timerAlive++)
 
 var _dirBarrel = point_direction(0, 32, xBarrel, yBarrel);
 var _distBarrel = point_distance(0, 32, xBarrel, yBarrel);
+
+
 								
 x = obj_weapon.x + lengthdir_x(_distBarrel, _dirBarrel + obj_weapon.image_angle);
 y = obj_weapon.y + lengthdir_y(_distBarrel, _dirBarrel + obj_weapon.image_angle);

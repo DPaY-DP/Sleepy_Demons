@@ -28,7 +28,8 @@ if (_numberWeapons > 0)
 						
 						while (_alpha > 0)
 						{
-							draw_sprite_simple(spr_laser, 0, _x + lengthdir_x(4, image_angle) * i, _y + lengthdir_y(4, image_angle) * i, { alpha : _alpha, angle : image_angle });
+							
+							 draw_sprite_simple(spr_laser, 0, _x + lengthdir_x(4, image_angle) * i, _y + lengthdir_y(4, image_angle) * i, { alpha : _alpha, angle : image_angle });
 							
 							_alpha -= 0.01;
 							i++;

@@ -174,6 +174,8 @@
     {"id":{"name":"obj_weapon","path":"objects/obj_weapon/obj_weapon.yy",},},
     {"id":{"name":"obj_zebediah","path":"objects/obj_zebediah/obj_zebediah.yy",},},
     {"id":{"name":"ef_dust","path":"particles/ef_dust/ef_dust.yy",},},
+    {"id":{"name":"room_combinded_easy","path":"rooms/room_combinded_easy/room_combinded_easy.yy",},},
+    {"id":{"name":"room_combined_middle","path":"rooms/room_combined_middle/room_combined_middle.yy",},},
     {"id":{"name":"room_credtis","path":"rooms/room_credtis/room_credtis.yy",},},
     {"id":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
     {"id":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
@@ -406,10 +408,18 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"room_combined_middle","path":"rooms/room_combined_middle/room_combined_middle.yy",},},
+    {"children":[
+        {"roomId":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
+        {"roomId":{"name":"room_test_jointRooms","path":"rooms/room_test_jointRooms/room_test_jointRooms.yy",},},
+        {"roomId":{"name":"room_test2","path":"rooms/room_test2/room_test2.yy",},},
+        {"roomId":{"name":"room_template","path":"rooms/room_template/room_template.yy",},},
+        {"roomId":{"name":"room_testTunnel","path":"rooms/room_testTunnel/room_testTunnel.yy",},},
+      ],"groupName":"debug",},
+    {"roomId":{"name":"room_combinded_easy","path":"rooms/room_combinded_easy/room_combinded_easy.yy",},},
     {"children":[
         {"roomId":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
         {"roomId":{"name":"room_credtis","path":"rooms/room_credtis/room_credtis.yy",},},
-        {"roomId":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
         {"roomId":{"name":"room_tutorial_executie","path":"rooms/room_tutorial_executie/room_tutorial_executie.yy",},},
         {"roomId":{"name":"room_tutorial_melee","path":"rooms/room_tutorial_melee/room_tutorial_melee.yy",},},
         {"roomId":{"name":"room_tutorial_gun","path":"rooms/room_tutorial_gun/room_tutorial_gun.yy",},},
@@ -419,12 +429,6 @@
         {"roomId":{"name":"room_tutorial_tunnel","path":"rooms/room_tutorial_tunnel/room_tutorial_tunnel.yy",},},
         {"roomId":{"name":"room_credtis","path":"rooms/room_credtis/room_credtis.yy",},},
       ],"groupName":"tutorial",},
-    {"children":[
-        {"roomId":{"name":"room_template","path":"rooms/room_template/room_template.yy",},},
-        {"roomId":{"name":"room_test2","path":"rooms/room_test2/room_test2.yy",},},
-        {"roomId":{"name":"room_test_jointRooms","path":"rooms/room_test_jointRooms/room_test_jointRooms.yy",},},
-        {"roomId":{"name":"room_testTunnel","path":"rooms/room_testTunnel/room_testTunnel.yy",},},
-      ],"groupName":"debug",},
   ],
   "templateType":"game",
   "TextureGroups":[
