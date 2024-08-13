@@ -6,3 +6,4 @@
 	instance_activate_layer("Enemies_1");
 	instance_activate_layer("Doors_Sprites");
 	show_debug_message("drückeberger");
+	instance_destroy();

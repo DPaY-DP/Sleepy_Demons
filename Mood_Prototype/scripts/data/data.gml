@@ -84,12 +84,12 @@ global.weaponData = [
 		xBarrel : 39,
 		yBarrel : 48,
 		
-		damage : 1,
+		damage : 4,
 		firerate : 10,
 		projectile : obj_projectileRepair,
 		
 		recoil : 1.4,
-		punch : 2,
+		punch : 1,
 	},
 	{
 		name : "catcher",

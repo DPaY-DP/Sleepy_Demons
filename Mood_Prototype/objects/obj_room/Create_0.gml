@@ -12,6 +12,7 @@ else
 	global.countRooms++;
 }
 
+global.playerHere = 0;
 	//delayed setup
 alarm[0] = 1;					//every obj_room must be loaded BEFORE every obj_doorway !!
 //alarm[1] = 2;					//setup for conjoined (every room needs its points and doors setup before this can run)

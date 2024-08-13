@@ -65,3 +65,7 @@ array_push(rooms[1].doors, {
 
 	//set depth
 depth += 50;
+
+player_here = function()
+{
+}
