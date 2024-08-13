@@ -1,20 +1,48 @@
+//immutable values
+	//projectile values
+boundary = 200;
+
+xStart = x;
+yStart = y;
+
+	//unique values
+if (!variable_global_exists("counterRepair")) global.counterRepair = 0;
+else global.counterRepair++;
+
+spd = 20;
+damage = 4 + irandom(2);
+
+range = 300;
+rangeFalloff = 300;
+
+
+
+
+//game values
+active = true;
+falloff = 0;
+
+
+//setup
 image_index = irandom(image_number - 1);
 rot = (3 + random(3)) * choose(1, -1); 
 
-spd = 20;
-
-timerAlive = 0;
-timerDespawn = 60;
-
-timerDraw = 0;
-
-boundary = 200;
-
-active = true;
-if (damage = 0) active = false;
-
-var _scale = 2;
-if (!active) _scale = random_range(1, 1.5);
-
-image_xscale = _scale;
-image_yscale = _scale;
+if (global.counterRepair mod 6 == 0) 
+{
+	audio_play_sound(snd_repairgun, 0, 0);
+	
+	image_xscale = 2;
+	image_yscale = 2;
+	
+	dir = image_angle;
+}
+else
+{
+	image_xscale = random_range(1, 1.5);
+	image_yscale = random_range(1, 1.5);
+	
+	dir = image_angle + random_range(-10, 10);
+	
+	active = false;
+}
+	

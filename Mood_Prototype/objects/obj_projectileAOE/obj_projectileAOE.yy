@@ -11,8 +11,8 @@
   "name":"obj_projectileAOE",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bullets",
-    "path":"folders/Objects/Bullets.yy",
+    "name":"Unused",
+    "path":"folders/Objects/Bullets/Unused.yy",
   },
   "parentObjectId":null,
   "persistent":false,

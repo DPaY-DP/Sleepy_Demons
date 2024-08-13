@@ -8,13 +8,10 @@
   "name":"obj_projectileDart",
   "overriddenProperties":[],
   "parent":{
-    "name":"Bullets",
-    "path":"folders/Objects/Bullets.yy",
+    "name":"Unused",
+    "path":"folders/Objects/Bullets/Unused.yy",
   },
-  "parentObjectId":{
-    "name":"OBJ_bullet",
-    "path":"objects/OBJ_bullet/OBJ_bullet.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

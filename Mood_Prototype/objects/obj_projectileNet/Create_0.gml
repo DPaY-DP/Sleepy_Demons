@@ -1,4 +1,4 @@
-spd = 25;
+spd = 60;
 spdRetract = 10; 
 
 timerAlive = 0;
@@ -12,3 +12,10 @@ active = true;
 
 retract = false;
 target = undefined;
+
+range = 1200;
+
+damage = 3;
+damageTick = 1;
+intervalTick = 15;
+timerTick = intervalTick;

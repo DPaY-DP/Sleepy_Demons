@@ -4,7 +4,7 @@ native_width = 640 * 2;
 native_height = 360 * 2;
 
 	//display (and therefore window) size relative to camera resolution
-zoom = 1.5;
+zoom = 1;
 
 window_set_size(native_width * zoom, native_height * zoom)
 window_size = [windowWidth, windowHeight];
@@ -87,4 +87,5 @@ stateLock.stop = function()
 initialize_state(stateFollowPlayer);
 
 //responsive data
-//if (global.save.fullscreen) toggle_fullscreen();
+//if (global.save.fullscreen) 
+//toggle_fullscreen();

@@ -1,11 +1,17 @@
-To-Do:
- - change tutorial text display method
+Weapon Change (Specialization, Ammo) + Polish Update
 
 
-Changes:
- - Better melee hitbox
- - Input changes Melee
- - (forms minigame) resized forms and holes to be slightly larger
- - tunnel bumpers no longer visible
- - minigames scale with window size (fullscreen enabled)
- - fixed a bug that would allow tunnels to be sabotaged multiple times (for no further gain)
+TO DO:
+- change font everywhere
+- consolidate interaction keys
+- add more specialized weapons (?)
+- reload mechanic (?)
+
+
+DONE:
+- Main Menu
+- After Level UI
+- Game over UI
+- specialize weapons
+- add ammo pools
+- add reload / resupply mechanic

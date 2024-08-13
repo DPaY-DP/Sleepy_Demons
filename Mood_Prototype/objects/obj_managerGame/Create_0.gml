@@ -103,8 +103,16 @@ stateLoss.drawGUI = function()
 		draw_sprite_simple(spr_bhop, _frame, GUIWidth / 2, GUIHeight / 2, { size : 4 });
 	}
 
-	draw_text_simple(GUIWidth * 0.5, GUIHeight * 0.15, "Ya dun goof'd!", { size : 1, color : c_white, font : font_menu });
-	if (timerState > 120) draw_text_simple(GUIWidth * 0.5, GUIHeight * 0.85, "Press R to restart.", { size : 1, color : c_white, font : font_menu_small });
+	draw_text_simple(GUIWidth * 0.5, GUIHeight * 0.15, "Chaos unfolds", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
+	if (timerState > 120) draw_text_simple(GUIWidth * 0.5, GUIHeight * 0.85, "Press R to restart.", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
+	
+	
+	if (keyboard_check_pressed(ord("R"))) 
+	{
+		room_restart();
+		global.countRooms = 0;
+		global.countEnv = 0;
+	}
 }
 
 
@@ -125,8 +133,8 @@ stateWin.drawGUI = function()
 {
 	draw_sprite_simple(spr_window, 0, GUIWidth * 0.05, GUIHeight * 0.05, { xscale : GUIWidth * 0.9, yscale : GUIHeight * 0.9, alpha : 0.5 });
 
-	draw_text_simple(GUIWidth * 0.5, GUIHeight * 0.15, "Yo'rue a gamer B)))", { size : 1, color : c_white, font : font_menu });
-	if (timerState > 120) draw_text_simple(GUIWidth * 0.5, GUIHeight * 0.85, "Press Space for Next Lervel :oo", { size : 1, color : c_white, font : font_menu_small });
+	draw_text_simple(GUIWidth * 0.5, GUIHeight * 0.15, "Snooze'd em up!", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
+	if (timerState > 90) draw_text_simple(GUIWidth * 0.5, GUIHeight * 0.85, "Press SPACE to enter the next level\nPress ESC to return to Menu", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
 }
 
 initialize_state(stateGame);

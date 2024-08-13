@@ -1,3 +1,5 @@
+mode = "main";
+
 levels =
 [
 	{
@@ -28,14 +30,6 @@ levels =
 		room : room_tutorial_tunnel,
 		name : "06: Tunnel",
 	},
-	{
-		room : room_credtis,
-		name : "07: Credits",
-	},
-	{
-		room : room_credtis,
-		name : "Credits",
-	},
 ]
 
 
@@ -44,7 +38,7 @@ levels =
 
 draw_menu_button = function(_string, _size, _function)
 {	
-	var _font = font_menu;
+	var _font = font_upheaval_scalable;
 	var _fontsize = _size;
 
 	draw_set_font(_font);
@@ -58,9 +52,7 @@ show_debug_message(buttonheight)
 	
 	buttonheight += _textheight + 20;
 	
-
 	var _color = c_white;
-
 	if (mouse_in_area_gui(_x - _textwidth, _y - _textheight, _textwidth, _textheight))
 	{
 		_color = c_grey;

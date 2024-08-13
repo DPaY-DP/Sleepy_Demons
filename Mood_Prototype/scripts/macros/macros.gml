@@ -16,6 +16,10 @@
 	#macro windowHeight window_get_height()
 
 
+//Fonts
+
+	#macro fontscale global.GUIScale * 64 / 1000 
+	
 
 //Game
 
