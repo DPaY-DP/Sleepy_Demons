@@ -174,11 +174,8 @@
     {"id":{"name":"obj_weapon","path":"objects/obj_weapon/obj_weapon.yy",},},
     {"id":{"name":"obj_zebediah","path":"objects/obj_zebediah/obj_zebediah.yy",},},
     {"id":{"name":"ef_dust","path":"particles/ef_dust/ef_dust.yy",},},
-<<<<<<< Updated upstream
     {"id":{"name":"room_combined_easy","path":"rooms/room_combined_easy/room_combined_easy.yy",},},
     {"id":{"name":"room_combined_hard","path":"rooms/room_combined_hard/room_combined_hard.yy",},},
-=======
->>>>>>> Stashed changes
     {"id":{"name":"room_combined_middle","path":"rooms/room_combined_middle/room_combined_middle.yy",},},
     {"id":{"name":"room_credtis","path":"rooms/room_credtis/room_credtis.yy",},},
     {"id":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
@@ -425,11 +422,6 @@
         {"roomId":{"name":"room_combined_middle","path":"rooms/room_combined_middle/room_combined_middle.yy",},},
         {"roomId":{"name":"room_tutorial_tunnel","path":"rooms/room_tutorial_tunnel/room_tutorial_tunnel.yy",},},
         {"roomId":{"name":"room_credtis","path":"rooms/room_credtis/room_credtis.yy",},},
-<<<<<<< Updated upstream
-=======
-        {"roomId":{"name":"room_combined_middle","path":"rooms/room_combined_middle/room_combined_middle.yy",},},
-        {},
->>>>>>> Stashed changes
       ],"groupName":"tutorial",},
     {"children":[
         {"roomId":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
