@@ -188,6 +188,7 @@
     {"id":{"name":"obj_zebediah","path":"objects/obj_zebediah/obj_zebediah.yy",},},
     {"id":{"name":"ef_dust","path":"particles/ef_dust/ef_dust.yy",},},
     {"id":{"name":"room_combinded_easy","path":"rooms/room_combinded_easy/room_combinded_easy.yy",},},
+    {"id":{"name":"room_combined_hard","path":"rooms/room_combined_hard/room_combined_hard.yy",},},
     {"id":{"name":"room_combined_middle","path":"rooms/room_combined_middle/room_combined_middle.yy",},},
     {"id":{"name":"room_credtis","path":"rooms/room_credtis/room_credtis.yy",},},
     {"id":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
@@ -442,6 +443,7 @@
         {"roomId":{"name":"room_credtis","path":"rooms/room_credtis/room_credtis.yy",},},
         {"roomId":{"name":"room_combined_middle","path":"rooms/room_combined_middle/room_combined_middle.yy",},},
         {"roomId":{"name":"room_combinded_easy","path":"rooms/room_combinded_easy/room_combinded_easy.yy",},},
+        {},
       ],"groupName":"tutorial",},
     {"children":[
         {"roomId":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
@@ -450,6 +452,8 @@
         {"roomId":{"name":"room_template","path":"rooms/room_template/room_template.yy",},},
         {"roomId":{"name":"room_testTunnel","path":"rooms/room_testTunnel/room_testTunnel.yy",},},
       ],"groupName":"debug",},
+    {"roomId":{"name":"room_combinded_easy","path":"rooms/room_combinded_easy/room_combinded_easy.yy",},},
+    {"roomId":{"name":"room_combined_hard","path":"rooms/room_combined_hard/room_combined_hard.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
