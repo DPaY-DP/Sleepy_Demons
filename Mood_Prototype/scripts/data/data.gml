@@ -224,7 +224,7 @@ weaponData = [
 		{
 			fire : snd_acidExplosion,
 			delay : false,
-			volume : 2,
+			volume : 1,
 		},
 	},
 	//{

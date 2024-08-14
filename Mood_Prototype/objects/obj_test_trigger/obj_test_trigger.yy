@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemyDemonSmall",
-    "path":"sprites/spr_enemyDemonSmall/spr_enemyDemonSmall.yy",
+    "name":"Laszlo_Teddy_Bear_Sprite",
+    "path":"sprites/Laszlo_Teddy_Bear_Sprite/Laszlo_Teddy_Bear_Sprite.yy",
   },
   "spriteMaskId":null,
   "visible":true,
