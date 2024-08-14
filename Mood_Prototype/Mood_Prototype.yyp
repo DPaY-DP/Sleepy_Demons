@@ -442,7 +442,6 @@
         {"roomId":{"name":"room_tutorial_tunnel","path":"rooms/room_tutorial_tunnel/room_tutorial_tunnel.yy",},},
         {"roomId":{"name":"room_credtis","path":"rooms/room_credtis/room_credtis.yy",},},
         {"roomId":{"name":"room_combined_middle","path":"rooms/room_combined_middle/room_combined_middle.yy",},},
-        {"roomId":{"name":"room_combinded_easy","path":"rooms/room_combinded_easy/room_combinded_easy.yy",},},
         {},
       ],"groupName":"tutorial",},
     {"children":[
