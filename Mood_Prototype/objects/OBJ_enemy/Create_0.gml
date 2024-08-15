@@ -794,7 +794,7 @@ stateExecute.run = function()
 	var _lineCheck = collision_line(x, y, obj_player.x, obj_player.y, OBJ_colliderPlayer, false, false);
 	if	(point_distance(x, y, obj_player.x, obj_player.y) < rangeExecute) && (_lineCheck == noone)
 	{
-		if (keyExecute) && (!instance_exists(obj_managerMinigame))
+		if (keyInteractTap) && (!instance_exists(obj_managerMinigame))
 		{
 			instance_create_layer(x, y, "Overlay", obj_managerMinigame, { enemy : id, game : "finisher" });
 		}

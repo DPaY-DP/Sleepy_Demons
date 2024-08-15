@@ -77,14 +77,14 @@ stateIdle.start = function()
 stateIdle.run = function()
 {
 	if (point_distance(xCenter, yCenter, obj_player.x, obj_player.y) < 60)
-	if (!sabotaged) && (keySabotage) && (!instance_exists(obj_managerMinigame))
+	if (!sabotaged) && (keyInteractTap) && (!instance_exists(obj_managerMinigame))
 	{
 		instance_create_layer(xCenter, yCenter, "Overlay", obj_managerMinigame, { tunnel : id, game : "tunnel" });
 	}	
 }
 stateIdle.draw = function()
 {
-	if (!sabotaged) && (point_distance(xCenter, yCenter, obj_player.x, obj_player.y) < 60) draw_sprite_simple(spr_UI_button, 2, xCenter, yCenter);
+	if (!sabotaged) && (point_distance(xCenter, yCenter, obj_player.x, obj_player.y) < 60) draw_sprite_simple(spr_UI_button, 0, xCenter, yCenter);
 	
 	image_index = sabotaged;
 }

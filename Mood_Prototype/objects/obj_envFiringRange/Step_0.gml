@@ -2,7 +2,7 @@ if	(hp < hpMax) &&
 	(point_distance(x, y, obj_player.x, obj_player.y) < distInteract) &&
 	(obj_player.inRoom == inRoom)
 {
-	if (keyRepairHeld) hp += obj_player.spdRepair;
+	if (keyInteractHold) hp += obj_player.spdRepair;
 }
 
 var _numberSaboteurs = 0;

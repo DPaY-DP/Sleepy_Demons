@@ -30,6 +30,5 @@
 	#macro keySecondary mouse_check_button_pressed(mb_right)
 	#macro keySecondaryHeld mouse_check_button(mb_right)
 	
-	#macro keyRepairHeld keyboard_check(ord("E"))
-	#macro keyExecute keyboard_check_pressed(ord("F"))
-	#macro keySabotage keyboard_check_pressed(ord("Q"))
+	#macro keyInteractHold keyboard_check(ord("E"))
+	#macro keyInteractTap keyboard_check_pressed(ord("F"))// || keyboard_check_pressed(ord("Q"))

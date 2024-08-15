@@ -2,8 +2,6 @@ Weapon Change (Specialization, Ammo) + Polish Update
 
 
 TO DO:
-- change font everywhere
-- consolidate interaction keys
 
 
 DONE:
@@ -15,6 +13,8 @@ DONE:
 - add reload / resupply mechanic
 - new physics system: apply acc only when vel in accepted range; clamp vel to velMaxPhys; always apply fric, independent of movement; tweak acc and velMaxMove values to re-create previous speed
 - add guenther (slow enemy, more hp, more dmg)
-- tune down the punch
+- tune down the punch for new phys system
 - add more specialized weapons (?)
 - reload mechanic (?)
+- consolidate interaction keys
+- change font everywhere
