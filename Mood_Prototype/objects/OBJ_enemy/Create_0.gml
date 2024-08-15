@@ -115,55 +115,37 @@ movement_and_navigation = function(_xTo, _yTo)
 		//if there is an accellerative force exalted by the player...
 	if (_hacc != 0)
 	{
-			//if the current velocity of the player is outside the maximum range, 
-			//don't apply the accelleration and
-			//apply friction
-		if (!in_range(hvel, -velMax, velMax))
-		{
-			hvel *= fric;
-		}
-	
-			//read accelleration direction
 		if (sign(_hacc) == 1)
 		{
-			//if current velocity plus current accelleration does NOT break the velocity maximum, apply accelleration to velocity
-			if (hvel + _hacc < velMax) hvel += _hacc;
-				//if current velocity plus current accelleration DOES break the velocity maximum, but current velocity is yet below
-				//the maximum, set velocity to maximum velocity
-			else if (hvel < velMax) hvel = velMax;
+			if (hvel + _hacc < velMaxWalk) hvel += _hacc;
 		}
 	
 		if (sign(_hacc) == -1) 
 		{
-			if (hvel + _hacc > -velMax) hvel += _hacc;
-			else if (hvel > -velMax) hvel = -velMax;
+			if (hvel + _hacc > -velMaxWalk) hvel += _hacc;
 		}
 	}
-		//if there is no accellerative force applied by the player,
-		//apply friction
-	else hvel *= fric;
 
-		//same logic as above
 	if (_vacc != 0)
 	{
-		if (!in_range(vvel, -velMax, velMax))
-		{
-			vvel *= fric;
-		}
-	
 		if (sign(_vacc) == 1)
 		{
-			if (vvel + _vacc < velMax) vvel += _vacc;
-			else if (vvel < velMax) vvel = velMax;
+			if (vvel + _vacc < velMaxWalk) vvel += _vacc;
 		}
 	
 		if (sign(_vacc) == -1) 
 		{
-			if (vvel + _vacc > -velMax) vvel += _vacc;
-			else if (vvel > -velMax) vvel = -velMax;
+			if (vvel + _vacc > -velMaxWalk) vvel += _vacc;
 		}
 	}
-	else vvel *= fric;
+	
+	hvel = clamp(hvel, -velMaxPhys, velMaxPhys);
+	vvel = clamp(vvel, -velMaxPhys, velMaxPhys);
+	
+	hvel *= fric;
+	vvel *= fric;
+	
+	
 
 	////collision
 	if (!place_meeting(x + hvel, y, obj_wall)) 

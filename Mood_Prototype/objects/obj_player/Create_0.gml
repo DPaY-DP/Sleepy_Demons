@@ -1,9 +1,12 @@
 #region IMMUTABLE VALUES
 accDefault = 1.25;
-velMaxDefault = 7;
+velMaxWalkDefault = 8;
+velMaxPhys = 60;
 
-frictionStandingDefault = 0.75;
-frictionWalkingDefault = 0.5;
+fric = 0.86;
+
+//frictionStandingDefault = 0.75;
+//frictionWalkingDefault = 0.5;
 			//knockback is LESS effective while moving to incentivize the player to keep moving
 			//instead of standing still like an idiot
 
@@ -19,10 +22,7 @@ spdRepair = 1;
 
 #region GAME VALUES
 acc = accDefault;
-velMax = velMaxDefault;
-
-frictionStanding = frictionStandingDefault;
-frictionWalking = frictionWalkingDefault;
+velMaxWalk = velMaxWalkDefault;
 
 orientation = 0;
 
@@ -106,16 +106,16 @@ stateActive.run = function()
 		acc = accWater;
 		velMax = velMaxWater;
 	
-		frictionStanding = frictionStandingWater;
-		frictionWalking = frictionWalkingWater;
+		//frictionStanding = frictionStandingWater;
+		//frictionWalking = frictionWalkingWater;
 	}
 	else
 	{
 		acc = accDefault;
-		velMax = velMaxDefault;
+		velMax = velMaxWalkDefault;
 
-		frictionStanding = frictionStandingDefault;
-		frictionWalking = frictionWalkingDefault;
+		//frictionStanding = frictionStandingDefault;
+		//frictionWalking = frictionWalkingDefault;
 	}
 
 		//booster behavior (remake)
@@ -141,56 +141,35 @@ stateActive.run = function()
 		//if there is an accellerative force exalted by the player...
 	if (_hacc != 0)
 	{
-			//if the current velocity of the player is outside the maximum range, 
-			//don't apply the accelleration and
-			//apply friction
-		if (!in_range(hvel, -velMax, velMax))
-		{
-			hvel *= frictionWalking;
-		}
-	
-			//read accelleration direction
 		if (sign(_hacc) == 1)
 		{
-			//if current velocity plus current accelleration does NOT break the velocity maximum, apply accelleration to velocity
-			if (hvel + _hacc < velMax) hvel += _hacc;
-				//if current velocity plus current accelleration DOES break the velocity maximum, but current velocity is yet below
-				//the maximum, set velocity to maximum velocity
-			else if (hvel < velMax) hvel = velMax;
+			if (hvel + _hacc < velMaxWalk) hvel += _hacc;
 		}
 	
 		if (sign(_hacc) == -1) 
 		{
-			if (hvel + _hacc > -velMax) hvel += _hacc;
-			else if (hvel > -velMax) hvel = -velMax;
+			if (hvel + _hacc > -velMaxWalk) hvel += _hacc;
 		}
 	}
-		//if there is no accellerative force applied by the player,
-		//apply friction
-	else hvel *= frictionStanding;
 
-
-		//same logic as above
 	if (_vacc != 0)
 	{
-		if (!in_range(vvel, -velMax, velMax))
-		{
-			vvel *= frictionWalking;
-		}
-	
 		if (sign(_vacc) == 1)
 		{
-			if (vvel + _vacc < velMax) vvel += _vacc;
-			else if (vvel < velMax) vvel = velMax;
+			if (vvel + _vacc < velMaxWalk) vvel += _vacc;
 		}
 	
 		if (sign(_vacc) == -1) 
 		{
-			if (vvel + _vacc > -velMax) vvel += _vacc;
-			else if (vvel > -velMax) vvel = -velMax;
+			if (vvel + _vacc > -velMaxWalk) vvel += _vacc;
 		}
 	}
-	else vvel *= frictionStanding;
+	
+	hvel = clamp(hvel, -velMaxPhys, velMaxPhys);
+	vvel = clamp(vvel, -velMaxPhys, velMaxPhys);
+	
+	hvel *= fric;
+	vvel *= fric;
 
 
 	////collision

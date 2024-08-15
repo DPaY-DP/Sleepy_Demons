@@ -1,13 +1,14 @@
 //unique values
 name = "pablo";
 
-accDefault = 0.5;
+accDefault = 0.74;
 accSlowed = 0.35;
-velMaxDefault = 5;
-velMaxSlowed = 3;
+velMaxWalkDefault = 8;
+velMaxWalkSlowed = 3;
+velMaxPhys = 60;
 
 acc = accDefault;
-velMax = velMaxDefault;
+velMaxWalk = velMaxWalkDefault;
 fric = 0.9;
 
 hpMax = 24;

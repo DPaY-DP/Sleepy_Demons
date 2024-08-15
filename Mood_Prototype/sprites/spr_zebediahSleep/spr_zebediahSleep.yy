@@ -30,6 +30,7 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"e15d326e-c4e9-4a5a-ac8d-6d05dafdb6d5","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"e15d326e-c4e9-4a5a-ac8d-6d05dafdb6d5","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"72951f87-28db-4926-bfd1-c01172b896b4","blendMode":0,"displayName":"default","isLocked":false,"name":"72951f87-28db-4926-bfd1-c01172b896b4","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"cc4dd14b-7259-4826-b9c6-8ec671619c76","blendMode":0,"displayName":"Layer 2","isLocked":false,"name":"cc4dd14b-7259-4826-b9c6-8ec671619c76","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_zebediahSleep",
   "nineSlice":null,

@@ -22,14 +22,8 @@ if (caught)
 	y = caught.y;
 }
 
-//prowler spaghetti code
-if (hit) && (!instance_exists(obj_projectileBulletProwler))
-{
-	hit = 0;
-}
-
 
 
 //DEBUG
-//show_debug_message($"inRoom: {inRoom}");
-if (inRoom == noone) show_message("HEY BOZO inRoom == noone!!!");
+////show_debug_message($"inRoom: {inRoom}");
+//if (inRoom == noone) show_message("HEY BOZO inRoom == noone!!!");

@@ -19,6 +19,8 @@ if (_numberWeapons > 0)
 		with (weaponsAvailable[i]) if (timerFirerate > 0) timerFirerate--;
 	}
 	
+	if (instance_exists(obj_managerMinigame)) exit;
+	
 	//functionality
 	var _weapon = weaponsAvailable[weaponEquipped];
 	

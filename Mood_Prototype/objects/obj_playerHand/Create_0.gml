@@ -14,3 +14,5 @@ damage = 10;
 punch = 10;
 
 active = true;
+
+force = 1.25;

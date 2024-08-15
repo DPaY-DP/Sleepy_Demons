@@ -3,13 +3,14 @@ event_inherited();
 //unique values
 name = "zebediah";
 
-accDefault = 0.65;
+accDefault = 0.8;
 accSlowed = 0.45;
-velMaxDefault = 6;
+velMaxWalkDefault = 12;
+velMaxPhys = 60;
 velMaxSlowed = 3.5;
 
 acc = accDefault;
-velMax = velMaxDefault;
+velMaxWalk = velMaxWalkDefault;
 fric = 0.9;
 
 hpMax = 18;
