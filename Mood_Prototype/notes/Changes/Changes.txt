@@ -15,3 +15,12 @@ DONE:
 - specialize weapons
 - add ammo pools
 - add reload / resupply mechanic
+
+
+
+Revert Changes from delete:
+- new system: apply acc only when vel in accepted range
+- clamp vel to velMaxPhys
+- always apply fric, independent of movement
+- tweak acc and velMaxMove values to re-create previous speed
+- add guenther (slow enemy, more hp, more dmg)
