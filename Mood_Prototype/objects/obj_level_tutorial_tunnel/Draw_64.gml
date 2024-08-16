@@ -5,9 +5,9 @@ if place_meeting(x, y, obj_player)
 	draw_text_simple(GUIWidth * 0.5, GUIHeight * 0.45, "This is a demon. \n\n It's naptime. \n Approach him and \n Press F", { size : 6 * fontscale, color : c_white, font : font_upheaval_scalable });
 	draw_sprite_ext(spr_pablo, 2, GUIWidth * 0.5, GUIHeight * 0.32, 1, 1, 0, c_white, 1);
 	
-	draw_text_simple(GUIWidth * 0.8, GUIHeight * 0.9, "Press any Mouse button \n to continue", { size : 3 * fontscale, color : c_white, font : font_upheaval_scalable });
+	draw_text_simple(GUIWidth * 0.8, GUIHeight * 0.9, "Press 'Space' button \n to continue", { size : 3 * fontscale, color : c_white, font : font_upheaval_scalable });
 	
-	if mouse_check_button_pressed(mb_any) instance_destroy()
+	if keyboard_check_pressed(vk_space) instance_destroy()
 	
 
 }
