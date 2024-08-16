@@ -144,7 +144,7 @@ weaponData = [
 		xBarrel : 0,
 		yBarrel : 0,
 		
-		recoil : 1.8,
+		recoil : 1.4,
 		firerate : 1,
 		
 		ammoMax: 400,
