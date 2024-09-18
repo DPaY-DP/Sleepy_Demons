@@ -155,7 +155,6 @@
     {"name":"obj_zebediah","order":2,"path":"objects/obj_zebediah/obj_zebediah.yy",},
     {"name":"room_combinded_easy","order":11,"path":"rooms/room_combinded_easy/room_combinded_easy.yy",},
     {"name":"room_combined_middle","order":10,"path":"rooms/room_combined_middle/room_combined_middle.yy",},
-    {"name":"room_credits_bugged","order":13,"path":"rooms/room_credits_bugged/room_credits_bugged.yy",},
     {"name":"room_credits","order":12,"path":"rooms/room_credits/room_credits.yy",},
     {"name":"room_main","order":7,"path":"rooms/room_main/room_main.yy",},
     {"name":"room_shootingRange","order":4,"path":"rooms/room_shootingRange/room_shootingRange.yy",},
