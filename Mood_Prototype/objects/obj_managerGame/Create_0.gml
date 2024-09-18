@@ -120,6 +120,18 @@ stateWin = new State();
 stateWin.start = function()
 {
 	with (OBJ_agents) switch_state(stateLock);
+	
+	var _length = array_length(global.save.levels);
+	for (var i = 0; i < _length; i++)
+	{
+		if	(i < _length - 1) &&
+			(room = global.save.levels[i].room)
+		{
+			global.save.levels[i + 1].unlocked = true;
+			obj_data.write_save();
+			break;
+		}
+	}
 }
 stateWin.run = function()
 {

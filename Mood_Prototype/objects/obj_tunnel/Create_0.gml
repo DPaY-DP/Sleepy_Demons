@@ -77,7 +77,7 @@ stateIdle.start = function()
 stateIdle.run = function()
 {
 	if (point_distance(xCenter, yCenter, obj_player.x, obj_player.y) < 60)
-	if (!sabotaged) && (keyInteractTap) && (!instance_exists(obj_managerMinigame))
+	if (!sabotaged) && (keySabotage) && (!instance_exists(obj_managerMinigame))
 	{
 		instance_create_layer(xCenter, yCenter, "Overlay", obj_managerMinigame, { tunnel : id, game : "tunnel" });
 	}	

@@ -69,11 +69,60 @@ create_save = function()
 
 
 //default values for each save
+
+enum KEYMAP 
+{
+	PRIMARY,
+	MELEE,
+	EXECUTE,
+	SABOTAGE,
+	REPAIR,
+}
+
 defaults = 
 {
 	fullscreen : true,
 	volume : 1,
 	version : global.version,
+	
+	levels :
+	[
+		{
+			room : room_tutorial_executie,
+			name : "Executie",
+			unlocked : true,
+		},
+		{
+			room : room_tutorial_melee,
+			name : "Melee",
+			unlocked : false,
+		},
+		{
+			room : room_tutorial_gun,
+			name : "Gun",
+			unlocked : false,
+		},
+		{
+			room : room_tutorial_gun_trigger,
+			name : "Trigger",
+			unlocked : false,
+		},
+		{
+			room : room_tutorial_big_room,
+			name : "Big Room",
+			unlocked : false,
+		},
+		{
+			room : room_tutorial_big_room_with_env,
+			name : "Big Room + Env",
+			unlocked : false,
+		},
+		{
+			room : room_tutorial_tunnel,
+			name : "Tunnel",
+			unlocked : false,
+		},
+	],
 }
 
 

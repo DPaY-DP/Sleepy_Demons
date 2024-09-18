@@ -1,0 +1,7 @@
+Player actions
+
+FIRE			LMB
+MELEE			C
+EXECUTE			F
+SABOTAGE TUNNEL	F
+REPAIR ENV		E

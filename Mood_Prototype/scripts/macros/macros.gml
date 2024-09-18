@@ -23,12 +23,13 @@
 
 //Game
 
-	#macro keyMelee keyboard_check_pressed(ord("V")) || keyboard_check_pressed(ord("C"))
+	#macro keyMelee mouse_check_button_pressed(mb_right)
 
 	#macro keyPrimary mouse_check_button_pressed(mb_left)
 	#macro keyPrimaryHeld mouse_check_button(mb_left)
-	#macro keySecondary mouse_check_button_pressed(mb_right)
-	#macro keySecondaryHeld mouse_check_button(mb_right)
+	//#macro keySecondary mouse_check_button_pressed(mb_right)
+	//#macro keySecondaryHeld mouse_check_button(mb_right)
 	
-	#macro keyInteractHold keyboard_check(ord("E"))
-	#macro keyInteractTap keyboard_check_pressed(ord("F"))// || keyboard_check_pressed(ord("Q"))
+	#macro keyRepair keyboard_check(ord("E"))
+	#macro keyExecute keyboard_check_pressed(ord("F"))
+	#macro keySabotage keyboard_check_pressed(ord("F"))

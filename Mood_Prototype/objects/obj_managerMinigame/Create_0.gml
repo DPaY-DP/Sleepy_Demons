@@ -35,7 +35,7 @@ switch (game)
 	break;
 	
 	case "finisher":	game = choose("horseshoe", "tuck", "lightswitch", "squarehole");
-						game = "squarehole";
+						//game = "squarehole";
 						
 						switch (game)
 						{

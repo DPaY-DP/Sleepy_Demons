@@ -1,1 +1,0 @@
-wall = instance_create_depth(x, y, depth - 1, obj_wall, { image_xscale : image_xscale, image_yscale : image_yscale * 2 });
