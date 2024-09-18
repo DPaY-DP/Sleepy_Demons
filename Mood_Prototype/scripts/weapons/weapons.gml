@@ -1,7 +1,3 @@
-//DEBUG
-debugmode = false;
-
-
 //ENUMERATOR
 enum enumWeapon
 {
@@ -206,7 +202,7 @@ weaponData = [
 		yBarrel : 0,
 		
 		recoil : 10,
-		firerate : 120,
+		firerate : 60,
 		
 		ammoMax: 5,
 		ammopool : infinity,

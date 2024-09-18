@@ -1,3 +1,9 @@
+if (instance_number(obj_camera) > 1)
+{
+	instance_destroy();
+	exit;
+}
+
 //immutable data
 	//native camera resolution
 native_width = 640 * 2;
@@ -87,5 +93,7 @@ stateLock.stop = function()
 initialize_state(stateFollowPlayer);
 
 //responsive data
-//if (global.save.fullscreen) 
-//toggle_fullscreen();
+show_debug_message(global.save)
+
+if (global.save.fullscreen) 
+toggle_fullscreen();

@@ -5,6 +5,8 @@ image_speed = 0;
 
 sprite_index = asset_get_index("spr_" + form);
 
+canBeGrabbed = true;
+
 do 
 {
 	x = GUIWidth * 0.1 + random(GUIWidth * 0.8);

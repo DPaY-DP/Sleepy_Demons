@@ -28,6 +28,8 @@ if (global.debugmode)
 	if (keyboard_check_pressed(vk_f12)) toggle_fullscreen();
 }
 
+//show_debug_message($"nissaan al gaib + {room}")
+
 
 //DEBUG MESSAGE
 //show_debug_message("");

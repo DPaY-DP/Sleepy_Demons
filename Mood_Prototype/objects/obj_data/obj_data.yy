@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_test_trigger_big_room",
+  "%Name":"obj_data",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"eventNum":0,"eventType":4,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_test_trigger_big_room",
+  "name":"obj_data",
   "overriddenProperties":[],
   "parent":{
-    "name":"Admin",
-    "path":"folders/Objects/Admin.yy",
+    "name":"Objects",
+    "path":"folders/Objects.yy",
   },
   "parentObjectId":null,
-  "persistent":false,
+  "persistent":true,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -29,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"Laszlo_Teddy_Bear_Sprite",
-    "path":"sprites/Laszlo_Teddy_Bear_Sprite/Laszlo_Teddy_Bear_Sprite.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

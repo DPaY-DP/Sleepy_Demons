@@ -1,8 +1,2 @@
-
-
-draw_set_font(font_menu_small);
-draw_set_colour(c_white);
-draw_set_halign(fa_center);
-draw_text(x, y, text);
-
-
+draw_text_simple(GUIwidth * 0.5, GUIheight * 0.5 + yScroll, text, { valign : fa_top, font : font_upheaval_scalable, size : 10 * fontscale, color : c_white });
+//draw_sprite(spr_bathtub, 0, GUIwidth * 0.5, GUIheight * 0.5)

@@ -25,6 +25,6 @@ switch (mode)
 						draw_menu_button("Return", 8 * fontscale, function() { mode = "main" });
 						draw_menu_button("Toggle Fullscreen", 8 * fontscale, function() { obj_camera.toggle_fullscreen() });
 
-						draw_text_simple(x + 30, y + 30, "Schmettings", { font : font_upheaval_scalable, size : 15 * fontscale, halign : fa_left, valign : fa_top })
+						draw_text_simple(x + 30, y + 30, "Settings", { font : font_upheaval_scalable, size : 15 * fontscale, halign : fa_left, valign : fa_top })
 	break;
 }

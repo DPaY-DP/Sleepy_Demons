@@ -42,6 +42,6 @@ function ds_clone(dataStructure)
 		return newArray
 	}
 	
-	//show_debug_message("##ERROR## ds_clone in " + string(self.id) + ": not a data structure!")
-	return undefined
+	show_debug_message($"##ds_clone: copied value is not a data structure: {dataStructure}");
+	return dataStructure
 }

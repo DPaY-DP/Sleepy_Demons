@@ -15,6 +15,7 @@ if (obj_managerMinigame.grabbedObject == id)
 			y = _hole.y;
 
 			image_speed = 1;
+			canBeGrabbed = false;
 
 			obj_managerMinigame.grabbedObject = noone;
 			obj_managerMinigame.formsLeft--;
@@ -22,7 +23,8 @@ if (obj_managerMinigame.grabbedObject == id)
 	}
 }
 
-if	(obj_managerMinigame.grabbedObject == noone) &&
+if	(canBeGrabbed) &&
+	(obj_managerMinigame.grabbedObject == noone) &&
 	(mouse_check_button_pressed(mb_left)) &&
 	(mouse_in_area_gui(	x - sprite_width * 0.75, y - sprite_height * 0.75,
 						sprite_width * 1.5, sprite_height * 1.5))
