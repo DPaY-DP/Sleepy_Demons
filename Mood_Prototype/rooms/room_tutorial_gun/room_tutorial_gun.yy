@@ -29,7 +29,6 @@
     {"name":"inst_337A0632_1","path":"rooms/room_tutorial_gun/room_tutorial_gun.yy",},
     {"name":"inst_6D65E975","path":"rooms/room_tutorial_gun/room_tutorial_gun.yy",},
     {"name":"inst_5A4095E0","path":"rooms/room_tutorial_gun/room_tutorial_gun.yy",},
-    {"name":"inst_438B52ED","path":"rooms/room_tutorial_gun/room_tutorial_gun.yy",},
     {"name":"inst_5D8CDF2F","path":"rooms/room_tutorial_gun/room_tutorial_gun.yy",},
     {"name":"inst_408830AB","path":"rooms/room_tutorial_gun/room_tutorial_gun.yy",},
     {"name":"inst_412DD146","path":"rooms/room_tutorial_gun/room_tutorial_gun.yy",},
@@ -41,6 +40,7 @@
     {"name":"inst_14646A7E","path":"rooms/room_tutorial_gun/room_tutorial_gun.yy",},
     {"name":"inst_790A86C4","path":"rooms/room_tutorial_gun/room_tutorial_gun.yy",},
     {"name":"inst_2279CF1D","path":"rooms/room_tutorial_gun/room_tutorial_gun.yy",},
+    {"name":"inst_438B52ED","path":"rooms/room_tutorial_gun/room_tutorial_gun.yy",},
   ],
   "isDnd":false,
   "layers":[

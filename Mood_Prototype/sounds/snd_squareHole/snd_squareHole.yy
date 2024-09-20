@@ -13,7 +13,7 @@
   "name":"snd_squareHole",
   "parent":{
     "name":"Square Hole",
-    "path":"folders/Objects/MGames/Square Hole.yy",
+    "path":"folders/Objects/Minigames/Square Hole.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

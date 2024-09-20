@@ -1,11 +1,16 @@
-global.envHP -= hpDrain;
-
+var _applyDamage = true;
 if	(hp < hpMax) && 
 	(point_distance(x, y, obj_player.x, obj_player.y) < distInteract) &&
 	(obj_player.inRoom == inRoom)
 {
-	if (keyRepair) hp += obj_player.spdRepair;
+	if (keyRepair) 
+	{
+		hp += obj_player.spdRepair;
+		_applyDamage = false;
+	}
 }
+
+if (_applyDamage) global.envHP -= hpDrain;
 
 var _numberSaboteurs = 0;
 

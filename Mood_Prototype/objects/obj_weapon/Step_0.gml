@@ -1,3 +1,6 @@
+//active
+if (!canShoot) exit;
+
 //get input
 var left = mouse_check_button_pressed(mb_left);
 var left_held = mouse_check_button(mb_left);

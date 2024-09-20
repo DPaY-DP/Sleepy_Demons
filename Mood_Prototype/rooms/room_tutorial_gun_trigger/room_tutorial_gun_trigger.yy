@@ -35,7 +35,6 @@
     {"name":"inst_337A0632_1_1","path":"rooms/room_tutorial_gun_trigger/room_tutorial_gun_trigger.yy",},
     {"name":"inst_6D65E975_1","path":"rooms/room_tutorial_gun_trigger/room_tutorial_gun_trigger.yy",},
     {"name":"inst_5A4095E0_1","path":"rooms/room_tutorial_gun_trigger/room_tutorial_gun_trigger.yy",},
-    {"name":"inst_438B52ED_1","path":"rooms/room_tutorial_gun_trigger/room_tutorial_gun_trigger.yy",},
     {"name":"inst_5D8CDF2F_1","path":"rooms/room_tutorial_gun_trigger/room_tutorial_gun_trigger.yy",},
     {"name":"inst_412DD146_1","path":"rooms/room_tutorial_gun_trigger/room_tutorial_gun_trigger.yy",},
     {"name":"inst_467758B6_1","path":"rooms/room_tutorial_gun_trigger/room_tutorial_gun_trigger.yy",},
@@ -102,6 +101,7 @@
     {"name":"inst_7193BF20","path":"rooms/room_tutorial_gun_trigger/room_tutorial_gun_trigger.yy",},
     {"name":"inst_197ECB40","path":"rooms/room_tutorial_gun_trigger/room_tutorial_gun_trigger.yy",},
     {"name":"inst_1E43099A","path":"rooms/room_tutorial_gun_trigger/room_tutorial_gun_trigger.yy",},
+    {"name":"inst_438B52ED_1","path":"rooms/room_tutorial_gun_trigger/room_tutorial_gun_trigger.yy",},
   ],
   "isDnd":false,
   "layers":[

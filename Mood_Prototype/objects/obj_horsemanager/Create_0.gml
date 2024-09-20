@@ -1,7 +1,7 @@
 size = 4 * global.GUIScale;
 
-xHorse = GUIWidth * 0.5;
-yHorse = GUIHeight * 0.35;
+xHorse = GUIwidth * 0.5;
+yHorse = GUIheight * 0.35;
 
 indicator = 0;
 

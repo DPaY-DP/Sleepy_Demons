@@ -8,11 +8,6 @@ timerState++;
 if	((window_size[0] != windowWidth) || (window_size[1] != windowHeight)) &&
 	((windowWidth != 0) && (windowHeight != 0))
 {
-	aspect_ratio = windowWidth / window_get_height();
-	
-	ideal_width = aspect_ratio * native_height;
-	
-	camera_set_view_size(cam, ideal_width, native_height);
 	surface_resize(surface, windowWidth, windowHeight);
 	alarm[0] = 1;
 	

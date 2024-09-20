@@ -22,3 +22,8 @@ if (timerCooldown > 0)
 }
 
 draw_self();
+
+if (global.debugmode)
+{
+	draw_text_simple(x, y, image_index, { color : c_fuchsia })
+}

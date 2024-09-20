@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Horseshoe",
-    "path":"folders/Objects/MGames/Horseshoe.yy",
+    "path":"folders/Objects/Minigames/Horseshoe.yy",
   },
   "parentObjectId":null,
   "persistent":false,

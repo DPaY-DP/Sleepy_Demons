@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Light Switch Minigame",
-    "path":"folders/Objects/MGames/Light Switch Minigame.yy",
+    "path":"folders/Objects/Minigames/Light Switch Minigame.yy",
   },
   "parentObjectId":null,
   "persistent":false,

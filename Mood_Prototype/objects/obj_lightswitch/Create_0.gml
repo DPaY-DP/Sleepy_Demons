@@ -17,6 +17,8 @@ if (turnedOn)
 	
 while (place_meeting(x, y, obj_lightswitch))
 {
-	x = view_get_wport(0) * 0.15 + random(view_get_wport(0) * 0.7);
-	y = view_get_hport(0) * 0.15 + random(view_get_hport(0) * 0.7);
+	x = GUIwidth * 0.15 + random(GUIwidth * 0.7);
+	y = GUIheight * 0.15 + random(GUIheight * 0.7);
+	
+	show_debug_message("while obj_lightswitch")
 }

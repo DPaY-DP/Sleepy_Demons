@@ -32,4 +32,4 @@
 	
 	#macro keyRepair keyboard_check(ord("E"))
 	#macro keyExecute keyboard_check_pressed(ord("F"))
-	#macro keySabotage keyboard_check_pressed(ord("F"))
+	#macro keyRetrievePillow keyboard_check_pressed(ord("Q"))

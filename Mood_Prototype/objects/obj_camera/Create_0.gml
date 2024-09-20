@@ -9,6 +9,9 @@ if (instance_number(obj_camera) > 1)
 native_width = 640 * 2;
 native_height = 360 * 2;
 
+aspect_ratio = native_width / native_height;
+camera_set_view_size(cam, native_width, native_height)
+
 	//display (and therefore window) size relative to camera resolution
 zoom = 1;
 

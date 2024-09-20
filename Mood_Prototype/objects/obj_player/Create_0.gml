@@ -5,11 +5,6 @@ velMaxPhys = 60;
 
 fric = 0.86;
 
-//frictionStandingDefault = 0.75;
-//frictionWalkingDefault = 0.5;
-			//knockback is LESS effective while moving to incentivize the player to keep moving
-			//instead of standing still like an idiot
-
 accWater = 0.99;
 velMaxWater = 5.5;
 
@@ -31,6 +26,8 @@ dir = 0;
 vel = 0;
 hvel = 0;
 vvel = 0;
+
+inRoom = undefined;
 #endregion
 
 
@@ -238,9 +235,17 @@ stateActive.draw = function()
 }
 
 stateLock = new State("Lock");
+stateLock.start = function()
+{
+	obj_weapon.canShoot = false;
+}
 stateLock.draw = function()
 {
 	draw_sprite_simple(sprite_index, 0, x, y, { angle : orientation });
+}
+stateLock.stop = function()
+{
+	obj_weapon.canShoot = true;
 }
 
 initialize_state(stateActive);

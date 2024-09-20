@@ -27,7 +27,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_guentherSleep",
+    "path":"sprites/spr_guentherSleep/spr_guentherSleep.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

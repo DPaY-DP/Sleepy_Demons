@@ -5,10 +5,11 @@ if (obj_managerMinigame.grabbedObject == id)
 	x = device_mouse_x_to_gui(0);
 	y = device_mouse_y_to_gui(0);
 	
-	if (mouse_check_button_released(mb_left))
-	{
+	//if (mouse_check_button_released(mb_left))
+	//{
 		var _hole = instance_place(x, y, obj_hole);
 		if (_hole != noone)
+		if (point_distance(x, y, _hole.x, _hole.y) < 15)		//(drop distance
 		if (_hole.form == form) || (_hole.form == "square")
 		{
 			x = _hole.x;
@@ -20,7 +21,7 @@ if (obj_managerMinigame.grabbedObject == id)
 			obj_managerMinigame.grabbedObject = noone;
 			obj_managerMinigame.formsLeft--;
 		}
-	}
+	//}
 }
 
 if	(canBeGrabbed) &&

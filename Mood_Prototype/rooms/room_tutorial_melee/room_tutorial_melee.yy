@@ -29,9 +29,9 @@
     {"name":"inst_64BDA4D","path":"rooms/room_tutorial_melee/room_tutorial_melee.yy",},
     {"name":"inst_337A0632","path":"rooms/room_tutorial_melee/room_tutorial_melee.yy",},
     {"name":"inst_6117DC7C","path":"rooms/room_tutorial_melee/room_tutorial_melee.yy",},
-    {"name":"inst_109AA1CA","path":"rooms/room_tutorial_melee/room_tutorial_melee.yy",},
     {"name":"inst_47C7D0B8","path":"rooms/room_tutorial_melee/room_tutorial_melee.yy",},
     {"name":"inst_76921EFA","path":"rooms/room_tutorial_melee/room_tutorial_melee.yy",},
+    {"name":"inst_109AA1CA","path":"rooms/room_tutorial_melee/room_tutorial_melee.yy",},
   ],
   "isDnd":false,
   "layers":[

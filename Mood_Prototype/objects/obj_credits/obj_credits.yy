@@ -10,8 +10,8 @@
   "name":"obj_credits",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Admin",
+    "path":"folders/Objects/Admin.yy",
   },
   "parentObjectId":null,
   "persistent":false,

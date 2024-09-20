@@ -12,9 +12,6 @@ show_debug_message($"###### {sprite_get_speed(spr_bhop)}")
 global.colorsDebug = [c_red, c_yellow, c_green, c_blue, c_fuchsia, c_aqua, c_maroon, c_olive, c_lime, c_navy, c_teal, c_orange, c_purple];
 
 
-//DEBUG
-global.debugmode = 0;
-
 draw_set_font(Font1)
 
 //enemy behavior
@@ -30,8 +27,8 @@ draw_minimap = function(_scale)
 {
 	var _scaleMinimap = _scale;
 	
-	var _offsetX = GUIWidth * 0.02 - 128 * _scaleMinimap;
-	var _offsetY = GUIHeight * 0.02 - 96 * _scaleMinimap;
+	var _offsetX = GUIwidth * 0.02 - 128 * _scaleMinimap;
+	var _offsetY = GUIheight * 0.02 - 96 * _scaleMinimap;
 	
 	with (obj_doorway) draw_sprite_simple(spr_doorOverlay, 0, _offsetX + x * _scaleMinimap, _offsetY + y * _scaleMinimap, { xscale : image_xscale * _scaleMinimap, yscale : image_yscale * _scaleMinimap })
 	with (obj_tunnel) 
@@ -56,12 +53,12 @@ draw_minimap = function(_scale)
 
 draw_hpbar = function()
 {
-	var _width = (GUIWidth * 0.76) * (global.envHP / global.envHPMax);
+	var _width = (GUIwidth * 0.76) * (global.envHP / global.envHPMax);
 	if (_width < 0) _width = 0;
-	var _barX = GUIWidth * 0.22;
+	var _barX = GUIwidth * 0.22;
 
 	draw_set_color(c_green);
-	if (global.envHP > 0) draw_rectangle(_barX, GUIHeight * 0.02, _barX + _width, GUIHeight * 0.1, false);
+	if (global.envHP > 0) draw_rectangle(_barX, GUIheight * 0.02, _barX + _width, GUIheight * 0.1, false);
 	draw_set_color(c_white);
 }
 
@@ -95,16 +92,16 @@ stateLoss.run = function()
 }
 stateLoss.drawGUI = function()
 {
-	draw_sprite_simple(spr_window, 0, GUIWidth * 0.05, GUIHeight * 0.05, { xscale : GUIWidth * 0.9, yscale : GUIHeight * 0.9, alpha : 0.5 });
+	draw_sprite_simple(spr_window, 0, GUIwidth * 0.05, GUIheight * 0.05, { xscale : GUIwidth * 0.9, yscale : GUIheight * 0.9, alpha : 0.5 });
 	
 	if (timerState <= sprite_get_number(spr_bhop) * get_animation_framelength(spr_bhop)) 
 	{
 		var _frame = get_animation_frame(spr_bhop, timerState);
-		draw_sprite_simple(spr_bhop, _frame, GUIWidth / 2, GUIHeight / 2, { size : 4 });
+		draw_sprite_simple(spr_bhop, _frame, GUIwidth / 2, GUIheight / 2, { size : 4 });
 	}
 
-	draw_text_simple(GUIWidth * 0.5, GUIHeight * 0.15, "Chaos unfolds", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
-	if (timerState > 120) draw_text_simple(GUIWidth * 0.5, GUIHeight * 0.85, "Press R to restart.", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
+	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Chaos unfolds", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
+	if (timerState > 120) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.85, "Press R to restart.", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
 	
 	
 	if (keyboard_check_pressed(ord("R"))) 
@@ -143,10 +140,10 @@ stateWin.run = function()
 }
 stateWin.drawGUI = function()
 {
-	draw_sprite_simple(spr_window, 0, GUIWidth * 0.05, GUIHeight * 0.05, { xscale : GUIWidth * 0.9, yscale : GUIHeight * 0.9, alpha : 0.5 });
+	draw_sprite_simple(spr_window, 0, GUIwidth * 0.05, GUIheight * 0.05, { xscale : GUIwidth * 0.9, yscale : GUIheight * 0.9, alpha : 0.5 });
 
-	draw_text_simple(GUIWidth * 0.5, GUIHeight * 0.15, "Snooze'd em up!", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
-	if (timerState > 90) draw_text_simple(GUIWidth * 0.5, GUIHeight * 0.85, "Press SPACE to enter the next level\nPress ESC to return to Menu", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
+	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Snooze'd em up!", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
+	if (timerState > 90) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.85, "Press SPACE to enter the next level\nPress ESC to return to Menu", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
 }
 
 initialize_state(stateGame);

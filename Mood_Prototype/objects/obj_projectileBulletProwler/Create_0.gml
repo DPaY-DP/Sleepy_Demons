@@ -3,7 +3,7 @@ event_inherited();
 	//unique values	
 punch = 15;
 		
-damage = 3;
+damage = 4;
 spd = 50;
 			
 range = 400; 

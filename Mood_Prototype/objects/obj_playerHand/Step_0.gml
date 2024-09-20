@@ -90,3 +90,32 @@ if (animate)
 		break;
 	}
 }
+
+var _enemy = instance_place(x, y, obj_enemyHitbox);
+if (_enemy != noone) && (_enemy.owner.hp > 0) && (active)
+{
+	var _damage = 10;
+	var _color = c_red;
+	if (_enemy.owner.slowed) 
+	{
+		_damage = 21;
+		_color = c_yellow;
+	}
+
+	instance_create_layer(_enemy.owner.x, _enemy.owner.y, "Overlay", obj_damageNumber, { damage : _damage, color : _color });
+
+	_enemy.owner.hvel += lengthdir_x(_damage / 2, image_angle);
+	_enemy.owner.vvel += lengthdir_y(_damage / 2, image_angle);
+
+	_enemy.owner.hp -= _damage;
+
+	active = false;
+}
+
+var _tunnel = instance_place(x, y, obj_tunnel);
+if (_tunnel != noone) && (active)
+{
+	with (_tunnel) toggle_sabotaged(true);
+
+	instance_destroy();
+}

@@ -1,4 +1,3 @@
-@ -0,0 +1,377 @@
 {
   "$GMRoom":"v1",
   "%Name":"room_combined_hard",

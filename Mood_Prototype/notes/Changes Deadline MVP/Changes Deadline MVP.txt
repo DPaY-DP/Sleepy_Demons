@@ -1,0 +1,41 @@
+TO-DO [JOSEPH]
+
+Menu
+☑ Schmettings to Settings
+☑ Credits usable from menu
+☑ Fullscreen solution for different screen resolutions
+
+Gameplay
+☑ Remap controls (RMB for punch)
+☑ Pillowstuff tunnels
+☑ Enemies can be finished inside tunnels
+
+Levels
+☑ Import missing levels
+☑ gun terminal on wrong layer in level envhp1
+
+Fixes
+☑ You can shoot in finish screen
+☑ You can shoot in tutorial screen
+
+Bugs
+☑ Sometimes trying to execute enemies causes the game to freeze (in fullscreen)
+☑ Squarehole minigame sometimes becomes uninteractable
+☑ Station doesn't refill weapon as expected (?) 
+☑ demons ignore sabotaged tunnels for pathfinding
+
+The "maybe" pile
+☑ Repairing an object temporarily disables env damage from that object
+☑ balacing pass (juice up weapons)
+
+Polish:
+☐ Pause function
+☐ Key remapping functionality
+☐ auto unequip empty gun
+☑ Adaptive level select 
+☑ square hole minigame, clicked forms do not need to be unclicked, but get sucked into the correct hole when overlaid
+
+
+New shit
+- Where is minimap??
+- New level crashes regularly (navmesh not assigned, but attempted to read)

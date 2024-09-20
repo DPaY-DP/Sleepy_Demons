@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Slider",
-    "path":"folders/Objects/MGames/Slider.yy",
+    "path":"folders/Objects/Minigames/Slider.yy",
   },
   "parentObjectId":null,
   "persistent":false,

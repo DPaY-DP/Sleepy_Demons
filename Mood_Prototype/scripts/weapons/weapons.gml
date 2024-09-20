@@ -57,7 +57,7 @@ weaponData = [
 		ammopool : infinity,
 		
 		burst : 3,
-		intervalBurst : 3,
+		intervalBurst : 2,
 		
 		blast : 1,
 		blastDeviance : 0,

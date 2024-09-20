@@ -8,8 +8,8 @@
   "name":"obj_data",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Admin",
+    "path":"folders/Objects/Admin.yy",
   },
   "parentObjectId":null,
   "persistent":true,

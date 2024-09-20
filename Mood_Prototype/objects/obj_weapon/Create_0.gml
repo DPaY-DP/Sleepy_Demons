@@ -4,6 +4,8 @@ image_alpha = 0;
 
 
 //functionality
+canShoot = true;
+
 timerFireRate = 0;
 
 weaponsAvailable = [];

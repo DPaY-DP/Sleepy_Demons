@@ -9,8 +9,8 @@
   "name":"obj_managerMinigame",
   "overriddenProperties":[],
   "parent":{
-    "name":"MGames",
-    "path":"folders/Objects/MGames.yy",
+    "name":"Minigames",
+    "path":"folders/Objects/Minigames.yy",
   },
   "parentObjectId":null,
   "persistent":false,

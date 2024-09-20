@@ -1,8 +1,10 @@
 shadows = [];
 shadowsMax = 8;
 
+sprite_index = spr_moodGuyFistHitbox;
+image_speed = 0;
+image_index = 0;
 image_alpha = 0;
-mask_index = spr_moodGuyFistHitbox;
 
 intervalCooldown = 75;
 timerCooldown = 0;

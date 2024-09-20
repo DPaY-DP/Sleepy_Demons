@@ -13,6 +13,7 @@ myHitbox = instance_create_depth(x, y, depth, obj_enemyHitbox, { owner : id });
 
 #region GAME VALUES
 inRoom = instance_place(x, y, obj_room);					//must start in room !!
+show_debug_message($"spawn room: {inRoom}")
 
 hvel = 0;
 vvel = 0;
@@ -464,8 +465,6 @@ statePlaying.run = function()
 		if (_distPlayer < rangePlayerFlee) switch_state(stateFlee);
 	}
 	
-	show_debug_message($"hp = {hp}; hpLast = {hpLast}");
-	
 	if (hp != hpLast) switch_state(stateFlee);
 }
 statePlaying.stop = function()
@@ -791,18 +790,20 @@ stateExecute.run = function()
 		switch_state(stateSeek);
 	}
 	
-	var _lineCheck = collision_line(x, y, obj_player.x, obj_player.y, OBJ_colliderPlayer, false, false);
+	var _lineCheck = collision_line(x, y, obj_player.x, obj_player.y, obj_wall, false, false);
+	show_debug_message(_lineCheck)
 	if	(point_distance(x, y, obj_player.x, obj_player.y) < rangeExecute) && (_lineCheck == noone)
 	{
 		if (keyExecute) && (!instance_exists(obj_managerMinigame))
 		{
+			show_debug_message("keyExecute pressed")
 			instance_create_layer(x, y, "Overlay", obj_managerMinigame, { enemy : id, game : "finisher" });
 		}
 	}
 }
 stateExecute.draw = function()
 {
-	var _lineCheck = collision_line(x, y, obj_player.x, obj_player.y, OBJ_colliderPlayer, false, false);
+	var _lineCheck = collision_line(x, y, obj_player.x, obj_player.y, obj_wall, false, false);
 	if	(point_distance(x, y, obj_player.x, obj_player.y) < rangeExecute) && (_lineCheck == noone)
 	{
 		if (!instance_exists(obj_managerMinigame)) draw_sprite_simple(spr_UI_button, 0, x, y - 16, { size : 0.8 });
@@ -822,7 +823,8 @@ stateSleep.start = function()
 	instance_destroy();
 }
 
-stateLock = new State();
+stateLock = new State("Lock");
 
-alarm[0] = 2;
+initialize_state(statePlaying);
+//alarm[0] = 2;			//WHY??
 #endregion

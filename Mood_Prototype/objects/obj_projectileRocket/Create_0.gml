@@ -9,7 +9,7 @@ boundary = 200;
 	//unique values
 punch = 40;
 			
-damage = 4;
+damage = 6;
 spd = 11;
 acc = 1.05;
 			

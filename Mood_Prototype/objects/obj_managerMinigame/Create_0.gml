@@ -1,5 +1,4 @@
-#macro GUIWidth display_get_gui_width()
-#macro GUIHeight display_get_gui_height()
+show_debug_message("manager minigame spawned")
 
 //initialize game
 switch (game)
@@ -9,8 +8,8 @@ switch (game)
 						spawnedScrews = false;
 						
 						//spawn tunnel and boards
-						var _portWidth = GUIWidth;
-						var _portHeight = GUIHeight;
+						var _portWidth = GUIwidth;
+						var _portHeight = GUIheight;
 
 						instance_create_depth(_portWidth * 0.5, _portHeight * 0.5, depth - 5, obj_gametunnel);
 
@@ -35,7 +34,9 @@ switch (game)
 	break;
 	
 	case "finisher":	game = choose("horseshoe", "tuck", "lightswitch", "squarehole");
-						//game = "squarehole";
+						game = "lightswitch";
+						
+						show_debug_message($"case finisher, game selected: {game}");
 						
 						switch (game)
 						{
@@ -68,8 +69,8 @@ switch (game)
 												timerDespawn = 120;
 						
 												var _size = 5;
-												var _xSpawn = GUIWidth / 4;
-												var _ySpawn = GUIHeight / 2;
+												var _xSpawn = GUIwidth / 4;
+												var _ySpawn = GUIheight / 2;
 						
 												instance_create_depth(_xSpawn, _ySpawn, depth - 10, obj_blanket, { size : _size });
 												instance_create_depth(_xSpawn * 3, _ySpawn, depth - 5, obj_demonbaby, { size : _size });
@@ -77,16 +78,18 @@ switch (game)
 							break;
 	
 							case "lightswitch":	switchesActivated = 0;
-												totalSwitches = 5 + irandom(2);
+												totalSwitches = 7 //5 + irandom(2);
 						
 												repeat (totalSwitches)
 												{
-													var _x = GUIWidth * 0.2 + random(GUIWidth * 0.6);
-													var _y = GUIHeight * 0.2 + random(GUIHeight * 0.6);
+													var _x = GUIwidth * 0.2 + random(GUIwidth * 0.6);
+													var _y = GUIheight * 0.2 + random(GUIheight * 0.6);
 
 													instance_create_depth(_x, _y, depth - 20, obj_lightswitch);
 												}
 							break;
 						}
+												
+						show_debug_message("setup minigame complete")
 	break;
 }

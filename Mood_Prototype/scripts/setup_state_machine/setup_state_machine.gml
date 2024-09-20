@@ -19,14 +19,14 @@ function setup_state_machine()
 	timerState = 0;
 
 	switch_state = function(_toState)
-	{
+	{		
 		state.stop();
-		//show_debug_message($"state {state.name} stop")
+		show_debug_message($"state {state.name} stop")
 		lastState = state;
 	
 		state = _toState;
 		state.start();
-		//show_debug_message($"state {state.name} start")
+		show_debug_message($"state {state.name} start")
 		
 		timerState = -1;
 	}

@@ -18,7 +18,7 @@ hpLast = hpMax;
 
 envDamage = 0.2;
 
-rangeExecute = 80;
+rangeExecute = 120;
 rangePlayerFlee = 120;
 
 intervalCackle = 300;
