@@ -1,3 +1,5 @@
+show_debug_message($"created: {id}")
+
 if (instance_number(obj_camera) > 1)
 {
 	instance_destroy();

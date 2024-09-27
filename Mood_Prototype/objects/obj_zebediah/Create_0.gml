@@ -29,10 +29,23 @@ intervalRecoverExecute = 300;
 
 intervalInstigate = 180;
 
+//unique methods
+reset_membership = function()
+{
+	if (target != undefined) 
+	{
+		if (target.object_index == obj_env) target.void_member(id);
+		else if (target.object_index == OBJ_enemy) target.targeted = false;
+		
+		target = undefined;
+	}
+}
 
-
+//unique states
 stateSeek.start = function()
 {	
+	reset_membership();
+	
 	//before sabotaging objects, attempt to instigate other demons
 		//get other demons
 	var _number = instance_number(OBJ_enemy);
@@ -68,6 +81,7 @@ stateSeek.start = function()
 		target = _enemies[0][0];
 		target.targeted = true;
 		navmesh = get_navmesh(inRoom, target.inRoom);
+		show_debug_message($"Zebediah: {inRoom.number}, {target.name}, {target.inRoom.number}, {navmesh}")
 		
 		intent = "instigate";
 		switch_state(stateWalk);

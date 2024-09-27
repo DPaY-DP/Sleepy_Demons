@@ -28,6 +28,14 @@ hvel = 0;
 vvel = 0;
 
 inRoom = undefined;
+
+animateMovement = false;
+#endregion
+
+
+#region SETUP
+image_xscale = 2;
+image_yscale = 2;
 #endregion
 
 
@@ -167,7 +175,16 @@ stateActive.run = function()
 	
 	hvel *= fric;
 	vvel *= fric;
-
+	
+	if ((left) || (right) || (up) || (down))
+	{
+		animateMovement = true;
+		image_speed = 1;
+	}
+	else 
+	{
+		animateMovement = false;
+	}
 
 	////collision
 	if (!place_meeting(x + hvel, y, OBJ_colliderPlayer)) x += round(hvel);
@@ -184,7 +201,6 @@ stateActive.run = function()
 		{
 			x += sign(hvel);
 		
-			//show_debug_message($"Resolving collision, loop {_loop}, x = {x}");
 			_loop++;
 		}
 	
@@ -192,8 +208,6 @@ stateActive.run = function()
 	
 		hvel = 0;
 	}
-
-
 
 	if (!place_meeting(x, y + vvel, OBJ_colliderPlayer)) y += round(vvel);
 	else
@@ -209,7 +223,6 @@ stateActive.run = function()
 		{
 			y += sign(vvel);
 		
-			//show_debug_message($"Resolving collision, loop {_loop}, y = {y}");
 			_loop++;
 		}
 	
@@ -231,7 +244,7 @@ stateActive.draw = function()
 		draw_sprite_simple(sprite_index, 0, x - lengthdir_x(_dist * i, _dir), y - lengthdir_y(_dist * i, _dir), { angle : image_angle, alpha : _alpha });
 	}
 
-	draw_sprite_simple(sprite_index, 0, x, y, { angle : orientation });
+	draw_sprite_simple(sprite_index, image_index, x, y, { angle : orientation, size : image_xscale });
 }
 
 stateLock = new State("Lock");
@@ -241,7 +254,7 @@ stateLock.start = function()
 }
 stateLock.draw = function()
 {
-	draw_sprite_simple(sprite_index, 0, x, y, { angle : orientation });
+	draw_sprite_simple(sprite_index, image_index, x, y, { angle : orientation, size : image_xscale });
 }
 stateLock.stop = function()
 {

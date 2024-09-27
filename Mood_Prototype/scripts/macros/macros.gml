@@ -1,4 +1,4 @@
-//camera
+ //camera
 
 	#macro cam view_camera[0]
 	#macro camWidth camera_get_view_width(cam)

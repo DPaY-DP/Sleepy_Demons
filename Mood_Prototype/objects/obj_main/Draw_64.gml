@@ -14,7 +14,7 @@ switch (mode)
 							var _room = global.save.levels[i].room;
 							global.roomTo = _room;
 	
-							draw_menu_button($"0{i}: {_name}", 8 * fontscale, function() { room_goto(global.roomTo) }, global.save.levels[i].unlocked);
+							draw_menu_button($"0{i + 1}: {_name}", 8 * fontscale, function() { room_goto(global.roomTo) }, global.save.levels[i].unlocked);
 						}
 
 						draw_text_simple(x + 30, y + 30, "Level Select", { font : font_upheaval_scalable, size : 15 * fontscale, halign : fa_left, valign : fa_top })

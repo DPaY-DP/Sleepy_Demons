@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_moodGuyFist",
-    "path":"sprites/spr_moodGuyFist/spr_moodGuyFist.yy",
+    "name":"spr_moodGuyFist_Pillow",
+    "path":"sprites/spr_moodGuyFist_Pillow/spr_moodGuyFist_Pillow.yy",
   },
   "spriteMaskId":null,
   "visible":true,

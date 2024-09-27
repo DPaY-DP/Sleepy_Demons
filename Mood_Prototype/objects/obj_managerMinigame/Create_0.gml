@@ -34,9 +34,9 @@ switch (game)
 	break;
 	
 	case "finisher":	game = choose("horseshoe", "tuck", "lightswitch", "squarehole");
-						game = "lightswitch";
+						//game = "squarehole";
 						
-						show_debug_message($"case finisher, game selected: {game}");
+						//show_debug_message($"case finisher, game selected: {game}");
 						
 						switch (game)
 						{
@@ -52,17 +52,18 @@ switch (game)
 							break;
 	
 							case "squarehole":	grabbedObject = noone;
-												formsLeft = 4;
+												formsLeft = 3;
+												
+												forms = ["circle", "square", "star", "triangle"];
+												array_delete(forms, irandom(3), 1);
 						
-												instance_create_depth(x, y, depth - 5, obj_hole, { form : "circle" });
-												instance_create_depth(x, y, depth - 5, obj_hole, { form : "square" });
-												instance_create_depth(x, y, depth - 5, obj_hole, { form : "star" });
-												instance_create_depth(x, y, depth - 5, obj_hole, { form : "triangle" });
+												instance_create_depth(x, y, depth - 5, obj_hole, { form : forms[0] });
+												instance_create_depth(x, y, depth - 5, obj_hole, { form : forms[1] });
+												instance_create_depth(x, y, depth - 5, obj_hole, { form : forms[2] });
 						
-												instance_create_depth(x, y, depth - 10, obj_form, { form : "circle" });
-												instance_create_depth(x, y, depth - 10, obj_form, { form : "square" });
-												instance_create_depth(x, y, depth - 10, obj_form, { form : "star" });
-												instance_create_depth(x, y, depth - 10, obj_form, { form : "triangle" });
+												instance_create_depth(x, y, depth - 10, obj_form, { form : forms[0] });
+												instance_create_depth(x, y, depth - 10, obj_form, { form : forms[1] });
+												instance_create_depth(x, y, depth - 10, obj_form, { form : forms[2] });
 							break;
 	
 							case "tuck":		babySleep = false;

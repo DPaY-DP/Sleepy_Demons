@@ -1,11 +1,11 @@
 var _length = array_length(shadows);
 
-for (var i = 0; i < _length; i++)
-{
-	var _alpha = 1 - (i + 1) / (_length + 1);
+//for (var i = 0; i < _length; i++)
+//{
+//	var _alpha = 1 - (i + 1) / (_length + 1);
 	
-	draw_sprite_simple(sprite_index, shadows[i].image, shadows[i].x, shadows[i].y, { alpha : _alpha * image_alpha, angle : shadows[i].angle });
-}
+//	draw_sprite_simple(sprite_index, shadows[i].image, shadows[i].x, shadows[i].y, { alpha : _alpha * image_alpha, angle : shadows[i].angle });
+//}
 
 if (timerCooldown > 0)
 {
@@ -25,5 +25,5 @@ draw_self();
 
 if (global.debugmode)
 {
-	draw_text_simple(x, y, image_index, { color : c_fuchsia })
+	//draw_text_simple(x, y, image_index, { color : c_fuchsia, font : font_upheaval_scalable, size : fontscale * 4 })
 }

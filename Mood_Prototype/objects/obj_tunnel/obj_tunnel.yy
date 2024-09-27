@@ -13,7 +13,10 @@
     "name":"Game Objects",
     "path":"folders/Objects/Game Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"OBJ_door",
+    "path":"objects/OBJ_door/OBJ_door.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

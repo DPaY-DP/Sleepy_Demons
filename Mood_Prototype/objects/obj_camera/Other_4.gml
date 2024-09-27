@@ -3,6 +3,7 @@ view_visible[0] = true;
 
 if ((windowWidth != 0) && (windowHeight != 0))
 {
+	camera_set_view_size(cam, native_width, native_height)
 	surface_resize(surface, windowWidth, windowHeight);
 	alarm[0] = 1;
 	

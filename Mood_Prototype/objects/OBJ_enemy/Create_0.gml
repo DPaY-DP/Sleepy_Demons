@@ -215,7 +215,7 @@ movement_and_navigation = function(_xTo, _yTo)
 
 get_navmesh = function(_idInRoom, _idTargetRoom)
 {
-	//show_debug_message($"\n\n	##########\n	Beginning navmesh calculations\n	##########\n\n	From room {_idInRoom.number} to room {_idTargetRoom.number}\n\n");
+	show_debug_message($"\n\n	##########\n	Beginning navmesh calculations\n	##########\n\n	From room {_idInRoom.number} to room {_idTargetRoom.number}\n\n");
 	
 	if (_idInRoom == _idTargetRoom) return [_idInRoom.centerpoint];
 	
@@ -231,6 +231,8 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 		if (!_door.object.sabotaged) array_push(_routes, [_door.entrypoint, _door.exitpoint, _door.toRoom]);
 	}
 	
+	show_debug_message($"START OF CALC, visited rooms (should only be current room):\n{_checked}")
+	
 	var _whilesafe = 0;
 	while (true)
 	{
@@ -239,27 +241,27 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 		var _lengthRoutes = array_length(_routes);
 		
 		//show_debug_message($"\nall routes:											{_routes}")
-		for (var dbg = 0; dbg < _lengthRoutes; dbg++)
-		{
-			//show_debug_message($"	{_routes[dbg]}; room #{array_last(_routes[dbg]).number}")
-		}
+		//for (var dbg = 0; dbg < _lengthRoutes; dbg++)
+		//{
+		//	//show_debug_message($"	{_routes[dbg]}; room #{array_last(_routes[dbg]).number}")
+		//}
 		
 		for (var i = 0; i < _lengthRoutes; i++)
 		{
 			//get current route; current room and doors
 			var _currentRoute = _routes[i];
-			//show_debug_message($"\nloop {i}, currentRoute: {_currentRoute}");
+				show_debug_message($"\nloop {i}, currentRoute: {_currentRoute}");
 			var _currentRoom = array_pop(_currentRoute);
-			//show_debug_message($"currentRoom: {_currentRoom}");
+				show_debug_message($"currentRoom: {_currentRoom.number}");
 			
 			if (_currentRoom == _idTargetRoom)
 			{
-				//show_debug_message("Found it!");
+					show_debug_message("Found it!");
 				return _currentRoute
 			}
 			
 			var _currentDoors = _currentRoom.doors;
-			//show_debug_message($"currentDoors: {_currentDoors}");
+				show_debug_message($"currentDoors: {_currentDoors}");
 			
 			_checked[_currentRoom.number] = true;
 			
@@ -273,12 +275,12 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 				var _currentDoor = _currentDoors[l];
 				var _idToRoom = _currentDoor.toRoom;
 				
-				//show_debug_message($"\nChecking if room has been travelled to: {_checked} for room {_idToRoom.number}");
+					show_debug_message($"\nChecking if room has been travelled to: {_checked} for room {_idToRoom.number}");
 				
 				if	(_currentDoor.object.sabotaged) ||
 					(_checked[_idToRoom.number]) 
 				{
-					//show_debug_message($"		Has been travelled, looping"); 
+						show_debug_message($"		Has been travelled, looping"); 
 					continue;
 				}
 				
@@ -292,12 +294,12 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 					_routes[i] = _copyRoute;
 					_modifyRoute = true;
 					
-					//show_debug_message($"		Appended Route: {_copyRoute}")
+						show_debug_message($"		Appended Route: {_copyRoute}")
 				}
 				else 
 				{
 					array_push(_routes, _copyRoute);
-					//show_debug_message($"		Pushed new Route: {_copyRoute}")
+						show_debug_message($"		Pushed new Route: {_copyRoute}")
 				}
 				
 				if (_idToRoom == _idTargetRoom)
@@ -311,18 +313,18 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 			
 			if (_deadEnd) 
 			{
-				//show_debug_message("		Dead End Detected")
-				//show_debug_message($"\n			DELETING FROM ARRAY _routes:\n		Before: {_routes}");
+					show_debug_message("\n		Dead End Detected")
+					show_debug_message($"			DELETING FROM ARRAY _routes:\n		Before: {_routes}");
 				array_delete(_routes, i, 1);
 				_lengthRoutes--;
 				i--;
-				//show_debug_message($"		After: {_routes}");
+					show_debug_message($"		After: {_routes}");
 			}
 			
 			_forsafe++;
 			if (_forsafe > 100)
 			{
-				//show_message("overflow FOR");
+					show_message("overflow FOR");
 				break;
 			}
 		}
@@ -334,6 +336,11 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 			break;
 		}
 	}
+	
+	show_debug_message("	### ERROR ###\n	get_navmesh returned no navmesh array")
+	//image_blend = c_red;
+	//image_xscale = 2;
+	//image_yscale = 2;
 }
 
 walk_navmesh = function(_dist)
@@ -398,6 +405,12 @@ walk_navmesh = function(_dist)
 			iterationsUnstuck = 0;
 		}
 	}
+}
+
+reset_membership = function()
+{
+	if (target != undefined) 
+	if (target.object_index == obj_env) target.void_member(id);
 }
 
 do_effect_dust = function(_x, _y)
@@ -519,13 +532,7 @@ stateWalk.stop = function()
 stateSeek = new State("Seek");
 stateSeek.start = function()
 {	
-	if (target != undefined) 
-	{
-		if (target.object_index == obj_env) target.void_member(id);
-		else if (target.object_index == OBJ_enemy) target.targeted = false;
-		
-		target = undefined;
-	}
+	reset_membership();
 	
 	//select env object
 		//get total number of env objects
@@ -586,13 +593,7 @@ stateSeek.start = function()
 stateRandomTarget = new State("RandomTarget");
 stateRandomTarget.start = function()
 {	
-	if (target != undefined) 
-	{
-		if (target.object_index == obj_env) target.void_member(id);
-		else if (target.object_index == OBJ_enemy) target.targeted = false;
-		
-		target = undefined;
-	}
+	reset_membership();
 	
 	if (instance_number(obj_room) > 1)
 	{
@@ -612,13 +613,7 @@ stateRandomTarget.start = function()
 stateFlee = new State("Flee");
 stateFlee.start = function()
 {
-	if (target != undefined) 
-	{
-		if (target.object_index == obj_env) target.void_member(id);
-		else if (target.object_index == OBJ_enemy) target.targeted = false;
-		
-		target = undefined;
-	}
+	reset_membership();
 	
 	var _doors = inRoom.doors;
 	var _lengthDoors = array_length(_doors);
@@ -770,15 +765,11 @@ stateRecover.stop = function()
 stateExecute = new State("Execute");
 stateExecute.start = function()
 {
-	if (target != undefined) 
-	{
-		if (target.object_index == obj_env) target.void_member(id);
-		else if (target.object_index == OBJ_enemy) target.targeted = false;
-		
-		target = undefined;
-	}
+	reset_membership();
 	
 	timerRecover = intervalRecoverExecute;
+	
+	image_speed = 0;
 }
 stateExecute.run = function()
 {	
@@ -791,12 +782,12 @@ stateExecute.run = function()
 	}
 	
 	var _lineCheck = collision_line(x, y, obj_player.x, obj_player.y, obj_wall, false, false);
-	show_debug_message(_lineCheck)
+	//show_debug_message(_lineCheck)
 	if	(point_distance(x, y, obj_player.x, obj_player.y) < rangeExecute) && (_lineCheck == noone)
 	{
 		if (keyExecute) && (!instance_exists(obj_managerMinigame))
 		{
-			show_debug_message("keyExecute pressed")
+			//show_debug_message("keyExecute pressed")
 			instance_create_layer(x, y, "Overlay", obj_managerMinigame, { enemy : id, game : "finisher" });
 		}
 	}
@@ -811,6 +802,7 @@ stateExecute.draw = function()
 }
 stateExecute.stop = function()
 {
+	image_speed = 1;
 }
 
 

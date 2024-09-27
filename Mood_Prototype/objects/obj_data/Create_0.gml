@@ -1,11 +1,13 @@
 #region GAME SETUP
 global.version = "V0.1";
 randomize();
+window_set_cursor(cr_none)
+cursor_sprite = spr_cursor;
 #endregion
 
 
 #region DEBUGMODE
-global.debugmode = true;
+global.debugmode = false;
 #endregion
 
 
@@ -132,11 +134,6 @@ defaults =
 			name : "[NONAME!!!!]",
 			unlocked : false,
 		},
-		{
-			room : room_combined_hard,
-			name : "[NONAME!!!!]",
-			unlocked : false,
-		},
 	],
 }
 
@@ -146,26 +143,3 @@ global.save = file_load(global.saveName);
 show_debug_message(global.save)
 if (!global.save) create_save();
 #endregion
-
-//array_pop(global.save.levels);
-//array_push(global.save.levels, 
-//		{
-//			room : room_combined_easy,
-//			name : "[NONAME!!!!]",
-//			unlocked : false,
-//		},)
-
-//array_push(global.save.levels, 
-//		{
-//			room : room_combined_middle,
-//			name : "[NONAME!!!!]",
-//			unlocked : false,
-//		},)
-
-//array_push(global.save.levels, 
-//		{
-//			room : room_combined_hard,
-//			name : "[NONAME!!!!]",
-//			unlocked : false,
-//		},)
-//		write_save();

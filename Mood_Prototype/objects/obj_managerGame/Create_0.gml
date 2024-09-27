@@ -21,44 +21,87 @@ global.parties = [];
 //rooms
 timerLoss = 0;
 
+levelborders = undefined;
+
+
+#region METHODS
+get_current_level = function()
+{
+	var _length = array_length(global.save.levels);
+	for (var i = 0; i < _length; i++)
+	{
+		if (room == global.save.levels[i].room) return i
+	}
+}
+#endregion
+
 
 #region METHODS
 draw_minimap = function(_scale)
 {
-	var _scaleMinimap = _scale;
+	var _mapscale = mapscale;
 	
-	var _offsetX = GUIwidth * 0.02 - 128 * _scaleMinimap;
-	var _offsetY = GUIheight * 0.02 - 96 * _scaleMinimap;
+	var _offsetX = GUIwidth * 0.03
+	var _offsetY = GUIwidth * 0.03
 	
-	with (obj_doorway) draw_sprite_simple(spr_doorOverlay, 0, _offsetX + x * _scaleMinimap, _offsetY + y * _scaleMinimap, { xscale : image_xscale * _scaleMinimap, yscale : image_yscale * _scaleMinimap })
+	draw_set_color(c_fuchsia);
+	draw_set_alpha(0.6);
+	draw_rectangle(_offsetX - GUIwidth * 0.01, _offsetY - GUIwidth * 0.01, 1450 * 0.2 + GUIwidth * 0.01, mapMaxHeight + 38 + GUIwidth * 0.01, false);
+	draw_set_color(c_white);
+	draw_set_alpha(1);
+	
+	with (obj_doorway) 
+	{
+		var _x = _offsetX + x * other.mapscale - other.mapLeftCompensate;
+		var _y = _offsetY + y * other.mapscale - other.mapTopCompensate;
+		
+		draw_sprite_simple(spr_doorOverlay, 0, _x, _y, { xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
+	}
 	with (obj_tunnel) 
 	{
-		draw_sprite_simple(spr_tunnelOverlay, sabotaged, _offsetX + x * _scaleMinimap, _offsetY + y * _scaleMinimap, { xscale : image_xscale * _scaleMinimap, yscale : image_yscale * _scaleMinimap });
+		var _x = _offsetX + x * other.mapscale - other.mapLeftCompensate;
+		var _y = _offsetY + y * other.mapscale - other.mapTopCompensate;
+		
+		draw_sprite_simple(spr_tunnelOverlay, sabotaged, _x, _y, { xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
 	}
 	with (obj_room)	
 	{
-		draw_sprite_simple(spr_roomOverlay, 0, _offsetX + x * _scaleMinimap, _offsetY + y * _scaleMinimap, { xscale : image_xscale * _scaleMinimap, yscale : image_yscale * _scaleMinimap });
+		var _x = _offsetX + x * other.mapscale - other.mapLeftCompensate;
+		var _y = _offsetY + y * other.mapscale - other.mapTopCompensate;
 		
-		if (flood) draw_sprite_simple(spr_roomFlooded, 0, _offsetX + x * _scaleMinimap, _offsetY + y * _scaleMinimap, { xscale : image_xscale * _scaleMinimap, yscale : image_yscale * _scaleMinimap, alpha : 0.5 * floodAmount });
+		draw_sprite_simple(spr_roomOverlay, 0, _x, _y, { xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
+		
+		if (flood) draw_sprite_simple(spr_roomFlooded, 0, _x, _y, { xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale, alpha : 0.5 * floodAmount });
 	}
 	with (obj_env)	
 	{
-		draw_sprite_simple(spr_envOverlay, image_index, _offsetX + x * _scaleMinimap, _offsetY + y * _scaleMinimap, { xscale : image_xscale * _scaleMinimap, yscale : image_yscale * _scaleMinimap })
+		var _x = _offsetX + x * other.mapscale - other.mapLeftCompensate;
+		var _y = _offsetY + y * other.mapscale - other.mapTopCompensate;
+		
+		draw_sprite_simple(spr_envOverlay, image_index, _x, _y, { xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale })
 	}
 	with (obj_gunPickup)
 	{
-		draw_sprite_simple(spr_gunOverlay, image_index, _offsetX + x * _scaleMinimap, _offsetY + y * _scaleMinimap, { xscale : image_xscale * _scaleMinimap, yscale : image_yscale * _scaleMinimap })
+		var _x = _offsetX + x * other.mapscale - other.mapLeftCompensate;
+		var _y = _offsetY + y * other.mapscale - other.mapTopCompensate;
+		
+		draw_sprite_simple(spr_gunOverlay, image_index, _x, _y, { xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale })
 	}
 }
 
 draw_hpbar = function()
 {
-	var _width = (GUIwidth * 0.76) * (global.envHP / global.envHPMax);
-	if (_width < 0) _width = 0;
-	var _barX = GUIwidth * 0.22;
+	var _factorHP = (global.envHP / global.envHPMax);
+	
+	var _maxHeight = (GUIheight * 0.94);
+	var _height = _maxHeight * _factorHP;
+	if (_height < 0) _height = 0;
+	var _barX = GUIwidth * 0.96;
+	var _barY = GUIheight * 0.03;
+	var _width = GUIwidth * 0.02;
 
 	draw_set_color(c_green);
-	if (global.envHP > 0) draw_rectangle(_barX, GUIheight * 0.02, _barX + _width, GUIheight * 0.1, false);
+	if (global.envHP > 0) draw_rectangle(_barX, _barY + _maxHeight - _height, _barX + _width, _barY + _maxHeight, false);
 	draw_set_color(c_white);
 }
 
@@ -68,6 +111,11 @@ draw_hpbar = function()
 setup_state_machine();
 
 stateGame = new State();
+stateGame.start = function()
+{
+	currentLevel = get_current_level();
+	show_debug_message(currentLevel)
+}
 stateGame.run = function()
 {
 	if (global.envHP <= 0) switch_state(stateLoss);
@@ -77,7 +125,7 @@ stateGame.run = function()
 stateGame.drawGUI = function()
 {
 	if (drawEnvHP) draw_hpbar();
-	//draw_minimap(0.2);
+	draw_minimap(0.2);
 }
 
 
@@ -118,23 +166,16 @@ stateWin.start = function()
 {
 	with (OBJ_agents) switch_state(stateLock);
 	
-	var _length = array_length(global.save.levels);
-	for (var i = 0; i < _length; i++)
-	{
-		if	(i < _length - 1) &&
-			(room = global.save.levels[i].room)
-		{
-			global.save.levels[i + 1].unlocked = true;
-			obj_data.write_save();
-			break;
-		}
-	}
+	if (currentLevel < array_length(global.save.levels) - 1) global.save.levels[currentLevel + 1].unlocked = true;
 }
 stateWin.run = function()
 {
 	if (keyboard_check_pressed(vk_space)) 
 	{
-		room_goto_next();
+		var _length = array_length(global.save.levels)
+		if (currentLevel < _length - 1) room_goto(global.save.levels[currentLevel + 1].room)
+		else room_goto(room_credits);
+		
 		switch_state(stateGame);
 	}
 }
@@ -147,3 +188,5 @@ stateWin.drawGUI = function()
 }
 
 initialize_state(stateGame);
+
+alarm[0] = 1;

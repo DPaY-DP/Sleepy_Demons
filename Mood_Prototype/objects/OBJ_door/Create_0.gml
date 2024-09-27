@@ -17,7 +17,16 @@ ds_list_destroy(_list);
 	//get entrypoints
 entries = [];
 
-if (sprite_width / sprite_height >= 1)									// orientation: 0 = vertical, 1 = horizontal
+	//get orientation
+		//check position of rooms relative to centerpoint of door. 
+		//both above == horizontal; both left == vertical. 
+		//theoretically, there should be no other possible permutations.
+orientation = "horizontal";
+show_debug_message($"{x}, {y}")
+if (rooms[0].x < xCenter) && (rooms[1].x < xCenter) orientation = "vertical";
+
+
+if (orientation == "horizontal")
 {				
 	entries[0] = {
 		x : xCenter + (sprite_width / 2) * sign(rooms[0].x - x),		//the x position of the entry point into this doorway is
@@ -65,7 +74,3 @@ array_push(rooms[1].doors, {
 
 	//set depth
 depth += 50;
-
-player_here = function()
-{
-}

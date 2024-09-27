@@ -6,9 +6,8 @@ draw_message = function(_num)
 {
 	switch (_num)
 	{
-		case 0:		draw_text_simple(GUIwidth * 0.5, GUIheight * 0.45, "This is a demon. \n\n It's naptime. \n Approach him and \n Press F", { size : 6 * fontscale, color : c_white, font : font_upheaval_scalable });
-					draw_sprite_ext(spr_pablo, 2, GUIwidth * 0.5, GUIheight * 0.32, 1, 1, 0, c_white, 1);
-					draw_text_simple(GUIwidth * 0.8, GUIheight * 0.9, "Press 'Space' button \n to continue", { size : 3 * fontscale, color : c_white, font : font_upheaval_scalable });
+		case 0:		draw_text_simple(GUIwidth * 0.5, GUIheight * 0.45, "\nDemons can go\nthrough special Tunnels.\nThey Look like this:\n\n\n\nApproach the Tunnel and Melee attack\nto disable it.\nUse RMB to reclaim your pillow from the tunnel.", { size : 6 * fontscale, color : c_white, font : font_upheaval_scalable });
+					draw_sprite_ext(spr_tunnel, 0, GUIwidth * 0.48, GUIheight * 0.45, 4, 2, 0, c_white, 1);
 		break;
 	}
 }

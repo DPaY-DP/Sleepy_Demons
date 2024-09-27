@@ -98,12 +98,12 @@
     {"name":"inst_32081126","path":"rooms/room_combined_easy/room_combined_easy.yy",},
     {"name":"inst_1CA3D5","path":"rooms/room_combined_easy/room_combined_easy.yy",},
     {"name":"inst_47CA3BD2","path":"rooms/room_combined_easy/room_combined_easy.yy",},
-    {"name":"inst_59BA59F4","path":"rooms/room_combined_easy/room_combined_easy.yy",},
     {"name":"inst_52CC304B","path":"rooms/room_combined_easy/room_combined_easy.yy",},
     {"name":"inst_1B92C99B","path":"rooms/room_combined_easy/room_combined_easy.yy",},
     {"name":"inst_751DC2B8","path":"rooms/room_combined_easy/room_combined_easy.yy",},
     {"name":"inst_501EF9F2","path":"rooms/room_combined_easy/room_combined_easy.yy",},
     {"name":"inst_56ACD057","path":"rooms/room_combined_easy/room_combined_easy.yy",},
+    {"name":"inst_70E1C5D2","path":"rooms/room_combined_easy/room_combined_easy.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -130,10 +130,10 @@
     {"$GMRInstanceLayer":"","%Name":"Secret","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_52CC304B","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_52CC304B","objectId":{"name":"obj_doorway_just_sprite","path":"objects/obj_doorway_just_sprite/obj_doorway_just_sprite.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":2.0,"x":800.0,"y":1312.0,},
         {"$GMRInstance":"v1","%Name":"inst_1B92C99B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1B92C99B","objectId":{"name":"obj_room_sprite","path":"objects/obj_room_sprite/obj_room_sprite.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.0,"scaleY":3.0,"x":800.0,"y":1376.0,},
-        {"$GMRInstance":"v1","%Name":"inst_59BA59F4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":4,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_59BA59F4","objectId":{"name":"obj_gunPickup","path":"objects/obj_gunPickup/obj_gunPickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":847.0,"y":1416.0,},
+        {"$GMRInstance":"v1","%Name":"inst_70E1C5D2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":4,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_70E1C5D2","objectId":{"name":"obj_stationWeapon","path":"objects/obj_stationWeapon/obj_stationWeapon.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":848.0,"y":1424.0,},
       ],"layers":[],"name":"Secret","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Weapons","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v1","%Name":"inst_7693AC56_4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7693AC56_4","objectId":{"name":"obj_gunPickup","path":"objects/obj_gunPickup/obj_gunPickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":845.0,"y":1195.0,},
+        {"$GMRInstance":"v1","%Name":"inst_7693AC56_4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7693AC56_4","objectId":{"name":"obj_gunPickup","path":"objects/obj_gunPickup/obj_gunPickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":832.0,"y":1024.0,},
       ],"layers":[],"name":"Weapons","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_77A728C8","animationSpeed":0.0,"colour":4294967295,"frozen":false,"headPosition":19.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_77A728C8","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_bathtub","path":"sprites/spr_bathtub/spr_bathtub.yy",},"x":519.0,"y":736.0,},

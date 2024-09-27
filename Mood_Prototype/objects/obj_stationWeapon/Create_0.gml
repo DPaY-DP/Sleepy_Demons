@@ -1,4 +1,4 @@
-intervalCollect = 90;
+intervalCollect = 45;
 timerCollect = intervalCollect;
 
 collected = false;

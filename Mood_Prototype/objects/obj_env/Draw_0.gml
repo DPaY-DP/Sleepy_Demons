@@ -20,8 +20,8 @@ if	(hp < hpMax) &&
 //DEBUG
 if (global.debugmode)
 {
-	draw_debug(stage, 0, 0, 0.25);
-	draw_debug(hp, 0, 32, 0.25);
+	//draw_debug(stage, 0, 0, 0.25);
+	//draw_debug(hp, 0, 32, 0.25);
 	
 	var _length = array_length(pointsSabo);
 	for (var i = 0; i < _length; i++)

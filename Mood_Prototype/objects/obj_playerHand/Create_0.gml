@@ -1,7 +1,7 @@
 shadows = [];
 shadowsMax = 8;
 
-sprite_index = spr_moodGuyFistHitbox;
+mask_index = spr_moodGuyFistHitbox;
 image_speed = 0;
 image_index = 0;
 image_alpha = 0;
@@ -18,3 +18,6 @@ punch = 10;
 active = true;
 
 force = 1.25;
+
+//remove from level 0
+if (room == room_tutorial_executie) instance_destroy();

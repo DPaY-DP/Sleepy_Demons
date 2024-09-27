@@ -9,7 +9,7 @@ if (obj_managerMinigame.grabbedObject == id)
 	//{
 		var _hole = instance_place(x, y, obj_hole);
 		if (_hole != noone)
-		if (point_distance(x, y, _hole.x, _hole.y) < 15)		//(drop distance
+		if (point_distance(x, y, _hole.x, _hole.y) < 30)		//(drop distance
 		if (_hole.form == form) || (_hole.form == "square")
 		{
 			x = _hole.x;

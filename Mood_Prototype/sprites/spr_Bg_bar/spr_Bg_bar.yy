@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Slider",
-    "path":"folders/Sprites/MGames/Slider.yy",
+    "name":"Healthbar",
+    "path":"folders/Sprites/Healthbar.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -1,4 +1,6 @@
 #region IMMUTABLE VALUES
+name = "env object";
+
 if (!variable_global_exists("countEnv")) global.countEnv = 0;
 numberEnv = global.countEnv++;
 

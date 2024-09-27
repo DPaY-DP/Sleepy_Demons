@@ -21,7 +21,7 @@ weaponData = [
 		yBarrel : 0,
 		
 		recoil : 5,
-		firerate : 30,
+		firerate : 40,
 		
 		ammoMax: infinity,
 		ammopool : infinity,
@@ -53,10 +53,10 @@ weaponData = [
 		recoil : 8,
 		firerate : 15,
 		
-		ammoMax: 21,
+		ammoMax: 28,
 		ammopool : infinity,
 		
-		burst : 3,
+		burst : 4,
 		intervalBurst : 2,
 		
 		blast : 1,
