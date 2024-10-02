@@ -209,7 +209,7 @@
           -2090,-2147483648,1,108,-43,-2147483648,2,98,99,-31,-2147483648,2,124,125,-46,-2147483648,2,68,85,-42,
           -2147483648,2,118,119,-31,-2147483648,2,144,145,-794,-2147483648,2,94,95,-123,-2147483648,2,114,115,
           -4722,-2147483648,
-        ],"TileDataFormat":1,},"tilesetId":null,"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+        ],"TileDataFormat":1,},"tilesetId":{"name":"tileset_sprites","path":"tilesets/tileset_sprites/tileset_sprites.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRTileLayer":"","%Name":"Tiles_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":50,"gridY":50,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":75,"SerialiseWidth":125,"TileCompressedData":[
           -506,-2147483648,2,92,93,-5,-2147483648,6,184,187,4,5,4,5,-12,-2147483648,5,96,97,-2147483648,96,97,
           -93,-2147483648,4,1073741850,1073741830,112,113,-5,-2147483648,6,204,207,24,25,24,25,-12,-2147483648,
@@ -240,7 +240,7 @@
           -2147483648,1879048320,1879048340,-25,-2147483648,2,1879048312,1879048332,-77,-2147483648,2,1879048321,
           1879048341,-14,-2147483648,2,805306501,805306500,-107,-2147483648,2,1879048320,1879048340,-497,-2147483648,
           2,1073741974,1073741954,-123,-2147483648,2,1073741975,1073741955,-2336,-2147483648,
-        ],"TileDataFormat":1,},"tilesetId":null,"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+        ],"TileDataFormat":1,},"tilesetId":{"name":"tileset_sprites","path":"tilesets/tileset_sprites/tileset_sprites.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRAssetLayer":"","%Name":"Assets_1","assets":[],"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Assets_1","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Manager","depth":300,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_6D65E975_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6D65E975_1","objectId":{"name":"obj_managerGame","path":"objects/obj_managerGame/obj_managerGame.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":0.0,"y":0.0,},

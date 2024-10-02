@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_demonScream",
+  "%Name":"steppos_half",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.72,
-  "name":"snd_demonScream",
+  "duration":0.610816,
+  "name":"steppos_half",
   "parent":{
     "name":"Implemented",
     "path":"folders/Sounds/Implemented.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_demonScream.mp3",
+  "soundFile":"steppos_half.wav",
   "type":0,
-  "volume":0.29,
+  "volume":1.0,
 }

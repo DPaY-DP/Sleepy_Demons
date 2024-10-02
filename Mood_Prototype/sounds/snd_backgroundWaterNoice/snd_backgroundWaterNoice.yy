@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_demonScream2",
+  "%Name":"snd_backgroundWaterNoice",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.312381,
-  "name":"snd_demonScream2",
+  "duration":9.221224,
+  "name":"snd_backgroundWaterNoice",
   "parent":{
-    "name":"Implemented",
-    "path":"folders/Sounds/Implemented.yy",
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_demonScream2.wav",
+  "soundFile":"snd_backgroundWaterNoice.mp3",
   "type":0,
-  "volume":0.29,
+  "volume":1.0,
 }

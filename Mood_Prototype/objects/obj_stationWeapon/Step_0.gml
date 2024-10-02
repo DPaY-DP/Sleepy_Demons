@@ -14,12 +14,14 @@ else
 	else 
 	{
 		used = false;
-		if(stationReloadDone)
-		{
-			audio_play_sound(Weapon_station_reloading_itself_finish,1,false);	//LUIZSOUND Trying to create a way to only play the sound when station is done reloading
-			stationReloadDone = false;
-		}
 	}
+}
+
+if(timerReuse == 1)
+{
+	show_debug_message("STATION RELOADED UWU")
+	audio_stop_sound(Weapon_station_reloading_itself_rattata);
+	audio_play_sound(Weapon_station_reloading_itself_finish,1,false);	//LUIZSOUND Trying to create a way to only play the sound when station is done reloading
 }
 
 if (_dist < 16) && (!used)

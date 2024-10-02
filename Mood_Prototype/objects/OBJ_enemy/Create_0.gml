@@ -31,7 +31,9 @@ timerUnstuck = 0;
 
 hitCombo = { burstId : undefined, hits : 0 };
 
-sleepSounds = [sleepy_demon_1_1,sleepy_demon_3_2,sleepy_demon_enno,sleepy_demon_eve]; //LUIZSLEEP Array for sleep sounds
+sleepSounds = [sleepy_demon_1_1,sleepy_demon_3_2,sleepy_demon_enno,sleepy_demon_eve]; //LUIZSOUND Array for sleep sounds
+idleSounds = [where_my_teddy,snd_demonSpeaks1,snd_demonSpeak2Deeper,snd_laughD1,snd_laughD2,snd_laughD3,snd_laughE1,snd_laughE2Deep,snd_laughE3]; //LUIZSOUND Array for idle Chatter
+idleTimer = random_range(3*room_speed,30*room_speed);
 #endregion
 
 
@@ -74,9 +76,9 @@ movement_and_navigation = function(_xTo, _yTo)
 	if (hvel != 0) || (vvel != 0) 
 	{
 		var _movedir = point_direction(0, 0, hvel, vvel);
-		if(!audio_is_playing(steppos_demons))
+		if(!audio_is_playing(steppos_demons_half_2))
 		{
-			audio_play_sound(steppos_demons,1,false);		//LUIZSOUND
+			audio_play_sound(steppos_demons_half_2,1,false,.3,0,1+random_range(-.2,.2));		//LUIZSOUND
 		}
 
 		if (abs(_goaldir - _movedir) > 180)
@@ -110,7 +112,7 @@ movement_and_navigation = function(_xTo, _yTo)
 	{
 		_dir = _goaldir;
 		drawArrow = false;
-		audio_stop_sound(steppos_demons);	//LUIZSOUND
+		audio_stop_sound(steppos_demons_half_2);	//LUIZSOUND
 	}
 	
 	

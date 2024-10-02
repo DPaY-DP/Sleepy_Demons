@@ -7,7 +7,11 @@ if (mouse_on_me())
 	if (held) 
 	{
 		image_index = 2;
-		if (mouse_check_button_released(mb_left)) func();
+		if (mouse_check_button_released(mb_left)) 
+		{
+			func();
+			audio_play_sound(snd_button,1,false)
+		}
 	}
 	
 	if (!mouse_check_button(mb_left)) held = false;

@@ -12,6 +12,7 @@ else turnedOn = 0;
 if (turnedOn) 
 {
 	image_index = 1;
+	audio_play_sound(snd_button,1,false)
 	obj_managerMinigame.switchesActivated++;
 }
 	

@@ -28,7 +28,11 @@ draw_menu_button = function(_string, _size, _function, _active = true)
 	if (mouse_in_area_gui(_x - _textwidth, _y - _textheight, _textwidth, _textheight))
 	{
 		_color = c_grey;
-		if (mouse_check_button_pressed(mb_left)) _function();
+		if (mouse_check_button_pressed(mb_left)) 
+		{
+			_function();
+			audio_play_sound(snd_button,1,false)
+		}
 	}
 
 	draw_text_simple(_x, _y, _string, { color : _color, valign : fa_bottom, halign : fa_right, font : _font, size : _fontsize });

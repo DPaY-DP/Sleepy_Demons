@@ -12,8 +12,8 @@
   "duration":1.300317,
   "name":"snd_demonSpeaks1",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Implemented",
+    "path":"folders/Sounds/Implemented.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

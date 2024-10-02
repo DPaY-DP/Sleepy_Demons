@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_doorway",
-    "path":"sprites/spr_doorway/spr_doorway.yy",
+    "name":"floor_stone",
+    "path":"sprites/floor_stone/floor_stone.yy",
   },
   "spriteMaskId":null,
   "visible":true,

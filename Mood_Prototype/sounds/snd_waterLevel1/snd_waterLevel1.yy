@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"steppos_demons_muffled_2",
+  "%Name":"snd_waterLevel1",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.755986,
-  "name":"steppos_demons_muffled_2",
+  "duration":1.645714,
+  "name":"snd_waterLevel1",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"steppos_demons_muffled_2.wav",
+  "soundFile":"snd_waterLevel1.mp3",
   "type":0,
   "volume":1.0,
 }

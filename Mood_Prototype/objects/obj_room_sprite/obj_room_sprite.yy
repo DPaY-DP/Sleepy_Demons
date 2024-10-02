@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ground",
-    "path":"sprites/spr_ground/spr_ground.yy",
+    "name":"floor_wood",
+    "path":"sprites/floor_wood/floor_wood.yy",
   },
   "spriteMaskId":null,
   "visible":true,

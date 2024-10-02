@@ -12,8 +12,8 @@
   "duration":1.034921,
   "name":"snd_laughE2Deep",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Implemented",
+    "path":"folders/Sounds/Implemented.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

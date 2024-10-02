@@ -180,7 +180,7 @@ stateActive.run = function()
 	{
 		animateMovement = true;
 		image_speed = 1;
-		if(!audio_is_playing(steppos))	audio_play_sound(steppos,1,false)
+		if(!audio_is_playing(steppos_half))	audio_play_sound(steppos_half,1,false)
 	}
 	else 
 	{

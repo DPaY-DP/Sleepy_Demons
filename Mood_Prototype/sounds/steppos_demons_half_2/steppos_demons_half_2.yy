@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"steppos_demons",
+  "%Name":"steppos_demons_half_2",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.789932,
-  "name":"steppos_demons",
+  "duration":0.376961,
+  "name":"steppos_demons_half_2",
   "parent":{
     "name":"Implemented",
     "path":"folders/Sounds/Implemented.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"steppos_demons.wav",
+  "soundFile":"steppos_demons_half_2.wav",
   "type":0,
   "volume":1.0,
 }

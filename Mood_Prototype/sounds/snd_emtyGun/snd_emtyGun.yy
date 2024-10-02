@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"steppos_flooded_3",
+  "%Name":"snd_emtyGun",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":1.738095,
-  "name":"steppos_flooded_3",
+  "duration":0.39185,
+  "name":"snd_emtyGun",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"steppos_flooded_3.wav",
+  "soundFile":"snd_emtyGun.mp3",
   "type":0,
   "volume":1.0,
 }

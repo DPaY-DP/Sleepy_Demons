@@ -12,8 +12,8 @@
   "duration":1.602177,
   "name":"snd_demonSpeak2Deeper",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Implemented",
+    "path":"folders/Sounds/Implemented.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

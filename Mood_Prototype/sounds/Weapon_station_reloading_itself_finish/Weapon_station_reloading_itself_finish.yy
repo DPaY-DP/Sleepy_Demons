@@ -12,8 +12,8 @@
   "duration":0.569524,
   "name":"Weapon_station_reloading_itself_finish",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Implemented",
+    "path":"folders/Sounds/Implemented.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

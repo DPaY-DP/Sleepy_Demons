@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ground",
-    "path":"sprites/spr_ground/spr_ground.yy",
+    "name":"floor_wood_color_variant",
+    "path":"sprites/floor_wood_color_variant/floor_wood_color_variant.yy",
   },
   "spriteMaskId":null,
   "visible":true,
