@@ -12,8 +12,8 @@
   "duration":0.412708,
   "name":"snd_prowler2",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Implemented",
+    "path":"folders/Sounds/Implemented.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

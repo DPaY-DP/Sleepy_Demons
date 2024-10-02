@@ -12,8 +12,8 @@
   "duration":0.417959,
   "name":"snd_punch",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Implemented",
+    "path":"folders/Sounds/Implemented.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

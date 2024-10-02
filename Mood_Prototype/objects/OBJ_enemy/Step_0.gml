@@ -22,7 +22,6 @@ if (caught)
 	y = caught.y;
 }
 
-
 //DEBUG
 ////show_debug_message($"inRoom: {inRoom}");
 //if (inRoom == noone) show_message("HEY BOZO inRoom == noone!!!");

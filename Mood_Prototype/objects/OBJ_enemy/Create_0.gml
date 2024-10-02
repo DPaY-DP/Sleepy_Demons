@@ -30,6 +30,8 @@ lastPoint = undefined;
 timerUnstuck = 0;
 
 hitCombo = { burstId : undefined, hits : 0 };
+
+sleepSounds = [sleepy_demon_1_1,sleepy_demon_3_2,sleepy_demon_enno,sleepy_demon_eve]; //LUIZSLEEP Array for sleep sounds
 #endregion
 
 
@@ -72,7 +74,11 @@ movement_and_navigation = function(_xTo, _yTo)
 	if (hvel != 0) || (vvel != 0) 
 	{
 		var _movedir = point_direction(0, 0, hvel, vvel);
-		
+		if(!audio_is_playing(steppos_demons))
+		{
+			audio_play_sound(steppos_demons,1,false);		//LUIZSOUND
+		}
+
 		if (abs(_goaldir - _movedir) > 180)
 		{
 			if (_goaldir > _movedir) _goaldir -= 360;
@@ -104,6 +110,7 @@ movement_and_navigation = function(_xTo, _yTo)
 	{
 		_dir = _goaldir;
 		drawArrow = false;
+		audio_stop_sound(steppos_demons);	//LUIZSOUND
 	}
 	
 	
@@ -809,6 +816,7 @@ stateExecute.stop = function()
 stateSleep = new State("Sleep");
 stateSleep.start = function()
 {
+	audio_play_sound(array_get(sleepSounds, random_range(0,array_length(sleepSounds))),1,false);
 	instance_create_depth(x, y, depth, obj_enemySleeping, { sprite_index : asset_get_index("spr_" + name + "Sleep") } );
 	
 	instance_destroy(myHitbox);

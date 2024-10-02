@@ -12,8 +12,8 @@
   "duration":1.056531,
   "name":"snd_acidExplosionFull",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Implemented",
+    "path":"folders/Sounds/Implemented.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

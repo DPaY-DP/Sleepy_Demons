@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_foundTeddySecret",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.986485,
+  "name":"snd_foundTeddySecret",
+  "parent":{
+    "name":"Implemented",
+    "path":"folders/Sounds/Implemented.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_foundTeddySecret.wav",
+  "type":0,
+  "volume":1.0,
+}

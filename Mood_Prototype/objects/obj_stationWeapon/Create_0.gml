@@ -9,5 +9,5 @@ timerReuse = intervalReuse;
 
 rangeCollect = 16;
 
-
+stationReloadDone = false;
 //idea: print additional mags, for increasingly more time cost

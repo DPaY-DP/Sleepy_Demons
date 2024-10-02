@@ -180,10 +180,12 @@ stateActive.run = function()
 	{
 		animateMovement = true;
 		image_speed = 1;
+		if(!audio_is_playing(steppos))	audio_play_sound(steppos,1,false)
 	}
 	else 
 	{
 		animateMovement = false;
+		audio_stop_sound(steppos)
 	}
 
 	////collision

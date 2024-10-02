@@ -6,4 +6,6 @@
 	instance_activate_layer("Enemies_1");
 	instance_activate_layer("Doors_Sprites");
 	show_debug_message("drückeberger");
+	audio_play_sound(snd_foundTeddySecret,1,false,.5)
 	instance_destroy();
+

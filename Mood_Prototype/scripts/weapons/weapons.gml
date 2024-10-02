@@ -218,7 +218,7 @@ weaponData = [
 		projectile : obj_projectileBlunder,
 		sound : 
 		{
-			fire : snd_acidExplosion,
+			fire : Shotgun_2,
 			delay : false,
 			volume : 1,
 		},

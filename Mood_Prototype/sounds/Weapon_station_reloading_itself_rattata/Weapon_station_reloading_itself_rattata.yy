@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"Weapon_station_reloading_itself_rattata",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.491791,
+  "name":"Weapon_station_reloading_itself_rattata",
+  "parent":{
+    "name":"Implemented",
+    "path":"folders/Sounds/Implemented.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"Weapon_station_reloading_itself_rattata.wav",
+  "type":0,
+  "volume":1.0,
+}
