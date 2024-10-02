@@ -166,7 +166,11 @@ stateWin.start = function()
 {
 	with (OBJ_agents) switch_state(stateLock);
 	
-	if (currentLevel < array_length(global.save.levels) - 1) global.save.levels[currentLevel + 1].unlocked = true;
+	if (currentLevel < array_length(global.save.levels) - 1) 
+	{
+		global.save.levels[currentLevel + 1].unlocked = true;
+		obj_data.write_save();
+	}
 }
 stateWin.run = function()
 {
