@@ -1,84 +1,28 @@
-sprite_index = spr_pablo;
+//unique values
+name = "pablo";
+
+accDefault = 0.74;
+accSlowed = 0.35;
+velMaxWalkDefault = 8;
+velMaxWalkSlowed = 3;
+velMaxPhys = 60;
+
+acc = accDefault;
+velMaxWalk = velMaxWalkDefault;
+fric = 0.9;
+
+hpMax = infinity;
+
+hp = hpMax;
+hpLast = hpMax;
+
+envDamage = 0.2;
+
+rangeExecute = 120;
+rangePlayerFlee = 120;
+
+intervalCackle = 300;
+intervalRecoverFlee = 120;
+intervalRecoverExecute = 300;
 
 event_inherited();
-
-hpMax = 1000000;
-hp = hpMax;
-
-walk = function(_dist)
-{
-	//show_debug_message($"\n		walking navmesh: {navmesh}")
-	
-	var _xNav = pointRandom.x;
-	var _yNav = pointRandom.y;
-	
-	var _positions = movement_and_navigation(_xNav, _yNav);
-	
-	var _xDist = _positions[3] - _positions[1];
-	var _yDist = _positions[2] - _positions[0];
-	
-	var _iterations = 5;
-	var _xIterate = _xDist / _iterations;
-	var _yIterate = _xDist / _iterations;
-	
-	for (var i = 0; i < _iterations; i++)
-	{
-		if (point_distance(x - _xIterate * i, y - _yIterate * i, _xNav, _yNav) < _dist) 
-		{
-			return false
-		}
-	}
-	
-	timerUnstuck++;
-	if (timerUnstuck >= intervalUnstuck)
-	{
-		timerUnstuck = 0;
-		if (point_distance(x, y, xLast, yLast) < distanceUnstuck)
-		{
-			iterationsUnstuck++;
-			if (iterationsUnstuck > 2)
-			{
-				if (lastPoint != undefined)
-				{
-					array_insert(navmesh, 0, lastPoint);
-					
-					iterationsUnstuck = 0;
-					xLast = x;
-					yLast = y;
-					
-					//lastPoint = undefined;
-					if (global.debugmode) show_message($"Pablo {id} in room {inRoom.number}\nNavigating back to previous waypoint:\n{lastPoint}");
-				}
-				else 
-				{
-					iterationsUnstuck = 0;
-					xLast = x;
-					yLast = y;
-					if (global.debugmode) show_message($"Pablo {id} in room {inRoom.number}\ntrying to navigate to a fallback point that is not defined");
-				}
-			}
-		}
-		else
-		{
-			xLast = x;
-			yLast = y;
-			
-			iterationsUnstuck = 0;
-		}
-	}
-	
-	return true
-}
-
-stateWalk = new State("Walk");
-stateWalk.start = function()
-{
-	pointRandom = array_choose(inRoom.points);
-}
-stateWalk.run = function()
-{
-	if (!walk(distanceWaypoint)) initialize_state(stateWalk);
-}
-stateWalk.stop = function()
-{
-}

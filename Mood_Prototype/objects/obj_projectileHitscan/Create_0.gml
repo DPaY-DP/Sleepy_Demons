@@ -19,13 +19,13 @@ punch = 120;
 check_collision = function()
 {			
 	hits = ds_list_create();
-	instance_place_list(x, y, OBJ_enemy, hits, true);
+	instance_place_list(x, y, obj_enemyHitbox, hits, true);
 	hits = list_to_array(hits);
 					
 	var _lengthHits = array_length(hits);					
 	for (var i = 0; i < _lengthHits; i++)
 	{
-		var _id = hits[i];
+		var _id = hits[i].owner;
 
 		if (_id.hp == 0) exit;
 

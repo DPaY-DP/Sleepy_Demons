@@ -47,6 +47,8 @@ switch (game)
 								with (enemy) switch_state(stateSleep);
 							}
 						}
+						
+						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Stop at center", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
 	break;
 	
 	case "squarehole":	if (formsLeft <= 0) && (!instance_exists(obj_form))
@@ -56,6 +58,8 @@ switch (game)
 							
 							with (enemy) switch_state(stateSleep);
 						}
+						
+						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "White to Gray", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
 	break;
 	
 	case "tuck":		if (babySleep)
@@ -67,6 +71,8 @@ switch (game)
 							
 							with (enemy) switch_state(stateSleep);
 						}
+						
+						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Tuck In", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
 	break;
 	
 	case "lightswitch":	if (switchesActivated == totalSwitches)
@@ -76,5 +82,7 @@ switch (game)
 							
 							with (enemy) switch_state(stateSleep);
 						}
+						
+						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Press Red", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
 	break;
 }

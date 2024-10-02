@@ -9,4 +9,3 @@ if  (mouse_on_me_center_gui()) &&
 	turnedOn = true;
 }
 
-draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Press Red", { size : 0.7, color : c_white, font : font_menu });

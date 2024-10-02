@@ -35,8 +35,8 @@ if (_dist < 16) && (!used)
 		}
 		else 
 		{
-				obj_weapon.restock_ammo(image_index);
-				audio_play_sound(weapon_station_give_weapon,1,false) //LUIZSOUND
+			obj_weapon.restock_ammo(image_index);
+			audio_play_sound(weapon_station_give_weapon,1,false)	//LUIZSOUND
 		}
 		used = true;
 		

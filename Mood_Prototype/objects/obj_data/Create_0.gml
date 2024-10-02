@@ -96,7 +96,7 @@ defaults =
 		},
 		{
 			room : room_tutorial_melee,
-			name : "Melee",
+			name : "Pillow Fight",
 			unlocked : false,
 		},
 		{
@@ -106,7 +106,7 @@ defaults =
 		},
 		{
 			room : room_tutorial_gun_trigger,
-			name : "Trigger",
+			name : "Peak-a-Bear",
 			unlocked : false,
 		},
 		{
@@ -116,22 +116,22 @@ defaults =
 		},
 		{
 			room : room_tutorial_big_room_with_env,
-			name : "Big Room + Env",
+			name : "Under Pressure",
 			unlocked : false,
 		},
 		{
 			room : room_tutorial_tunnel,
-			name : "Tunnel",
+			name : "Tunnel Vision",
 			unlocked : false,
 		},
 		{
 			room : room_combined_easy,
-			name : "[NONAME!!!!]",
+			name : "Chaos Unfolds",
 			unlocked : false,
 		},
 		{
 			room : room_combined_middle,
-			name : "[NONAME!!!!]",
+			name : "Dead Ends",
 			unlocked : false,
 		},
 	],

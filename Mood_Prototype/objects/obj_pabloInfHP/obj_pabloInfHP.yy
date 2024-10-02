@@ -3,7 +3,6 @@
   "%Name":"obj_pabloInfHP",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_pabloInfHP",
@@ -13,8 +12,8 @@
     "path":"folders/Objects/Enemies.yy",
   },
   "parentObjectId":{
-    "name":"obj_pablo",
-    "path":"objects/obj_pablo/obj_pablo.yy",
+    "name":"OBJ_enemy",
+    "path":"objects/OBJ_enemy/OBJ_enemy.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -247,33 +247,39 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 		var _forsafe = 0;
 		var _lengthRoutes = array_length(_routes);
 		
-		//show_debug_message($"\nall routes:											{_routes}")
-		//for (var dbg = 0; dbg < _lengthRoutes; dbg++)
-		//{
-		//	//show_debug_message($"	{_routes[dbg]}; room #{array_last(_routes[dbg]).number}")
-		//}
-		
 		for (var i = 0; i < _lengthRoutes; i++)
 		{
+			show_debug_message(_routes)
+			
 			//get current route; current room and doors
 			var _currentRoute = _routes[i];
 				show_debug_message($"\nloop {i}, currentRoute: {_currentRoute}");
 			var _currentRoom = array_pop(_currentRoute);
 				show_debug_message($"currentRoom: {_currentRoom.number}");
 			
+				//is checked room target room?
 			if (_currentRoom == _idTargetRoom)
 			{
-					show_debug_message("Found it!");
 				return _currentRoute
 			}
 			
+				//if not
+				//get doors of current room
 			var _currentDoors = _currentRoom.doors;
-				show_debug_message($"currentDoors: {_currentDoors}");
+			
+				var _debugCurrentDoors = [];
+				var _lengthDoorsCurrentRoom = array_length(_currentDoors);
+				for (var l = 0; l < _lengthDoorsCurrentRoom; l++)
+				{
+					array_push(_debugCurrentDoors, _currentDoors[l].toRoom.number);
+				}
+				show_debug_message($"currentDoors: {_debugCurrentDoors}");
 			
 			_checked[_currentRoom.number] = true;
 			
 			var _deadEnd = true;
 			var _modifyRoute = true;
+			
 			//iterate through connected rooms of current route room
 			var _lengthDoorsCurrentRoom = array_length(_currentDoors);
 			for (var l = 0; l < _lengthDoorsCurrentRoom; l++)
@@ -299,9 +305,9 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 				if (_modifyRoute) 
 				{
 					_routes[i] = _copyRoute;
-					_modifyRoute = true;
+					_modifyRoute = false;
 					
-						show_debug_message($"		Appended Route: {_copyRoute}")
+						show_debug_message($"		Appended Route: {_copyRoute} to room {array_last(_copyRoute).number}")
 				}
 				else 
 				{
@@ -312,7 +318,7 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 				if (_idToRoom == _idTargetRoom)
 				{
 					array_pop(_routes[i]);
-					return _routes[i]
+					return _routes[i];
 				}
 				
 				_deadEnd = false;
