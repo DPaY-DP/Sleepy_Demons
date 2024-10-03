@@ -95,7 +95,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.2.162",
+    "IDEVersion":"2024.8.1.171",
   },
   "name":"Mood_Prototype",
   "resources":[
@@ -151,6 +151,7 @@
     {"id":{"name":"obj_enemyHitbox","path":"objects/obj_enemyHitbox/obj_enemyHitbox.yy",},},
     {"id":{"name":"obj_enemySleeping","path":"objects/obj_enemySleeping/obj_enemySleeping.yy",},},
     {"id":{"name":"obj_env","path":"objects/obj_env/obj_env.yy",},},
+    {"id":{"name":"obj_envDebug","path":"objects/obj_envDebug/obj_envDebug.yy",},},
     {"id":{"name":"obj_envFiringRange","path":"objects/obj_envFiringRange/obj_envFiringRange.yy",},},
     {"id":{"name":"obj_form","path":"objects/obj_form/obj_form.yy",},},
     {"id":{"name":"obj_gameboard","path":"objects/obj_gameboard/obj_gameboard.yy",},},
@@ -419,6 +420,7 @@
     {"id":{"name":"spr_envBar","path":"sprites/spr_envBar/spr_envBar.yy",},},
     {"id":{"name":"spr_envLine","path":"sprites/spr_envLine/spr_envLine.yy",},},
     {"id":{"name":"spr_envOverlay","path":"sprites/spr_envOverlay/spr_envOverlay.yy",},},
+    {"id":{"name":"spr_envToilet","path":"sprites/spr_envToilet/spr_envToilet.yy",},},
     {"id":{"name":"spr_excecute_UI","path":"sprites/spr_excecute_UI/spr_excecute_UI.yy",},},
     {"id":{"name":"spr_fridge_i1","path":"sprites/spr_fridge_i1/spr_fridge_i1.yy",},},
     {"id":{"name":"spr_gameboard","path":"sprites/spr_gameboard/spr_gameboard.yy",},},

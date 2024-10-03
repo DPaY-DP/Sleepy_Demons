@@ -9,7 +9,7 @@ inRoom = instance_place(x, y, obj_room);
 hpMax = 100;
 stageMax = 2;
 
-image_index = stageMax;
+image_index = image_number - 1;
 
 distInteract = 200;
 
@@ -39,7 +39,7 @@ if (array_length(pointsSabo) < membersMax)
 		_repeats++;
 	}
 	until (array_length(pointsSabo) == membersMax)
-	show_message($"obj_env in room {inRoom.number} could not find enough sabo points to match membersMax variable, added {_repeats} repeats.")
+	//show_message($"obj_env in room {inRoom.number} could not find enough sabo points to match membersMax variable, added {_repeats} repeats.")
 }
 #endregion
 

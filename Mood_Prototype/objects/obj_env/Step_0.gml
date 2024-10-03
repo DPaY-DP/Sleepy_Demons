@@ -1,3 +1,4 @@
+//healing and preventing damage
 var _applyDamage = true;
 if	(hp < hpMax) && 
 	(point_distance(x, y, obj_player.x, obj_player.y) < distInteract) &&
@@ -10,15 +11,11 @@ if	(hp < hpMax) &&
 	}
 }
 
+//applying damage
 if (_applyDamage) global.envHP -= hpDrain;
 
+//sabotaging
 var _numberSaboteurs = 0;
-
-		//CRASH:
-		//_member was read from array, even though member no longer existed in the game world
-		//implying that when the demon got deleted, it did not correctly get removed from the
-		//members array
-
 var _length = array_length(members);
 for (var i = 0; i < _length; i++)
 {
@@ -40,6 +37,7 @@ for (var i = 0; i < _length; i++)
 	hp -= _member.envDamage;
 }
 
+//change stage
 if (hp >= hpMax)
 {
 	if (stage < stageMax)

@@ -8,7 +8,12 @@ var _yDraw = y + sprite_height / 2 - _factor * sprite_height;
 var _width = sprite_width;
 var _height = _factor * sprite_height / 2;
 
-draw_sprite_part_ext(spr_env, stage + 1, 0, 0, _width, _height, _xDraw, _yDraw, 2, 2, c_white, 1);
+var _maxImage = image_number - 1;
+var _image = ((_factor / 3) + stage * (1/3)) * _maxImage;
+
+image_index = _image;
+
+//draw_sprite_part_ext(spr_envObject, stage + 1, 0, 0, _width, _height, _xDraw, _yDraw, 2, 2, c_white, 1);
 
 if	(hp < hpMax) && 
 	(point_distance(x, y, obj_player.x, obj_player.y) < distInteract) &&
@@ -20,9 +25,6 @@ if	(hp < hpMax) &&
 //DEBUG
 if (global.debugmode)
 {
-	//draw_debug(stage, 0, 0, 0.25);
-	//draw_debug(hp, 0, 32, 0.25);
-	
 	var _length = array_length(pointsSabo);
 	for (var i = 0; i < _length; i++)
 	{

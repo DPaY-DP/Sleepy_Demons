@@ -69,7 +69,7 @@ if (_numberWeapons > 0)
 				if (ammo > 0)
 				{
 					other.fire = true;
-					if (sound.delay) audio_play_sound_at(sound.delay, x, y, 0, 100, 150, 1, 0, 0, sound.volume);
+					if (sound.delay) audio_play_sound_at(sound.delay, other.x, other.y, 0, 100, 150, 1, 0, 0, sound.volume);
 				}
 			}
 		}
