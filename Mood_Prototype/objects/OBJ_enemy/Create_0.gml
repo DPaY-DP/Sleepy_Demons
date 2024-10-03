@@ -33,7 +33,7 @@ hitCombo = { burstId : undefined, hits : 0 };
 
 sleepSounds = [sleepy_demon_1_1,sleepy_demon_3_2,sleepy_demon_enno,sleepy_demon_eve]; //LUIZSOUND Array for sleep sounds
 idleSounds = [where_my_teddy,snd_demonSpeaks1,snd_demonSpeak2Deeper,snd_laughD1,snd_laughD2,snd_laughD3,snd_laughE1,snd_laughE2Deep,snd_laughE3]; //LUIZSOUND Array for idle Chatter
-idleTimer = random_range(3*room_speed,30*room_speed);
+idleTimer = random_range(10*room_speed,30*room_speed);
 #endregion
 
 

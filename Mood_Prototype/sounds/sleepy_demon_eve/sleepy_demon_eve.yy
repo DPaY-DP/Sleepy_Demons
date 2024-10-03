@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"sleepy_demon_eve.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.3,
 }
