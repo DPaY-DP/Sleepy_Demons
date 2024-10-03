@@ -95,7 +95,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.2.162",
+    "IDEVersion":"2024.8.1.171",
   },
   "name":"Mood_Prototype",
   "resources":[
@@ -120,6 +120,7 @@
     {"id":{"name":"credit_BackgroundV","path":"objects/credit_BackgroundV/credit_BackgroundV.yy",},},
     {"id":{"name":"OBJ_agents","path":"objects/OBJ_agents/OBJ_agents.yy",},},
     {"id":{"name":"obj_ak","path":"objects/obj_ak/obj_ak.yy",},},
+    {"id":{"name":"obj_audioMaster","path":"objects/obj_audioMaster/obj_audioMaster.yy",},},
     {"id":{"name":"OBJ_backgroundParent","path":"objects/OBJ_backgroundParent/OBJ_backgroundParent.yy",},},
     {"id":{"name":"obj_bed","path":"objects/obj_bed/obj_bed.yy",},},
     {"id":{"name":"obj_bhop","path":"objects/obj_bhop/obj_bhop.yy",},},

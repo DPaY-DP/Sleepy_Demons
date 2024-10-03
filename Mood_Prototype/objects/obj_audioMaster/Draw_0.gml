@@ -1,0 +1,1 @@
+//draw_sprite_simple(spr_bush, 0, camX + camWidth / 2, camY + camHeight / 2)

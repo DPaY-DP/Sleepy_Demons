@@ -40,7 +40,7 @@ if (_numberWeapons > 0)
 					if (timerBurst > 0) timerBurst--;
 					else
 					{
-						if (sound.fire) audio_play_sound(sound.fire, 0, 0, sound.volume);
+						if (sound.fire) audio_play_sound_at(sound.fire, other.x, other.y, 0, 100, 150, 1, 0, 0, sound.volume);
 						repeat (blast) instance_create_depth(other.x, other.y, other.depth + 1, projectile, { image_angle : other.image_angle + random_range(-blastDeviance, blastDeviance), yBarrel : yBarrel, xBarrel : xBarrel });
 						
 						obj_player.hvel -= lengthdir_x(_weapon.recoil, other.image_angle);
@@ -69,7 +69,7 @@ if (_numberWeapons > 0)
 				if (ammo > 0)
 				{
 					other.fire = true;
-					if (sound.delay) audio_play_sound(sound.delay, 0, 0, sound.volume);
+					if (sound.delay) audio_play_sound_at(sound.delay, x, y, 0, 100, 150, 1, 0, 0, sound.volume);
 				}
 			}
 		}

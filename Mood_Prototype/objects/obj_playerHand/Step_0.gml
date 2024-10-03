@@ -6,7 +6,7 @@ timerCooldown--;
 if (!instance_exists(obj_managerMinigame)) && (obj_player.state.name != "Lock")
 if (keyMelee) && (timerCooldown <= 0)
 {
-	audio_play_sound(snd_punch2, 0, 0);
+	audio_play_sound_at(snd_punch2, x, y, 0, 100, 150, 1, 0, 0);
 	
 	image_alpha = 1;
 	

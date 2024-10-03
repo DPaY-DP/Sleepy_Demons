@@ -19,7 +19,7 @@ audioExplosion = undefined;
 
 explode = function()
 {	
-	audioExplosion = audio_play_sound(snd_acidExplosion, 0, 0);
+	audioExplosion = audio_play_sound_at(snd_acidExplosion, x, y, 0, 100, 150, 1, 0, 0);
 	
 	image_alpha = 0;
 	spd = 0;

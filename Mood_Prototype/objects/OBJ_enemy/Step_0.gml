@@ -24,7 +24,7 @@ if (caught)
 
 if(idleTimer <= 0)
 {
-	audio_play_sound(array_get(idleSounds,random_range(0,array_length(idleSounds))),1,false,.3); //LUIZSOUND
+	audio_play_sound_at(array_get(idleSounds,random_range(0,array_length(idleSounds))), x, y, 0, 100, 150, 1, 0, false, .3); //LUIZSOUND
 	idleTimer = random_range(3*room_speed,30*room_speed)
 }
 else idleTimer--;

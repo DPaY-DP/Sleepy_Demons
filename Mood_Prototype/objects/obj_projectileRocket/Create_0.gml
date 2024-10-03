@@ -36,7 +36,7 @@ active = true;
 
 explode = function()
 {	
-	audio_play_sound(snd_rocketExplode, 0, 0);
+	audio_play_sound_at(snd_rocketExplode, x, y, 0, 100, 150, 1, 0, 0);
 	
 	image_alpha = 0;
 	spd = 0;

@@ -21,7 +21,7 @@ if(timerReuse == 1)
 {
 	show_debug_message("STATION RELOADED UWU")
 	audio_stop_sound(Weapon_station_reloading_itself_rattata);
-	audio_play_sound(Weapon_station_reloading_itself_finish,1,false);	//LUIZSOUND Trying to create a way to only play the sound when station is done reloading
+	audio_play_sound_at(Weapon_station_reloading_itself_finish, x, y, 0, 100, 150, 1, 0, false);	//LUIZSOUND Trying to create a way to only play the sound when station is done reloading
 }
 
 if (_dist < 16) && (!used)
@@ -33,12 +33,12 @@ if (_dist < 16) && (!used)
 		{
 			obj_weapon.pickup_gun(image_index);
 			collected = true;
-			audio_play_sound(weapon_station_give_weapon,1,false)	//LUIZSOUND
+			audio_play_sound_at(weapon_station_give_weapon, x, y, 0, 100, 150, 1, 0, false)	//LUIZSOUND
 		}
 		else 
 		{
 			obj_weapon.restock_ammo(image_index);
-			audio_play_sound(weapon_station_give_weapon,1,false)	//LUIZSOUND
+			audio_play_sound_at(weapon_station_give_weapon, x, y, 0, 100, 150, 1, 0, false)	//LUIZSOUND
 		}
 		used = true;
 		
@@ -51,5 +51,5 @@ else image_blend = c_white;
 
 while(used=true && !audio_is_playing(Weapon_station_reloading_itself_rattata) && !audio_is_playing(weapon_station_give_weapon)) 
 {
-	audio_play_sound(Weapon_station_reloading_itself_rattata,1,false)	//LUIZSOUND plays the charging sound while it is charging
+	audio_play_sound_at(Weapon_station_reloading_itself_rattata, x, y, 0, 100, 150, 1, 0, false)	//LUIZSOUND plays the charging sound while it is charging
 }
