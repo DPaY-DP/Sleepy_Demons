@@ -8,7 +8,6 @@
   "instanceCreationOrder":[
     {"name":"inst_428B14B7_7_1","path":"rooms/room_combined_middle/room_combined_middle.yy",},
     {"name":"inst_585D9300_8_1","path":"rooms/room_combined_middle/room_combined_middle.yy",},
-    {"name":"inst_7693AC56_5_1","path":"rooms/room_combined_middle/room_combined_middle.yy",},
     {"name":"inst_1C3DBFC9_6_1","path":"rooms/room_combined_middle/room_combined_middle.yy",},
     {"name":"inst_64F484E6_6_1","path":"rooms/room_combined_middle/room_combined_middle.yy",},
     {"name":"inst_98E5168_1","path":"rooms/room_combined_middle/room_combined_middle.yy",},
@@ -33,7 +32,6 @@
     {"name":"inst_6BB0A96_1","path":"rooms/room_combined_middle/room_combined_middle.yy",},
     {"name":"inst_631AFF4F_1","path":"rooms/room_combined_middle/room_combined_middle.yy",},
     {"name":"inst_75F42D3_1","path":"rooms/room_combined_middle/room_combined_middle.yy",},
-    {"name":"inst_40E03329_1","path":"rooms/room_combined_middle/room_combined_middle.yy",},
     {"name":"inst_4B846D1B_1","path":"rooms/room_combined_middle/room_combined_middle.yy",},
     {"name":"inst_D1F5A7D_1","path":"rooms/room_combined_middle/room_combined_middle.yy",},
     {"name":"inst_1AE15109_1","path":"rooms/room_combined_middle/room_combined_middle.yy",},
@@ -450,6 +448,9 @@
     {"name":"inst_15B03419","path":"rooms/room_combined_middle/room_combined_middle.yy",},
     {"name":"inst_7E340411","path":"rooms/room_combined_middle/room_combined_middle.yy",},
     {"name":"inst_ACD5D1B","path":"rooms/room_combined_middle/room_combined_middle.yy",},
+    {"name":"inst_6770326B","path":"rooms/room_combined_middle/room_combined_middle.yy",},
+    {"name":"inst_248FF6F7","path":"rooms/room_combined_middle/room_combined_middle.yy",},
+    {"name":"inst_54A2C6CC","path":"rooms/room_combined_middle/room_combined_middle.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -492,6 +493,7 @@
     {"$GMRInstanceLayer":"","%Name":"Player","depth":400,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_585D9300_8_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_585D9300_8_1","objectId":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":544.0,"y":1088.0,},
         {"$GMRInstance":"v1","%Name":"inst_64F484E6_6_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_64F484E6_6_1","objectId":{"name":"obj_camera","path":"objects/obj_camera/obj_camera.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":0.0,},
+        {"$GMRInstance":"v1","%Name":"inst_6770326B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6770326B","objectId":{"name":"obj_gunPickup","path":"objects/obj_gunPickup/obj_gunPickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":544.0,"y":1088.0,},
       ],"layers":[],"name":"Player","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Enemies","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_782630E3_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_782630E3_1","objectId":{"name":"obj_zebediah","path":"objects/obj_zebediah/obj_zebediah.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":965.0,"y":1109.0,},
@@ -509,8 +511,8 @@
         {"$GMRInstance":"v1","%Name":"inst_7D7AD77A_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7D7AD77A_1","objectId":{"name":"obj_zebediah","path":"objects/obj_zebediah/obj_zebediah.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1152.0,"y":640.0,},
       ],"layers":[],"name":"Enemies","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Weapons","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v1","%Name":"inst_7693AC56_5_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":3,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7693AC56_5_1","objectId":{"name":"obj_gunPickup","path":"objects/obj_gunPickup/obj_gunPickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":768.0,"y":1088.0,},
-        {"$GMRInstance":"v1","%Name":"inst_40E03329_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":5,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_40E03329_1","objectId":{"name":"obj_gunPickup","path":"objects/obj_gunPickup/obj_gunPickup.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":975.0,"y":1390.0,},
+        {"$GMRInstance":"v1","%Name":"inst_248FF6F7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":3,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_248FF6F7","objectId":{"name":"obj_stationWeapon","path":"objects/obj_stationWeapon/obj_stationWeapon.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":768.0,"y":1088.0,},
+        {"$GMRInstance":"v1","%Name":"inst_54A2C6CC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":5,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_54A2C6CC","objectId":{"name":"obj_stationWeapon","path":"objects/obj_stationWeapon/obj_stationWeapon.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":960.0,"y":1408.0,},
       ],"layers":[],"name":"Weapons","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Env","depth":700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_7D87912B_1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7D87912B_1","objectId":{"name":"obj_env","path":"objects/obj_env/obj_env.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":704.0,"y":480.0,},
