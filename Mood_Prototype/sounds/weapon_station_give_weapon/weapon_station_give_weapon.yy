@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"weapon_station_give_weapon.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.5,
 }

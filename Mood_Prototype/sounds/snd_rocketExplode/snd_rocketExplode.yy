@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_rocketExplode.wav",
   "type":0,
-  "volume":0.29,
+  "volume":0.6,
 }
