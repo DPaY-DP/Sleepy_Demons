@@ -96,6 +96,7 @@
     {"name":"credit_BackgroundV","order":9,"path":"objects/credit_BackgroundV/credit_BackgroundV.yy",},
     {"name":"OBJ_agents","order":4,"path":"objects/OBJ_agents/OBJ_agents.yy",},
     {"name":"obj_ak","order":22,"path":"objects/obj_ak/obj_ak.yy",},
+    {"name":"obj_audioMaster","order":15,"path":"objects/obj_audioMaster/obj_audioMaster.yy",},
     {"name":"OBJ_backgroundParent","order":7,"path":"objects/OBJ_backgroundParent/OBJ_backgroundParent.yy",},
     {"name":"obj_bed","order":2,"path":"objects/obj_bed/obj_bed.yy",},
     {"name":"obj_bhop","order":6,"path":"objects/obj_bhop/obj_bhop.yy",},
