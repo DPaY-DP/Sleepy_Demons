@@ -101,7 +101,7 @@ defaults =
 		},
 		{
 			room : room_tutorial_gun,
-			name : "Gun",
+			name : "Babies First Gun",		//Alt Title: Fun Gun Run
 			unlocked : false,
 		},
 		{
@@ -111,7 +111,7 @@ defaults =
 		},
 		{
 			room : room_tutorial_big_room,
-			name : "Big Room",
+			name : "Expanding Horizons",
 			unlocked : false,
 		},
 		{
