@@ -1,5 +1,5 @@
 #region GAME SETUP
-global.version = "V0.1.1";
+global.version = "V0.1.2";
 randomize();
 window_set_cursor(cr_none)
 cursor_sprite = spr_cursor;
@@ -90,47 +90,47 @@ defaults =
 	levels :
 	[
 		{
-			room : room_tutorial_executie,
+			room : room_00Executie,
 			name : "Executie",
 			unlocked : true,
 		},
 		{
-			room : room_tutorial_melee,
+			room : room_01PillowFight,
 			name : "Pillow Fight",
 			unlocked : false,
 		},
 		{
-			room : room_tutorial_gun,
+			room : room_02BabysFirstGun,
 			name : "Babies First Gun",		//Alt Title: Fun Gun Run
 			unlocked : false,
 		},
 		{
-			room : room_tutorial_gun_trigger,
+			room : room_03PeakABear,
 			name : "Peak-a-Bear",
 			unlocked : false,
 		},
 		{
-			room : room_tutorial_big_room,
+			room : room_04ExpandingHorizons,
 			name : "Expanding Horizons",
 			unlocked : false,
 		},
 		{
-			room : room_tutorial_big_room_with_env,
+			room : room_05UnderPressure,
 			name : "Under Pressure",
 			unlocked : false,
 		},
 		{
-			room : room_tutorial_tunnel,
+			room : room_06TunnelVision,
 			name : "Tunnel Vision",
 			unlocked : false,
 		},
 		{
-			room : room_combined_easy,
+			room : room_07ChaosUnfolds,
 			name : "Chaos Unfolds",
 			unlocked : false,
 		},
 		{
-			room : room_combined_middle,
+			room : room_08DeadEnds,
 			name : "Dead Ends",
 			unlocked : false,
 		},
