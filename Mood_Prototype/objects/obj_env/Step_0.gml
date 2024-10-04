@@ -20,7 +20,7 @@ var _length = array_length(members);
 for (var i = 0; i < _length; i++)
 {
 	var _member = members[i];
-	if (instance_exists(_member.object_index))
+	if (instance_exists(_member))
 	if (_member.inSaboPosition) _numberSaboteurs++;
 	continue;
 	
