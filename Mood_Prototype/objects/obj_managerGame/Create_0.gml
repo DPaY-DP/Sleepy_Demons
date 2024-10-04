@@ -100,6 +100,7 @@ draw_hpbar = function()
 	var _width = GUIwidth * 0.02;
 
 	draw_set_color(c_green);
+	if (global.envHP > 0) draw_rectangle_color(_barX - 10, _barY + _maxHeight - _height - 10, _barX + _width + 10, _barY + _maxHeight +10,c_black ,c_black ,c_black ,c_black , false);
 	if (global.envHP > 0) draw_rectangle(_barX, _barY + _maxHeight - _height, _barX + _width, _barY + _maxHeight, false);
 	draw_set_color(c_white);
 }
