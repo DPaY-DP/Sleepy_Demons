@@ -454,6 +454,7 @@
     {"name":"inst_4F08515F","path":"rooms/room_08DeadEnds/room_08DeadEnds.yy",},
     {"name":"inst_4D1C4545","path":"rooms/room_08DeadEnds/room_08DeadEnds.yy",},
     {"name":"inst_6725FFF","path":"rooms/room_08DeadEnds/room_08DeadEnds.yy",},
+    {"name":"inst_2D703DCC","path":"rooms/room_08DeadEnds/room_08DeadEnds.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -485,6 +486,7 @@
     {"$GMRInstanceLayer":"","%Name":"Weapons","depth":500,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_248FF6F7","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":3,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_248FF6F7","objectId":{"name":"obj_stationWeapon","path":"objects/obj_stationWeapon/obj_stationWeapon.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":768.0,"y":1088.0,},
         {"$GMRInstance":"v1","%Name":"inst_54A2C6CC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":5,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_54A2C6CC","objectId":{"name":"obj_stationWeapon","path":"objects/obj_stationWeapon/obj_stationWeapon.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":960.0,"y":1408.0,},
+        {"$GMRInstance":"v1","%Name":"inst_2D703DCC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":1,"imageSpeed":0.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2D703DCC","objectId":{"name":"obj_stationWeapon","path":"objects/obj_stationWeapon/obj_stationWeapon.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1440.0,"y":576.0,},
       ],"layers":[],"name":"Weapons","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Env","depth":600,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_7D87912B_1","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7D87912B_1","objectId":{"name":"obj_env","path":"objects/obj_env/obj_env.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":2.0,"scaleY":2.0,"x":672.0,"y":512.0,},
