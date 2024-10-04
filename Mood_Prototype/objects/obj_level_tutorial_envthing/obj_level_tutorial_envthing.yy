@@ -1,11 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_level_tutorial_big_room_env",
+  "%Name":"obj_level_tutorial_envthing",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_level_tutorial_big_room_env",
+  "name":"obj_level_tutorial_envthing",
   "overriddenProperties":[],
   "parent":{
     "name":"Tutorial Messages",

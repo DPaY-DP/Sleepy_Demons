@@ -139,7 +139,7 @@
     {"name":"obj_horsemanager","order":8,"path":"objects/obj_horsemanager/obj_horsemanager.yy",},
     {"name":"obj_horseslider01","order":10,"path":"objects/obj_horseslider01/obj_horseslider01.yy",},
     {"name":"obj_horseslider02","order":11,"path":"objects/obj_horseslider02/obj_horseslider02.yy",},
-    {"name":"obj_level_tutorial_big_room_env","order":1,"path":"objects/obj_level_tutorial_big_room_env/obj_level_tutorial_big_room_env.yy",},
+    {"name":"obj_level_tutorial_envthing","order":7,"path":"objects/obj_level_tutorial_envthing/obj_level_tutorial_envthing.yy",},
     {"name":"obj_level_tutorial_gun","order":2,"path":"objects/obj_level_tutorial_gun/obj_level_tutorial_gun.yy",},
     {"name":"obj_level_tutorial_melee","order":3,"path":"objects/obj_level_tutorial_melee/obj_level_tutorial_melee.yy",},
     {"name":"obj_level_tutorial_tunnel","order":4,"path":"objects/obj_level_tutorial_tunnel/obj_level_tutorial_tunnel.yy",},
