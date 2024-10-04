@@ -1,1 +1,1 @@
-sprite_index = spr_envLittlePool;
+sprite_index = spr_envWaterDispenser;

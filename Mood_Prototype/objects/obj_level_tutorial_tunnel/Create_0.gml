@@ -11,3 +11,7 @@ draw_message = function(_num)
 		break;
 	}
 }
+
+instance_deactivate_layer("Enemies_1");
+
+instance_deactivate_layer("More_Doors");

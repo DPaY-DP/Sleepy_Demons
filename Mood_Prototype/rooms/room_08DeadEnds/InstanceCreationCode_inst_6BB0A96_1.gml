@@ -1,1 +1,1 @@
-sprite_index = spr_envWaterDispenser;
+ sprite_index = spr_envWaterDispenser;
