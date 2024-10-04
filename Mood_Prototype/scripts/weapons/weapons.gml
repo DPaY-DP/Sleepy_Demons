@@ -83,7 +83,7 @@ weaponData = [
 		recoil : 20,
 		firerate : 60,
 		
-		ammoMax: 2,
+		ammoMax: 3,
 		ammopool : infinity,
 		
 		burst : 1,
@@ -174,7 +174,7 @@ weaponData = [
 		recoil : 10,
 		firerate : 10,
 		
-		ammoMax: 5,
+		ammoMax: 7,
 		ammopool : infinity,
 		
 		burst : 1,

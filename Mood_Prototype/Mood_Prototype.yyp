@@ -37,8 +37,9 @@
     {"$GMFolder":"","%Name":"Visual Objects","folderPath":"folders/Objects/Visual Objects.yy","name":"Visual Objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Particle Systems","folderPath":"folders/Particle Systems.yy","name":"Particle Systems","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"All Levels","folderPath":"folders/Rooms/All Levels.yy","name":"All Levels","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Levels in Game","folderPath":"folders/Rooms/Levels in Game.yy","name":"Levels in Game","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Test and Debug","folderPath":"folders/Rooms/Test and Debug.yy","name":"Test and Debug","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Tutorial Levels","folderPath":"folders/Rooms/Tutorial Levels.yy","name":"Tutorial Levels","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Scripts","folderPath":"folders/Scripts.yy","name":"Scripts","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"General Functions (Outdated)","folderPath":"folders/Scripts/General Functions (Outdated).yy","name":"General Functions (Outdated)","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Animation Functions","folderPath":"folders/Scripts/General Functions (Outdated)/Animation Functions.yy","name":"Animation Functions","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -232,6 +233,8 @@
     {"id":{"name":"room_test2","path":"rooms/room_test2/room_test2.yy",},},
     {"id":{"name":"room_testTunnel","path":"rooms/room_testTunnel/room_testTunnel.yy",},},
     {"id":{"name":"room_tutorial_big_room_4","path":"rooms/room_tutorial_big_room_4/room_tutorial_big_room_4.yy",},},
+    {"id":{"name":"room_tutorial_big_room_old","path":"rooms/room_tutorial_big_room_old/room_tutorial_big_room_old.yy",},},
+    {"id":{"name":"room_tutorial_big_room_with_env_old","path":"rooms/room_tutorial_big_room_with_env_old/room_tutorial_big_room_with_env_old.yy",},},
     {"id":{"name":"room_tutorial_big_room_with_env","path":"rooms/room_tutorial_big_room_with_env/room_tutorial_big_room_with_env.yy",},},
     {"id":{"name":"room_tutorial_big_room","path":"rooms/room_tutorial_big_room/room_tutorial_big_room.yy",},},
     {"id":{"name":"room_tutorial_executie","path":"rooms/room_tutorial_executie/room_tutorial_executie.yy",},},
@@ -538,6 +541,8 @@
     {"id":{"name":"spr_window","path":"sprites/spr_window/spr_window.yy",},},
     {"id":{"name":"spr_zebediah","path":"sprites/spr_zebediah/spr_zebediah.yy",},},
     {"id":{"name":"spr_zebediahSleep","path":"sprites/spr_zebediahSleep/spr_zebediahSleep.yy",},},
+    {"id":{"name":"tunnel_middle","path":"sprites/tunnel_middle/tunnel_middle.yy",},},
+    {"id":{"name":"tunnel_side","path":"sprites/tunnel_side/tunnel_side.yy",},},
     {"id":{"name":"Tv_front","path":"sprites/Tv_front/Tv_front.yy",},},
     {"id":{"name":"Tv","path":"sprites/Tv/Tv.yy",},},
     {"id":{"name":"tileset_sprites","path":"tilesets/tileset_sprites/tileset_sprites.yy",},},
@@ -548,8 +553,8 @@
   "RoomOrderNodes":[
     {"children":[
         {"roomId":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
-        {"roomId":{"name":"room_tutorial_big_room","path":"rooms/room_tutorial_big_room/room_tutorial_big_room.yy",},},
-        {"roomId":{"name":"room_tutorial_big_room_with_env","path":"rooms/room_tutorial_big_room_with_env/room_tutorial_big_room_with_env.yy",},},
+        {"roomId":{"name":"room_tutorial_big_room_old","path":"rooms/room_tutorial_big_room_old/room_tutorial_big_room_old.yy",},},
+        {"roomId":{"name":"room_tutorial_big_room_with_env_old","path":"rooms/room_tutorial_big_room_with_env_old/room_tutorial_big_room_with_env_old.yy",},},
         {"roomId":{"name":"room_tutorial_tunnel","path":"rooms/room_tutorial_tunnel/room_tutorial_tunnel.yy",},},
       ],"groupName":"tutorial",},
     {"children":[
@@ -568,6 +573,8 @@
     {"roomId":{"name":"room_tutorial_gun","path":"rooms/room_tutorial_gun/room_tutorial_gun.yy",},},
     {"roomId":{"name":"room_tutorial_gun_trigger","path":"rooms/room_tutorial_gun_trigger/room_tutorial_gun_trigger.yy",},},
     {"roomId":{"name":"room_tutorial_big_room_4","path":"rooms/room_tutorial_big_room_4/room_tutorial_big_room_4.yy",},},
+    {"roomId":{"name":"room_tutorial_big_room","path":"rooms/room_tutorial_big_room/room_tutorial_big_room.yy",},},
+    {"roomId":{"name":"room_tutorial_big_room_with_env","path":"rooms/room_tutorial_big_room_with_env/room_tutorial_big_room_with_env.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

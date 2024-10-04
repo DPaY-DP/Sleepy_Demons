@@ -10,7 +10,7 @@ if (!variable_global_exists("counterRepair")) global.counterRepair = 0;
 else global.counterRepair++;
 
 spd = 20;
-damage = 4 + irandom(2);
+damage = 10 + irandom(2);
 
 range = 300;
 rangeFalloff = 300;

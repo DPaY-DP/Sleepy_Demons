@@ -59,7 +59,7 @@ switch (game)
 							with (enemy) switch_state(stateSleep);
 						}
 						
-						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "White to Gray", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
+						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Drop blocks in holes", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
 	break;
 	
 	case "tuck":		if (babySleep)

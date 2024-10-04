@@ -16,7 +16,7 @@ draw_menu_button = function(_string, _size, _function, _active = true)
 	var _x = GUIwidth * 0.95;
 	var _y = GUIheight * 0.97 - buttonheight;
 	
-	buttonheight += _textheight + 20;
+	buttonheight += _textheight + 15 * global.GUIScale;
 	
 	if (!_active)
 	{

@@ -14,5 +14,3 @@ if (timerCollect < intervalCollect)
 	draw_rectangle_color(x1, y1, x2, y2, c_grey, c_grey, c_grey, c_grey, false);
 	draw_rectangle_color(x1, y1, x2, y2, c_fuchsia, c_fuchsia, c_fuchsia, c_fuchsia, false);
 }
-
-draw_text(x,y,timerReuse)

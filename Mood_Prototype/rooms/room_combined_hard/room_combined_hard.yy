@@ -340,8 +340,8 @@
   ],
   "name":"room_combined_hard",
   "parent":{
-    "name":"Tutorial Levels",
-    "path":"folders/Rooms/Tutorial Levels.yy",
+    "name":"All Levels",
+    "path":"folders/Rooms/All Levels.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

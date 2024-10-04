@@ -62,8 +62,8 @@
   ],
   "name":"room_credits",
   "parent":{
-    "name":"Tutorial Levels",
-    "path":"folders/Rooms/Tutorial Levels.yy",
+    "name":"Rooms",
+    "path":"folders/Rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

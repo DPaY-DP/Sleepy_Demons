@@ -1,5 +1,5 @@
 #region GAME SETUP
-global.version = "V0.1";
+global.version = "V0.1.1";
 randomize();
 window_set_cursor(cr_none)
 cursor_sprite = spr_cursor;
@@ -140,6 +140,6 @@ defaults =
 
 //get save or set up fresh save
 global.save = file_load(global.saveName);
-show_debug_message(global.save)
-if (!global.save) create_save();
+
+if (!global.save) || (global.save.version != global.version) create_save();
 #endregion

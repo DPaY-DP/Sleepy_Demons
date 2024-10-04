@@ -44,32 +44,28 @@ draw_minimap = function(_scale)
 	var _offsetX = GUIwidth * 0.03;
 	var _offsetY = GUIwidth * 0.03;
 	
-	//draw_set_color(c_fuchsia);
-	//draw_set_alpha(0.6);
-	//draw_rectangle(_offsetX - GUIwidth * 0.01, _offsetY - GUIwidth * 0.01, 1450 * 0.2 + GUIwidth * 0.01, mapMaxHeight + 38 + GUIwidth * 0.01, false);
-	//draw_set_color(c_white);
-	//draw_set_alpha(1);
+	var _mapAlpha = 1;
 	
 	with (obj_doorway) 
 	{
 		var _x = _offsetX + x * _mapscale - other.mapLeftCompensate;
 		var _y = _offsetY + y * _mapscale - other.mapTopCompensate;
 		
-		draw_sprite_simple(spr_doorOverlay, 0, _x, _y, { xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
+		draw_sprite_simple(spr_doorOverlay, 0, _x, _y, { alpha : _mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
 	}
 	with (obj_tunnel) 
 	{
 		var _x = _offsetX + x * _mapscale - other.mapLeftCompensate;
 		var _y = _offsetY + y * _mapscale - other.mapTopCompensate;
 		
-		draw_sprite_simple(spr_tunnelOverlay, sabotaged, _x, _y, { xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
+		draw_sprite_simple(spr_tunnelOverlay, sabotaged, _x, _y, { alpha : _mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
 	}
 	with (obj_room)	
 	{
 		var _x = _offsetX + x * _mapscale - other.mapLeftCompensate;
 		var _y = _offsetY + y * _mapscale - other.mapTopCompensate;
 		
-		draw_sprite_simple(spr_roomOverlay, 0, _x, _y, { xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
+		draw_sprite_simple(spr_roomOverlay, 0, _x, _y, { alpha : _mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
 		
 		if (flood) draw_sprite_simple(spr_roomFlooded, 0, _x, _y, { xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale, alpha : 0.5 * floodAmount });
 	}
@@ -78,14 +74,14 @@ draw_minimap = function(_scale)
 		var _x = _offsetX + x * _mapscale - other.mapLeftCompensate;
 		var _y = _offsetY + y * _mapscale - other.mapTopCompensate;
 		
-		draw_sprite_simple(spr_envOverlay, image_index, _x, _y, { xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale })
+		draw_sprite_simple(spr_envOverlay, image_index, _x, _y, { alpha : _mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale })
 	}
 	with (obj_gunPickup)
 	{
 		var _x = _offsetX + x * _mapscale - other.mapLeftCompensate;
 		var _y = _offsetY + y * _mapscale - other.mapTopCompensate;
 		
-		draw_sprite_simple(spr_gunOverlay, image_index, _x, _y, { xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale })
+		draw_sprite_simple(spr_gunOverlay, image_index, _x, _y, { alpha : _mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale })
 	}
 }
 
