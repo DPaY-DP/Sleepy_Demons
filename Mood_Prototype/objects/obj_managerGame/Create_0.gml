@@ -11,6 +11,9 @@ show_debug_message($"###### {sprite_get_speed(spr_bhop)}")
 
 global.colorsDebug = [c_red, c_yellow, c_green, c_blue, c_fuchsia, c_aqua, c_maroon, c_olive, c_lime, c_navy, c_teal, c_orange, c_purple];
 
+currentSong = choose(snd_musicLevel1, snd_musicLevel2);
+audio_play_sound(currentSong,1,false);
+hasWon = false;
 
 draw_set_font(Font1)
 
@@ -116,6 +119,13 @@ stateGame.run = function()
 {
 	if (global.envHP <= 0) switch_state(stateLoss);
 	
+	if(!audio_is_playing(currentSong) && !hasWon)
+	{
+		show_debug_message("Playing sound")
+		currentSong = choose(snd_musicLevel1, snd_musicLevel2);
+		audio_play_sound(currentSong,1,false);
+	}
+	
 	if (!instance_exists(OBJ_enemy)) switch_state(stateWin);
 }
 stateGame.drawGUI = function()
@@ -129,6 +139,7 @@ stateLoss = new State();
 stateLoss.start = function()
 {
 	with (OBJ_agents) switch_state(stateLock);
+	audio_stop_sound(currentSong);
 }
 stateLoss.run = function()
 {
@@ -161,6 +172,9 @@ stateWin = new State();
 stateWin.start = function()
 {
 	with (OBJ_agents) switch_state(stateLock);
+	
+	hasWon = true;
+	audio_stop_sound(currentSong);
 	
 	if (currentLevel < array_length(global.save.levels) - 1) 
 	{

@@ -5,7 +5,11 @@ timerState++;
 
 //restart
 if (keyboard_check_pressed(vk_f8)) room_restart();
-if (keyboard_check_pressed(vk_escape)) room_goto(room_main);
+if (keyboard_check_pressed(vk_escape)) 
+{
+	audio_stop_sound(currentSong);
+	room_goto(room_main);
+}
 
 
 //###DEBUG

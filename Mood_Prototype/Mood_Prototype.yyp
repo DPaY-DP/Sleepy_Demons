@@ -96,7 +96,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2024.6.2.162",
   },
   "name":"Mood_Prototype",
   "resources":[
@@ -327,6 +327,10 @@
     {"id":{"name":"snd_laughE1","path":"sounds/snd_laughE1/snd_laughE1.yy",},},
     {"id":{"name":"snd_laughE2Deep","path":"sounds/snd_laughE2Deep/snd_laughE2Deep.yy",},},
     {"id":{"name":"snd_laughE3","path":"sounds/snd_laughE3/snd_laughE3.yy",},},
+    {"id":{"name":"snd_musicCredits","path":"sounds/snd_musicCredits/snd_musicCredits.yy",},},
+    {"id":{"name":"snd_musicLevel1","path":"sounds/snd_musicLevel1/snd_musicLevel1.yy",},},
+    {"id":{"name":"snd_musicLevel2","path":"sounds/snd_musicLevel2/snd_musicLevel2.yy",},},
+    {"id":{"name":"snd_musicMainMenu","path":"sounds/snd_musicMainMenu/snd_musicMainMenu.yy",},},
     {"id":{"name":"snd_pistol","path":"sounds/snd_pistol/snd_pistol.yy",},},
     {"id":{"name":"snd_pistol2","path":"sounds/snd_pistol2/snd_pistol2.yy",},},
     {"id":{"name":"snd_prowler","path":"sounds/snd_prowler/snd_prowler.yy",},},
