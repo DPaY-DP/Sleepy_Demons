@@ -20,4 +20,4 @@ active = true;
 force = 1.25;
 
 //remove from level 0
-if (room == room_tutorial_executie) instance_destroy();
+if (room == room_00Executie) instance_destroy();

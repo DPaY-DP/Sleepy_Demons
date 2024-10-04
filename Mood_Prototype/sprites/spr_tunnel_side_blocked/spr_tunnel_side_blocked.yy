@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"World Tiles",
-    "path":"folders/Sprites/World Tiles.yy",
+    "name":"Floors",
+    "path":"folders/Sprites/Environment/Floors.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

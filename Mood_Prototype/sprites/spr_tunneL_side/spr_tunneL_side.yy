@@ -1,6 +1,6 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_tunneL_side",
+  "%Name":"spr_tunnel_side",
   "bboxMode":0,
   "bbox_bottom":31,
   "bbox_left":0,
@@ -21,19 +21,19 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"a01e7073-6f18-479f-bbac-e0706d737f03","blendMode":0,"displayName":"default","isLocked":false,"name":"a01e7073-6f18-479f-bbac-e0706d737f03","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_tunneL_side",
+  "name":"spr_tunnel_side",
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"World Tiles",
-    "path":"folders/Sprites/World Tiles.yy",
+    "name":"Floors",
+    "path":"folders/Sprites/Environment/Floors.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"spr_tunneL_side",
+    "%Name":"spr_tunnel_side",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_tunneL_side",
+    "name":"spr_tunnel_side",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,7 +69,7 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0ea3059e-3eae-471e-b734-c81fb5006e2d","path":"sprites/spr_tunneL_side/spr_tunneL_side.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0ea3059e-3eae-471e-b734-c81fb5006e2d","path":"sprites/spr_tunnel_side/spr_tunnel_side.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"8f786a4f-ba96-4747-8afe-bc6d29a54527","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
