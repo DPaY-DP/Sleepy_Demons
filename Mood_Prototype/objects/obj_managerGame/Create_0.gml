@@ -17,6 +17,9 @@ hasWon = false;
 
 draw_set_font(Font1)
 
+mapAlpha = 0;
+
+
 //enemy behavior
 global.parties = [];
 
@@ -42,33 +45,39 @@ get_current_level = function()
 #region METHODS
 draw_minimap = function(_scale)
 {
+	if (instance_exists(obj_managerMinigame)) exit;
+	
 	var _mapscale = mapscale * global.GUIScale;
 	
 	var _offsetX = GUIwidth * 0.03;
 	var _offsetY = GUIwidth * 0.03;
 	
-	var _mapAlpha = 1;
+	if (obj_player.x < camX + 300) && (obj_player.y < camY + 300)
+	{
+		if (mapAlpha > 0) mapAlpha -= 0.025;
+	}
+	else if (mapAlpha < 1) mapAlpha += 0.025;
 	
 	with (obj_doorway) 
 	{
 		var _x = _offsetX + x * _mapscale - other.mapLeftCompensate;
 		var _y = _offsetY + y * _mapscale - other.mapTopCompensate;
 		
-		draw_sprite_simple(spr_doorOverlay, 0, _x, _y, { alpha : _mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
+		draw_sprite_simple(spr_doorOverlay, 0, _x, _y, { alpha : other.mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
 	}
 	with (obj_tunnel) 
 	{
 		var _x = _offsetX + x * _mapscale - other.mapLeftCompensate;
 		var _y = _offsetY + y * _mapscale - other.mapTopCompensate;
 		
-		draw_sprite_simple(spr_tunnelOverlay, sabotaged, _x, _y, { alpha : _mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
+		draw_sprite_simple(spr_tunnelOverlay, sabotaged, _x, _y, { alpha : other.mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
 	}
 	with (obj_room)	
 	{
 		var _x = _offsetX + x * _mapscale - other.mapLeftCompensate;
 		var _y = _offsetY + y * _mapscale - other.mapTopCompensate;
 		
-		draw_sprite_simple(spr_roomOverlay, 0, _x, _y, { alpha : _mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
+		draw_sprite_simple(spr_roomOverlay, 0, _x, _y, { alpha : other.mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
 		
 		if (flood) draw_sprite_simple(spr_roomFlooded, 0, _x, _y, { xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale, alpha : 0.5 * floodAmount });
 	}
@@ -77,14 +86,14 @@ draw_minimap = function(_scale)
 		var _x = _offsetX + x * _mapscale - other.mapLeftCompensate;
 		var _y = _offsetY + y * _mapscale - other.mapTopCompensate;
 		
-		draw_sprite_simple(spr_envOverlay, image_index, _x, _y, { alpha : _mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale })
+		draw_sprite_simple(spr_envOverlay, image_index, _x, _y, { alpha : other.mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale })
 	}
 	with (obj_gunPickup)
 	{
 		var _x = _offsetX + x * _mapscale - other.mapLeftCompensate;
 		var _y = _offsetY + y * _mapscale - other.mapTopCompensate;
 		
-		draw_sprite_simple(spr_gunOverlay, image_index, _x, _y, { alpha : _mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale })
+		draw_sprite_simple(spr_gunOverlay, image_index, _x, _y, { alpha : other.mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale })
 	}
 }
 

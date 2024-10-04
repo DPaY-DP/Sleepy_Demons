@@ -1,4 +1,4 @@
-draw_self();
+//draw_self();
 
 var _lengthConnected = array_length(doors);
 for (var i = 0; i < _lengthConnected; i++)

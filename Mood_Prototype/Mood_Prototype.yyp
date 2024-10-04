@@ -96,7 +96,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.2.162",
+    "IDEVersion":"2024.8.1.171",
   },
   "name":"Mood_Prototype",
   "resources":[
@@ -429,6 +429,7 @@
     {"id":{"name":"spr_env","path":"sprites/spr_env/spr_env.yy",},},
     {"id":{"name":"spr_envBar","path":"sprites/spr_envBar/spr_envBar.yy",},},
     {"id":{"name":"spr_envLine","path":"sprites/spr_envLine/spr_envLine.yy",},},
+    {"id":{"name":"spr_envLittlePool","path":"sprites/spr_envLittlePool/spr_envLittlePool.yy",},},
     {"id":{"name":"spr_envOverlay","path":"sprites/spr_envOverlay/spr_envOverlay.yy",},},
     {"id":{"name":"spr_envToilet","path":"sprites/spr_envToilet/spr_envToilet.yy",},},
     {"id":{"name":"spr_envWaterDispenser","path":"sprites/spr_envWaterDispenser/spr_envWaterDispenser.yy",},},
@@ -534,6 +535,7 @@
     {"id":{"name":"spr_tunnelCross","path":"sprites/spr_tunnelCross/spr_tunnelCross.yy",},},
     {"id":{"name":"spr_tunnelOverlay","path":"sprites/spr_tunnelOverlay/spr_tunnelOverlay.yy",},},
     {"id":{"name":"spr_tunnelSkin","path":"sprites/spr_tunnelSkin/spr_tunnelSkin.yy",},},
+    {"id":{"name":"spr_tunnelTut","path":"sprites/spr_tunnelTut/spr_tunnelTut.yy",},},
     {"id":{"name":"spr_tvCracked","path":"sprites/spr_tvCracked/spr_tvCracked.yy",},},
     {"id":{"name":"spr_tvStand","path":"sprites/spr_tvStand/spr_tvStand.yy",},},
     {"id":{"name":"spr_tvStandnoTv","path":"sprites/spr_tvStandnoTv/spr_tvStandnoTv.yy",},},
@@ -558,6 +560,7 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
     {"children":[
         {"roomId":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
         {"roomId":{"name":"room_testTunnel","path":"rooms/room_testTunnel/room_testTunnel.yy",},},
@@ -566,7 +569,6 @@
         {"roomId":{"name":"room_template","path":"rooms/room_template/room_template.yy",},},
       ],"groupName":"debug",},
     {"children":[
-        {"roomId":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
         {"roomId":{"name":"room_tutorial_big_room_old","path":"rooms/room_tutorial_big_room_old/room_tutorial_big_room_old.yy",},},
         {"roomId":{"name":"room_tutorial_big_room_with_env_old","path":"rooms/room_tutorial_big_room_with_env_old/room_tutorial_big_room_with_env_old.yy",},},
         {"roomId":{"name":"room_06TunnelVision","path":"rooms/room_06TunnelVision/room_06TunnelVision.yy",},},
