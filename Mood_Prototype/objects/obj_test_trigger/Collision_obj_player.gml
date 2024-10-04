@@ -8,4 +8,8 @@
 	show_debug_message("drückeberger");
 	audio_play_sound_at(snd_foundTeddySecret, x, y, 0, 100, 150, 1, 0, false, .5)
 	instance_destroy();
+	
+	with (OBJ_enemy) switch_state(lastState);
+	obj_weapon.canShoot = true;
+
 
