@@ -1,4 +1,4 @@
-var _sprSide = spr_tunnel_side;
+ var _sprSide = spr_tunnel_side;
 var _sprMiddle = spr_tunnel_middle;
 
 if (tunnel.sabotaged)
