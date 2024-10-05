@@ -12,6 +12,9 @@ draw_message = function(_num)
 	}
 }
 
+
 instance_deactivate_layer("Enemies_1");
 
-instance_deactivate_layer("More_Doors");
+instance_activate_layer("Rooms_1");
+instance_activate_layer("More_Doors");
+
