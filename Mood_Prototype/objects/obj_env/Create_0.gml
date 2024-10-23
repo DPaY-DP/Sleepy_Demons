@@ -15,7 +15,7 @@ image_index = image_number - 1;
 distInteract = 200;
 
 membersMax = 3;
-membersSabo = 2;
+membersSabo = 3;
 
 pointsSabo = [];
 
