@@ -16,10 +16,10 @@ if (turnedOn)
 	obj_managerMinigame.switchesActivated++;
 }
 	
-while (place_meeting(x, y, obj_lightswitch))
-{
-	x = GUIwidth * 0.15 + random(GUIwidth * 0.7);
-	y = GUIheight * 0.15 + random(GUIheight * 0.7);
+//while (place_meeting(x, y, obj_lightswitch))
+//{
+//	x = GUIwidth * 0.15 + random(GUIwidth * 0.7);
+//	y = GUIheight * 0.15 + random(GUIheight * 0.7);
 	
-	show_debug_message("while obj_lightswitch")
-}
+//	show_debug_message("while obj_lightswitch")
+//}

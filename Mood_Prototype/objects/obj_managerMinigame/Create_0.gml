@@ -33,8 +33,8 @@ switch (game)
 						}
 	break;
 	
-	case "finisher":	game = choose("horseshoe", "tuck", "lightswitch", "squarehole");
-						//game = "squarehole";
+	case "finisher":	//game = choose("horseshoe", "tuck", "lightswitch", "squarehole");
+						game = "lightswitch";
 						
 						//show_debug_message($"case finisher, game selected: {game}");
 						
@@ -56,14 +56,14 @@ switch (game)
 												
 												forms = ["circle", "square", "star", "triangle"];
 												array_delete(forms, irandom(3), 1);
+												
+												instance_create_depth(500, 500, depth - 5, obj_hole, { form : forms[0] });
+												instance_create_depth(700, 700, depth - 5, obj_hole, { form : forms[1] });
+												instance_create_depth(1000, 700, depth - 5, obj_hole, { form : forms[2] });
 						
-												instance_create_depth(x, y, depth - 5, obj_hole, { form : forms[0] });
-												instance_create_depth(x, y, depth - 5, obj_hole, { form : forms[1] });
-												instance_create_depth(x, y, depth - 5, obj_hole, { form : forms[2] });
-						
-												instance_create_depth(x, y, depth - 10, obj_form, { form : forms[0] });
-												instance_create_depth(x, y, depth - 10, obj_form, { form : forms[1] });
-												instance_create_depth(x, y, depth - 10, obj_form, { form : forms[2] });
+												instance_create_depth(800, 800, depth - 10, obj_form, { form : forms[0] });
+												instance_create_depth(450, 450, depth - 10, obj_form, { form : forms[1] });
+												instance_create_depth(200, 200, depth - 10, obj_form, { form : forms[2] });
 							break;
 	
 							case "tuck":		babySleep = false;
@@ -81,13 +81,21 @@ switch (game)
 							case "lightswitch":	switchesActivated = 0;
 												totalSwitches = 7 //5 + irandom(2);
 						
-												repeat (totalSwitches)
-												{
-													var _x = GUIwidth * 0.2 + random(GUIwidth * 0.6);
-													var _y = GUIheight * 0.2 + random(GUIheight * 0.6);
+												//repeat (totalSwitches)
+												//{
+												//	var _x = GUIwidth * 0.2 + random(GUIwidth * 0.6);
+												//	var _y = GUIheight * 0.2 + random(GUIheight * 0.6);
 
-													instance_create_depth(_x, _y, depth - 20, obj_lightswitch);
-												}
+												//	instance_create_depth(_x, _y, depth - 20, obj_lightswitch);
+												//}
+												instance_create_depth(400, 400, depth - 20, obj_lightswitch);
+												instance_create_depth(600, 600, depth - 20, obj_lightswitch);
+												instance_create_depth(800, 800, depth - 20, obj_lightswitch);
+												instance_create_depth(450, 450, depth - 20, obj_lightswitch);
+												instance_create_depth(200, 200, depth - 20, obj_lightswitch);
+												instance_create_depth(650, 650, depth - 20, obj_lightswitch);
+												instance_create_depth(800, 600, depth - 20, obj_lightswitch);
+											
 							break;
 						}
 												
