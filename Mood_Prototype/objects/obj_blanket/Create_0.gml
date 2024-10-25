@@ -3,7 +3,7 @@ xStart = x;
 grabbed = false;
 xOffset = 0;
 
-sensBlanket = 30;
+sensBlanket = 500;
 
 image_xscale = size * global.GUIScale;
 image_yscale = size * global.GUIScale;
@@ -27,7 +27,7 @@ stateGrab.start = function()
 }
 stateGrab.run = function()
 {
-	x = device_mouse_x_to_gui(0) - xOffset;
+	x = device_mouse_x_to_gui(0) - 0;
 	if (x < xStart) x = xStart;
 	
 	if (x - xprevious > sensBlanket) ||
@@ -42,10 +42,10 @@ stateGrab.stop = function()
 stateReturn = new State();
 stateReturn.run = function()
 {
-	x -= 10;
+	x -= 0;
 	if (x <= xStart) 
 	{
-		sensBlanket += 15;
+		sensBlanket += 100;
 		switch_state(stateIdle);
 	}
 	

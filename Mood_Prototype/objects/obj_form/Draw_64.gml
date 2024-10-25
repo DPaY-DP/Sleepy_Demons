@@ -32,3 +32,9 @@ if	(canBeGrabbed) &&
 {
 	obj_managerMinigame.grabbedObject = id;
 }
+
+if (mouse_check_button_released(mb_left))
+
+{
+	obj_managerMinigame.grabbedObject = noone;
+}
