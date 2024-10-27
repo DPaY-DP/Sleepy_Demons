@@ -56,6 +56,7 @@ if (hp < 0) && (stage > 0)
 {	
 	switch_stage(-1);
 	hp = hpMax;
+	global.envHP += 100;
 }
 
 hp = clamp(hp, 0, hpMax);

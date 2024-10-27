@@ -11,7 +11,7 @@ velMaxWater = 5.5;
 frictionStandingWater = 0.55;
 frictionWalkingWater = 0.4;
 
-spdRepair = 1;
+spdRepair = 1.5;
 #endregion
 
 
