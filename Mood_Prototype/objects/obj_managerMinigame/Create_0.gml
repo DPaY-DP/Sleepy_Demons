@@ -34,7 +34,7 @@ switch (game)
 	break;
 	
 	case "finisher":	//game = choose("horseshoe", "tuck", "lightswitch", "squarehole");
-						game = choose("tuck", "squarehole");
+						game = choose("brush");
 						
 						//show_debug_message($"case finisher, game selected: {game}");
 						
@@ -96,6 +96,15 @@ switch (game)
 												instance_create_depth(650, 650, depth - 20, obj_lightswitch);
 												instance_create_depth(800, 600, depth - 20, obj_lightswitch);
 											
+							break;
+							
+							case "brush":		brushed = 0;
+							
+												
+												var _xSpawn = GUIwidth / 4;
+												var _ySpawn = GUIheight /3;
+												instance_create_depth(_xSpawn, _ySpawn, depth -20, obj_teethSlider);
+							
 							break;
 						}
 												
