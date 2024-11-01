@@ -81,8 +81,11 @@
     {"$GMFolder":"","%Name":"Square Hole","folderPath":"folders/Sprites/MGames/Square Hole.yy","name":"Square Hole","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tuck In","folderPath":"folders/Sprites/MGames/Tuck In.yy","name":"Tuck In","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tunnel","folderPath":"folders/Sprites/MGames/Tunnel.yy","name":"Tunnel","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Player","folderPath":"folders/Sprites/Player.yy","name":"Player","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tileset","folderPath":"folders/Sprites/Tileset.yy","name":"Tileset","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"UI","folderPath":"folders/Sprites/UI.yy","name":"UI","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Weapon","folderPath":"folders/Sprites/Weapon.yy","name":"Weapon","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Projectile","folderPath":"folders/Sprites/Weapon/Projectile.yy","name":"Projectile","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"World Tiles","folderPath":"folders/Sprites/World Tiles.yy","name":"World Tiles","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -309,7 +312,6 @@
     {"id":{"name":"Laszlo_Kindergarden_Stress_relief_toy_Sprite","path":"sprites/Laszlo_Kindergarden_Stress_relief_toy_Sprite/Laszlo_Kindergarden_Stress_relief_toy_Sprite.yy",},},
     {"id":{"name":"Laszlo_Rubic_cube_Sprite","path":"sprites/Laszlo_Rubic_cube_Sprite/Laszlo_Rubic_cube_Sprite.yy",},},
     {"id":{"name":"Laszlo_Teddy_Bear_Sprite","path":"sprites/Laszlo_Teddy_Bear_Sprite/Laszlo_Teddy_Bear_Sprite.yy",},},
-    {"id":{"name":"MC_fist","path":"sprites/MC_fist/MC_fist.yy",},},
     {"id":{"name":"milk_side","path":"sprites/milk_side/milk_side.yy",},},
     {"id":{"name":"milk_top","path":"sprites/milk_top/milk_top.yy",},},
     {"id":{"name":"Mood_Prototype_CreditScreen","path":"sprites/Mood_Prototype_CreditScreen/Mood_Prototype_CreditScreen.yy",},},
@@ -510,10 +512,10 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
     {"children":[
         {"roomId":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
       ],"groupName":"debug",},
+    {"roomId":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
     {"children":[
         {"roomId":{"name":"room_06TunnelVision","path":"rooms/room_06TunnelVision/room_06TunnelVision.yy",},},
       ],"groupName":"tutorial",},

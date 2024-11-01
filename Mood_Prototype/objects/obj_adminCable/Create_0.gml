@@ -1,6 +1,3 @@
-GUIwidth = display_get_gui_width()
-GUIheight = display_get_gui_height()
-
 _ySpawn = GUIheight  ;
 _xSpawn = GUIwidth ;
 						
