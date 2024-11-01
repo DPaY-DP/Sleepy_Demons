@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Tutorial Messages",
-    "path":"folders/Objects/Admin/Tutorial Messages.yy",
+    "path":"folders/Objects/# Game/Tutorial Messages.yy",
   },
   "parentObjectId":null,
   "persistent":false,

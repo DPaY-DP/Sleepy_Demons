@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Square Hole",
-    "path":"folders/Objects/Minigames/Square Hole.yy",
+    "path":"folders/Objects/# Game/Minigames/Square Hole.yy",
   },
   "parentObjectId":null,
   "persistent":false,

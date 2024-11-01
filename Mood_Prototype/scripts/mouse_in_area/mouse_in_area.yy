@@ -6,7 +6,7 @@
   "name":"mouse_in_area",
   "parent":{
     "name":"Mouse Functions",
-    "path":"folders/Scripts/General Functions (Outdated)/Mouse Functions.yy",
+    "path":"folders/Scripts/General Functions/Mouse Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

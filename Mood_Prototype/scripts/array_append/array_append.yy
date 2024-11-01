@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"array_append",
   "parent":{
-    "name":"New Functions",
-    "path":"folders/Scripts/New Functions.yy",
+    "name":"Array Functions",
+    "path":"folders/Scripts/General Functions/Array Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

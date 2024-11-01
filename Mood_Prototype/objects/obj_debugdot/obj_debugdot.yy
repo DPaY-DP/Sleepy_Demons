@@ -7,7 +7,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Debug",
-    "path":"folders/Objects/Debug.yy",
+    "path":"folders/Objects/# Game/Admin/Debug.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -10,8 +10,8 @@
   "name":"obj_cable_parent",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Cables",
+    "path":"folders/Objects/# Game/Minigames/Cables.yy",
   },
   "parentObjectId":null,
   "persistent":false,

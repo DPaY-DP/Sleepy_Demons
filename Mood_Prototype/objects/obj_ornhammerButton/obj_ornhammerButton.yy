@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Menu",
-    "path":"folders/Objects/Menu.yy",
+    "path":"folders/Objects/# Main/Menu.yy",
   },
   "parentObjectId":{
     "name":"OBJ_creditButtonParent",

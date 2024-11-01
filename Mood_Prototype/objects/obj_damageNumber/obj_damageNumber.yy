@@ -10,8 +10,8 @@
   "name":"obj_damageNumber",
   "overriddenProperties":[],
   "parent":{
-    "name":"New",
-    "path":"folders/Objects/New.yy",
+    "name":"# Game",
+    "path":"folders/Objects/# Game.yy",
   },
   "parentObjectId":null,
   "persistent":false,

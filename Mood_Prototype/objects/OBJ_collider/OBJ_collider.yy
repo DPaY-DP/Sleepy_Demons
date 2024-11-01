@@ -6,8 +6,8 @@
   "name":"OBJ_collider",
   "overriddenProperties":[],
   "parent":{
-    "name":"Game Objects",
-    "path":"folders/Objects/Game Objects.yy",
+    "name":"World Objects",
+    "path":"folders/Objects/# Game/World Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

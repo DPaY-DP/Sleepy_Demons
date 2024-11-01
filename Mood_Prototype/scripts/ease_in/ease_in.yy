@@ -6,7 +6,7 @@
   "name":"ease_in",
   "parent":{
     "name":"Easing Functions",
-    "path":"folders/Scripts/General Functions (Outdated)/Easing Functions.yy",
+    "path":"folders/Scripts/General Functions/Easing Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

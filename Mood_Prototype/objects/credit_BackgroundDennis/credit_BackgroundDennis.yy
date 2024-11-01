@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"BG",
-    "path":"folders/Objects/Menu/CreditsButtons/BG.yy",
+    "path":"folders/Objects/# Main/Menu/CreditsButtons/BG.yy",
   },
   "parentObjectId":{
     "name":"OBJ_backgroundParent",

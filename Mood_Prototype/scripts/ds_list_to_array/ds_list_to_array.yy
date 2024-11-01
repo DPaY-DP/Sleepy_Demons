@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"ds_list_to_array",
   "parent":{
-    "name":"Array Functions",
-    "path":"folders/Scripts/General Functions (Outdated)/Array Functions.yy",
+    "name":"Data Structure Functions",
+    "path":"folders/Scripts/General Functions/Data Structure Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

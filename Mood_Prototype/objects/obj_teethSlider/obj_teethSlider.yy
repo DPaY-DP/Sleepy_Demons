@@ -15,7 +15,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Brush",
-    "path":"folders/Objects/Minigames/Brush.yy",
+    "path":"folders/Objects/# Game/Minigames/Brush.yy",
   },
   "parentObjectId":null,
   "persistent":false,

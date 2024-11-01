@@ -8,8 +8,8 @@
   "name":"obj_test_trigger",
   "overriddenProperties":[],
   "parent":{
-    "name":"Admin",
-    "path":"folders/Objects/Admin.yy",
+    "name":"World Objects",
+    "path":"folders/Objects/# Game/World Objects.yy",
   },
   "parentObjectId":null,
   "persistent":false,

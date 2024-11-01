@@ -11,8 +11,8 @@
   "name":"obj_bhop",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Tutorial Messages",
+    "path":"folders/Objects/# Game/Tutorial Messages.yy",
   },
   "parentObjectId":null,
   "persistent":false,

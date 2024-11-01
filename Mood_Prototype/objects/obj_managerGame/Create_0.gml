@@ -15,8 +15,6 @@ currentSong = choose(snd_musicLevel1, snd_musicLevel2);
 audio_play_sound(currentSong,1,false);
 hasWon = false;
 
-draw_set_font(Font1)
-
 mapAlpha = 0;
 
 

@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Minigames",
-    "path":"folders/Objects/Minigames.yy",
+    "path":"folders/Objects/# Game/Minigames.yy",
   },
   "parentObjectId":null,
   "persistent":false,

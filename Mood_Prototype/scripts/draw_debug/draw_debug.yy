@@ -6,7 +6,7 @@
   "name":"draw_debug",
   "parent":{
     "name":"Debug Functions",
-    "path":"folders/Scripts/General Functions (Outdated)/Debug Functions.yy",
+    "path":"folders/Scripts/General Functions/Debug Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Tuck In",
-    "path":"folders/Objects/Minigames/Tuck In.yy",
+    "path":"folders/Objects/# Game/Minigames/Tuck In.yy",
   },
   "parentObjectId":null,
   "persistent":false,

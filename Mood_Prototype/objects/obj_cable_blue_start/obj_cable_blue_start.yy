@@ -8,8 +8,8 @@
   "name":"obj_cable_blue_start",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Cables",
+    "path":"folders/Objects/# Game/Minigames/Cables.yy",
   },
   "parentObjectId":{
     "name":"obj_cable_parent",

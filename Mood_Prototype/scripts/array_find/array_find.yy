@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"array_invert",
+  "%Name":"array_find",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"array_invert",
+  "name":"array_find",
   "parent":{
     "name":"Array Functions",
     "path":"folders/Scripts/General Functions/Array Functions.yy",

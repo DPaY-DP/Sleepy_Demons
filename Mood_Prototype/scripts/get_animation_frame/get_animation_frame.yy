@@ -6,7 +6,7 @@
   "name":"get_animation_frame",
   "parent":{
     "name":"Animation Functions",
-    "path":"folders/Scripts/General Functions (Outdated)/Animation Functions.yy",
+    "path":"folders/Scripts/General Functions/Animation Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
