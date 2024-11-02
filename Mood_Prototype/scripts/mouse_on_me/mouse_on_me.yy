@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"mouse_on_me",
   "parent":{
-    "name":"New Functions",
-    "path":"folders/Scripts/New Functions.yy",
+    "name":"Mouse Functions",
+    "path":"folders/Scripts/General Functions/Mouse Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

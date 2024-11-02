@@ -6,7 +6,7 @@
   "name":"setup_state_machine",
   "parent":{
     "name":"State Machine Functions",
-    "path":"folders/Scripts/General Functions (Outdated)/State Machine Functions.yy",
+    "path":"folders/Scripts/General Functions/State Machine Functions.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

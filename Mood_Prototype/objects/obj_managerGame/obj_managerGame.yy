@@ -12,7 +12,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Admin",
-    "path":"folders/Objects/Admin.yy",
+    "path":"folders/Objects/# Game/Admin.yy",
   },
   "parentObjectId":null,
   "persistent":false,

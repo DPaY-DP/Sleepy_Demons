@@ -11,7 +11,7 @@ velMaxWater = 5.5;
 frictionStandingWater = 0.55;
 frictionWalkingWater = 0.4;
 
-spdRepair = 1;
+spdRepair = 1.5;
 #endregion
 
 
@@ -40,6 +40,7 @@ image_yscale = 2;
 
 
 #region METHODS
+	#region do_effect_dust
 do_effect_dust = function(_x, _y)
 {
 	var _lifeMax = 20;
@@ -73,12 +74,13 @@ do_effect_dust = function(_x, _y)
 	
 	alarm[0] = _lifeMax;
 }
+	#endregion
+	
 #endregion
 
 
 #region SPAWNING AND SETUP
 instance_create_depth(x, y, depth - 2, obj_playerHand);
-instance_create_depth(x, y, depth - 1, obj_weapon);
 #endregion
 
 #region STATE MACHINE

@@ -1,5 +1,5 @@
-image_xscale = 1.6 * global.GUIScale;
-image_yscale = 1.6 * global.GUIScale;
+image_xscale = 1.8 * global.GUIScale;
+image_yscale = 1.8 * global.GUIScale;
 
 sprite_index = asset_get_index("spr_" + form + "Hole");
 

@@ -1,6 +1,8 @@
 image_xscale = global.GUIScale;
 image_yscale = global.GUIScale;
 
+
+
 image_speed = 0;
 
 if (obj_managerMinigame.switchesActivated < 3)

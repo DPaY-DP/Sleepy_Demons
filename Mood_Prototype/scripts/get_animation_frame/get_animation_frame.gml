@@ -1,8 +1,9 @@
 function get_animation_frame(sprite, gametick)
 {
-	var _gamespeed = game_get_speed(gamespeed_fps);
 	var _spd = sprite_get_speed(sprite);
-	var _framelength = _gamespeed / _spd;
+	var _framelength = fps / _spd;
+	
+	show_debug_message(floor(gametick / _framelength))
 	
 	return floor(gametick / _framelength);
 }

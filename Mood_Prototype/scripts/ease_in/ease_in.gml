@@ -1,8 +1,8 @@
-function ease_in(timer, startVal, change, duration)
+function ease_in(timeVal, startVal, change, duration)
 {
-	timer /= duration;
+	timeVal /= duration;
 	
-	var _return = change * timer * timer * timer + startVal;
+	var _return = change * timeVal * timeVal * timeVal + startVal;
 	
 	return _return
 }

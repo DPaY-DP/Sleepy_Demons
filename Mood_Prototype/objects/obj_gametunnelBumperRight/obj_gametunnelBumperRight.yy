@@ -11,7 +11,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Tunnel",
-    "path":"folders/Objects/Minigames/Tunnel.yy",
+    "path":"folders/Objects/# Game/Minigames/Tunnel.yy",
   },
   "parentObjectId":null,
   "persistent":false,

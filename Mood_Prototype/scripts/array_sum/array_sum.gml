@@ -1,9 +1,10 @@
-function array_sum(array)
+function array_sum(array, abs)
 {
 	var _sum = 0;
 	for (var i = 0; i < array_length(array); i++)
 	{
-		_sum += array[i];
+		if (abs) _sum += abs(array[i]);
+		else _sum += array[i];
 	}
 	return _sum;
 }

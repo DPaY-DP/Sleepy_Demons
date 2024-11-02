@@ -11,7 +11,7 @@ rooms = [];
 
 var _list = ds_list_create();
 instance_place_list(x, y, obj_room, _list, false);
-rooms = list_to_array(_list);
+rooms = ds_list_to_array(_list);
 ds_list_destroy(_list);																								 
 																													 
 	//get entrypoints

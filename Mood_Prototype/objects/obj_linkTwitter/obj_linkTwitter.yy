@@ -9,7 +9,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"CreditsButtons",
-    "path":"folders/Objects/Menu/CreditsButtons.yy",
+    "path":"folders/Objects/# Main/Menu/CreditsButtons.yy",
   },
   "parentObjectId":{
     "name":"OBJ_creditButtonParent",

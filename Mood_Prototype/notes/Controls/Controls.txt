@@ -1,6 +1,0 @@
-Player actions
-
-FIRE			LMB
-MELEE			RMB
-EXECUTE			F
-REPAIR ENV		E

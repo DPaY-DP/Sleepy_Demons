@@ -1,7 +1,7 @@
-function mouse_in_area(_xTop, _yTop, _width, _height)
+function mouse_in_area(_xTop, _yTop, _xOffset, _yOffset)
 {
-	var bottomX = _xTop + _width;
-	var bottomY = _yTop + _height;
+	var bottomX = _xTop + _xOffset;
+	var bottomY = _yTop + _yOffset;
 	
 	if (mouse_x >= _xTop) && (mouse_y >= _yTop) && (mouse_x < bottomX) && (mouse_y < bottomY)
 	return true;
