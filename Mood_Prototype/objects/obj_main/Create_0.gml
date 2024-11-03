@@ -25,7 +25,7 @@ draw_menu_button = function(_string, _size, _function, _active = true)
 	}
 	
 	var _color = c_white;
-	if (mouse_in_area_gui(_x - _textwidth, _y - _textheight, _textwidth, _textheight))
+	if (mouse_in_area_GUI(_x - _textwidth, _y - _textheight, _textwidth, _textheight))
 	{
 		_color = c_grey;
 		if (mouse_check_button_pressed(mb_left)) 

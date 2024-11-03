@@ -19,5 +19,9 @@ active = true;
 
 force = 1.25;
 
+counterMeleeCharge = 0;
+
+ammo = 1;
+
 //remove from level 0
 if (room == room_00Executie) instance_destroy();

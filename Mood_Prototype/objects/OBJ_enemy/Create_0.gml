@@ -827,6 +827,8 @@ stateSleep.start = function()
 	audio_play_sound_at(array_get(sleepSounds, random_range(0,array_length(sleepSounds))), x, y, 0, 100, 150, 1, 0, false);
 	instance_create_depth(x, y, depth, obj_enemySleeping, { sprite_index : asset_get_index("spr_" + name + "Sleep") } );
 	
+	obj_loadout.reload();
+	
 	instance_destroy(myHitbox);
 	instance_destroy();
 }

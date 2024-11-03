@@ -4,21 +4,35 @@ if (array_length(shadows) == shadowsMax) array_pop(shadows);
 
 timerCooldown--;
 if (!instance_exists(obj_managerMinigame)) && (obj_player.state.name != "Lock")
+
 if (keyMelee) && (timerCooldown <= 0)
 {
-	audio_play_sound_at(snd_punch2, x, y, 0, 100, 150, 1, 0, 0);
+	if (counterMeleeCharge <= 30)
+	{
+		audio_play_sound_at(snd_punch2, x, y, 0, 100, 150, 1, 0, 0);
 	
-	image_alpha = 1;
+		image_alpha = 1;
 	
-	obj_player.canMove = false;
+		obj_player.canMove = false;
 	
-	frame = 0;
-	animate = true;
+		frame = 0;
+		animate = true;
 	
-	dir = image_angle;
+		dir = image_angle;
 	
-	timerCooldown = intervalCooldown;
+		timerCooldown = intervalCooldown;
+	}
+	else
+	{
+		instance_create_depth(x, y, depth, obj_projectilePillow, { dir : obj_player.orientation })
+		
+		ammo--;
+		if (ammo == 0) instance_destroy();
+	}
 }
+
+if (keyMeleeHeld) counterMeleeCharge++;
+else counterMeleeCharge = 0;
 
 if (animate)
 {
@@ -117,5 +131,6 @@ if (_tunnel != noone) && (active)
 {
 	with (_tunnel) toggle_sabotaged(true);
 
-	instance_destroy();
+	ammo--;
+	if (ammo == 0) instance_destroy();
 }

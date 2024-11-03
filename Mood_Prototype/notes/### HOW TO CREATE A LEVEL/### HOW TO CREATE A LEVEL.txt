@@ -11,4 +11,4 @@
 	
 	+. if you at any point want to add new rooms, make sure they are created before any doorways (re-arrange them in the Instance Creation Order
 		by clicking on your room asset in the asset browser, then clicking "Instance Creation Order" on the left side of the screen in the room
-		inspector.
+		inspector.)

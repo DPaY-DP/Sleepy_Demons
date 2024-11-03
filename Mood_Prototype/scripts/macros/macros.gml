@@ -23,7 +23,8 @@
 
 //Game
 
-	#macro keyMelee mouse_check_button_pressed(mb_right)
+	#macro keyMelee mouse_check_button_released(mb_right)
+	#macro keyMeleeHeld mouse_check_button(mb_right)
 
 	#macro keyPrimary mouse_check_button_pressed(mb_left)
 	#macro keyPrimaryHeld mouse_check_button(mb_left)

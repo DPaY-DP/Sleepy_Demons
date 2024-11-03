@@ -21,6 +21,17 @@ if (timerCooldown > 0)
 	draw_rectangle_color(x1, y1, x2, y2, c_purple, c_purple, c_purple, c_purple, false);
 }
 
+var _barWidth = 30;
+var _barHeight = 4;
+
+var x1 = x - _barWidth / 2;
+var y1 = y + 32;
+
+var x2 = x1 + _barWidth * min((counterMeleeCharge / 30), 1);
+var y2 = y1 + _barHeight;
+
+draw_rectangle_color(x1, y1, x2, y2, c_aqua, c_aqua, c_aqua, c_aqua, false);
+
 draw_self();
 
 if (global.debugmode)

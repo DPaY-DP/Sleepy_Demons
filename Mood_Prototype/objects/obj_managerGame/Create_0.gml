@@ -1,31 +1,33 @@
-randomize();
+//IMMUTABLE VALUES
 global.envHPMax = 1000;
+
+
+
+
+//GAME VALUES
 global.envHP = global.envHPMax;
 
 drawEnvHP = false;
 if (instance_exists(obj_env)) drawEnvHP = true;
 
-global.debugtimer = 0;
-
-show_debug_message($"###### {sprite_get_speed(spr_bhop)}")
-
-global.colorsDebug = [c_red, c_yellow, c_green, c_blue, c_fuchsia, c_aqua, c_maroon, c_olive, c_lime, c_navy, c_teal, c_orange, c_purple];
 
 currentSong = choose(snd_musicLevel1, snd_musicLevel2);
 audio_play_sound(currentSong,1,false);
 hasWon = false;
 
 mapAlpha = 0;
+alarm[0] = 1;
 
 
-//enemy behavior
-global.parties = [];
+global.debugtimer = 0;
+global.colorsDebug = [c_red, c_yellow, c_green, c_blue, c_fuchsia, c_aqua, c_maroon, c_olive, c_lime, c_navy, c_teal, c_orange, c_purple];
 
 
-//rooms
-timerLoss = 0;
 
-levelborders = undefined;
+
+//SETUP AND SPAWNING
+randomize();
+
 
 
 #region METHODS
@@ -37,10 +39,7 @@ get_current_level = function()
 		if (room == global.save.levels[i].room) return i
 	}
 }
-#endregion
 
-
-#region METHODS
 draw_minimap = function(_scale)
 {
 	if (instance_exists(obj_managerMinigame)) exit;
@@ -86,13 +85,6 @@ draw_minimap = function(_scale)
 		
 		draw_sprite_simple(spr_envOverlay, image_index, _x, _y, { alpha : other.mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale })
 	}
-	with (obj_gunPickup)
-	{
-		var _x = _offsetX + x * _mapscale - other.mapLeftCompensate;
-		var _y = _offsetY + y * _mapscale - other.mapTopCompensate;
-		
-		draw_sprite_simple(spr_gunOverlay, image_index, _x, _y, { alpha : other.mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale })
-	}
 }
 
 draw_hpbar = function()
@@ -111,8 +103,8 @@ draw_hpbar = function()
 	if (global.envHP > 0) draw_rectangle(_barX, _barY + _maxHeight - _height, _barX + _width, _barY + _maxHeight, false);
 	draw_set_color(c_white);
 }
-
 #endregion
+
 
 //states
 setup_state_machine();
@@ -210,5 +202,3 @@ stateWin.drawGUI = function()
 }
 
 initialize_state(stateGame);
-
-alarm[0] = 1;

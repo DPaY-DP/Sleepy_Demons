@@ -1,0 +1,13 @@
+Notes:
+ - Demons need to have their physics enabled constantly, so they are properly affected by movement altering	effects such as the black hole gun.
+
+
+
+Optimization:
+ - damage numbers should be created by the enemy upon taking damage, not by the instance causing the damage
+
+
+
+Bugs:
+ - Player gets stuck upon trying to exit portal (???)
+ - wappons shoot in minigame
