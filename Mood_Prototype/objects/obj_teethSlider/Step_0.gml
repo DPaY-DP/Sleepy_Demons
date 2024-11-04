@@ -51,5 +51,3 @@ switch (brushed)
 } 
 
 
-//show_debug_message(value_);
-show_debug_message(brushed);

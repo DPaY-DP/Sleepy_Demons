@@ -1,1 +1,0 @@
-draw_rectangle(GUIwidth * 0.1, GUIheight * 0.1, GUIwidth * 0.8, GUIheight * 0.8, true )

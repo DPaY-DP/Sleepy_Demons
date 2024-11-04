@@ -1,4 +1,8 @@
 randomize();
+						//dslistminigames = ds_list_create()
+						//ds_list_add(dslistminigames, "horseshoe")
+						//ds_list_add(dslistminigames, "cablegame")
+						//ds_list_add(dslistminigames, "tuck")
 global.envHPMax = 1000;
 global.envHP = global.envHPMax;
 

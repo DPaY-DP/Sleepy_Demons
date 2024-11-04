@@ -11,8 +11,8 @@
   "name":"obj_cable_blue_end",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"CableGame",
+    "path":"folders/Objects/Minigames/CableGame.yy",
   },
   "parentObjectId":null,
   "persistent":false,

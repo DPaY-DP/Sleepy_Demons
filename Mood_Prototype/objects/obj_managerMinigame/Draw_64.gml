@@ -85,4 +85,73 @@ switch (game)
 						
 						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Press Red", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
 	break;
+	
+	case "cablegame":	if (global.number_of_cables == 4)
+						{
+							
+							instance_destroy(obj_admincable)
+							instance_destroy(obj_cable_parent)
+							instance_destroy(obj_cable_red_end)
+							instance_destroy(obj_cable_yellow_end)
+							instance_destroy(obj_cable_green_end)
+							instance_destroy(obj_cable_blue_end)
+							instance_destroy()
+							
+							with (enemy) switch_state(stateSleep);
+						}
+						
+						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Connect Cables", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
+	break;
+	
+		case "brush":	if (brushed == 3)
+						{
+							instance_destroy(obj_teethSlider);
+							instance_destroy();
+							
+							with (enemy) switch_state(stateSleep);
+						}
+						
+						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Bursh", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
+	break;
+	
+		case "stuffthepillow":	if instance_number(obj_fluff)=0
+								{
+									instance_destroy(obj_pillow);
+									instance_destroy(obj_stuffthepillowadmin);
+									instance_destroy();
+									
+									with (enemy) switch_state(stateSleep);
+								}
+
+						
+						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Bursh", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
+	break;
+	
+		case "ticklenose":	if Obj_twitchynose.ticklescore = 5
+								{
+									instance_destroy(Obj_feather);
+									instance_destroy(Obj_twitchynose);
+									instance_destroy();
+									
+									with (enemy) switch_state(stateSleep);
+								}
+
+						
+						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Tickle", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
+						
+	break;
+	
+		case "inputgame":	if obj_inputs.inputgameend = true
+							{
+								instance_destroy(obj_guentheranim);
+								instance_destroy(obj_inputs);
+								instance_destroy(obj_anim);
+								instance_destroy();
+									
+								with (enemy) switch_state(stateSleep);
+							}
+
+						
+						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Input", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
+	break;
 }

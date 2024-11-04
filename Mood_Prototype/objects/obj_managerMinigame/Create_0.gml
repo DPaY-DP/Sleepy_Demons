@@ -1,5 +1,6 @@
 show_debug_message("manager minigame spawned")
 
+
 //initialize game
 switch (game)
 {
@@ -34,9 +35,22 @@ switch (game)
 	break;
 	
 	case "finisher":	//game = choose("horseshoe", "tuck", "lightswitch", "squarehole");
-						game = choose("brush");
+
+
+						
+						//randomminigame = irandom_range(-1,ds_list_size(obj_managerGame.dslistminigames))
+						//randomminigametest = ds_list_find_value(obj_managerGame.dslistminigames, randomminigame)
+						//game = randomminigametest;
+						//ds_list_delete(obj_managerGame.dslistminigames,randomminigame)
+
+
+						//show_debug_message(randomminigametest)
+						//show_debug_message(randomminigame)
+						//show_debug_message(ds_list_size(obj_managerGame.dslistminigames))
 						
 						//show_debug_message($"case finisher, game selected: {game}");
+						
+						game = "inputgame"
 						
 						switch (game)
 						{
@@ -104,6 +118,41 @@ switch (game)
 												var _xSpawn = GUIwidth / 4;
 												var _ySpawn = GUIheight /3;
 												instance_create_depth(_xSpawn, _ySpawn, depth -20, obj_teethSlider);
+							
+							break;
+							
+							case "cablegame":	
+							
+																						
+								instance_create_depth(0, 0, depth -20, obj_admincable);
+							
+							break;
+							
+							case "stuffthepillow":	
+								var _xSpawn = GUIwidth / 4;
+								var _ySpawn = GUIheight / 3;
+																						
+								instance_create_depth(x, y, depth -20, obj_stuffthepillowadmin);
+								instance_create_depth(_xSpawn * 0.5, _ySpawn, depth -20, obj_pillow);
+							
+							break;
+							
+							case "ticklenose":	
+														
+								instance_create_depth(x, y, depth -20, Obj_twitchynose);
+								instance_create_depth(x, y, depth -20, Obj_feather);
+							
+							break;
+							
+							case "inputgame":	
+														
+								instance_create_depth(x, y, depth -20, obj_anim);
+								instance_create_depth(x, y, depth -20, obj_inputs);
+								var _x = GUIwidth / 4 ;
+								var _y = GUIheight / 4;
+								instance_create_depth(_x, _y, depth -20, obj_guentheranim,);
+								
+								
 							
 							break;
 						}
