@@ -40,7 +40,7 @@ switch (game)
 						
 						var _randomminigame = irandom( ds_list_size(obj_managerGame.dslistminigames) - 1 );
 						var _minigame = ds_list_find_value(obj_managerGame.dslistminigames, _randomminigame );
-						game = "squarehole"//_minigame
+						game = _minigame //"lightswitch"
 						var _minigame_value = ds_list_find_index(obj_managerGame.dslistminigames, _randomminigame )
 						ds_list_delete(obj_managerGame.dslistminigames, _minigame_value );
 
