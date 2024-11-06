@@ -1,6 +1,8 @@
 randomize();
 global.envHPMax = 1000;
 global.envHP = global.envHPMax;
+//Minigame Setup
+dslistminigames = ds_list_create()
 
 drawEnvHP = false;
 if (instance_exists(obj_env)) drawEnvHP = true;

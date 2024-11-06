@@ -40,7 +40,7 @@ switch (game)
 						
 						var _randomminigame = irandom( ds_list_size(obj_managerGame.dslistminigames) - 1 );
 						var _minigame = ds_list_find_value(obj_managerGame.dslistminigames, _randomminigame );
-						game = _minigame //"lightswitch"
+						game = "lightswitch"
 						var _minigame_value = ds_list_find_index(obj_managerGame.dslistminigames, _randomminigame )
 						ds_list_delete(obj_managerGame.dslistminigames, _minigame_value );
 
@@ -124,22 +124,35 @@ switch (game)
 							break;
 	
 							case "lightswitch":	switchesActivated = 0;
-												totalSwitches = 7 //5 + irandom(2);
+												totalSwitches = 9 //5 + irandom(2);
 						
-												//repeat (totalSwitches)
-												//{
-												//	var _x = GUIwidth * 0.2 + random(GUIwidth * 0.6);
-												//	var _y = GUIheight * 0.2 + random(GUIheight * 0.6);
+												_xSpawn = GUIwidth
+												_ySpawn = GUIheight
+																							
+												xpos_start = [_xSpawn * 0.2,_xSpawn * 0.5,_xSpawn * 0.8,_xSpawn * 0.2,_xSpawn * 0.5,_xSpawn * 0.8,_xSpawn * 0.2,_xSpawn * 0.5,_xSpawn * 0.8]
+												ypos_start = [_ySpawn * 0.2,_ySpawn * 0.2,_ySpawn * 0.2,_ySpawn * 0.5,_ySpawn * 0.5,_ySpawn * 0.5,_ySpawn * 0.8,_ySpawn * 0.8,_ySpawn * 0.8]
+		
+												for (i = 0; i < 9; i++)
+												{
 
-												//	instance_create_depth(_x, _y, depth - 20, obj_lightswitch);
-												//}
-												instance_create_depth(400, 400, depth - 20, obj_lightswitch);
-												instance_create_depth(600, 600, depth - 20, obj_lightswitch);
-												instance_create_depth(800, 800, depth - 20, obj_lightswitch);
-												instance_create_depth(450, 450, depth - 20, obj_lightswitch);
-												instance_create_depth(200, 200, depth - 20, obj_lightswitch);
-												instance_create_depth(650, 650, depth - 20, obj_lightswitch);
-												instance_create_depth(800, 600, depth - 20, obj_lightswitch);
+													var chosen_index = irandom( array_length(xpos_start) - 1 );
+													var chosen_option_x = xpos_start[chosen_index]
+													var chosen_option_y = ypos_start[chosen_index]
+		
+	
+
+													instance_create_depth(chosen_option_x,chosen_option_y, 10, obj_lightswitch);
+													array_delete(xpos_start, chosen_index, 1)
+													array_delete(ypos_start, chosen_index, 1)
+												}
+												
+												//instance_create_depth(400, 400, depth - 20, obj_lightswitch);
+												//instance_create_depth(600, 600, depth - 20, obj_lightswitch);
+												//instance_create_depth(800, 800, depth - 20, obj_lightswitch);
+												//instance_create_depth(450, 450, depth - 20, obj_lightswitch);
+												//instance_create_depth(200, 200, depth - 20, obj_lightswitch);
+												//instance_create_depth(650, 650, depth - 20, obj_lightswitch);
+												//instance_create_depth(800, 600, depth - 20, obj_lightswitch);
 											
 							break;
 							
