@@ -1,8 +1,4 @@
 randomize();
-						//dslistminigames = ds_list_create()
-						//ds_list_add(dslistminigames, "horseshoe")
-						//ds_list_add(dslistminigames, "cablegame")
-						//ds_list_add(dslistminigames, "tuck")
 global.envHPMax = 1000;
 global.envHP = global.envHPMax;
 
@@ -99,6 +95,23 @@ draw_minimap = function(_scale)
 		
 		draw_sprite_simple(spr_gunOverlay, image_index, _x, _y, { alpha : other.mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale })
 	}
+	with (obj_player) 
+	{
+		var _x = _offsetX + x * _mapscale - other.mapLeftCompensate;
+		var _y = _offsetY + y * _mapscale - other.mapTopCompensate;
+		
+		draw_sprite_simple(spr_walkinHereLeft, 0, _x, _y, { alpha : other.mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
+	}
+	if (instance_number(OBJ_enemy) = 1)
+	{
+			with (OBJ_enemy) 
+		{
+			var _x = _offsetX + x * _mapscale - other.mapLeftCompensate;
+			var _y = _offsetY + y * _mapscale - other.mapTopCompensate;
+		
+			draw_sprite_simple(spr_pablo, 0, _x, _y, { alpha : other.mapAlpha, xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale });
+		}
+	}
 }
 
 draw_hpbar = function()
@@ -179,6 +192,7 @@ stateLoss.drawGUI = function()
 		global.countRooms = 0;
 		global.countEnv = 0;
 	}
+	
 }
 
 

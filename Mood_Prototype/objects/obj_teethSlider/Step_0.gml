@@ -6,7 +6,7 @@ if mouse_check_button_pressed(mb_left)
 	var button_x = x+sprite_width*value_;
 	var button_y = y;
 	var button_radius = sprite_get_width(spr_brush);
-	if point_in_circle(mouse_x,mouse_y, button_x, button_y, button_radius)
+	if point_in_circle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0), button_x, button_y, button_radius)
 	{ selected_ = true;
 	}
 }
@@ -16,7 +16,7 @@ if !mouse_check_button(mb_left) {
 }
 
 if selected_ {
-	value_ = clamp((mouse_x-x)/sprite_width, 0, max_value_); //damit wir die momentane Breite des Sliders haben
+	value_ = clamp((device_mouse_x_to_gui(0)-x)/sprite_width, 0, max_value_); //damit wir die momentane Breite des Sliders haben
 
 }
 

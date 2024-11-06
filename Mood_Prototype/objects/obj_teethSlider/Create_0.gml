@@ -1,8 +1,8 @@
 image_xscale = 4;
 image_yscale = 4;
 
-xMouth = GUIwidth /4;
-yMouth = GUIheight /3;
+xMouth = GUIwidth /2;
+yMouth = GUIheight /2;
 
 value_ = 0;
 max_value_ = 1;

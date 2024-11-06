@@ -152,6 +152,19 @@ switch (game)
 							}
 
 						
-						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Input", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
+						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Press the Inputs", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
+	break;
+	
+		case "fastclick":	if 	obj_bubble.fastclickwon = true
+							{
+
+								instance_destroy(obj_bubble);
+								instance_destroy();
+									
+								with (enemy) switch_state(stateSleep);
+							}
+
+						
+						draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Press Left Click", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
 	break;
 }

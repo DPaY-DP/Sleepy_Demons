@@ -21,12 +21,12 @@ if (evaluate_input(inputs[position]))
 {
 	var _anim = [spr_closeEyeLeft, spr_closeEyeRight, spr_cocoa, spr_pat, spr_brush, spr_book];
 	
-	instance_create_depth(320, 160, depth, obj_anim, { sprite_index : _anim[inputs[position]] });
+	instance_create_depth(GUIwidth / 2, GUIheight / 2, depth - 10, obj_anim, { sprite_index : _anim[inputs[position]] });
 	position++;
 	if (position == array_length(inputs)) 
 	{
 		inputgameend = true
-		instance_create_depth(320, 160, depth, obj_anim, { sprite_index : spr_zzz });
+		instance_create_depth(GUIwidth / 2, GUIheight / 2, depth - 10, obj_anim, { sprite_index : spr_zzz });
 	}
 }
 //else if (position != 0) position--;
