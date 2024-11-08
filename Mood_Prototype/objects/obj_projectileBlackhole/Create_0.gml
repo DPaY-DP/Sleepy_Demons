@@ -1,5 +1,5 @@
 //IMMUTABLE VALUES
-spdBase = 15;
+spdBase = 5;
 
 //forceBase = 1;
 //forceBoost = forceBase * 5;

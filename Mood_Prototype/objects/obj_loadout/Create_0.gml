@@ -16,6 +16,7 @@ weaponsEffect =
 [
 	obj_weaponGluelauncher,
 	obj_weaponBlackhole,
+	obj_weaponMiniyum,
 ];
 
 weaponsEquipped = [];

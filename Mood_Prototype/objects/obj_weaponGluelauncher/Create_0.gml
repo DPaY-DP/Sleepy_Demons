@@ -1,7 +1,7 @@
 //IMMUTABLE VALUES
 intervalFirerate = 45;
 
-rocketjump = 50;
+rocketjump = 150;
 
 ammoMax = 3;
 ammoBag = 1;

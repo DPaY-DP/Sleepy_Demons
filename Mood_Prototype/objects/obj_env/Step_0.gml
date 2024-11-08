@@ -54,9 +54,9 @@ if (hp >= hpMax)
 
 if (hp < 0) && (stage > 0)
 {	
-	switch_stage(-1);
+	var _x = choose();
+	
 	hp = hpMax;
-	global.envHP += 100;
 }
 
 hp = clamp(hp, 0, hpMax);

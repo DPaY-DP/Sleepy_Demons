@@ -15,6 +15,7 @@ image_index = identity;
 burst = function()
 {
 	with (obj_projectilePortal_lingering) if (identity == other.identity) instance_destroy();
+	
 	instance_create_depth(x, y, depth, obj_projectilePortal_lingering, { identity : identity });
 	instance_destroy();
 }

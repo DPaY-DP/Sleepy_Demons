@@ -1,8 +1,8 @@
 x += lengthdir_x(spd, image_angle);
 y += lengthdir_y(spd, image_angle);
 
-spd *= 0.98;
-if (spd <= 3) spd = 0;
+//spd *= 0.98;
+//if (spd <= 3) spd = 0;
 
 //force = forceBase + forceBoost - (1 - (spd / spdBase));
 range = rangeBase + rangeBoost - (1 - (spd / spdBase));

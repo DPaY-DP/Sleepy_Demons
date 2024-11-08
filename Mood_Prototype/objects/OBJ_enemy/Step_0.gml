@@ -6,20 +6,16 @@ hp = clamp(hp, 0, hpMax);
 hpLast = hp;
 
 
-//slowness spaghetti code
+//slowness
 if (timerSlowed > 0) timerSlowed--;
-else if (slowed)
-{
-	slowed = false;
-	acc = accDefault;
-	velMax = velMaxDefault;
-}
+else slowed = false;
 
-//extendo net spaghetti code
-if (caught)
-{
-	x = caught.x;
-	y = caught.y;
+if (buildupSlowness >= limitSlowness)
+{	
+	buildupSlowness = 0;
+	timerSlowed = payoffSlowness;
+	
+	slowed = true;
 }
 
 if(idleTimer <= 0)

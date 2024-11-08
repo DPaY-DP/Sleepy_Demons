@@ -1,12 +1,5 @@
 var _length = array_length(shadows);
 
-//for (var i = 0; i < _length; i++)
-//{
-//	var _alpha = 1 - (i + 1) / (_length + 1);
-	
-//	draw_sprite_simple(sprite_index, shadows[i].image, shadows[i].x, shadows[i].y, { alpha : _alpha * image_alpha, angle : shadows[i].angle });
-//}
-
 if (timerCooldown > 0)
 {
 	var _barWidth = 30;

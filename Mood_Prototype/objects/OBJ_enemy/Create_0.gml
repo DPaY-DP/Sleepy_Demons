@@ -1,6 +1,4 @@
 #region IMMUTABLE VALUES
-
-//global values
 distanceWaypoint = 40;
 distanceUnstuck = 10;
 
@@ -13,7 +11,6 @@ myHitbox = instance_create_depth(x, y, depth, obj_enemyHitbox, { owner : id });
 
 #region GAME VALUES
 inRoom = instance_place(x, y, obj_room);					//must start in room !!
-show_debug_message($"spawn room: {inRoom}")
 
 hvel = 0;
 vvel = 0;
@@ -29,7 +26,10 @@ lastPoint = undefined;
 
 timerUnstuck = 0;
 
-hitCombo = { burstId : undefined, hits : 0 };
+timerSlowed = 0;
+slowed = false;
+
+buildupSlowness = 0;
 
 sleepSounds = [sleepy_demon_1_1,sleepy_demon_3_2,sleepy_demon_enno,sleepy_demon_eve]; //LUIZSOUND Array for sleep sounds
 idleSounds = [where_my_teddy,snd_demonSpeaks1,snd_demonSpeak2Deeper,snd_laughD1,snd_laughD2,snd_laughD3,snd_laughE1,snd_laughE2Deep,snd_laughE3]; //LUIZSOUND Array for idle Chatter
@@ -68,6 +68,103 @@ caught = undefined;
 
 
 #region METHODS
+apply_physics = function(_hacc, _vacc)
+{	
+	//apply accelleration
+		//if there is an accellerative force exalted by the player...
+	if (_hacc != 0)
+	{
+		if (sign(_hacc) == 1)
+		{
+			if (hvel + _hacc < velMaxWalk) hvel += _hacc;
+		}
+	
+		if (sign(_hacc) == -1) 
+		{
+			if (hvel + _hacc > -velMaxWalk) hvel += _hacc;
+		}
+	}
+
+	if (_vacc != 0)
+	{
+		if (sign(_vacc) == 1)
+		{
+			if (vvel + _vacc < velMaxWalk) vvel += _vacc;
+		}
+	
+		if (sign(_vacc) == -1) 
+		{
+			if (vvel + _vacc > -velMaxWalk) vvel += _vacc;
+		}
+	}
+	
+	hvel = clamp(hvel, -velMaxPhys, velMaxPhys);
+	vvel = clamp(vvel, -velMaxPhys, velMaxPhys);
+	
+	hvel *= fric;
+	vvel *= fric;
+	
+	if (slowed) repeat (3)
+	{
+		hvel *= fric;
+		vvel *= fric;
+	}
+	
+
+	////collision
+	if (!place_meeting(x + hvel, y, obj_wall)) 
+	{
+		x += round(hvel);
+	}
+	else
+	{
+		x = round(x);
+		hvel = round(hvel);
+	
+		var _doEffect = false;
+		if (abs(hvel) >= 10) _doEffect = true;
+
+		var _loop = 1;
+		while (!place_meeting(x + sign(hvel), y, obj_wall)) && (_loop < 1000)
+		{
+			x += sign(hvel);
+			_loop++;
+			
+			if (_loop == 1000) if (global.debugmode) show_message($"X-collision loop overflow!\n\nPablo {id} in room {inRoom.number}\n x: {x}, y: {y}, hvel : {hvel}");
+		}
+	
+		if (_doEffect) do_effect_dust(x + sign(hvel) * sprite_width / 2, y);
+	
+		hvel = 0;
+	}
+
+	if (!place_meeting(x, y + vvel, obj_wall)) 
+	{
+		y += round(vvel);
+	}
+	else
+	{
+		y = round(y);
+		vvel = round(vvel);
+	
+		var _doEffect = false;
+		if (abs(vvel) >= 10) _doEffect = true;
+
+		var _loop = 1;
+		while (!place_meeting(x, y + sign(vvel), obj_wall)) && (_loop < 1000)
+		{
+			y += sign(vvel);
+			_loop++;
+			
+			if (_loop == 1000) if (global.debugmode) show_message($"Y-collision loop overflow!\n\nPablo {id} in room {inRoom.number}\n x: {x}, y: {y}, vvel : {vvel}");
+		}
+	
+		if (_doEffect) do_effect_dust(x, y + sign(vvel) * sprite_height / 2);
+	
+		vvel = 0;
+	}
+}
+
 movement_and_navigation = function(_xTo, _yTo)
 {
 	var _dir = undefined;
@@ -105,8 +202,6 @@ movement_and_navigation = function(_xTo, _yTo)
 			}
 		}
 		else _dir = _movedir - (_movedir - _goaldir) * 2;
-		
-		//show_debug_message($"\nframe: {global.debugtimer}\ngoaldir = {_goaldir}\nmovedir = {_movedir}\ntargetdir = {_dir}");
 	}
 	else 
 	{
@@ -117,104 +212,11 @@ movement_and_navigation = function(_xTo, _yTo)
 	
 	
 	var _return = [x, y];
-		
+	
 	var _hacc = lengthdir_x(acc, _dir);
 	var _vacc = lengthdir_y(acc, _dir);
 	
-	//apply accelleration
-		//if there is an accellerative force exalted by the player...
-	if (_hacc != 0)
-	{
-		if (sign(_hacc) == 1)
-		{
-			if (hvel + _hacc < velMaxWalk) hvel += _hacc;
-		}
-	
-		if (sign(_hacc) == -1) 
-		{
-			if (hvel + _hacc > -velMaxWalk) hvel += _hacc;
-		}
-	}
-
-	if (_vacc != 0)
-	{
-		if (sign(_vacc) == 1)
-		{
-			if (vvel + _vacc < velMaxWalk) vvel += _vacc;
-		}
-	
-		if (sign(_vacc) == -1) 
-		{
-			if (vvel + _vacc > -velMaxWalk) vvel += _vacc;
-		}
-	}
-	
-	hvel = clamp(hvel, -velMaxPhys, velMaxPhys);
-	vvel = clamp(vvel, -velMaxPhys, velMaxPhys);
-	
-	hvel *= fric;
-	vvel *= fric;
-	
-	
-
-	////collision
-	if (!place_meeting(x + hvel, y, obj_wall)) 
-	{
-		x += round(hvel);
-	}
-	else
-	{
-		x = round(x);
-		hvel = round(hvel);
-	
-		var _doEffect = false;
-		if (abs(hvel) >= 10) _doEffect = true;
-
-		var _loop = 1;
-		while (!place_meeting(x + sign(hvel), y, obj_wall)) && (_loop < 1000)
-		{
-			x += sign(hvel);
-		
-			//show_debug_message($"hvel: {hvel}")
-			//show_debug_message($"Resolving collision, loop {_loop}, x = {x}");
-			_loop++;
-			
-			if (_loop == 1000) if (global.debugmode) show_message($"X-collision loop overflow!\n\nPablo {id} in room {inRoom.number}\n x: {x}, y: {y}, hvel : {hvel}");
-		}
-	
-		if (_doEffect) do_effect_dust(x + sign(hvel) * sprite_width / 2, y);
-	
-		hvel = 0;
-	}
-
-	if (!place_meeting(x, y + vvel, obj_wall)) 
-	{
-		y += round(vvel);
-	}
-	else
-	{
-		y = round(y);
-		vvel = round(vvel);
-	
-		var _doEffect = false;
-		if (abs(vvel) >= 10) _doEffect = true;
-
-		var _loop = 1;
-		while (!place_meeting(x, y + sign(vvel), obj_wall)) && (_loop < 1000)
-		{
-			y += sign(vvel);
-		
-			//show_debug_message($"vvel: {vvel}")
-			//show_debug_message($"Resolving collision, loop {_loop}, y = {y}");
-			_loop++;
-			
-			if (_loop == 1000) if (global.debugmode) show_message($"Y-collision loop overflow!\n\nPablo {id} in room {inRoom.number}\n x: {x}, y: {y}, vvel : {vvel}");
-		}
-	
-		if (_doEffect) do_effect_dust(x, y + sign(vvel) * sprite_height / 2);
-	
-		vvel = 0;
-	}
+	apply_physics(_hacc, _vacc);
 	
 	array_push(_return, x);
 	array_push(_return, y);
@@ -359,9 +361,7 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 }
 
 walk_navmesh = function(_dist)
-{
-	//show_debug_message($"\n		walking navmesh: {navmesh}")
-	
+{	
 	var _xNav = navmesh[0].x;
 	var _yNav = navmesh[0].y;
 	
@@ -400,7 +400,6 @@ walk_navmesh = function(_dist)
 					xLast = x;
 					yLast = y;
 					
-					//lastPoint = undefined;
 					if (global.debugmode) show_message($"Pablo {id} in room {inRoom.number}\nNavigating back to previous waypoint:\n{lastPoint}");
 				}
 				else 
@@ -478,6 +477,8 @@ statePlaying.start = function()
 }
 statePlaying.run = function()
 {
+	apply_physics(0, 0);
+	
 	if (timerPlaying > 0) timerPlaying--;
 	else
 	{
@@ -528,8 +529,6 @@ stateWalk.run = function()
 			break;
 		}
 	}
-	
-	//show_debug_message(navmesh)
 	
 	var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
 	if (_distPlayer < rangePlayerFlee) && (intent != "recover") &&
@@ -672,6 +671,8 @@ stateWait.start = function()
 }
 stateWait.run = function()
 {
+	apply_physics(0, 0);
+	
 	var _updateRoom = instance_place(x, y, obj_room);
 	if (_updateRoom != noone) inRoom = _updateRoom;
 	
@@ -723,6 +724,8 @@ stateSabotage.start = function()
 }
 stateSabotage.run = function()
 {
+	apply_physics(0, 0);
+	
 	var _updateRoom = instance_place(x, y, obj_room);
 	if (_updateRoom != noone) inRoom = _updateRoom;
 	
@@ -763,6 +766,8 @@ stateRecover.start = function()
 }
 stateRecover.run = function()
 {	
+	apply_physics(0, 0);
+	
 	timerRecover--;
 	if (timerRecover <= 0) switch_state(stateSeek);
 
@@ -836,5 +841,4 @@ stateSleep.start = function()
 stateLock = new State("Lock");
 
 initialize_state(statePlaying);
-//alarm[0] = 2;			//WHY??
 #endregion

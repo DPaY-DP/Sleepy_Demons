@@ -3,8 +3,8 @@ if (animate) array_insert(shadows, 0, { x : x, y : y, angle : image_angle, image
 if (array_length(shadows) == shadowsMax) array_pop(shadows);
 
 timerCooldown--;
+if (obj_loadout.weaponActive == 0)
 if (!instance_exists(obj_managerMinigame)) && (obj_player.state.name != "Lock")
-
 if (keyMelee) && (timerCooldown <= 0)
 {
 	if (counterMeleeCharge <= 30)

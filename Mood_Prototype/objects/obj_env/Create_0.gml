@@ -1,26 +1,35 @@
   #region IMMUTABLE VALUES
-show_debug_message("create event");
 name = "env object";
 
-if (!variable_global_exists("countEnv")) global.countEnv = 0;
-numberEnv = global.countEnv++;
-
 inRoom = instance_place(x, y, obj_room);
-
-hpMax = 100;
-stageMax = 2;
 
 image_index = image_number - 1;
 
 distInteract = 200;
 
 membersMax = 3;
-membersSabo = 3;
+membersSabo = 1;
 
 pointsSabo = [];
+#endregion
+
+
+#region GAME VALUES
+hp = hpMax;
+
+members = [];
+
+pointMeet = undefined;
+
+POIs = [];
+#endregion
+
+
+#region SETUP AND SPAWNING
+if (!variable_global_exists("countEnv")) global.countEnv = 0;
+numberEnv = global.countEnv++;
 
 var _dir = 0;
-var _distPointSabo = 64;
 for (var i = 0; i < 8; i++)
 {
 	var _x = x + lengthdir_x(64, _dir);
@@ -45,39 +54,7 @@ if (array_length(pointsSabo) < membersMax)
 #endregion
 
 
-#region GAME VALUES
-hp = hpMax;
-stage = stageMax;
-
-hpDrain = 0;
-
-members = [];
-
-pointMeet = undefined;
-#endregion
-
-
 #region METHODS
-switch_stage = function(_change)
-{
-	stage += _change;
-	image_index = stage;
-	
-	switch (stage)
-	{		
-		case 2:		hpDrain = 0.1;
-					inRoom.flood = false;
-		break;
-		
-		case 1:		hpDrain = 0.2;
-					inRoom.flood = true;
-		break;
-		
-		case 0:		hpDrain = 0.3;
-		break;
-	}
-}
-
 add_member = function(_id)
 {
 	if (array_length(members) == membersMax) return false

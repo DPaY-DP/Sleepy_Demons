@@ -1,15 +1,11 @@
 #region IMMUTABLE VALUES
 accDefault = 1.25;
+accBoosted = 1.33;
 velMaxWalkDefault = 8;
+velMaxWalkBoosted = 12;
 velMaxPhys = 60;
 
 fric = 0.86;
-
-accWater = 0.99;
-velMaxWater = 5.5;
-
-frictionStandingWater = 0.55;
-frictionWalkingWater = 0.4;
 
 spdRepair = 1.5;
 #endregion
@@ -30,6 +26,9 @@ vvel = 0;
 inRoom = undefined;
 
 animateMovement = false;
+
+boosted = false;
+timerBoosted = 0;
 #endregion
 
 
@@ -114,41 +113,26 @@ stateActive.run = function()
 	////speed modification
 	var _updateRoom = instance_place(x, y, obj_room);
 	if (_updateRoom != noone) inRoom = _updateRoom;
-
-	if (inRoom.flood)
-	{
-		acc = accWater;
-		velMax = velMaxWater;
 	
-		//frictionStanding = frictionStandingWater;
-		//frictionWalking = frictionWalkingWater;
+	if (boosted)
+	{
+		var _acc = accBoosted;
+		var _velMaxWalk = velMaxWalkBoosted;
 	}
 	else
 	{
-		acc = accDefault;
-		velMax = velMaxWalkDefault;
-
-		//frictionStanding = frictionStandingDefault;
-		//frictionWalking = frictionWalkingDefault;
+		var _acc = accDefault;
+		var _velMaxWalk = velMaxWalkDefault;
 	}
-
-		//booster behavior (remake)
-		//if (place_meeting(x,y, obj_booster)) booster_cd = 10;
-		//if (booster_cd > 0)
-		//{
-		//	booster_speed = 5;
-		//	booster_cd =  booster_cd - .1;
-		//}
-		//else
-		//{
-		//	booster_speed = 0;
-		//}
+	
+	if (timerBoosted > 0) timerBoosted--;
+	else boosted = false;
 
 	//movement
 	//get accelleration
 		//reads out the players input and converts it into accelleration defined by the acc variable
-	var _hacc = (right - left) * acc;
-	var _vacc = (down - up) * acc;
+	var _hacc = (right - left) * _acc;
+	var _vacc = (down - up) * _acc;
 
 
 	//apply accelleration
@@ -157,12 +141,12 @@ stateActive.run = function()
 	{
 		if (sign(_hacc) == 1)
 		{
-			if (hvel + _hacc < velMaxWalk) hvel += _hacc;
+			if (hvel + _hacc < _velMaxWalk) hvel += _hacc;
 		}
 	
 		if (sign(_hacc) == -1) 
 		{
-			if (hvel + _hacc > -velMaxWalk) hvel += _hacc;
+			if (hvel + _hacc > -_velMaxWalk) hvel += _hacc;
 		}
 	}
 
@@ -170,12 +154,12 @@ stateActive.run = function()
 	{
 		if (sign(_vacc) == 1)
 		{
-			if (vvel + _vacc < velMaxWalk) vvel += _vacc;
+			if (vvel + _vacc < _velMaxWalk) vvel += _vacc;
 		}
 	
 		if (sign(_vacc) == -1) 
 		{
-			if (vvel + _vacc > -velMaxWalk) vvel += _vacc;
+			if (vvel + _vacc > -_velMaxWalk) vvel += _vacc;
 		}
 	}
 	

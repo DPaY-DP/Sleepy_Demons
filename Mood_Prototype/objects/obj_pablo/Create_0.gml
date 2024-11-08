@@ -25,4 +25,7 @@ intervalCackle = 300;
 intervalRecoverFlee = 120;
 intervalRecoverExecute = 300;
 
+limitSlowness = 10;
+payoffSlowness = 300;
+
 event_inherited();
