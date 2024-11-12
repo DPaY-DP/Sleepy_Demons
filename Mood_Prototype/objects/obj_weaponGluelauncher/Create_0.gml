@@ -1,4 +1,6 @@
 //IMMUTABLE VALUES
+name = "Gluegun";
+
 intervalFirerate = 45;
 
 rocketjump = 150;

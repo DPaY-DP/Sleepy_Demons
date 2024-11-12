@@ -187,7 +187,11 @@ stateWin.run = function()
 	if (keyboard_check_pressed(vk_space)) 
 	{
 		var _length = array_length(global.save.levels)
-		if (currentLevel < _length - 1) room_goto(global.save.levels[currentLevel + 1].room)
+		if (currentLevel < _length - 1) 
+		{
+			global.roomTo = global.save.levels[currentLevel + 1].room;
+			room_goto(room_loadout);
+		}
 		else room_goto(room_credits);
 		
 		switch_state(stateGame);

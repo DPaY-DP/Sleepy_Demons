@@ -83,9 +83,9 @@ instance_create_depth(x, y, depth - 2, obj_playerHand);
 
 with (obj_loadout)
 {
-	weaponsEquipped[0] = instance_create_layer(other.x, other.y, "Weapons", weaponsMain[selectedMain]);
-	weaponsEquipped[1] = instance_create_layer(other.x, other.y, "Weapons", weaponsEffect[selected01]);
-	weaponsEquipped[2] = instance_create_layer(other.x, other.y, "Weapons", weaponsEffect[selected02]);
+	weaponsEquipped[0] = instance_create_layer(other.x, other.y, "Weapons", weaponsMain[selected[0]]);
+	weaponsEquipped[1] = instance_create_layer(other.x, other.y, "Weapons", weaponsEffect[selected[1]]);
+	weaponsEquipped[2] = instance_create_layer(other.x, other.y, "Weapons", weaponsEffect[selected[2]]);
 }
 #endregion
 

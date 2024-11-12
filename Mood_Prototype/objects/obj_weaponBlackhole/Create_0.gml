@@ -1,4 +1,6 @@
 //IMMUTABLE VALUES
+name = "Blackhole";
+
 intervalFirerate = 45;
 
 rocketjump = 30;

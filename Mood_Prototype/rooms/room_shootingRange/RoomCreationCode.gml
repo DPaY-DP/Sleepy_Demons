@@ -1,0 +1,1 @@
+show_debug_message("shooting range room room room");

@@ -4,7 +4,7 @@ mode = "main";
 
 //methods
 
-draw_menu_button = function(_string, _size, _function, _active = true)
+draw_menu_button = function(_string, _size, _function, _active = true, _argument)
 {	
 	var _font = font_upheaval_scalable;
 	var _fontsize = _size;
@@ -30,7 +30,7 @@ draw_menu_button = function(_string, _size, _function, _active = true)
 		_color = c_grey;
 		if (mouse_check_button_pressed(mb_left)) 
 		{
-			_function();
+			_function(_argument);
 			audio_play_sound(snd_button,1,false)
 		}
 	}

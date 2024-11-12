@@ -366,6 +366,7 @@
     {"id":{"name":"spr_bulletPyjama","path":"sprites/spr_bulletPyjama/spr_bulletPyjama.yy",},},
     {"id":{"name":"spr_bulletUI","path":"sprites/spr_bulletUI/spr_bulletUI.yy",},},
     {"id":{"name":"spr_bush","path":"sprites/spr_bush/spr_bush.yy",},},
+    {"id":{"name":"spr_buton","path":"sprites/spr_buton/spr_buton.yy",},},
     {"id":{"name":"spr_buttonCredits","path":"sprites/spr_buttonCredits/spr_buttonCredits.yy",},},
     {"id":{"name":"spr_buttonQuit","path":"sprites/spr_buttonQuit/spr_buttonQuit.yy",},},
     {"id":{"name":"spr_buttonSettings","path":"sprites/spr_buttonSettings/spr_buttonSettings.yy",},},
@@ -384,6 +385,7 @@
     {"id":{"name":"spr_clothesOnFloor","path":"sprites/spr_clothesOnFloor/spr_clothesOnFloor.yy",},},
     {"id":{"name":"spr_colliderCorner","path":"sprites/spr_colliderCorner/spr_colliderCorner.yy",},},
     {"id":{"name":"spr_colliderMask","path":"sprites/spr_colliderMask/spr_colliderMask.yy",},},
+    {"id":{"name":"spr_confrim","path":"sprites/spr_confrim/spr_confrim.yy",},},
     {"id":{"name":"spr_creditsGeneral","path":"sprites/spr_creditsGeneral/spr_creditsGeneral.yy",},},
     {"id":{"name":"spr_crosshair","path":"sprites/spr_crosshair/spr_crosshair.yy",},},
     {"id":{"name":"spr_cursor","path":"sprites/spr_cursor/spr_cursor.yy",},},
@@ -551,8 +553,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"room_loadout","path":"rooms/room_loadout/room_loadout.yy",},},
     {"roomId":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
+    {"roomId":{"name":"room_loadout","path":"rooms/room_loadout/room_loadout.yy",},},
     {"children":[
         {"roomId":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
       ],"groupName":"debug",},

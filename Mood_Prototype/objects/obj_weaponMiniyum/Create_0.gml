@@ -1,4 +1,6 @@
 //IMMUTABLE VALUES
+name = "Miniyum";
+
 intervalFirerate = 4;
 
 ammoMax = 100;

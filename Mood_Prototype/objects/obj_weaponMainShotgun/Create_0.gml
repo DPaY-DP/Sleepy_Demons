@@ -1,4 +1,6 @@
 //IMMUTABLE VALUES
+name = "Main: Shotgun";
+
 intervalFirerate = 60;
 
 rocketjump = 30;

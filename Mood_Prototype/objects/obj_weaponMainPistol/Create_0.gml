@@ -1,4 +1,6 @@
 //IMMUTABLE VALUES
+name = "Main: Pistol";
+
 intervalFirerate = 45;
 
 rocketjump = 30;

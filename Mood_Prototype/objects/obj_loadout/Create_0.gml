@@ -1,8 +1,6 @@
 //SETUP
 if (instance_number(id) > 1) instance_destroy();
 
-global.loadoutLevel = room_shootingRange;
-
 
 //IMMUTABLE VALUES
 weaponsMain =
@@ -25,10 +23,8 @@ weaponsEquipped = [];
 //GAME VALUES
 modeSelect = 0;
 
-selectedMain = 0;
-
-selected01 = 0;
-selected02 = 1;
+selected = [0, 0, 0];
+spriteWeapon = [spr_weaponMenuMain, spr_weaponMenuOther, spr_weaponMenuOther];
 
 shufflebag = [];
 
@@ -96,12 +92,14 @@ stateGame.run = function()
 }
 stateGame.drawGUI = function()
 {
+		//ammo in game
 	var _y = GUIheight * 0.7;
 	for (var i = 1; i < 3; i++)
 	{
 		if (i == weaponActive) var _size = 2;
 		else var _size = 1;
 		
+		show_debug_message(weaponsEquipped[i].name)
 		draw_text_simple(GUIwidth * 0.05, _y, $"{weaponsEquipped[i].ammo} / {weaponsEquipped[i].ammoMax}", { size : _size / 2, halign : fa_left, valign : fa_top, font : font_dmg });
 		_y += 80 * _size;
 	}
@@ -116,38 +114,43 @@ stateSelect.start = function()
 {
 }
 stateSelect.run = function()
-{
-	//get input
-	var lmb = mouse_check_button_pressed(mb_left);
-	var rmb = mouse_check_button_pressed(mb_right);
-	var space = keyboard_check_pressed(vk_space);
-	
-	switch (modeSelect)
-	{
-		case 0:		if (lmb) selectedMain++;
-					if (rmb) selectedMain--;
-					selectedMain = loop(selectedMain, 0, sprite_get_number(spr_weaponMenuMain) - 1);
-		break;
-	
-		case 1:		if (lmb) selected01++;
-					if (rmb) selected01--;
-					selected01 = loop(selected01, 0, sprite_get_number(spr_weaponMenuOther) - 1);
-		break;
-	
-		case 2:		if (lmb) selected02++;
-					if (rmb) selected02--;
-					selected02 = loop(selected02, 0, sprite_get_number(spr_weaponMenuOther) - 1);
-		break;
-	}
-
-	if (space) modeSelect++;
-	
-	if (modeSelect == 3) room_goto(global.loadoutLevel);
+{	
 }
 stateSelect.drawGUI = function()
 {
+	draw_text_simple(GUIwidth / 2, GUIheight * 0.1, "SELECT LOADOUT", { font : font_upheaval_scalable, size : fontscale * 12 });
+	
+	//draw buttons
+	var _size = 2 * global.GUIScale;
+	var _width = sprite_get_width(spr_buton)	* _size;
+	var _height = sprite_get_height(spr_buton)	* _size;
+	
+	var _x = GUIwidth / 6 * (1 + 2 * modeSelect);
+	
+	var _y = GUIheight * 0.4;
+	draw_sprite_simple(spr_buton, selected[modeSelect], _x, _y,		{ size : _size });
+	if (mouse_in_area_GUI(_x - _width / 2, _y - _height, _width, _height)) && (mouse_check_button_pressed(mb_left)) selected[modeSelect]++;
+	
+	var _y = GUIheight * 0.6;
+	draw_sprite_simple(spr_buton, selected[modeSelect], _x, _y,		{ xscale : _size, yscale : -_size });
+	if	(mouse_in_area_GUI(_x - _width / 2, _y, _width, _height)) && (mouse_check_button_pressed(mb_left)) selected[modeSelect]--;
+	
+	selected[modeSelect] = loop(selected[modeSelect], 0, sprite_get_number(spriteWeapon[modeSelect]) - 1);
+	
+	
+	var _y = GUIheight * 0.9;
+	var _size = 1 * global.GUIScale;
+	var _width = sprite_get_width(spr_confrim)	* _size;
+	var _height = sprite_get_height(spr_confrim)	* _size;
+	draw_sprite_simple(spr_confrim, 0, _x, _y,		{ size : _size });
+	if	((mouse_in_area_GUI(_x - _width / 2, _y - _height / 2, _width, _height)) && (mouse_check_button_pressed(mb_left))) ||
+		(keyboard_check_pressed(vk_space)) modeSelect++;
+	
+	if (modeSelect == 3) room_goto(global.roomTo);
+	
+	
 	//draw main
-	draw_sprite_simple(spr_weaponMenuMain, selectedMain, GUIwidth / 6, GUIheight / 2, { size : 4 });
-	draw_sprite_simple(spr_weaponMenuOther, selected01, GUIwidth / 6 * 3, GUIheight / 2, { size : 4 });
-	draw_sprite_simple(spr_weaponMenuOther, selected02, GUIwidth / 6 * 5, GUIheight / 2, { size : 4 });
+	draw_sprite_simple(spriteWeapon[0], selected[0], GUIwidth / 6, GUIheight / 2,		{ size : 6 * global.GUIScale });
+	draw_sprite_simple(spriteWeapon[1], selected[1], GUIwidth / 6 * 3, GUIheight / 2,	{ size : 6 * global.GUIScale });
+	draw_sprite_simple(spriteWeapon[2], selected[2], GUIwidth / 6 * 5, GUIheight / 2,	{ size : 6 * global.GUIScale });
 }
