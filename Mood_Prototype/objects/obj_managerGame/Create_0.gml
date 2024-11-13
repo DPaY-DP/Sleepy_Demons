@@ -54,10 +54,17 @@ draw_minimap = function(_scale)
 	var _offsetX = GUIwidth * 0.03;
 	var _offsetY = GUIwidth * 0.03;
 	
-	if (obj_player.x < camX + 300) && (obj_player.y < camY + 300)
-	{
-		if (mapAlpha > 0) mapAlpha -= 0.025;
-	}
+	//if (obj_player.x < camX + 300) && (obj_player.y < camY + 300)
+	//{
+	//	if (mapAlpha > 0) mapAlpha -= 0.025;
+		
+	//}
+	//else if (mapAlpha < 1) mapAlpha += 0.025;
+	
+	if (collision_rectangle(camX,camY,camX + 300, camY + 300,OBJ_agents,false,false) != noone) 
+    {
+        if (mapAlpha > 0) mapAlpha -= 0.025;
+    }
 	else if (mapAlpha < 1) mapAlpha += 0.025;
 	
 	with (obj_doorway) 
