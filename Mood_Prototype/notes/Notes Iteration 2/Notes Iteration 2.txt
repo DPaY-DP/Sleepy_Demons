@@ -11,3 +11,5 @@ Optimization:
 Bugs:
  - Player gets stuck upon trying to exit portal (???)
  - wappons shoot in minigame
+ 
+ 
