@@ -6,10 +6,13 @@
   "name":"obj_cable_red_end",
   "overriddenProperties":[],
   "parent":{
-    "name":"Cables",
-    "path":"folders/Objects/# Game/Minigames/Cables.yy",
+    "name":"CableGame",
+    "path":"folders/Objects/# Game/Minigames/CableGame.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_cable_end_parent",
+    "path":"objects/obj_cable_end_parent/obj_cable_end_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

@@ -99,7 +99,6 @@ stateGame.drawGUI = function()
 		if (i == weaponActive) var _size = 2;
 		else var _size = 1;
 		
-		show_debug_message(weaponsEquipped[i].name)
 		draw_text_simple(GUIwidth * 0.05, _y, $"{weaponsEquipped[i].ammo} / {weaponsEquipped[i].ammoMax}", { size : _size / 2, halign : fa_left, valign : fa_top, font : font_dmg });
 		_y += 80 * _size;
 	}

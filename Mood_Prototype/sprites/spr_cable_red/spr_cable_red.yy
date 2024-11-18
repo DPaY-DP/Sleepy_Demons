@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"ZZZ Other (Needs Sorting !!)",
-    "path":"folders/Sprites/ZZZ Other (Needs Sorting !!).yy",
+    "name":"CableGame",
+    "path":"folders/Sprites/MGames/CableGame.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

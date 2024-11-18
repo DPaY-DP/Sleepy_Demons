@@ -1,20 +1,22 @@
-//healing and preventing damage
-var _applyDamage = true;
-if	(hp < hpMax) && 
+//player healing when broken
+if	(broken) && 
+	(array_length(POIsBroken) == 0) &&
 	(point_distance(x, y, obj_player.x, obj_player.y) < distInteract) &&
 	(obj_player.inRoom == inRoom)
 {
 	if (keyRepair) 
 	{
-		hp += obj_player.spdRepair;
-		_applyDamage = false;
+		instance_create_depth(x, y, depth, obj_managerMinigame, { broken : id, game : enumMinigame.INPUTS_RAW });
+		applyDamage = false;
 	}
 }
 
-//applying damage
-if (_applyDamage) global.envHP -= hpDrain;
 
-//sabotaging
+//applying damage on full destroy
+if (broken) && (applyDamage) global.envHP -= hpDrain;
+
+
+//getting sabotaged
 var _numberSaboteurs = 0;
 var _length = array_length(members);
 for (var i = 0; i < _length; i++)
@@ -37,26 +39,23 @@ for (var i = 0; i < _length; i++)
 	hp -= _member.envDamage;
 }
 
+
 //change stage
-if (hp >= hpMax)
+if (hp < 0) && (!broken)
 {
-	if (stage < stageMax)
-	{
-		switch_stage(1)
-		hp = 0;
-	}
-	else 
-	{
-		//stage 3
-		hpDrain = 0;
-	}
-}
-
-if (hp < 0) && (stage > 0)
-{	
-	var _x = choose();
+	POIs = array_shuffle(POIs);
+	var _broken = array_pop(POIs);
+	_broken.applyDamage = true;
+	_broken.image_speed = 1;
 	
-	hp = hpMax;
+	array_push(POIsBroken, _broken);	
+	image_index = array_length(POIsBroken);
+	
+	if (array_length(POIs) != 0) hp = hpMax;
+	else
+	{
+		broken = true;
+		applyDamage = true;
+		image_blend = c_red;
+	}
 }
-
-hp = clamp(hp, 0, hpMax);

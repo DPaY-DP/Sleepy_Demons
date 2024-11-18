@@ -31,6 +31,6 @@
 	//#macro keySecondary mouse_check_button_pressed(mb_right)
 	//#macro keySecondaryHeld mouse_check_button(mb_right)
 	
-	#macro keyRepair keyboard_check(ord("E"))
+	#macro keyRepair keyboard_check_pressed(ord("E"))
 	#macro keyExecute keyboard_check_pressed(ord("F"))
 	#macro keyRetrievePillow keyboard_check_pressed(ord("Q"))

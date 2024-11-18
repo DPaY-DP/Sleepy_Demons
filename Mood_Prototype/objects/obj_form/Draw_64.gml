@@ -27,7 +27,7 @@ if (obj_managerMinigame.grabbedObject == id)
 if	(canBeGrabbed) &&
 	(obj_managerMinigame.grabbedObject == noone) &&
 	(mouse_check_button_pressed(mb_left)) &&
-	(mouse_in_area_GUI(	x - sprite_width * 0.75, y - sprite_height * 0.75,
+	(mouse_in_area_gui(	x - sprite_width * 0.75, y - sprite_height * 0.75,
 						sprite_width * 1.5, sprite_height * 1.5))
 {
 	obj_managerMinigame.grabbedObject = id;

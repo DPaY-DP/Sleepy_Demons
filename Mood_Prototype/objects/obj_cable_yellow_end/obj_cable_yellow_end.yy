@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
   "%Name":"obj_cable_yellow_end",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "eventList":[],
   "managed":true,
   "name":"obj_cable_yellow_end",
   "overriddenProperties":[],
   "parent":{
-    "name":"Cables",
-    "path":"folders/Objects/# Game/Minigames/Cables.yy",
+    "name":"CableGame",
+    "path":"folders/Objects/# Game/Minigames/CableGame.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_cable_end_parent",
+    "path":"objects/obj_cable_end_parent/obj_cable_end_parent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

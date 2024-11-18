@@ -1,12 +1,7 @@
 draw_self();
 
-var _factor = hp / hpMax;
-
-var _maxImage = image_number - 1;
-var _image = ((_factor / 3) + stage * (1/3)) * _maxImage;
-image_index = _image;
-
-if	(hp < hpMax) && 
+if	(broken) && 
+	(array_length(POIsBroken) == 0) &&
 	(point_distance(x, y, obj_player.x, obj_player.y) < distInteract) &&
 	(obj_player.inRoom == inRoom)
 {

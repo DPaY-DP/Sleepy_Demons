@@ -14,9 +14,10 @@ setup_state_machine();
 stateIdle = new State();
 stateIdle.run = function()
 {
-	if  (mouse_on_me_center_gui()) &&
-		(mouse_check_button_pressed(mb_left))
-		switch_state(stateGrab);
+	if (mouse_on_me_center_GUI()) && 
+	(mouse_check_button_pressed(mb_left))
+	switch_state(stateGrab);
+	else image_blend = c_white;
 }
 
 stateGrab = new State();
@@ -49,7 +50,7 @@ stateReturn.run = function()
 		switch_state(stateIdle);
 	}
 	
-	if  (mouse_on_me_center_gui()) &&
+	if  (mouse_on_me_center_GUI()) &&
 		(mouse_check_button_pressed(mb_left))
 		switch_state(stateGrab);
 }

@@ -3,32 +3,41 @@ name = "env object";
 
 inRoom = instance_place(x, y, obj_room);
 
-image_index = image_number - 1;
-
 distInteract = 200;
 
 membersMax = 3;
 membersSabo = 1;
 
 pointsSabo = [];
+
+hpMax = 50;
+hpDrain = 0.5;
+
+stageMax = image_number - 1;
 #endregion
 
 
 #region GAME VALUES
 hp = hpMax;
+POIs = [];
+POIsBroken = [];
+
+broken = false;
+applyDamage = false;
 
 members = [];
 
 pointMeet = undefined;
-
-POIs = [];
 #endregion
 
 
 #region SETUP AND SPAWNING
+	//setup environment count and add myself to it
 if (!variable_global_exists("countEnv")) global.countEnv = 0;
 numberEnv = global.countEnv++;
 
+
+	//create sabotage points for demons to interact with me
 var _dir = 0;
 for (var i = 0; i < 8; i++)
 {
@@ -49,7 +58,6 @@ if (array_length(pointsSabo) < membersMax)
 		_repeats++;
 	}
 	until (array_length(pointsSabo) == membersMax)
-	//show_message($"obj_env in room {inRoom.number} could not find enough sabo points to match membersMax variable, added {_repeats} repeats.")
 }
 #endregion
 
@@ -57,10 +65,16 @@ if (array_length(pointsSabo) < membersMax)
 #region METHODS
 add_member = function(_id)
 {
-	if (array_length(members) == membersMax) return false
+	if (array_length(members) == membersMax) 
+	{
+		show_debug_message("rejected member (full)")
+		return false
+	}
 	else array_push(members, _id);
 	
 	if (array_length(members) == 1) pointMeet = array_choose(inRoom.points);
+	
+	show_debug_message("accepted member")
 	
 	return true
 }
@@ -95,5 +109,12 @@ void_member = function(_id)
 	{
 		if (_id == pointsSabo[i][1]) pointsSabo[i][1] = 0;
 	}
+}
+
+fix = function()
+{
+	broken = false;
+	hp = hpMax;
+	image_blend = c_white;
 }
 #endregion

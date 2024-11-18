@@ -2,8 +2,6 @@
 global.envHPMax = 1000;
 
 
-
-
 //GAME VALUES
 global.envHP = global.envHPMax;
 
@@ -21,6 +19,34 @@ alarm[0] = 1;
 
 global.debugtimer = 0;
 global.colorsDebug = [c_red, c_yellow, c_green, c_blue, c_fuchsia, c_aqua, c_maroon, c_olive, c_lime, c_navy, c_teal, c_orange, c_purple];
+
+	//Minigames
+enum enumMinigame
+{
+	BRUSH,
+	CABLE,
+	FASTCLICK,
+	HORSESHOE,
+	INPUTS,
+	INPUTS_RAW,			//this gets used exclusively for env object repairs
+	LIGHTSWITCH,
+	SQUAREHOLE,
+	STUFF,
+	TICKLE,
+	TUCK,
+}
+
+
+arrayMinigames = [];
+switch (room)
+{
+	case room_00Executie:	array_push(arrayMinigames, enumMinigame.INPUTS);
+							array_push(arrayMinigames, enumMinigame.INPUTS);
+							array_push(arrayMinigames, enumMinigame.TUCK);
+							
+							arrayMinigames = array_shuffle(arrayMinigames);
+	break;
+}
 
 
 
@@ -121,7 +147,6 @@ stateGame.run = function()
 	
 	if(!audio_is_playing(currentSong) && !hasWon)
 	{
-		show_debug_message("Playing sound")
 		currentSong = choose(snd_musicLevel1, snd_musicLevel2);
 		//audio_play_sound(currentSong,1,false);
 	}

@@ -6,8 +6,8 @@
   "name":"obj_cable_green_start",
   "overriddenProperties":[],
   "parent":{
-    "name":"Cables",
-    "path":"folders/Objects/# Game/Minigames/Cables.yy",
+    "name":"CableGame",
+    "path":"folders/Objects/# Game/Minigames/CableGame.yy",
   },
   "parentObjectId":{
     "name":"obj_cable_parent",

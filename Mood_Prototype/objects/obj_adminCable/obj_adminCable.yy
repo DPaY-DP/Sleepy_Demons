@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_adminCable",
+  "%Name":"obj_admincable",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_adminCable",
+  "name":"obj_admincable",
   "overriddenProperties":[],
   "parent":{
-    "name":"Cables",
-    "path":"folders/Objects/# Game/Minigames/Cables.yy",
+    "name":"CableGame",
+    "path":"folders/Objects/# Game/Minigames/CableGame.yy",
   },
   "parentObjectId":null,
   "persistent":false,
