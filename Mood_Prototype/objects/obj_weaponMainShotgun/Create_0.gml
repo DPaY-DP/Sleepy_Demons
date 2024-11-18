@@ -8,6 +8,8 @@ rocketjump = 30;
 
 //GAME VALUES
 active = true;
+canShoot = true;
+
 
 timerFirerate = 0;
 

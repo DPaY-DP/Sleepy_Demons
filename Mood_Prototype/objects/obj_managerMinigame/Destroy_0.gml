@@ -1,0 +1,1 @@
+with (OBJ_weapon) canShoot = true;

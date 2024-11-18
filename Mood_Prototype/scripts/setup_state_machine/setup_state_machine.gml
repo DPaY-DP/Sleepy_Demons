@@ -18,13 +18,13 @@ function setup_state_machine()
 
 	timerState = 0;
 
-	switch_state = function(_toState)
+	switch_state = function(_toState, _argument)
 	{
 		state.stop();
 		lastState = state;
 	
 		state = _toState;
-		state.start();
+		state.start(_argument);
 		
 		timerState = -1;
 	}

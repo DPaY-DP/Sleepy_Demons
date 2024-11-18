@@ -1,5 +1,15 @@
+BEFORE DEPLOYMENT:
+ - Remove Shooting Range
+ - Re-enable Sound (uncomment functions)
+ - Change Version
+	> Enable version check savewipe
+ - Remove automatic save deletion
+ - Remove unlock_all();
+ - re-enable fullscreen as default setting
+ 
+
 Notes:
- - Demons need to have their physics enabled constantly, so they are properly affected by movement altering	effects such as the black hole gun.
+ - reload animation (shells flying)
 
 
 
@@ -8,8 +18,19 @@ Optimization:
 
 
 
+Unitended Behavior:
+ - You can softlock yourself with throw pillows (because they get consumed)
+
+
+
 Bugs:
- - Player gets stuck upon trying to exit portal (???)
- - wappons shoot in minigame
+ - "Bursh" minigame broken (I think its the pillow one)
+ - Brush minigame hitbox weird (make it larger)
+ - ESCaping to menu crashes game
  
  
+ 
+Completed / Fixed:
+ - Demons need to have their physics enabled constantly, so they are properly affected by movement altering	effects such as the black hole gun.
+ - wappon shoot in minigame
+ - player get stuck upon exiting portal

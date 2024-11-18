@@ -15,9 +15,10 @@ weaponsEffect =
 	obj_weaponGluelauncher,
 	obj_weaponBlackhole,
 	obj_weaponMiniyum,
+	obj_weaponGummybear,
+	obj_weaponStinkbomb,
+	//obj_weaponCatcher,
 ];
-
-weaponsEquipped = [];
 
 
 //GAME VALUES
@@ -32,14 +33,17 @@ shufflebag = [];
 //METHODS
 reload = function()
 {
+	if (weaponsMax < 2) exit;
+	
 	if (array_length(shufflebag) == 0)
 	{
+			//we could do this with a for loop if we ever wanna create more weapon slots
 		with (weaponsEquipped[1])
 		{
 			array_push(other.shufflebag, [1, ammoBag]);
 			array_push(other.shufflebag, [1, ammoBag]);
 		}
-		with (weaponsEquipped[2])
+		if (weaponsEquipped[2] != noone) with (weaponsEquipped[2])
 		{
 			array_push(other.shufflebag, [2, ammoBag]);
 			array_push(other.shufflebag, [2, ammoBag]);
@@ -61,6 +65,10 @@ stateGame = new State();
 stateGame.start = function()
 {
 	weaponActive = 0;
+	
+	if (weaponsMax > 0) weaponsEquipped[0] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", weaponsMain[selected[0]]);
+	if (weaponsMax > 1) weaponsEquipped[1] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", weaponsEffect[selected[1]]);
+	if (weaponsMax > 2) weaponsEquipped[2] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", weaponsEffect[selected[2]]);
 }
 stateGame.run = function()
 {
@@ -93,11 +101,12 @@ stateGame.run = function()
 stateGame.drawGUI = function()
 {
 		//ammo in game
+	var _size = 1;
 	var _y = GUIheight * 0.7;
-	for (var i = 1; i < 3; i++)
+	for (var i = 1; i < weaponsMax; i++)
 	{
 		if (i == weaponActive) var _size = 2;
-		else var _size = 1;
+		//else var _size = 1;
 		
 		draw_text_simple(GUIwidth * 0.05, _y, $"{weaponsEquipped[i].ammo} / {weaponsEquipped[i].ammoMax}", { size : _size / 2, halign : fa_left, valign : fa_top, font : font_dmg });
 		_y += 80 * _size;
@@ -111,6 +120,21 @@ stateGame.drawGUI = function()
 stateSelect = new State();
 stateSelect.start = function()
 {
+	weaponsEquipped = [noone, noone, noone];
+	modeSelect = 0;
+
+	var _level = global.save.levels[get_level_id(global.roomTo)];
+	
+	if (_level.loadoutWeapons == 0)
+	{
+		weaponsMax = 0;
+		room_goto(global.roomTo);
+		exit;
+	}
+	else
+	{
+		weaponsMax = _level.loadoutWeapons;
+	}
 }
 stateSelect.run = function()
 {	
@@ -145,11 +169,30 @@ stateSelect.drawGUI = function()
 	if	((mouse_in_area_GUI(_x - _width / 2, _y - _height / 2, _width, _height)) && (mouse_check_button_pressed(mb_left))) ||
 		(keyboard_check_pressed(vk_space)) modeSelect++;
 	
-	if (modeSelect == 3) room_goto(global.roomTo);
+	if (modeSelect == weaponsMax) 
+	{
+		show_debug_message("weaponsMax")
+		room_goto(global.roomTo);
+	}
 	
 	
 	//draw main
 	draw_sprite_simple(spriteWeapon[0], selected[0], GUIwidth / 6, GUIheight / 2,		{ size : 6 * global.GUIScale });
-	draw_sprite_simple(spriteWeapon[1], selected[1], GUIwidth / 6 * 3, GUIheight / 2,	{ size : 6 * global.GUIScale });
-	draw_sprite_simple(spriteWeapon[2], selected[2], GUIwidth / 6 * 5, GUIheight / 2,	{ size : 6 * global.GUIScale });
+	if (weaponsMax > 1) 
+	{
+		draw_sprite_simple(spriteWeapon[1], selected[1], GUIwidth / 6 * 3, GUIheight / 2,	{ size : 6 * global.GUIScale });
+	}
+	else
+	{
+		draw_sprite_simple(spr_weaponMenuNone, 0, GUIwidth / 6 * 3, GUIheight / 2,	{ size : 6 * global.GUIScale });
+	}
+	
+	if (weaponsMax > 2) 
+	{
+		draw_sprite_simple(spriteWeapon[2], selected[2], GUIwidth / 6 * 5, GUIheight / 2,	{ size : 6 * global.GUIScale });
+	}
+	else
+	{
+		draw_sprite_simple(spr_weaponMenuNone, 0, GUIwidth / 6 * 5, GUIheight / 2,	{ size : 6 * global.GUIScale });
+	}
 }
