@@ -79,7 +79,7 @@ do_effect_dust = function(_x, _y)
 
 
 #region SPAWNING AND SETUP
-instance_create_depth(x, y, depth - 2, obj_playerHand);
+instance_create_depth(x, y, depth - 2, obj_weaponPillow);
 #endregion
 
 #region STATE MACHINE

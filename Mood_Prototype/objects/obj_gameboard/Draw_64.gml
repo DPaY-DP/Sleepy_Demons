@@ -8,7 +8,7 @@ draw_self();
 
 
 //functionality
-if	(mouse_in_area_gui(x - sprite_width / 2, y - sprite_height / 2, sprite_width, sprite_height)) && 
+if	(mouse_in_area_GUI(x - sprite_width / 2, y - sprite_height / 2, sprite_width, sprite_height)) && 
 	(mouse_check_button_pressed(mb_left)) && 
 	(!obj_managerMinigame.holdingBoard) &&
 	(!placed)

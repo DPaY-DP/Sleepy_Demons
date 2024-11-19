@@ -172,6 +172,8 @@ stateWin.start = function()
 	hasWon = true;
 	audio_stop_sound(currentSong);
 	
+	obj_data.pull_weapons();
+	
 	if (currentLevel < array_length(global.save.levels) - 1) 
 	{
 		global.save.levels[currentLevel + 1].unlocked = true;

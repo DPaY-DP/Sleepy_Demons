@@ -39,7 +39,7 @@ stateIdle.run = function()
 	if (sabotaged) && (keyMelee) && (!instance_exists(obj_managerMinigame))
 	{
 		toggle_sabotaged(false);
-		instance_create_layer(obj_player.x, obj_player.y, "Player", obj_playerHand)
+		instance_create_layer(obj_player.x, obj_player.y, "Player", obj_weaponPillow)
 	}
 }
 stateIdle.draw = function()

@@ -57,7 +57,6 @@ reset_to_default = function(_structname)
 
 write_save = function()
 {
-	show_debug_message($"write save: {global.save}")
 	file_save(global.saveName, global.save, true);
 }
 
@@ -77,25 +76,25 @@ unlock_all = function()
 		global.save.levels[i].unlocked = true;
 	}
 	
-	global.save.weaponsUnlocked =
+	var _length = array_length(global.save.weaponsUnlocked.main);
+	for (var i = 0; i < _length; i++)
 	{
-		effect: 
-		[
-			obj_weaponGluelauncher,
-			obj_weaponBlackhole,
-			obj_weaponMiniyum,
-			obj_weaponGummybear,
-			obj_weaponStinkbomb,
-			obj_weaponCatchmines,
-		],
+		global.save.weaponsUnlocked.main[i][0] = true;
+	}
 	
-		main:
-		[	
-			obj_weaponMainPistol,
-			obj_weaponMainShotgun,
-			obj_weaponMainRifle,
-		],
-	};	
+	var _length = array_length(global.save.weaponsUnlocked.effect);
+	for (var i = 0; i < _length; i++)
+	{
+		global.save.weaponsUnlocked.effect[i][0] = true;
+	}
+	
+	write_save();
+}
+
+pull_weapons = function()
+{
+	global.save.weaponsUnlocked.main =		obj_loadout.weaponsMain;
+	global.save.weaponsUnlocked.effect =	obj_loadout.weaponsEffect;
 	
 	write_save();
 }
@@ -324,13 +323,21 @@ defaults =
 	{
 		effect: 
 		[
+			[0, obj_weaponGluelauncher],
+			[0, obj_weaponBlackhole],
+			[0, obj_weaponMiniyum],
+			[0, obj_weaponGummybear],
+			[0, obj_weaponStinkbomb],
+			[0, obj_weaponCatchmines],
 		],
 	
 		main:
 		[	
-			obj_weaponMainPistol,
+			[1, obj_weaponMainPistol],
+			[0, obj_weaponMainShotgun],
+			[0, obj_weaponMainRifle],
 		],
-	},
+	},			
 }
 
 

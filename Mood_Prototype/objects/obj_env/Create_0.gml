@@ -5,7 +5,7 @@ inRoom = instance_place(x, y, obj_room);
 
 distInteract = 200;
 
-membersMax = 3;
+membersMax = 4;
 membersSabo = 1;
 
 pointsSabo = [];
@@ -67,14 +67,14 @@ add_member = function(_id)
 {
 	if (array_length(members) == membersMax) 
 	{
-		show_debug_message("rejected member (full)")
+		//show_debug_message("rejected member (full)")
 		return false
 	}
 	else array_push(members, _id);
 	
 	if (array_length(members) == 1) pointMeet = array_choose(inRoom.points);
 	
-	show_debug_message("accepted member")
+	//show_debug_message("accepted member")
 	
 	return true
 }

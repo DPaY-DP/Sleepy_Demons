@@ -29,6 +29,8 @@ intervalRecoverExecute = 300;
 
 intervalInstigate = 180;
 
+limitSlowness = 10;
+
 //unique methods
 reset_membership = function()
 {

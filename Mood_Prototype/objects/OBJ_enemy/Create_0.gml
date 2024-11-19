@@ -615,14 +615,13 @@ stateSeek.start = function()
 		var _tryEnv = array_pop(_envs);
 		
 		//see if it is a valid sabotage target (hp remaining)
-		show_debug_message($"POIs: {array_length(_tryEnv.POIs)}; broken: {_tryEnv.broken}")
+		show_debug_message($"{name} looking for sabotage target:\nPOIs: {array_length(_tryEnv.POIs)}; broken: {_tryEnv.broken}")
 		
-		if (array_length(_tryEnv.POIs) != 0)	show_debug_message("1")
-		if (!_tryEnv.broken)					show_debug_message("2")
+		//if (array_length(_tryEnv.POIs) != 0)	show_debug_message("1")
+		//if (!_tryEnv.broken)					show_debug_message("2")
 		
 		if (array_length(_tryEnv.POIs) != 0) && (!_tryEnv.broken)
 		{
-			show_debug_message("hello")
 			//if valid, attempt to join
 			if (_tryEnv.add_member(id)) break;
 			else _tryEnv = undefined;

@@ -104,11 +104,11 @@ if (_enemy != noone) && (_enemy.owner.hp > 0) && (active)
 {
 	var _damage = 10;
 	var _color = c_red;
-	if (_enemy.owner.slowed) 
-	{
-		_damage = 21;
-		_color = c_yellow;
-	}
+	//if (_enemy.owner.slowed) 
+	//{
+	//	_damage = 21;
+	//	_color = c_yellow;
+	//}
 
 	instance_create_layer(_enemy.owner.x, _enemy.owner.y, "Overlay", obj_damageNumber, { damage : _damage, color : _color });
 
@@ -127,4 +127,17 @@ if (_tunnel != noone) && (active)
 
 	ammo--;
 	if (ammo == 0) instance_destroy();
+}
+
+var _enemy = instance_place(x, y, obj_pillowFort);
+if (_enemy != noone) && (active)
+{
+	var _damage = 10;
+	var _color = c_red;
+
+	instance_create_layer(_enemy.x, _enemy.y, "Overlay", obj_damageNumber, { damage : _damage, color : _color });
+
+	_enemy.hp -= _damage;
+
+	active = false;
 }

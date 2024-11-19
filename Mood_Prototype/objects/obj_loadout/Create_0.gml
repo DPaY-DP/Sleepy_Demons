@@ -3,11 +3,12 @@ if (instance_number(id) > 1) instance_destroy();
 
 
 //IMMUTABLE VALUES
-weaponsMain = global.save.weaponsUnlocked.main;
-weaponsEffect = global.save.weaponsUnlocked.effect;
 
 
 //GAME VALUES
+weaponsMain = global.save.weaponsUnlocked.main;
+weaponsEffect = global.save.weaponsUnlocked.effect;
+
 modeSelect = 0;
 
 selected = [0, 0, 0];
@@ -44,6 +45,10 @@ reload = function()
 }
 
 
+//SETUP AND SPAWNING
+
+
+
 //STATES
 setup_state_machine();
 
@@ -52,12 +57,14 @@ stateGame.start = function()
 {
 	weaponActive = 0;
 	
-	if (weaponsMax > 0) weaponsEquipped[0] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", weaponsMain[selected[0]]);
-	if (weaponsMax > 1) weaponsEquipped[1] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", weaponsEffect[selected[1]]);
-	if (weaponsMax > 2) weaponsEquipped[2] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", weaponsEffect[selected[2]]);
+	if (weaponsMax > 0) weaponsEquipped[0] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", weaponsMain[selected[0]][1]);
+	if (weaponsMax > 1) weaponsEquipped[1] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", weaponsEffect[selected[1]][1]);
+	if (weaponsMax > 2) weaponsEquipped[2] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", weaponsEffect[selected[2]][1]);
 }
 stateGame.run = function()
 {
+	if (weaponsMax == 0) exit;
+	
 	var mwUp = mouse_wheel_up();
 	var mwDown = mouse_wheel_down();
 	
@@ -68,7 +75,7 @@ stateGame.run = function()
 		weaponsEquipped[weaponActive].active = false;
 		
 		weaponActive += _switch;
-		weaponActive = loop(weaponActive, 0, 2);
+		weaponActive = loop(weaponActive, 0, weaponsMax - 1);
 	
 		weaponsEquipped[weaponActive].active = true;
 	}
@@ -76,7 +83,7 @@ stateGame.run = function()
 	if (keyboard_check_pressed(vk_anykey))
 	{
 		var _digit = string_digits(keyboard_lastchar)
-		if (_digit != "") && (_digit < 4) && (_digit != 0)
+		if (_digit != "") && (_digit <= weaponsMax) && (_digit != 0)
 		{
 			weaponsEquipped[weaponActive].active = false;
 			weaponActive = _digit - 1;
@@ -97,7 +104,7 @@ stateGame.drawGUI = function()
 		draw_text_simple(GUIwidth * 0.05, _y, $"{weaponsEquipped[i].ammo} / {weaponsEquipped[i].ammoMax}", { size : _size / 2, halign : fa_left, valign : fa_top, font : font_dmg });
 		_y += 80 * _size;
 	}
-	if (instance_exists(obj_playerHand)) var _ammo = obj_playerHand.ammo;
+	if (instance_exists(obj_weaponPillow)) var _ammo = obj_weaponPillow.ammo;
 	else var _ammo = 0;
 	draw_text_simple(GUIwidth * 0.05, _y, $"pilo: {_ammo}", { size : _size / 2, halign : fa_left, valign : fa_top, font : font_dmg });
 }
@@ -158,7 +165,10 @@ stateSelect.drawGUI = function()
 	var _height = sprite_get_height(spr_confrim)	* _size;
 	draw_sprite_simple(spr_confrim, 0, _x, _y,		{ size : _size });
 	if	((mouse_in_area_GUI(_x - _width / 2, _y - _height / 2, _width, _height)) && (mouse_check_button_pressed(mb_left))) ||
-		(keyboard_check_pressed(vk_space)) modeSelect++;
+		(keyboard_check_pressed(vk_space)) 
+	{
+		modeSelect++;
+	}
 	
 	if (modeSelect == weaponsMax) 
 	{
