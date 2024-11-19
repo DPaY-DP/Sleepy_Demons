@@ -151,7 +151,10 @@ stateGame.run = function()
 		//audio_play_sound(currentSong,1,false);
 	}
 	
-	if (!instance_exists(OBJ_enemy)) switch_state(stateWin);
+	if (!instance_exists(OBJ_enemy) && !instance_exists(obj_tutorialDummy))
+	{
+		switch_state(stateWin);
+	}
 }
 stateGame.drawGUI = function()
 {

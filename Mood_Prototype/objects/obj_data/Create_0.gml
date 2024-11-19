@@ -90,6 +90,11 @@ defaults =
 	levels :
 	[
 		{
+			room : room_tutorialShooting,
+			name : "TutorialShooting",
+			unlocked : true,
+		},
+		{
 			room : room_00Executie,
 			name : "Executie",
 			unlocked : true,

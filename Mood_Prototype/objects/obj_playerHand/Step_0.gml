@@ -134,3 +134,4 @@ if (_tunnel != noone) && (active)
 	ammo--;
 	if (ammo == 0) instance_destroy();
 }
+
