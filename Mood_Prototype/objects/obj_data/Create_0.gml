@@ -77,6 +77,26 @@ unlock_all = function()
 		global.save.levels[i].unlocked = true;
 	}
 	
+	global.save.weaponsUnlocked =
+	{
+		effect: 
+		[
+			obj_weaponGluelauncher,
+			obj_weaponBlackhole,
+			obj_weaponMiniyum,
+			obj_weaponGummybear,
+			obj_weaponStinkbomb,
+			obj_weaponCatchmines,
+		],
+	
+		main:
+		[	
+			obj_weaponMainPistol,
+			obj_weaponMainShotgun,
+			obj_weaponMainRifle,
+		],
+	};	
+	
 	write_save();
 }
 
@@ -299,6 +319,18 @@ defaults =
 			loadoutWeapons : 3,
 		},
 	],
+	
+	weaponsUnlocked :
+	{
+		effect: 
+		[
+		],
+	
+		main:
+		[	
+			obj_weaponMainPistol,
+		],
+	},
 }
 
 

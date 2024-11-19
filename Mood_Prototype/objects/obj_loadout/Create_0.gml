@@ -3,22 +3,8 @@ if (instance_number(id) > 1) instance_destroy();
 
 
 //IMMUTABLE VALUES
-weaponsMain =
-[
-	obj_weaponMainPistol,
-	obj_weaponMainShotgun,
-	obj_weaponMainRifle,
-];
-
-weaponsEffect =
-[
-	obj_weaponGluelauncher,
-	obj_weaponBlackhole,
-	obj_weaponMiniyum,
-	obj_weaponGummybear,
-	obj_weaponStinkbomb,
-	obj_weaponCatchmines,
-];
+weaponsMain = global.save.weaponsUnlocked.main;
+weaponsEffect = global.save.weaponsUnlocked.effect;
 
 
 //GAME VALUES

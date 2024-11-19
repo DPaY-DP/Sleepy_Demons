@@ -2,7 +2,7 @@
 if (weaponActive != obj_loadout.weaponActive) instance_destroy();
 
 timerDespawn--;
-if (timerDespawn <= 0) && (!keyMeleeHeld) && (!keyMelee) && (obj_player.canMove) instance_destroy();
+if (timerDespawn <= 0) && (!keyMeleeHeld) && (!keyMelee) && (!animatePunch) && (!animateRush) instance_destroy();
 
 
 //function

@@ -205,6 +205,7 @@
     {"name":"obj_weaponMainRifle","order":2,"path":"objects/obj_weaponMainRifle/obj_weaponMainRifle.yy",},
     {"name":"obj_weaponMainShotgun","order":1,"path":"objects/obj_weaponMainShotgun/obj_weaponMainShotgun.yy",},
     {"name":"obj_weaponMiniyum","order":2,"path":"objects/obj_weaponMiniyum/obj_weaponMiniyum.yy",},
+    {"name":"obj_weaponPickup","order":3,"path":"objects/obj_weaponPickup/obj_weaponPickup.yy",},
     {"name":"obj_weaponStinkbomb","order":4,"path":"objects/obj_weaponStinkbomb/obj_weaponStinkbomb.yy",},
     {"name":"obj_weaponStinkbombMelee","order":5,"path":"objects/obj_weaponStinkbombMelee/obj_weaponStinkbombMelee.yy",},
     {"name":"obj_zebediah","order":2,"path":"objects/obj_zebediah/obj_zebediah.yy",},

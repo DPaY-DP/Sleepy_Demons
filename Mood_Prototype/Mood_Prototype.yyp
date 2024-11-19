@@ -249,6 +249,7 @@
     {"id":{"name":"obj_weaponMainRifle","path":"objects/obj_weaponMainRifle/obj_weaponMainRifle.yy",},},
     {"id":{"name":"obj_weaponMainShotgun","path":"objects/obj_weaponMainShotgun/obj_weaponMainShotgun.yy",},},
     {"id":{"name":"obj_weaponMiniyum","path":"objects/obj_weaponMiniyum/obj_weaponMiniyum.yy",},},
+    {"id":{"name":"obj_weaponPickup","path":"objects/obj_weaponPickup/obj_weaponPickup.yy",},},
     {"id":{"name":"obj_weaponStinkbomb","path":"objects/obj_weaponStinkbomb/obj_weaponStinkbomb.yy",},},
     {"id":{"name":"obj_weaponStinkbombMelee","path":"objects/obj_weaponStinkbombMelee/obj_weaponStinkbombMelee.yy",},},
     {"id":{"name":"obj_zebediah","path":"objects/obj_zebediah/obj_zebediah.yy",},},

@@ -11,6 +11,7 @@ BEFORE DEPLOYMENT:
 Notes:
  - reload animation (shells flying)
  - make bullets despawn at the next frame or smth like that (become invisible too soon upon collision)
+ - catchtrap holds 1 enemy currently
 
 
 
