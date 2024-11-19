@@ -4,8 +4,3 @@ image_alpha = 0;
 
 animate = false;
 active = true;
-
-
-shadows = [];
-
-obj_player.canMove = true;

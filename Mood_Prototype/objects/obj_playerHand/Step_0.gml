@@ -1,7 +1,3 @@
-if (animate) array_insert(shadows, 0, { x : x, y : y, angle : image_angle, image : image_index });
-
-if (array_length(shadows) == shadowsMax) array_pop(shadows);
-
 timerCooldown--;
 if (obj_loadout.weaponActive == 0)
 if (!instance_exists(obj_managerMinigame)) && (obj_player.state.name != "Lock")
@@ -12,8 +8,6 @@ if (keyMelee) && (timerCooldown <= 0)
 		audio_play_sound_at(snd_punch2, x, y, 0, 100, 150, 1, 0, 0);
 	
 		image_alpha = 1;
-	
-		obj_player.canMove = false;
 	
 		frame = 0;
 		animate = true;

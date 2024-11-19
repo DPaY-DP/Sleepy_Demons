@@ -20,4 +20,4 @@ else
 }
 
 timerStink++;
-if (timerStink mod 45 == 0) instance_create_layer(x, y, "Overlay", obj_projectileStinkbombEffect);
+if (timerStink mod 45 == 0) instance_create_layer(x, y, "Overlay", obj_projectileStinkbombEffect, { dur : 1 });

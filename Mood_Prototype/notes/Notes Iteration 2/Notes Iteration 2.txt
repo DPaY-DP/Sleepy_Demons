@@ -10,6 +10,7 @@ BEFORE DEPLOYMENT:
 
 Notes:
  - reload animation (shells flying)
+ - make bullets despawn at the next frame or smth like that (become invisible too soon upon collision)
 
 
 
@@ -26,7 +27,8 @@ Unitended Behavior:
 Bugs:
  - "Bursh" minigame broken (I think its the pillow one)
  - Brush minigame hitbox weird (make it larger)
- - ESCaping to menu crashes game
+ - ESCaping to menu crashes game#
+ - weapon switching is sometimes buggy
  
  
  

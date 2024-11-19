@@ -1,6 +1,3 @@
-shadows = [];
-shadowsMax = 8;
-
 mask_index = spr_moodGuyFistHitbox;
 image_speed = 0;
 image_index = 0;

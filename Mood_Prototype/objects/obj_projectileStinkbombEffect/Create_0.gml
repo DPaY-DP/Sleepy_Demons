@@ -6,9 +6,9 @@ sizeChange = sizeMax - sizeDefault;
 rotDefault = 2;
 rotChange = -rotDefault;
 
-intervalGrowth = 120;
-intervalLife = 60;
-intervalFade = 60;
+intervalGrowth = 120 * dur;
+intervalLife = 60 * dur;
+intervalFade = 60 * dur;
 
 
 //SETUP AND SPAWNING

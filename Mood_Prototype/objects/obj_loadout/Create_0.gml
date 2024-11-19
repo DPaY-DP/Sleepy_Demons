@@ -17,7 +17,7 @@ weaponsEffect =
 	obj_weaponMiniyum,
 	obj_weaponGummybear,
 	obj_weaponStinkbomb,
-	//obj_weaponCatcher,
+	obj_weaponCatchmines,
 ];
 
 
@@ -148,15 +148,20 @@ stateSelect.drawGUI = function()
 	var _width = sprite_get_width(spr_buton)	* _size;
 	var _height = sprite_get_height(spr_buton)	* _size;
 	
+	var _keyDown =	(keyboard_check_pressed(ord("S"))) ||	(keyboard_check_pressed(vk_down)) ||	mouse_wheel_down();
+	var _keyUp =	(keyboard_check_pressed(ord("W"))) ||	(keyboard_check_pressed(vk_up))	||		mouse_wheel_up();
+	
 	var _x = GUIwidth / 6 * (1 + 2 * modeSelect);
 	
 	var _y = GUIheight * 0.4;
 	draw_sprite_simple(spr_buton, selected[modeSelect], _x, _y,		{ size : _size });
-	if (mouse_in_area_GUI(_x - _width / 2, _y - _height, _width, _height)) && (mouse_check_button_pressed(mb_left)) selected[modeSelect]++;
+	if	((mouse_in_area_GUI(_x - _width / 2, _y - _height, _width, _height)) && (mouse_check_button_pressed(mb_left))) ||
+		(_keyUp) selected[modeSelect]++;
 	
 	var _y = GUIheight * 0.6;
 	draw_sprite_simple(spr_buton, selected[modeSelect], _x, _y,		{ xscale : _size, yscale : -_size });
-	if	(mouse_in_area_GUI(_x - _width / 2, _y, _width, _height)) && (mouse_check_button_pressed(mb_left)) selected[modeSelect]--;
+	if	((mouse_in_area_GUI(_x - _width / 2, _y, _width, _height)) && (mouse_check_button_pressed(mb_left))) ||
+		(_keyDown) selected[modeSelect]--;
 	
 	selected[modeSelect] = loop(selected[modeSelect], 0, sprite_get_number(spriteWeapon[modeSelect]) - 1);
 	

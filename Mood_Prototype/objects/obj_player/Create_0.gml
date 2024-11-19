@@ -241,6 +241,11 @@ stateLock.start = function()
 {
 	with (OBJ_weapon) canShoot = false;
 }
+stateLock.run = function()
+{
+	//visuals
+	orientation = point_direction(x, y, mouse_x, mouse_y);
+}
 stateLock.draw = function()
 {
 	draw_sprite_simple(sprite_index, image_index, x, y, { angle : orientation, size : image_xscale });

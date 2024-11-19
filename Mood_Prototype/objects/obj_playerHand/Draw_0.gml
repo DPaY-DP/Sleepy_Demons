@@ -1,4 +1,4 @@
-var _length = array_length(shadows);
+if (obj_loadout.weaponActive != 0) exit;
 
 if (timerCooldown > 0)
 {
