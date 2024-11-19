@@ -34,6 +34,8 @@ buildupSlowness = 0;
 sleepSounds = [sleepy_demon_1_1,sleepy_demon_3_2,sleepy_demon_enno,sleepy_demon_eve]; //LUIZSOUND Array for sleep sounds
 idleSounds = [where_my_teddy,snd_demonSpeaks1,snd_demonSpeak2Deeper,snd_laughD1,snd_laughD2,snd_laughD3,snd_laughE1,snd_laughE2Deep,snd_laughE3]; //LUIZSOUND Array for idle Chatter
 idleTimer = random_range(10*room_speed,30*room_speed);
+
+gummybear = noone;
 #endregion
 
 
@@ -486,15 +488,27 @@ statePlaying.run = function()
 		else switch_state(stateSeek);
 	}
 	
+	var _scare = noone;
+	
 	if (obj_player.inRoom == inRoom)
 	{
 		timerPlaying = 0;
 	
 		var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
-		if (_distPlayer < rangePlayerFlee) switch_state(stateFlee);
+		if (_distPlayer < rangePlayerFlee) _scare = obj_player;
 	}
 	
-	if (hp != hpLast) switch_state(stateFlee);
+	if (instance_exists(obj_projectileStinkbomb))
+	{
+		var _stinkbomb = instance_nearest(x, y, obj_projectileStinkbomb);
+			
+		var _distStink = point_distance(x, y, _stinkbomb.x, _stinkbomb.y);
+		if (_distStink < obj_projectileStinkbomb.range) _scare = _stinkbomb;
+	}
+	
+	if (hp != hpLast) _scare = obj_player;
+	
+	if (_scare != noone) switch_state(stateFlee, _scare);
 }
 statePlaying.stop = function()
 {
@@ -527,14 +541,31 @@ stateWalk.run = function()
 			
 			case "instigate": switch_state(stateInstigate);
 			break;
+			
+			case "gummybear": switch_state(stateGummybear);
+			break;
 		}
 	}
 	
-	var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
-	if (_distPlayer < rangePlayerFlee) && (intent != "recover") &&
-	(obj_player.inRoom == inRoom) switch_state(stateFlee);
+	var _scare = noone;
 	
-	if (hp != hpLast) switch_state(stateFlee);
+	var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
+	if (obj_player.inRoom == inRoom) && (_distPlayer < rangePlayerFlee) && (intent != "recover")
+	{
+		_scare = obj_player;
+	}
+	
+	if (instance_exists(obj_projectileStinkbomb))
+	{
+		var _stinkbomb = instance_nearest(x, y, obj_projectileStinkbomb);
+			
+		var _distStink = point_distance(x, y, _stinkbomb.x, _stinkbomb.y);
+		if (_distStink < obj_projectileStinkbomb.range) _scare = _stinkbomb;
+	}
+	
+	if (hp != hpLast) _scare = obj_player;
+	
+	if (_scare != noone) switch_state(stateFlee, _scare);
 	
 	if (hp == 0) switch_state(stateExecute);
 }
@@ -547,6 +578,17 @@ stateSeek = new State("Seek");
 stateSeek.start = function()
 {	
 	reset_membership();
+	
+	if (gummybear != noone)
+	{
+		navmesh = get_navmesh(inRoom, gummybear.inRoom);
+		if (array_length(navmesh) == 0) switch_state(stateRandomTarget);
+		
+		intent = "gummybear";
+		switch_state(stateWalk);
+		
+		exit;
+	}
 	
 	//select env object
 		//get total number of env objects
@@ -573,14 +615,13 @@ stateSeek.start = function()
 		var _tryEnv = array_pop(_envs);
 		
 		//see if it is a valid sabotage target (hp remaining)
-		show_debug_message($"POIs: {array_length(_tryEnv.POIs)}; broken: {_tryEnv.broken}")
+		show_debug_message($"{name} looking for sabotage target:\nPOIs: {array_length(_tryEnv.POIs)}; broken: {_tryEnv.broken}")
 		
-		if (array_length(_tryEnv.POIs) != 0)	show_debug_message("1")
-		if (!_tryEnv.broken)					show_debug_message("2")
+		//if (array_length(_tryEnv.POIs) != 0)	show_debug_message("1")
+		//if (!_tryEnv.broken)					show_debug_message("2")
 		
 		if (array_length(_tryEnv.POIs) != 0) && (!_tryEnv.broken)
 		{
-			show_debug_message("hello")
 			//if valid, attempt to join
 			if (_tryEnv.add_member(id)) break;
 			else _tryEnv = undefined;
@@ -630,7 +671,7 @@ stateRandomTarget.start = function()
 
 
 stateFlee = new State("Flee");
-stateFlee.start = function()
+stateFlee.start = function(_scareId)
 {
 	reset_membership();
 	
@@ -649,7 +690,7 @@ stateFlee.start = function()
 			if (_door.object.sabotaged) continue;
 			
 			var _distMe = point_distance(x, y, _door.object.x, _door.object.y);
-			var _distPlayer = point_distance(obj_player.x, obj_player.y, _door.object.x, _door.object.y);
+			var _distPlayer = point_distance(_scareId.x, _scareId.y, _door.object.x, _door.object.y);
 			
 			var _factor = _distPlayer - _distMe;
 			
@@ -703,14 +744,24 @@ stateWait.run = function()
 	
 	if (_beginSabo) switch_state(stateSabotage);
 	
+		//flee?
+	var _scare = noone;
 	var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
-	if (_distPlayer < rangePlayerFlee) &&
-	(obj_player.inRoom == inRoom) switch_state(stateFlee);
+	if (obj_player.inRoom == inRoom) && (_distPlayer < rangePlayerFlee)
+	{
+		_scare = obj_player;
+	}
+	if (instance_exists(obj_projectileStinkbomb))
+	{
+		var _stinkbomb = instance_nearest(x, y, obj_projectileStinkbomb);
+			
+		var _distStink = point_distance(x, y, _stinkbomb.x, _stinkbomb.y);
+		if (_distStink < obj_projectileStinkbomb.range) _scare = _stinkbomb;
+	}
+	if (hp != hpLast) _scare = obj_player;
+	if (_scare != noone) switch_state(stateFlee, _scare);
 	
-	if (hp != hpLast) switch_state(stateFlee);
-	
-	if (hp == 0) switch_state(stateExecute);
-	
+		//move on?
 	if (timerWait > 0) timerWait--;
 	else switch_state(stateSeek);
 }
@@ -748,11 +799,29 @@ stateSabotage.run = function()
 		if (timerCackle == 0) switch_state(stateSeek);
 	}
 	
+	
+	
+	var _scare = noone;
+	
 	var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
-	if (_distPlayer < rangePlayerFlee) &&
-	(obj_player.inRoom == inRoom) switch_state(stateFlee);
-
-	if (hp != hpLast) switch_state(stateFlee);
+	if (obj_player.inRoom == inRoom) && (_distPlayer < rangePlayerFlee)
+	{
+		_scare = obj_player;
+	}
+	
+	if (instance_exists(obj_projectileStinkbomb))
+	{
+		var _stinkbomb = instance_nearest(x, y, obj_projectileStinkbomb);
+			
+		var _distStink = point_distance(x, y, _stinkbomb.x, _stinkbomb.y);
+		if (_distStink < obj_projectileStinkbomb.range) _scare = _stinkbomb;
+	}
+	
+	if (hp != hpLast) _scare = obj_player;
+	
+	if (_scare != noone) switch_state(stateFlee, _scare);
+	
+	
 	
 	if (hp == 0) switch_state(stateExecute);
 }
@@ -775,15 +844,57 @@ stateRecover.run = function()
 	
 	timerRecover--;
 	if (timerRecover <= 0) switch_state(stateSeek);
-
-	if (inRoom == obj_player.inRoom) switch_state(stateFlee);
 	
-	if (hp != hpLast) switch_state(stateFlee);
+	
+	
+	var _scare = noone;
+	
+	var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
+	if (obj_player.inRoom == inRoom) && (_distPlayer < rangePlayerFlee)
+	{
+		_scare = obj_player;
+	}
+	
+	if (instance_exists(obj_projectileStinkbomb))
+	{
+		var _stinkbomb = instance_nearest(x, y, obj_projectileStinkbomb);
+			
+		var _distStink = point_distance(x, y, _stinkbomb.x, _stinkbomb.y);
+		if (_distStink < obj_projectileStinkbomb.range) _scare = _stinkbomb;
+	}
+	
+	if (hp != hpLast) _scare = obj_player;
+	
+	if (_scare != noone) switch_state(stateFlee, _scare);
+	
+	
 	
 	if (hp == 0) switch_state(stateExecute);
 }
 stateRecover.stop = function()
 {
+}
+
+
+stateGummybear = new State("Gummybear");
+stateGummybear.start = function()
+{
+}
+stateGummybear.run = function()
+{
+	var _updateRoom = instance_place(x, y, obj_room);
+	if (_updateRoom != noone) inRoom = _updateRoom;
+
+	if (instance_exists(gummybear)) movement_and_navigation(gummybear.x, gummybear.y);
+	else 
+	{
+		gummybear = noone;
+		switch_state(stateSeek);
+	}
+}
+stateGummybear.stop = function()
+{	
+	
 }
 
 

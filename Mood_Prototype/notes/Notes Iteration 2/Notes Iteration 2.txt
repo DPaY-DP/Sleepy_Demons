@@ -1,5 +1,22 @@
+BEFORE DEPLOYMENT:
+ - Remove Shooting Range
+ - Re-enable Sound (uncomment functions)
+ - Change Version
+	> Enable version check savewipe
+ - Remove automatic save deletion
+ - Remove unlock_all();
+ - re-enable fullscreen as default setting
+ - remove "unlock all"
+ 
+
 Notes:
- - Demons need to have their physics enabled constantly, so they are properly affected by movement altering	effects such as the black hole gun.
+ - reload animation (shells flying)
+ - make bullets despawn at the next frame or smth like that (become invisible too soon upon collision)
+ - catchtrap holds 1 enemy currently
+ - squareholes too far apart bruv
+ - no double weapons maybe?
+ - instakilling guenther with the pillow doesnt seem right
+ - guenther active and downed / sleep sprite have different origin points (?)
 
 
 
@@ -8,8 +25,21 @@ Optimization:
 
 
 
+Unitended Behavior:
+ - You can softlock yourself in pillow fight with throw pillows (because they get consumed)
+
+
+
 Bugs:
- - Player gets stuck upon trying to exit portal (???)
- - wappons shoot in minigame
+ - trying to switch weapon crashes the game when there are no / not enough weapons
+ - "Bursh" minigame broken (I think its the pillow one)
+ - Brush minigame hitbox weird (make it larger)
+ - ESCaping to menu crashes game#
+ - weapon switching is sometimes buggy
  
  
+ 
+Completed / Fixed:
+ - Demons need to have their physics enabled constantly, so they are properly affected by movement altering	effects such as the black hole gun.
+ - wappon shoot in minigame
+ - player get stuck upon exiting portal

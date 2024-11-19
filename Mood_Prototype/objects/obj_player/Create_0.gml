@@ -79,14 +79,7 @@ do_effect_dust = function(_x, _y)
 
 
 #region SPAWNING AND SETUP
-instance_create_depth(x, y, depth - 2, obj_playerHand);
-
-with (obj_loadout)
-{
-	weaponsEquipped[0] = instance_create_layer(other.x, other.y, "Weapons", weaponsMain[selected[0]]);
-	weaponsEquipped[1] = instance_create_layer(other.x, other.y, "Weapons", weaponsEffect[selected[1]]);
-	weaponsEquipped[2] = instance_create_layer(other.x, other.y, "Weapons", weaponsEffect[selected[2]]);
-}
+instance_create_depth(x, y, depth - 2, obj_weaponPillow);
 #endregion
 
 #region STATE MACHINE
@@ -246,7 +239,12 @@ stateActive.draw = function()
 stateLock = new State("Lock");
 stateLock.start = function()
 {
-	obj_weapon.canShoot = false;
+	with (OBJ_weapon) canShoot = false;
+}
+stateLock.run = function()
+{
+	//visuals
+	orientation = point_direction(x, y, mouse_x, mouse_y);
 }
 stateLock.draw = function()
 {
@@ -254,7 +252,7 @@ stateLock.draw = function()
 }
 stateLock.stop = function()
 {
-	obj_weapon.canShoot = true;
+	with (OBJ_weapon) canShoot = true;
 }
 
 initialize_state(stateActive);

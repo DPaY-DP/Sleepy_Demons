@@ -11,6 +11,7 @@ ammoBag = 2;
 
 //GAME VALUES
 active = false;
+canShoot = true;
 
 timerFirerate = 0;
 

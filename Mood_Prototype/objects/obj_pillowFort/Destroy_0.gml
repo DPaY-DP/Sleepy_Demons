@@ -1,0 +1,1 @@
+instance_create_depth(x + sprite_width / 2, y + sprite_width / 2, depth, obj_pillowPickup);

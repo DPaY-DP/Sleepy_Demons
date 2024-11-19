@@ -2,11 +2,8 @@
 hpDrain = 0.1;
 
 inRoom = instance_place(x, y, obj_room);
-with (obj_env) if (inRoom == other.inRoom) 
-{
-	array_push(POIs, other.id);
-	other.owner = id;
-}
+
+alarm[0] = 1;
 
 rangeInteract = 25;
 

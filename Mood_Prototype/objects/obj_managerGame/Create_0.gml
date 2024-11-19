@@ -20,40 +20,10 @@ alarm[0] = 1;
 global.debugtimer = 0;
 global.colorsDebug = [c_red, c_yellow, c_green, c_blue, c_fuchsia, c_aqua, c_maroon, c_olive, c_lime, c_navy, c_teal, c_orange, c_purple];
 
-	//Minigames
-enum enumMinigame
-{
-	BRUSH,
-	CABLE,
-	FASTCLICK,
-	HORSESHOE,
-	INPUTS,
-	INPUTS_RAW,			//this gets used exclusively for env object repairs
-	LIGHTSWITCH,
-	SQUAREHOLE,
-	STUFF,
-	TICKLE,
-	TUCK,
-}
-
-
-arrayMinigames = [];
-switch (room)
-{
-	case room_00Executie:	array_push(arrayMinigames, enumMinigame.INPUTS);
-							array_push(arrayMinigames, enumMinigame.INPUTS);
-							array_push(arrayMinigames, enumMinigame.TUCK);
-							
-							arrayMinigames = array_shuffle(arrayMinigames);
-	break;
-}
-
-
 
 
 //SETUP AND SPAWNING
 randomize();
-
 
 
 #region METHODS
@@ -139,7 +109,8 @@ stateGame = new State();
 stateGame.start = function()
 {
 	currentLevel = get_current_level();
-	show_debug_message(currentLevel)
+	
+	arrayMinigames = array_shuffle(ds_clone(global.save.levels[currentLevel].minigames));
 }
 stateGame.run = function()
 {
@@ -203,6 +174,8 @@ stateWin.start = function()
 	
 	hasWon = true;
 	audio_stop_sound(currentSong);
+	
+	obj_data.pull_weapons();
 	
 	if (currentLevel < array_length(global.save.levels) - 1) 
 	{

@@ -1,5 +1,6 @@
-show_debug_message("manager minigame spawned")
 randomize();
+
+with (OBJ_weapon) canShoot = false;
 
 //initialize game
 if (!variable_instance_exists(id, "game"))

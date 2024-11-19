@@ -10,7 +10,7 @@ if (timerFirerate > 0) timerFirerate--;
 
 
 //active filter
-if (!active) exit;
+if (!active) || (!canShoot) exit;
 
 
 //main action

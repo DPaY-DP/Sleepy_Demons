@@ -1,1 +1,1 @@
-audio_stop_sound(snd_musicMainMenu);
+//audio_stop_sound(snd_musicMainMenu);
