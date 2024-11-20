@@ -64,7 +64,7 @@ switch (game)
 										
 										var _target = enemy.object_index
 										
-										if(_target == OBJ_enemy)
+										if(object_is_ancestor(_target, OBJ_enemy))
 										{
 											with (enemy) switch_state(stateSleep);
 										}
@@ -75,18 +75,6 @@ switch (game)
 										}
 										
 										instance_destroy();
-										
-										var _target = layer_instance_get_instance(enemy)
-										
-										if(enemy == OBJ_enemy)
-										{
-											with (enemy) switch_state(stateSleep);
-										}
-										else if(enemy == obj_tutorialDummy)
-										{
-											show_debug_message("DUMMY EXECUTE");											
-											_target.executedDummy = true;	
-										}
 									}
 									
 									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Tuck In", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
