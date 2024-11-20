@@ -16,15 +16,17 @@ switch (game)
 											instance_destroy(obj_horsecolliderCrit);
 											instance_destroy();
 											
-											if(enemy == OBJ_enemy)							//LUIZ changed this to account for Execute Tutorial
-											{
-												with (enemy) switch_state(stateSleep);
-											}
-											else if(enemy == obj_tutorialDummy)
-											{
-												var _target = layer_instance_get_instance(enemy)
-												_target.executedDummy = true;	
-											}
+										var _target = enemy.object_index
+										
+										if(object_is_ancestor(_target, OBJ_enemy))
+										{
+											with (enemy) switch_state(stateSleep);
+										}
+										else if(_target == obj_tutorialDummy)
+										{
+											show_debug_message("DUMMY EXECUTE");											
+											_target.executedDummy = true;	
+										}
 										}
 									}
 									
@@ -39,13 +41,15 @@ switch (game)
 										with (obj_hole) instance_destroy();
 										instance_destroy();
 										
-										if(enemy == OBJ_enemy)
+										var _target = enemy.object_index
+										
+										if(object_is_ancestor(_target, OBJ_enemy))
 										{
 											with (enemy) switch_state(stateSleep);
 										}
-										else if(enemy == obj_tutorialDummy)
+										else if(_target == obj_tutorialDummy)
 										{
-											var _target = layer_instance_get_instance(enemy)
+											show_debug_message("DUMMY EXECUTE");											
 											_target.executedDummy = true;	
 										}
 									}
@@ -88,13 +92,15 @@ switch (game)
 										instance_destroy(obj_lightswitch);
 										instance_destroy();
 										
-										if(enemy == OBJ_enemy)
+										var _target = enemy.object_index
+										
+										if(object_is_ancestor(_target, OBJ_enemy))
 										{
 											with (enemy) switch_state(stateSleep);
 										}
-										else if(enemy == obj_tutorialDummy)
+										else if(_target == obj_tutorialDummy)
 										{
-											var _target = layer_instance_get_instance(enemy)
+											show_debug_message("DUMMY EXECUTE");											
 											_target.executedDummy = true;	
 										}
 									}
@@ -138,13 +144,15 @@ switch (game)
 										instance_destroy(obj_teethSlider);
 										instance_destroy();
 										
-										if(enemy == OBJ_enemy)
+										var _target = enemy.object_index
+										
+										if(object_is_ancestor(_target, OBJ_enemy))
 										{
 											with (enemy) switch_state(stateSleep);
 										}
-										else if(enemy == obj_tutorialDummy)
+										else if(_target == obj_tutorialDummy)
 										{
-											var _target = layer_instance_get_instance(enemy)
+											show_debug_message("DUMMY EXECUTE");											
 											_target.executedDummy = true;	
 										}
 									}
@@ -161,13 +169,15 @@ switch (game)
 										instance_destroy(obj_stuffthepillowadmin);
 										instance_destroy();
 										
-										if(enemy == OBJ_enemy)
+										var _target = enemy.object_index
+										
+										if(object_is_ancestor(_target, OBJ_enemy))
 										{
 											with (enemy) switch_state(stateSleep);
 										}
-										else if(enemy == obj_tutorialDummy)
+										else if(_target == obj_tutorialDummy)
 										{
-											var _target = layer_instance_get_instance(enemy)
+											show_debug_message("DUMMY EXECUTE");											
 											_target.executedDummy = true;	
 										}
 									}
@@ -185,13 +195,15 @@ switch (game)
 										instance_destroy(Obj_twitchynose);
 										instance_destroy();
 										
-										if(enemy == OBJ_enemy)
+										var _target = enemy.object_index
+										
+										if(object_is_ancestor(_target, OBJ_enemy))
 										{
 											with (enemy) switch_state(stateSleep);
 										}
-										else if(enemy == obj_tutorialDummy)
+										else if(_target == obj_tutorialDummy)
 										{
-											var _target = layer_instance_get_instance(enemy)
+											show_debug_message("DUMMY EXECUTE");											
 											_target.executedDummy = true;	
 										}
 									}
@@ -224,13 +236,15 @@ switch (game)
 										instance_destroy(obj_anim);
 										instance_destroy();
 											
-										if(enemy == OBJ_enemy)
+										var _target = enemy.object_index
+										
+										if(object_is_ancestor(_target, OBJ_enemy))
 										{
 											with (enemy) switch_state(stateSleep);
 										}
-										else if(enemy == obj_tutorialDummy)
+										else if(_target == obj_tutorialDummy)
 										{
-											var _target = layer_instance_get_instance(enemy);
+											show_debug_message("DUMMY EXECUTE");											
 											_target.executedDummy = true;	
 										}
 									}
@@ -246,14 +260,15 @@ switch (game)
 										instance_destroy(obj_bubble);
 										instance_destroy();
 											
-										if(enemy == OBJ_enemy)
+										var _target = enemy.object_index
+										
+										if(object_is_ancestor(_target, OBJ_enemy))
 										{
 											with (enemy) switch_state(stateSleep);
 										}
-										else if(enemy == obj_tutorialDummy)
+										else if(_target == obj_tutorialDummy)
 										{
-											show_debug_message("DUMMY EXECUTE");
-											var _target = layer_instance_get_instance(enemy);
+											show_debug_message("DUMMY EXECUTE");											
 											_target.executedDummy = true;	
 										}
 									}
