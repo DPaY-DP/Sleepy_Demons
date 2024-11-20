@@ -141,3 +141,16 @@ if (_enemy != noone) && (active)
 
 	active = false;
 }
+
+var _enemy = instance_place(x, y, obj_tutorialDummy);
+if (_enemy != noone) && (active)
+{
+	var _damage = 10;
+	var _color = c_red;
+
+	instance_create_layer(_enemy.x, _enemy.y, "Overlay", obj_damageNumber, { damage : _damage, color : _color });
+
+	_enemy.timesMelee++;
+
+	active = false;
+}

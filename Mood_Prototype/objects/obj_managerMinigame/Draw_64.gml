@@ -16,7 +16,7 @@ switch (game)
 											instance_destroy(obj_horsecolliderCrit);
 											instance_destroy();
 											
-											if(enemy == OBJ_enemy)
+											if(enemy == OBJ_enemy)							//LUIZ changed this to account for Execute Tutorial
 											{
 												with (enemy) switch_state(stateSleep);
 											}
