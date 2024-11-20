@@ -29,7 +29,7 @@
   "origin":4,
   "parent":{
     "name":"stuffthepillow",
-    "path":"folders/Sprites/MGames/stuffthepillow.yy",
+    "path":"folders/Sprites/Minigames/stuffthepillow.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

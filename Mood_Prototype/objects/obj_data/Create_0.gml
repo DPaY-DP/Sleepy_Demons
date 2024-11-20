@@ -91,6 +91,33 @@ unlock_all = function()
 	write_save();
 }
 
+unlock_weapon = function(_objectIndex)
+{
+	var _length = array_length(global.save.weaponsUnlocked.main);
+	for (var i = 0; i < _length; i++)
+	{
+		var _dataWeapon = global.save.weaponsUnlocked.main[i];
+		
+		if (_dataWeapon[1] == _objectIndex) 
+		{
+			_dataWeapon[0] = true;
+			return [spr_weaponMenuMain, i, _dataWeapon[2], _dataWeapon[3]];
+		}
+	}
+	
+	var _length = array_length(global.save.weaponsUnlocked.effect);
+	for (var i = 0; i < _length; i++)
+	{
+		var _dataWeapon = global.save.weaponsUnlocked.effect[i];
+		
+		if (_dataWeapon[1] == _objectIndex) 
+		{
+			_dataWeapon[0] = true;
+			return [spr_weaponMenuEffect, i, _dataWeapon[2], _dataWeapon[3]];
+		}
+	}
+}
+
 pull_weapons = function()
 {
 	global.save.weaponsUnlocked.main =		obj_loadout.weaponsMain;
@@ -130,12 +157,29 @@ enum enumMinigame
 	INPUTS_RAW,
 }
 
+enum enumWeaponMain
+{
+	PISTOL,
+	SHOTGUN,
+	RIFLE,
+}
+
+enum enumWeaponEffect
+{
+	GLUELAUNCHER,
+	BLACKHOLE,
+	MINIYUM,
+	GUMMYBEAR,
+	STINKBOMB,
+	CATCHMINE,
+}
+
 defaults = 
 {
 	version : global.version,
 	
 	fullscreen : false,
-	volumeMusic : 0.5,
+	volumeMusic : 0, //0.5
 	volumeSFX : 0.25,
 	
 	levels :
@@ -153,6 +197,8 @@ defaults =
 			
 			loadoutPillows : 2,
 			loadoutWeapons : 3,
+			
+			weaponUnlocks : [],
 		},
 		{
 			room : room_tutorialShooting,
@@ -167,6 +213,8 @@ defaults =
 			
 			loadoutPillows : 0,
 			loadoutWeapons : 1,
+			
+			weaponUnlocks : [],
 		},
 		{
 			room : room_tutorialExecutie,
@@ -174,13 +222,13 @@ defaults =
 			unlocked : true,
 			
 			minigames :  [
-				enumMinigame.TUCK,
 				enumMinigame.TUCK,			//LUIZ Might want to think about different Minigames / random for first encounter
-				enumMinigame.TUCK,
 			],
 			
 			loadoutPillows : 0,
 			loadoutWeapons : 0,
+			
+			weaponUnlocks : [],
 		},
 		{
 			room : room_00Executie,
@@ -188,13 +236,15 @@ defaults =
 			unlocked : true,
 		
 			minigames :  [
-				enumMinigame.BRUSH,
-				enumMinigame.BRUSH,
-				enumMinigame.BRUSH,
+				enumMinigame.TUCK,
+				enumMinigame.TUCK,
+				enumMinigame.TUCK,
 			],
 			
 			loadoutPillows : 0,
 			loadoutWeapons : 0,
+			
+			weaponUnlocks : [],
 		},
 		{
 			room : room_01PillowFight,
@@ -208,6 +258,8 @@ defaults =
 			
 			loadoutPillows : 1,
 			loadoutWeapons : 0,
+			
+			weaponUnlocks : [obj_weaponMainPistol, obj_weaponMainShotgun, obj_weaponMainRifle],
 		},
 		{
 			room : room_02BabysFirstGun,
@@ -222,6 +274,8 @@ defaults =
 			
 			loadoutPillows : 1,
 			loadoutWeapons : 1,
+			
+			weaponUnlocks : [obj_weaponGluelauncher],
 		},
 		{
 			room : room_03PeakABear,
@@ -240,7 +294,9 @@ defaults =
 			],
 			
 			loadoutPillows : 1,
-			loadoutWeapons : 3,
+			loadoutWeapons : 2,
+			
+			weaponUnlocks : [obj_weaponMiniyum],
 		},
 		{
 			room : room_04ExpandingHorizons,
@@ -261,6 +317,8 @@ defaults =
 			
 			loadoutPillows : 1,
 			loadoutWeapons : 3,
+			
+			weaponUnlocks : [obj_weaponBlackhole, obj_weaponGummybear],
 		},
 		{
 			room : room_05UnderPressure,
@@ -281,6 +339,8 @@ defaults =
 			
 			loadoutPillows : 1,
 			loadoutWeapons : 3,
+			
+			weaponUnlocks : [obj_weaponStinkbomb],
 		},
 		{
 			room : room_06TunnelVision,
@@ -302,6 +362,8 @@ defaults =
 			
 			loadoutPillows : 1,
 			loadoutWeapons : 3,
+			
+			weaponUnlocks : [obj_weaponCatchmines],
 		},
 		{
 			room : room_07ChaosUnfolds,
@@ -322,6 +384,8 @@ defaults =
 			
 			loadoutPillows : 1,
 			loadoutWeapons : 3,
+			
+			weaponUnlocks : [],
 		},
 		{
 			room : room_08DeadEnds,
@@ -346,6 +410,8 @@ defaults =
 			
 			loadoutPillows : 1,
 			loadoutWeapons : 3,
+			
+			weaponUnlocks : [],
 		},
 	],
 	
@@ -353,19 +419,19 @@ defaults =
 	{
 		effect: 
 		[
-			[0, obj_weaponGluelauncher],
-			[0, obj_weaponBlackhole],
-			[0, obj_weaponMiniyum],
-			[0, obj_weaponGummybear],
-			[0, obj_weaponStinkbomb],
-			[0, obj_weaponCatchmines],
+			[0, obj_weaponGluelauncher,	"GLUE GLOB LAUNCHER",		"Prim: Launches a sticky glue pad\nthat slows enemies\n\nAlt: Rocket Jump"		],
+			[0, obj_weaponBlackhole,	"SINGULARITY V.2",			"Prim: Fires a slow moving black\nhole\n\nAlt: Create up to two linked portals"	],
+			[0, obj_weaponMiniyum,		"THE MINIYUM",				"Prim: Fire volleys of slowing candy\ncanes\n\nAlt: Boost yourself to gain speed"		],
+			[0, obj_weaponGummybear,	"GUMMY LURE-AND-BUMPER GUN","Prim: Deploy Gummy Lure\n\nAlt: Deploy Gummy Bumper"		],
+			[0, obj_weaponStinkbomb,	"MILITARY GRADE STINK",		"Prim: Throw disgusting stink bomb\nto scare off enemies\n\nAlt: Enter berserker melee rush"	],
+			[0, obj_weaponCatchmines,	"CATCHMINE THROWER",		"Prim: Deploy Catchmine\n\nAlt: Grappling Hook"		],
 		],
 	
 		main:
 		[	
-			[1, obj_weaponMainPistol],
-			[0, obj_weaponMainShotgun],
-			[0, obj_weaponMainRifle],
+			[1, obj_weaponMainPistol,	"NITEQUIL BLASTER",		"Basic Weapon\n\nMidrange, Single Shot"		],
+			[0, obj_weaponMainShotgun,	"NITEQUIL PEPPERGUN",	"Basic Weapon\n\nShort Range, Spread Shot"	],
+			[0, obj_weaponMainRifle,	"NITEQUIL SHARPSHOT",	"Basic Weapon\n\nLong Range, Single Shot"	],
 		],
 	},			
 }

@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Tunnel",
-    "path":"folders/Sprites/MGames/Tunnel.yy",
+    "path":"folders/Sprites/Minigames/Tunnel.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

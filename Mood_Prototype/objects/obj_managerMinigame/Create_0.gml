@@ -120,7 +120,7 @@ switch (game)
 				
 				
 	case enumMinigame.STUFF:		repeat(5) instance_create_depth(x, y, depth - 20, obj_fluff);
-									instance_create_depth(camX, camY + camHeight * 0.5, depth -20, obj_pillow);
+									instance_create_depth(0, GUIheight * 0.5, depth -20, obj_pillow);
 	break;
 					
 					

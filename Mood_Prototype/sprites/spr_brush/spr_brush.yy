@@ -26,7 +26,7 @@
   "origin":9,
   "parent":{
     "name":"Brush",
-    "path":"folders/Sprites/MGames/Brush.yy",
+    "path":"folders/Sprites/Minigames/Brush.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Light Switch Minigame",
-    "path":"folders/Sprites/MGames/Light Switch Minigame.yy",
+    "path":"folders/Sprites/Minigames/Light Switch Minigame.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

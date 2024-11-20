@@ -29,7 +29,7 @@
   "origin":4,
   "parent":{
     "name":"Tuck In",
-    "path":"folders/Sprites/MGames/Tuck In.yy",
+    "path":"folders/Sprites/Minigames/Tuck In.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -62,7 +62,7 @@
     },
     "name":"spr_demonbaby",
     "playback":1,
-    "playbackSpeed":2.0,
+    "playbackSpeed":8.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",

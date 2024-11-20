@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"CableGame",
-    "path":"folders/Sprites/MGames/CableGame.yy",
+    "path":"folders/Sprites/Minigames/CableGame.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

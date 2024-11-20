@@ -11,7 +11,6 @@ if (instance_exists(obj_env)) drawEnvHP = true;
 
 currentSong = choose(snd_musicLevel1, snd_musicLevel2);
 audio_play_sound(currentSong,1,false, gainMusic);
-hasWon = false;
 
 mapAlpha = 0;
 alarm[0] = 1;
@@ -116,7 +115,7 @@ stateGame.run = function()
 {
 	if (global.envHP <= 0) switch_state(stateLoss);
 	
-	if(!audio_is_playing(currentSong) && !hasWon)
+	if (!audio_is_playing(currentSong))
 	{
 		currentSong = choose(snd_musicLevel1, snd_musicLevel2);
 		audio_play_sound(currentSong,1,false, gainMusic);
@@ -170,12 +169,19 @@ stateLoss.drawGUI = function()
 stateWin = new State();
 stateWin.start = function()
 {
-	with (OBJ_agents) switch_state(stateLock);
-	
-	hasWon = true;
 	audio_stop_sound(currentSong);
 	
-	obj_data.pull_weapons();
+	with (OBJ_agents) switch_state(stateLock);
+	
+	unlockEvent = [];
+	displayUnlock = 0;
+	
+	var _levelData = global.save.levels[currentLevel];
+	var _length = array_length(_levelData.weaponUnlocks);
+	for (var i = 0; i < _length; i++)
+	{
+		array_push(unlockEvent, obj_data.unlock_weapon(_levelData.weaponUnlocks[i]));
+	}
 	
 	if (currentLevel < array_length(global.save.levels) - 1) 
 	{
@@ -185,24 +191,61 @@ stateWin.start = function()
 }
 stateWin.run = function()
 {
+	var _length = array_length(unlockEvent);
 	if (keyboard_check_pressed(vk_space)) 
 	{
-		var _length = array_length(global.save.levels)
-		if (currentLevel < _length - 1) 
+		if (displayUnlock >= _length)
 		{
-			global.roomTo = global.save.levels[currentLevel + 1].room;
-			room_goto(room_loadout);
-		}
-		else room_goto(room_credits);
+			var _length = array_length(global.save.levels);
+			if (currentLevel < _length - 1) 
+			{
+				global.roomTo = global.save.levels[currentLevel + 1].room;
+				room_goto(room_loadout);
+			}
+			else room_goto(room_credits);
 		
-		switch_state(stateGame);
+			switch_state(stateGame);
+		}
+		else displayUnlock++;
 	}
+	
+	if (mouse_check_button_pressed(mb_left)) displayUnlock++;
 }
 stateWin.drawGUI = function()
 {
 	draw_sprite_simple(spr_window, 0, GUIwidth * 0.05, GUIheight * 0.05, { xscale : GUIwidth * 0.9, yscale : GUIheight * 0.9, alpha : 0.5 });
 
 	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Snooze'd em up!", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
+	
+	//var _size = global.GUIScale * 6;
+	//var _spriteSize = sprite_get_width(spr_weaponMenuEffect) * _size;
+	//var _border = 10 * _size;
+	//var _length = array_length(unlockEvent);
+	//for (var i = 0; i < _length; i++)
+	//{
+	//	var _data = unlockEvent[i];
+		
+	//	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.25, "Weapons Unlocked:", { color : c_white, font : font_upheaval_scalable, size : 8 * fontscale });
+		
+	//	var _x = GUIwidth / 2 + i * (_border + _spriteSize) - (_border + _spriteSize) * ((_length - 1) / 2);
+	//	var _y = GUIheight / 2;
+		
+	//	draw_sprite_simple(_data[0], _data[1], _x, _y, { size : _size });
+	//}	
+	
+	var _length = array_length(unlockEvent);
+	if (displayUnlock < _length)
+	{		
+		draw_set_color(c_grey);
+		draw_rectangle(GUIwidth * 0.2, GUIheight * 0.25, GUIwidth * 0.8, GUIheight * 0.8, false);
+		draw_set_color(c_white);
+		
+		var _data = unlockEvent[displayUnlock];
+		draw_text_simple(GUIwidth * 0.5, GUIheight * 0.3, "Weapons Unlocked:\n" + _data[2], { color : c_white, font : font_upheaval_scalable, size : 4 * fontscale });
+		draw_sprite_simple(_data[0], _data[1], GUIwidth * 0.5, GUIheight * 0.46, { size : global.GUIScale * 4 });
+		draw_text_simple(GUIwidth * 0.25, GUIheight * 0.68, _data[3], { color : c_white, font : font_upheaval_scalable, size : 4 * fontscale, halign : fa_left });
+	}
+	
 	if (timerState > 90) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.85, "Press SPACE to enter the next level\nPress ESC to return to Menu", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
 }
 

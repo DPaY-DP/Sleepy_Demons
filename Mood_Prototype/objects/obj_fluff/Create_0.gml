@@ -3,13 +3,13 @@ xOffset = 0;
 yOffset = 0;
 
 image_index = irandom(image_number - 1);
-image_xscale = 6;
-image_yscale = 6;
+image_xscale = 6 * global.GUIScale;
+image_yscale = 6 * global.GUIScale;
 
 do
 { 
-	x = camX + camWidth * 0.2 + random(camWidth * 0.7);
-	y = camY + camHeight * 0.1 + random(camHeight * 0.8);
+	x = GUIwidth * 0.2 + random(GUIwidth * 0.7);
+	y = GUIheight * 0.1 + random(GUIheight * 0.8);
 	
 	show_debug_message($"{x}; {y}")
 	

@@ -1,4 +1,4 @@
-if (spd == 0) 
+if (spd == 0) && (!catching)
 {
 	var _alpha = sine_between(current_time / 1000, 2, -0.5, 0.25);
 
