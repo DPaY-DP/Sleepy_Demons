@@ -156,6 +156,29 @@ defaults =
 			room : room_tutorialShooting,
 			name : "TutorialShooting",
 			unlocked : true,
+			
+			minigames :  [
+				enumMinigame.TUCK,
+				enumMinigame.TUCK,
+				enumMinigame.TUCK,
+			],
+			
+			loadoutPillows : 0,
+			loadoutWeapons : 1,
+		},
+		{
+			room : room_tutorialExecutie,
+			name : "TutorialExecutie",
+			unlocked : true,
+			
+			minigames :  [
+				enumMinigame.TUCK,
+				enumMinigame.TUCK,			//LUIZ Might want to think about different Minigames / random for first encounter
+				enumMinigame.TUCK,
+			],
+			
+			loadoutPillows : 0,
+			loadoutWeapons : 0,
 		},
 		{
 			room : room_00Executie,

@@ -272,6 +272,7 @@
     {"id":{"name":"room_loadout","path":"rooms/room_loadout/room_loadout.yy",},},
     {"id":{"name":"room_main","path":"rooms/room_main/room_main.yy",},},
     {"id":{"name":"room_shootingRange","path":"rooms/room_shootingRange/room_shootingRange.yy",},},
+    {"id":{"name":"room_tutorialExecutie","path":"rooms/room_tutorialExecutie/room_tutorialExecutie.yy",},},
     {"id":{"name":"room_tutorialShooting","path":"rooms/room_tutorialShooting/room_tutorialShooting.yy",},},
     {"id":{"name":"array_append","path":"scripts/array_append/array_append.yy",},},
     {"id":{"name":"array_choose","path":"scripts/array_choose/array_choose.yy",},},
@@ -640,6 +641,7 @@
     {"roomId":{"name":"room_03PeakABear","path":"rooms/room_03PeakABear/room_03PeakABear.yy",},},
     {"roomId":{"name":"room_04ExpandingHorizons","path":"rooms/room_04ExpandingHorizons/room_04ExpandingHorizons.yy",},},
     {"roomId":{"name":"room_05UnderPressure","path":"rooms/room_05UnderPressure/room_05UnderPressure.yy",},},
+    {"roomId":{"name":"room_tutorialExecutie","path":"rooms/room_tutorialExecutie/room_tutorialExecutie.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

@@ -15,8 +15,16 @@ switch (game)
 											instance_destroy(obj_horsecollider);
 											instance_destroy(obj_horsecolliderCrit);
 											instance_destroy();
-										
-											with (enemy) switch_state(stateSleep);
+											
+											if(enemy == OBJ_enemy)
+											{
+												with (enemy) switch_state(stateSleep);
+											}
+											else if(enemy == obj_tutorialDummy)
+											{
+												var _target = layer_instance_get_instance(enemy)
+												_target.executedDummy = true;	
+											}
 										}
 									}
 									
@@ -31,7 +39,15 @@ switch (game)
 										with (obj_hole) instance_destroy();
 										instance_destroy();
 										
-										with (enemy) switch_state(stateSleep);
+										if(enemy == OBJ_enemy)
+										{
+											with (enemy) switch_state(stateSleep);
+										}
+										else if(enemy == obj_tutorialDummy)
+										{
+											var _target = layer_instance_get_instance(enemy)
+											_target.executedDummy = true;	
+										}
 									}
 									
 									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Drop blocks in holes", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
@@ -45,9 +61,32 @@ switch (game)
 										instance_destroy(obj_blanket);
 										instance_destroy(obj_demonbaby);
 										instance_destroy(obj_bed);
+										
+										var _target = enemy.object_index
+										
+										if(_target == OBJ_enemy)
+										{
+											with (enemy) switch_state(stateSleep);
+										}
+										else if(_target == obj_tutorialDummy)
+										{
+											show_debug_message("DUMMY EXECUTE");											
+											_target.executedDummy = true;	
+										}
+										
 										instance_destroy();
 										
-										with (enemy) switch_state(stateSleep);
+										var _target = layer_instance_get_instance(enemy)
+										
+										if(enemy == OBJ_enemy)
+										{
+											with (enemy) switch_state(stateSleep);
+										}
+										else if(enemy == obj_tutorialDummy)
+										{
+											show_debug_message("DUMMY EXECUTE");											
+											_target.executedDummy = true;	
+										}
 									}
 									
 									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Tuck In", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
@@ -61,7 +100,15 @@ switch (game)
 										instance_destroy(obj_lightswitch);
 										instance_destroy();
 										
-										with (enemy) switch_state(stateSleep);
+										if(enemy == OBJ_enemy)
+										{
+											with (enemy) switch_state(stateSleep);
+										}
+										else if(enemy == obj_tutorialDummy)
+										{
+											var _target = layer_instance_get_instance(enemy)
+											_target.executedDummy = true;	
+										}
 									}
 									
 									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Press Red", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
@@ -81,7 +128,15 @@ switch (game)
 										instance_destroy(obj_cable_blue_end)
 										instance_destroy()
 										
-										with (enemy) switch_state(stateSleep);
+										if(enemy == OBJ_enemy)
+										{
+											with (enemy) switch_state(stateSleep);
+										}
+										else if(enemy == obj_tutorialDummy)
+										{
+											var _target = layer_instance_get_instance(enemy)
+											_target.executedDummy = true;	
+										}
 									}
 									
 									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Connect Cables", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
@@ -95,7 +150,15 @@ switch (game)
 										instance_destroy(obj_teethSlider);
 										instance_destroy();
 										
-										with (enemy) switch_state(stateSleep);
+										if(enemy == OBJ_enemy)
+										{
+											with (enemy) switch_state(stateSleep);
+										}
+										else if(enemy == obj_tutorialDummy)
+										{
+											var _target = layer_instance_get_instance(enemy)
+											_target.executedDummy = true;	
+										}
 									}
 									
 									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Bursh", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
@@ -110,7 +173,15 @@ switch (game)
 										instance_destroy(obj_stuffthepillowadmin);
 										instance_destroy();
 										
-										with (enemy) switch_state(stateSleep);
+										if(enemy == OBJ_enemy)
+										{
+											with (enemy) switch_state(stateSleep);
+										}
+										else if(enemy == obj_tutorialDummy)
+										{
+											var _target = layer_instance_get_instance(enemy)
+											_target.executedDummy = true;	
+										}
 									}
 									
 									
@@ -126,7 +197,15 @@ switch (game)
 										instance_destroy(Obj_twitchynose);
 										instance_destroy();
 										
-										with (enemy) switch_state(stateSleep);
+										if(enemy == OBJ_enemy)
+										{
+											with (enemy) switch_state(stateSleep);
+										}
+										else if(enemy == obj_tutorialDummy)
+										{
+											var _target = layer_instance_get_instance(enemy)
+											_target.executedDummy = true;	
+										}
 									}
 									
 									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Tickle", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
@@ -157,7 +236,15 @@ switch (game)
 										instance_destroy(obj_anim);
 										instance_destroy();
 											
-										with (enemy) switch_state(stateSleep);
+										if(enemy == OBJ_enemy)
+										{
+											with (enemy) switch_state(stateSleep);
+										}
+										else if(enemy == obj_tutorialDummy)
+										{
+											var _target = layer_instance_get_instance(enemy);
+											_target.executedDummy = true;	
+										}
 									}
 									
 									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Press the Inputs", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
@@ -171,7 +258,16 @@ switch (game)
 										instance_destroy(obj_bubble);
 										instance_destroy();
 											
-										with (enemy) switch_state(stateSleep);
+										if(enemy == OBJ_enemy)
+										{
+											with (enemy) switch_state(stateSleep);
+										}
+										else if(enemy == obj_tutorialDummy)
+										{
+											show_debug_message("DUMMY EXECUTE");
+											var _target = layer_instance_get_instance(enemy);
+											_target.executedDummy = true;	
+										}
 									}
 									
 									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Press Left Click", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });

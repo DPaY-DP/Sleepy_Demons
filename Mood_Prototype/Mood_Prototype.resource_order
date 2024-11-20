@@ -225,6 +225,7 @@
     {"name":"room_loadout","order":5,"path":"rooms/room_loadout/room_loadout.yy",},
     {"name":"room_main","order":4,"path":"rooms/room_main/room_main.yy",},
     {"name":"room_shootingRange","order":4,"path":"rooms/room_shootingRange/room_shootingRange.yy",},
+    {"name":"room_tutorialExecutie","order":2,"path":"rooms/room_tutorialExecutie/room_tutorialExecutie.yy",},
     {"name":"room_tutorialShooting","order":1,"path":"rooms/room_tutorialShooting/room_tutorialShooting.yy",},
     {"name":"array_choose","order":1,"path":"scripts/array_choose/array_choose.yy",},
     {"name":"array_find","order":2,"path":"scripts/array_find/array_find.yy",},

@@ -919,7 +919,7 @@ stateExecute.run = function()
 	
 	var _lineCheck = collision_line(x, y, obj_player.x, obj_player.y, obj_wall, false, false);
 	//show_debug_message(_lineCheck)
-	if	(point_distance(x, y, obj_player.x, obj_player.y) < rangeExecute) && (_lineCheck == noone)
+	if	(point_distance(x, y, obj_player.x, obj_player.y) < rangeExecute) && (_lineCheck == noone)	//LUIZ changed this to account for Execute Tutorial
 	{
 		if (keyExecute) && (!instance_exists(obj_managerMinigame))
 		{
