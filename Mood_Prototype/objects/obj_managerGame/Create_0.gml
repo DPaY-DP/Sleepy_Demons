@@ -10,7 +10,7 @@ if (instance_exists(obj_env)) drawEnvHP = true;
 
 
 currentSong = choose(snd_musicLevel1, snd_musicLevel2);
-//audio_play_sound(currentSong,1,false);
+audio_play_sound(currentSong,1,false, gainMusic);
 hasWon = false;
 
 mapAlpha = 0;
@@ -119,7 +119,7 @@ stateGame.run = function()
 	if(!audio_is_playing(currentSong) && !hasWon)
 	{
 		currentSong = choose(snd_musicLevel1, snd_musicLevel2);
-		//audio_play_sound(currentSong,1,false);
+		audio_play_sound(currentSong,1,false, gainMusic);
 	}
 	
 	if (!instance_exists(OBJ_enemy) && !instance_exists(obj_tutorialDummy))

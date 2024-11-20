@@ -1,2 +1,1 @@
-
-draged=false;
+dragged=false;

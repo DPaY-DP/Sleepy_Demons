@@ -177,7 +177,7 @@ movement_and_navigation = function(_xTo, _yTo)
 		var _movedir = point_direction(0, 0, hvel, vvel);
 		if(!audio_is_playing(steppos_demons_half_2))
 		{
-			audio_play_sound_at(steppos_demons_half_2, x, y, 0, 100, 150, 1, 0, 0, 1, 0, 1 + random_range(-.2, .2));		//LUIZSOUND
+			audio_play_sound_at(steppos_demons_half_2, x, y, 0, 100, 150, 1, 0, 0, gainSFX, 0, 1 + random_range(-.2, .2));		//LUIZSOUND
 		}
 
 		if (abs(_goaldir - _movedir) > 180)
@@ -945,7 +945,7 @@ stateExecute.stop = function()
 stateSleep = new State("Sleep");
 stateSleep.start = function()
 {
-	audio_play_sound_at(array_get(sleepSounds, random_range(0,array_length(sleepSounds))), x, y, 0, 100, 150, 1, 0, false);
+	audio_play_sound_at(array_get(sleepSounds, random_range(0,array_length(sleepSounds))), x, y, 0, 100, 150, 1, 0, false, gainSFX);
 	instance_create_depth(x, y, depth, obj_enemySleeping, { sprite_index : asset_get_index("spr_" + name + "Sleep") } );
 	
 	obj_loadout.reload();

@@ -185,7 +185,7 @@ switch (game)
 									}
 									
 									
-									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Bursh", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
+									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Stuff the Pillow", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
 	break;							
 	
 	

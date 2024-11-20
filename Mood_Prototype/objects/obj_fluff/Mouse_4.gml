@@ -1,4 +1,3 @@
-
-draged=true;
-xx=x-mouse_x;
-yy=y-mouse_y
+dragged = true;
+xOffset = x - mouse_x;
+yOffset = y - mouse_y;

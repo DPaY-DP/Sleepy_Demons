@@ -34,3 +34,6 @@
 	#macro keyRepair keyboard_check_pressed(ord("E"))
 	#macro keyExecute keyboard_check_pressed(ord("F"))
 	#macro keyRetrievePillow keyboard_check_pressed(ord("Q"))
+	
+	#macro gainMusic global.save.volumeMusic
+	#macro gainSFX global.save.volumeSFX

@@ -132,9 +132,11 @@ enum enumMinigame
 
 defaults = 
 {
-	fullscreen : false,
-	volume : 1,
 	version : global.version,
+	
+	fullscreen : false,
+	volumeMusic : 0.5,
+	volumeSFX : 0.25,
 	
 	levels :
 	[
@@ -186,9 +188,9 @@ defaults =
 			unlocked : true,
 		
 			minigames :  [
-				enumMinigame.TUCK,
-				enumMinigame.TUCK,
-				enumMinigame.TUCK,
+				enumMinigame.BRUSH,
+				enumMinigame.BRUSH,
+				enumMinigame.BRUSH,
 			],
 			
 			loadoutPillows : 0,

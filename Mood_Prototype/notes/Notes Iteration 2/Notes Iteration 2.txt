@@ -31,11 +31,11 @@ Unitended Behavior:
 
 
 Bugs:
- - trying to switch weapon crashes the game when there are no / not enough weapons
- - "Bursh" minigame broken (I think its the pillow one)
- - Brush minigame hitbox weird (make it larger)
- - ESCaping to menu crashes game#
- - weapon switching is sometimes buggy
+ - trying to switch weapon crashes the game when there are no / not enough weapons  ## fixed ?
+ - "Bursh" minigame broken (I think its the pillow one)								## fixed !
+ - Brush minigame hitbox weird (make it larger)										## fixed !
+ - ESCaping to menu crashes game#													## fixed ?
+ - weapon switching is sometimes buggy												
  
  
  

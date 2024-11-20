@@ -5,7 +5,7 @@ if (keyMelee) && (timerCooldown <= 0)
 {
 	if (counterMeleeCharge <= 30)
 	{
-		audio_play_sound_at(snd_punch2, x, y, 0, 100, 150, 1, 0, 0);
+		audio_play_sound_at(snd_punch2, x, y, 0, 100, 150, 1, 0, 0, gainSFX);
 	
 		image_alpha = 1;
 	

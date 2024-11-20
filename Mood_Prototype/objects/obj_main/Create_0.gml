@@ -1,9 +1,11 @@
+//IMMUTABLE VALUES
+
+
+//GAME VALUES
 mode = "main";
 
 
-
-//methods
-
+//METHODS
 draw_menu_button = function(_string, _size, _function, _active = true, _argument)
 {	
 	var _font = font_upheaval_scalable;
@@ -31,7 +33,7 @@ draw_menu_button = function(_string, _size, _function, _active = true, _argument
 		if (mouse_check_button_pressed(mb_left)) 
 		{
 			_function(_argument);
-			audio_play_sound(snd_button,1,false)
+			audio_play_sound(snd_button,1,false, gainSFX)
 		}
 	}
 
