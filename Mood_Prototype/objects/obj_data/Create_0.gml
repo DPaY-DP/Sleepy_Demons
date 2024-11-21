@@ -158,9 +158,7 @@ defaults =
 			unlocked : true,
 			
 			minigames :  [
-				enumMinigame.TUCK,
-				enumMinigame.TUCK,
-				enumMinigame.TUCK,
+
 			],
 			
 			loadoutPillows : 0,
@@ -175,6 +173,18 @@ defaults =
 				enumMinigame.TUCK,
 				enumMinigame.TUCK,			//LUIZ Might want to think about different Minigames / random for first encounter
 				enumMinigame.TUCK,
+			],
+			
+			loadoutPillows : 0,
+			loadoutWeapons : 0,
+		},
+		{
+			room : room_tutorialEnvironment,
+			name : "Tutorial Environment",
+			unlocked : true,
+			
+			minigames :  [
+
 			],
 			
 			loadoutPillows : 0,

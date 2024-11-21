@@ -219,8 +219,10 @@ switch (game)
 									{
 										instance_destroy(obj_inputs_raw);
 										instance_destroy();
-											
-										with (broken) fix();
+										
+										if(broken.object_index == obj_env) with (broken) fix();
+										else if(broken.object_index == obj_tutorialEnvBig) with (broken) inputsDone();
+										
 									}
 									
 									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Press the Inputs", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
