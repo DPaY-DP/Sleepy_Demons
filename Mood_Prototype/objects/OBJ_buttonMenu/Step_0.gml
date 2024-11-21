@@ -10,7 +10,7 @@ if (mouse_on_me())
 		if (mouse_check_button_released(mb_left)) 
 		{
 			func();
-			audio_play_sound(snd_button,1,false)
+			audio_play_sound(snd_button,1,false, gainSFX)
 		}
 	}
 	

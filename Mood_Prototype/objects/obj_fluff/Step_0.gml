@@ -1,10 +1,5 @@
-
-if(draged==false)
+if (dragged)
 {
-	exit;
-}
-else
-{
-	x=mouse_x+xx;
-	y=mouse_y+yy;
+	x = mouse_x + xOffset;
+	y = mouse_y + yOffset;
 }

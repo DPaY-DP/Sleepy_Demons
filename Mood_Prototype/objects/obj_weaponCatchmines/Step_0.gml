@@ -83,7 +83,7 @@ if (rmb) && (timerFirerate == 0) && (ammo > 0)
 	targetGrapple = [_x, _y];
 	grappling = true;
 	with (obj_player) switch_state(stateLock);
-	audio_play_sound(snd_grapple, 0, 0, 1, 0, 0.8 + random(0.4));
+	audio_play_sound(snd_grapple, 0, 0, gainSFX, 0, 0.8 + random(0.4));
 	
 	dirGrapple = point_direction(x, y, targetGrapple[0], targetGrapple[1]);
 }

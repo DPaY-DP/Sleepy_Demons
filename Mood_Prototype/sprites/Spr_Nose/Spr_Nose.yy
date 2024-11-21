@@ -26,7 +26,7 @@
   "origin":0,
   "parent":{
     "name":"Tickleminigame",
-    "path":"folders/Sprites/MGames/Tickleminigame.yy",
+    "path":"folders/Sprites/Minigames/Tickleminigame.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

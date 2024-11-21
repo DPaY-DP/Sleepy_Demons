@@ -12,4 +12,3 @@ image_speed = 0;
 
 brushed = 0;
 right_trigger = false;
-

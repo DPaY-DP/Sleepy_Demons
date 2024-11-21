@@ -27,7 +27,7 @@
   "origin":3,
   "parent":{
     "name":"Slider",
-    "path":"folders/Sprites/MGames/Slider.yy",
+    "path":"folders/Sprites/Minigames/Slider.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

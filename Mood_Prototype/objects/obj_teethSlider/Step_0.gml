@@ -5,9 +5,11 @@ if mouse_check_button_pressed(mb_left)
 {
 	var button_x = x+sprite_width*value_;
 	var button_y = y;
-	var button_radius = sprite_get_width(spr_brush);
-	if point_in_circle(device_mouse_x_to_gui(0),device_mouse_y_to_gui(0), button_x, button_y, button_radius)
-	{ selected_ = true;
+	var button_radius = sprite_get_width(spr_brush) * 2;
+	
+	if point_in_circle (device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), button_x, button_y, button_radius)
+	{ 
+		selected_ = true;
 	}
 }
 
@@ -29,7 +31,7 @@ if (value_ == 1 && brushed == 0)
 if (value_ == 0 && right_trigger == true) alarm_set(1,1);
 if (value_ == 1 && right_trigger == false && brushed == 1) alarm_set(2,1);
 if (value_ == 1 && right_trigger == false && brushed == 2) alarm_set(3,1);
-if (value_ == 0 && right_trigger == true && brushed == 3) instance_create_depth(xMouth-64, yMouth, -10, obj_teethAnimation);
+if (value_ == 0 && right_trigger == true && brushed == 3) instance_create_depth(xMouth - 32 * global.GUIScale, yMouth, depth - 1, obj_teethAnimation);
 
 switch (brushed)
 {
@@ -50,4 +52,4 @@ switch (brushed)
 	break;
 } 
 
-
+show_debug_message(brushed)

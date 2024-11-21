@@ -31,15 +31,15 @@ Unitended Behavior:
 
 
 Bugs:
- - trying to switch weapon crashes the game when there are no / not enough weapons
- - "Bursh" minigame broken (I think its the pillow one)
- - Brush minigame hitbox weird (make it larger)
- - ESCaping to menu crashes game#
- - weapon switching is sometimes buggy
+ - trying to switch weapon crashes the game when there are no / not enough weapons  ## fixed ?
+ - "Bursh" minigame broken (I think its the pillow one)								## fixed !
+ - Brush minigame hitbox weird (make it larger)										## fixed !
+ - ESCaping to menu crashes game#													## fixed ?
+ - weapon switching is sometimes buggy												
+ - stuff minigame moves with camera lololol											## fixed !
+ - stuff minigame BUGGED AGAIN
+ - crash: guenther and pablo sabotage env object (something with _broken.applyDamage)
  
  
  
 Completed / Fixed:
- - Demons need to have their physics enabled constantly, so they are properly affected by movement altering	effects such as the black hole gun.
- - wappon shoot in minigame
- - player get stuck upon exiting portal

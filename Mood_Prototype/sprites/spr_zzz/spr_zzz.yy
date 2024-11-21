@@ -32,7 +32,7 @@
   "origin":4,
   "parent":{
     "name":"InputsGame",
-    "path":"folders/Sprites/MGames/InputsGame.yy",
+    "path":"folders/Sprites/Minigames/InputsGame.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -119,11 +119,8 @@ switch (game)
 	break;
 				
 				
-	case enumMinigame.STUFF:		var _xSpawn = GUIwidth / 4;
-									var _ySpawn = GUIheight / 3;
-																										
-									instance_create_depth(x, y, depth -20, obj_stuffthepillowadmin);
-									instance_create_depth(_xSpawn * 0.5, _ySpawn, depth -20, obj_pillow);
+	case enumMinigame.STUFF:		repeat(5) instance_create_depth(x, y, depth - 20, obj_fluff);
+									instance_create_depth(0, GUIheight * 0.5, depth -20, obj_pillow);
 	break;
 					
 					

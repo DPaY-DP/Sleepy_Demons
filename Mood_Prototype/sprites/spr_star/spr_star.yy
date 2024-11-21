@@ -29,7 +29,7 @@
   "origin":4,
   "parent":{
     "name":"Square Hole",
-    "path":"folders/Sprites/MGames/Square Hole.yy",
+    "path":"folders/Sprites/Minigames/Square Hole.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

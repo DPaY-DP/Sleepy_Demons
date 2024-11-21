@@ -28,7 +28,7 @@
   "origin":9,
   "parent":{
     "name":"Horseshoe",
-    "path":"folders/Sprites/MGames/Horseshoe.yy",
+    "path":"folders/Sprites/Minigames/Horseshoe.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Tuck In",
-    "path":"folders/Sprites/MGames/Tuck In.yy",
+    "path":"folders/Sprites/Minigames/Tuck In.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

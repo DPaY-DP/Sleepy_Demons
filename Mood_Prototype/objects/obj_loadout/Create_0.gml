@@ -12,7 +12,7 @@ weaponsEffect = global.save.weaponsUnlocked.effect;
 modeSelect = 0;
 
 selected = [0, 0, 0];
-spriteWeapon = [spr_weaponMenuMain, spr_weaponMenuOther, spr_weaponMenuOther];
+spriteWeapon = [spr_weaponMenuMain, spr_weaponMenuEffect, spr_weaponMenuEffect];
 
 shufflebag = [];
 

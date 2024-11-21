@@ -30,7 +30,7 @@
   "origin":4,
   "parent":{
     "name":"FastClick",
-    "path":"folders/Sprites/MGames/FastClick.yy",
+    "path":"folders/Sprites/Minigames/FastClick.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

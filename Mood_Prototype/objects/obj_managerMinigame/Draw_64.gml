@@ -23,8 +23,7 @@ switch (game)
 											with (enemy) switch_state(stateSleep);
 										}
 										else if(_target == obj_tutorialDummy)
-										{
-											show_debug_message("DUMMY EXECUTE");											
+										{										
 											_target.executedDummy = true;	
 										}
 										}
@@ -48,8 +47,7 @@ switch (game)
 											with (enemy) switch_state(stateSleep);
 										}
 										else if(_target == obj_tutorialDummy)
-										{
-											show_debug_message("DUMMY EXECUTE");											
+										{										
 											_target.executedDummy = true;	
 										}
 									}
@@ -73,8 +71,7 @@ switch (game)
 											with (enemy) switch_state(stateSleep);
 										}
 										else if(_target == obj_tutorialDummy)
-										{
-											show_debug_message("DUMMY EXECUTE");											
+										{											
 											_target.executedDummy = true;	
 										}
 										
@@ -99,8 +96,7 @@ switch (game)
 											with (enemy) switch_state(stateSleep);
 										}
 										else if(_target == obj_tutorialDummy)
-										{
-											show_debug_message("DUMMY EXECUTE");											
+										{										
 											_target.executedDummy = true;	
 										}
 									}
@@ -139,9 +135,10 @@ switch (game)
 	
 	case enumMinigame.BRUSH:		draw_sprite_simple(spr_window, 0, GUIwidth * 0.05, GUIheight * 0.05, { xscale : GUIwidth * 0.9, yscale : GUIheight * 0.9, alpha : 0.5 });
 	
-									if (brushed == 3)
+									if (obj_teethSlider.brushed == 4)
 									{
 										instance_destroy(obj_teethSlider);
+										instance_destroy(obj_teethAnimation);
 										instance_destroy();
 										
 										var _target = enemy.object_index
@@ -151,13 +148,12 @@ switch (game)
 											with (enemy) switch_state(stateSleep);
 										}
 										else if(_target == obj_tutorialDummy)
-										{
-											show_debug_message("DUMMY EXECUTE");											
+										{											
 											_target.executedDummy = true;	
 										}
 									}
 									
-									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Bursh", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
+									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Brush", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
 	break;							
 	
 	
@@ -166,7 +162,6 @@ switch (game)
 									if instance_number(obj_fluff)=0
 									{
 										instance_destroy(obj_pillow);
-										instance_destroy(obj_stuffthepillowadmin);
 										instance_destroy();
 										
 										var _target = enemy.object_index
@@ -176,14 +171,13 @@ switch (game)
 											with (enemy) switch_state(stateSleep);
 										}
 										else if(_target == obj_tutorialDummy)
-										{
-											show_debug_message("DUMMY EXECUTE");											
+										{											
 											_target.executedDummy = true;	
 										}
 									}
 									
 									
-									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Bursh", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
+									draw_text_simple(GUIwidth * 0.5, GUIheight * 0.9, "Stuff the Pillow", { size : 5 * fontscale, color : c_white, font : font_upheaval_scalable });
 	break;							
 	
 	
@@ -202,8 +196,7 @@ switch (game)
 											with (enemy) switch_state(stateSleep);
 										}
 										else if(_target == obj_tutorialDummy)
-										{
-											show_debug_message("DUMMY EXECUTE");											
+										{									
 											_target.executedDummy = true;	
 										}
 									}
@@ -245,8 +238,7 @@ switch (game)
 											with (enemy) switch_state(stateSleep);
 										}
 										else if(_target == obj_tutorialDummy)
-										{
-											show_debug_message("DUMMY EXECUTE");											
+										{									
 											_target.executedDummy = true;	
 										}
 									}
@@ -269,8 +261,7 @@ switch (game)
 											with (enemy) switch_state(stateSleep);
 										}
 										else if(_target == obj_tutorialDummy)
-										{
-											show_debug_message("DUMMY EXECUTE");											
+										{										
 											_target.executedDummy = true;	
 										}
 									}

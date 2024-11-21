@@ -32,7 +32,7 @@
   "origin":3,
   "parent":{
     "name":"Brush",
-    "path":"folders/Sprites/MGames/Brush.yy",
+    "path":"folders/Sprites/Minigames/Brush.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -65,7 +65,7 @@
     },
     "name":"spr_cleanTeeth",
     "playback":1,
-    "playbackSpeed":4.0,
+    "playbackSpeed":12.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
