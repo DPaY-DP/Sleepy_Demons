@@ -20,13 +20,23 @@ if (lmbHeld) && (timerFirerate == 0) && (ammo > 0) && (spinUp >= 20)
 	ammo--;
 	
 	instance_create_depth(x, y, depth, obj_projectileCandydart, { image_angle : image_angle - 8 + random(16) });
+	
+	audio_play_sound(snd_miniGunBullet, 0, 0, gainSFX, 0, 0.8 + random(0.4));
 }
 
-if (lmbHeld) spinUp++;
+if (lmbHeld) 
+{
+	if (spinUp == 0) audio_play_sound(snd_minigunStart, 0, 0, gainSFX);
+	
+	spinUp++;
+	if (spinUp >= 20) && (!audio_is_playing(snd_minigunLoopTief)) audio_play_sound(snd_minigunLoopTief, 0, 0, gainSFX, 0, 0.8 + random(0.4));
+}
 else 
 {
-	spinUp -= 2;
-	if (spinUp < 0) spinUp = 0;
+	spinUp = 0;
+	
+	//spinUp -= 2;
+	//if (spinUp < 0) spinUp = 0;
 }
 
 
@@ -38,4 +48,6 @@ if (rmb) && (timerFirerate == 0) && (ammo > 0)
 	
 	obj_player.boosted = true;
 	obj_player.timerBoosted = 300;
+	
+	audio_play_sound(snd_miniyumBoost, 0, 0, gainSFX, 0, 0.8 + random(0.4));
 }

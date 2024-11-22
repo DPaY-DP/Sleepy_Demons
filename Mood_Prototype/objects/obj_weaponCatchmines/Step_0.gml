@@ -35,6 +35,8 @@ if (grappling)
 		grappling = false;
 		with (obj_player) switch_state(stateActive);
 	}
+	
+	if (!audio_is_playing(snd_grapplingHookPulling)) audio_play_sound(snd_grapplingHookPulling, 0, 0, gainSFX, 0, grapplePitch);
 }
 
 
@@ -49,6 +51,8 @@ if (lmb) && (timerFirerate == 0) && (ammo > 0)
 	ammo--;
 	
 	instance_create_depth(x, y, depth, obj_projectileCatchmine, { image_angle : image_angle });
+	
+	audio_play_sound(snd_defaultFire, 0, 0, gainSFX);
 }
 
 
@@ -72,7 +76,6 @@ if (rmb) && (timerFirerate == 0) && (ammo > 0)
 		{
 			timerFirerate = 0;
 			ammo++;
-			show_debug_message("nah bruv")
 			
 			exit;
 		}
@@ -82,8 +85,10 @@ if (rmb) && (timerFirerate == 0) && (ammo > 0)
 	
 	targetGrapple = [_x, _y];
 	grappling = true;
+	grapplePitch = random_range(0.9, 1.1);
 	with (obj_player) switch_state(stateLock);
-	audio_play_sound(snd_grapple, 0, 0, gainSFX, 0, 0.8 + random(0.4));
 	
 	dirGrapple = point_direction(x, y, targetGrapple[0], targetGrapple[1]);
+	
+	audio_play_sound(snd_grapplingHookHit, 0, 0, gainSFX);
 }

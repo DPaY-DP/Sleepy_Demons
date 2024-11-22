@@ -20,6 +20,8 @@ if (obj_managerMinigame.grabbedObject == id)
 
 			obj_managerMinigame.grabbedObject = noone;
 			obj_managerMinigame.formsLeft--;
+			
+			audio_play_sound(snd_squareHoleDrop, 0, 0, gainSFX, 0, 0.8 + random(0.2));
 		}
 	//}
 }

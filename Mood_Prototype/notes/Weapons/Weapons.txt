@@ -1,0 +1,54 @@
+Main Pistol
+> projectile
+> player held perspective
+> loadout portrait (64 x 64)
+
+Main Shotgun
+> projectile (can be same as Main pistol)
+> player held perspective
+> loadout portrait (64 x 64)
+
+Main Rifle
+> projectile (can be same as Main pistol)
+> player held perspective
+> loadout portrait (64 x 64)
+
+Glue Launcher
+> projectile
+> gluetrap (patch of glue on the floor, circle, diameter 128)
+> explosion sprite (rocket jump)
+> player held perspective
+> loadout portrait (64 x 64)
+
+Blackhole
+> projectile blackhole
+> vfx blackhole ?
+> projectile portal
+> lingering portal
+> player held perspective
+> loadout portrait (64 x 64)
+
+Miniyum
+> projectile
+> vfx for sugar rush
+> player held perspective
+> loadout portrait (64 x 64)
+
+Catchmine Launcher
+> lingering trap (also projectile)
+> hook that catches enemy from trap
+> grappling hook
+> player held perspective
+> loadout portrait (64 x 64)
+
+Gummy Bear Launcher
+> Gummy Bear Lure
+> Gummy Bear Bumper
+> player held perspective
+> loadout portrait (64 x 64)
+
+Stinkbomb Launcher
+> stink bomb projectile
+> player melee rush vfx
+> player held perspective
+> loadout portrait (64 x 64)

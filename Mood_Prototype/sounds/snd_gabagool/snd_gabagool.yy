@@ -12,8 +12,8 @@
   "duration":0.813,
   "name":"snd_gabagool",
   "parent":{
-    "name":"Implemented",
-    "path":"folders/Sounds/Implemented.yy",
+    "name":"Unused",
+    "path":"folders/Sounds/Unused.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

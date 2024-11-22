@@ -19,8 +19,9 @@ if (lmb) && (timerFirerate == 0) && (ammo > 0)
 	timerFirerate = intervalFirerate;
 	ammo--;
 	
-	show_debug_message("bhole launched");
 	instance_create_depth(x, y, depth, obj_projectileBlackhole, { image_angle : image_angle });
+	
+	audio_play_sound(snd_blackholeFire, 0, 0, gainSFX, 0, 0.7);
 }
 
 
@@ -30,5 +31,8 @@ if (rmb) && (timerFirerate == 0) && (ammo > 0)
 	timerFirerate = intervalFirerate;
 	ammo--;
 	
-	instance_create_depth(x, y, depth, obj_projectilePortal, { image_angle : image_angle });
+	identity = flick(identity)
+	instance_create_depth(x, y, depth, obj_projectilePortal, { image_angle : image_angle, identity : identity });
+	
+	audio_play_sound(snd_blackholeFire, 0, 0, gainSFX, 0, 1.3);
 }

@@ -20,6 +20,8 @@ if (lmb) && (timerFirerate == 0) && (ammo > 0)
 	ammo--;
 	
 	instance_create_depth(x, y, depth, obj_projectileGummybear, { image_angle : image_angle });
+	
+	audio_play_sound(snd_gummySplat, 0, 0, gainSFX, 0, 1.1);
 }
 
 
@@ -30,4 +32,6 @@ if (rmb) && (timerFirerate == 0) && (ammo > 0)
 	ammo--;
 	
 	instance_create_depth(x, y, depth, obj_projectileGummybumper, { image_xscale : 3, image_yscale : 3, dir : image_angle });
+	
+	audio_play_sound(snd_gummySplat, 0, 0, gainSFX, 0, 0.8);
 }

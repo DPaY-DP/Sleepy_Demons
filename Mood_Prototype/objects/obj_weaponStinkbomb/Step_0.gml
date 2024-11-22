@@ -20,6 +20,8 @@ if (lmb) && (timerFirerate == 0) && (ammo > 0)
 	ammo--;
 	
 	instance_create_depth(x, y, depth, obj_projectileStinkbomb, { image_angle : image_angle });
+	
+	audio_play_sound(snd_defaultCannon, 0, 0, gainSFX, 0, 1.1);
 }
 
 
@@ -31,4 +33,6 @@ if (rmb) && (timerFirerate == 0) && (ammo > 0)
 	
 	instance_create_depth(x, y, depth, obj_weaponStinkbombMelee, { weaponActive : obj_loadout.weaponActive });
 	active = false;
+	
+	audio_play_sound(snd_steampipeLeaking, 0, 0, gainSFX, 0, 1.5);
 }

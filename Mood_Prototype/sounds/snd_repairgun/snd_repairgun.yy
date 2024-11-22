@@ -12,8 +12,8 @@
   "duration":1.05619,
   "name":"snd_repairgun",
   "parent":{
-    "name":"Implemented",
-    "path":"folders/Sounds/Implemented.yy",
+    "name":"Unused",
+    "path":"folders/Sounds/Unused.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

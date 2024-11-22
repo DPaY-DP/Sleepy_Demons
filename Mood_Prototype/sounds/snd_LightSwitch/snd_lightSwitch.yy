@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_lightSwitch",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.415918,
+  "name":"snd_lightSwitch",
+  "parent":{
+    "name":"Lightswitch",
+    "path":"folders/Sounds/Minigames/Lightswitch.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_lightSwitch.wav",
+  "type":0,
+  "volume":1.0,
+}

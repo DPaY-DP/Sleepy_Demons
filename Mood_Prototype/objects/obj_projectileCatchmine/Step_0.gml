@@ -34,6 +34,7 @@ else if (!catching)
 			
 			var _dir = point_direction(x, y, _target.x, _target.y);
 			instance_create_depth(x, y, depth, obj_projectileCatchmineNet, { dir : _dir, owner : id, range : range * 3 });
+			audio_play_sound(snd_catchmine, 0, 0, gainSFX);
 			break;
 		}
 	}

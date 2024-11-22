@@ -239,6 +239,8 @@ defaults =
 			
 			loadoutPillows : 0,
 			loadoutWeapons : 0,
+			
+			weaponUnlocks : [],
 		},
 		{
 			room : room_00Executie,
@@ -246,9 +248,9 @@ defaults =
 			unlocked : true,
 		
 			minigames :  [
-				enumMinigame.TUCK,
-				enumMinigame.TUCK,
-				enumMinigame.TUCK,
+				enumMinigame.INPUTS,
+				enumMinigame.INPUTS,
+				enumMinigame.INPUTS,
 			],
 			
 			loadoutPillows : 0,
@@ -433,7 +435,7 @@ defaults =
 			[0, obj_weaponBlackhole,	"SINGULARITY V.2",			"Prim: Fires a slow moving black\nhole\n\nAlt: Create up to two linked portals"	],
 			[0, obj_weaponMiniyum,		"THE MINIYUM",				"Prim: Fire volleys of slowing candy\ncanes\n\nAlt: Boost yourself to gain speed"		],
 			[0, obj_weaponGummybear,	"GUMMY LURE-AND-BUMPER GUN","Prim: Deploy Gummy Lure\n\nAlt: Deploy Gummy Bumper"		],
-			[0, obj_weaponStinkbomb,	"MILITARY GRADE STINK",		"Prim: Throw disgusting stink bomb\nto scare off enemies\n\nAlt: Enter berserker melee rush"	],
+			[0, obj_weaponStinkbomb,	"\"NOSE-FERATU 2\" OLFACTORY DISINCENTIVIZER",		"Prim: Throw disgusting stink bomb\nto scare off enemies\n\nAlt: Enter berserker melee rush"	],
 			[0, obj_weaponCatchmines,	"CATCHMINE THROWER",		"Prim: Deploy Catchmine\n\nAlt: Grappling Hook"		],
 		],
 	

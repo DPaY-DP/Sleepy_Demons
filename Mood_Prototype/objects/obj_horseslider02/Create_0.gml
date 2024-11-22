@@ -29,3 +29,5 @@ check_horse_collider = function()
 	}
 	instance_destroy();
 }
+
+sfx = audio_play_sound(snd_HorseSliderRight, 0, 0, gainSFX);

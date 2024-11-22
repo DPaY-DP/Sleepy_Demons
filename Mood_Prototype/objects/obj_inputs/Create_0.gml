@@ -39,22 +39,52 @@ evaluate_input = function(_input)
 {
 	switch (_input)
 	{
-		case enumInput.LEFT:	if (keyboard_check_pressed(ord("A"))) || (keyboard_check_pressed(vk_left)) return true;
+			//close eye
+		case enumInput.LEFT:	if (keyboard_check_pressed(ord("A"))) || (keyboard_check_pressed(vk_left)) 
+								{
+									return true;
+									audio_play_sound(snd_keyboardLeft, 0, 0, gainSFX);
+								}
 		break;
 		
-		case enumInput.RIGHT:	if (keyboard_check_pressed(ord("D"))) || (keyboard_check_pressed(vk_right)) return true;	
+			//close eye
+		case enumInput.RIGHT:	if (keyboard_check_pressed(ord("D"))) || (keyboard_check_pressed(vk_right)) 
+								{
+									return true;
+									audio_play_sound(snd_keyboardRight, 0, 0, gainSFX);
+								}
 		break;
 		
-		case enumInput.UP:		if (keyboard_check_pressed(ord("W"))) || (keyboard_check_pressed(vk_up)) return true;
+			//cocoa
+		case enumInput.UP:		if (keyboard_check_pressed(ord("W"))) || (keyboard_check_pressed(vk_up)) 
+								{
+									return true;
+									audio_play_sound(snd_InputGameDrink, 0, 0, gainSFX);
+								}
 		break;
 		
-		case enumInput.DOWN:	if (keyboard_check_pressed(ord("S"))) || (keyboard_check_pressed(vk_down)) return true;	
+			//pat
+		case enumInput.DOWN:	if (keyboard_check_pressed(ord("S"))) || (keyboard_check_pressed(vk_down)) 
+								{
+									return true;
+									audio_play_sound(snd_InputGamePetHead, 0, 0, gainSFX);
+								}
 		break;
 		
-		case enumInput.LMB:		if (mouse_check_button_pressed(mb_left)) return true;
+			//brush
+		case enumInput.LMB:		if (mouse_check_button_pressed(mb_left)) 
+								{
+									return true;
+									audio_play_sound(snd_brushLeft, 0, 0, gainSFX);
+								}
 		break;
 		
-		case enumInput.RMB:		if (mouse_check_button_pressed(mb_right)) return true;
+			//read
+		case enumInput.RMB:		if (mouse_check_button_pressed(mb_right)) 
+								{
+									return true;
+									audio_play_sound(snd_InputGameBook2, 0, 0, gainSFX);
+								}
 		break;
 	}
 		

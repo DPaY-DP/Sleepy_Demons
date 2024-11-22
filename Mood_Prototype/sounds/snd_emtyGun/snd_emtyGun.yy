@@ -12,8 +12,8 @@
   "duration":0.39185,
   "name":"snd_emtyGun",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Unimplemented",
+    "path":"folders/Sounds/Unimplemented.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

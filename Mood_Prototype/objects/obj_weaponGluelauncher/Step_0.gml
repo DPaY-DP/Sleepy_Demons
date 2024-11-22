@@ -19,8 +19,9 @@ if (lmb) && (timerFirerate == 0) && (ammo > 0)
 	timerFirerate = intervalFirerate;
 	ammo--;
 	
-	show_debug_message("glue launched")
 	instance_create_depth(x, y, depth, obj_projectileGluetrap, { image_angle : image_angle });
+	
+	audio_play_sound(snd_defaultCannon, 0, 0, gainSFX);
 }
 
 
@@ -33,4 +34,6 @@ if (rmb) && (timerFirerate == 0) && (ammo > 0)
 	var _dir = image_angle;
 	obj_player.hvel -= lengthdir_x(rocketjump, image_angle);
 	obj_player.vvel -= lengthdir_y(rocketjump, image_angle);
+	
+	audio_play_sound(snd_defaultCannon, 0, 0, gainSFX * 1.5, 0, 0.5);
 }

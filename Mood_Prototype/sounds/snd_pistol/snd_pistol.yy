@@ -12,8 +12,8 @@
   "duration":0.513129,
   "name":"snd_pistol",
   "parent":{
-    "name":"Implemented",
-    "path":"folders/Sounds/Implemented.yy",
+    "name":"Unimplemented",
+    "path":"folders/Sounds/Unimplemented.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

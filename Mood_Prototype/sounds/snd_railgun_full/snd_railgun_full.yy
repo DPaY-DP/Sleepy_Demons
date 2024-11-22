@@ -12,8 +12,8 @@
   "duration":1.98093,
   "name":"snd_railgun_full",
   "parent":{
-    "name":"Implemented",
-    "path":"folders/Sounds/Implemented.yy",
+    "name":"Unimplemented",
+    "path":"folders/Sounds/Unimplemented.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

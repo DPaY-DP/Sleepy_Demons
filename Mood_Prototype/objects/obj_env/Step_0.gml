@@ -59,4 +59,6 @@ if (hp < 0) && (!broken)
 		applyDamage = true;
 		image_blend = c_red;
 	}
+	
+	audio_play_sound(snd_envSabotage, 0, 0, gainSFX);
 }

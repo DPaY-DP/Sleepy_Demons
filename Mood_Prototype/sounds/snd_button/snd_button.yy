@@ -12,8 +12,8 @@
   "duration":0.107392,
   "name":"snd_button",
   "parent":{
-    "name":"Implemented",
-    "path":"folders/Sounds/Implemented.yy",
+    "name":"UI",
+    "path":"folders/Sounds/UI.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

@@ -17,8 +17,15 @@ timerFirerate = 0;
 
 ammo = ammoMax;
 
+identity = 0;
+
 
 //METHODS
+flick = function(_input)
+{
+	if (_input) return false
+	return true
+}
 
 
 //STATES
