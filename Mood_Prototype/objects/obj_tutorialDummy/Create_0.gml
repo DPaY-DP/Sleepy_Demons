@@ -9,16 +9,18 @@ dummyBehaviour = function()
 	switch(currentRoom)
 	{
 		case "room_tutorialShooting":
+			draw_self();
 			draw_text_simple(x,y-25,timesShot,{size : .1});
 			draw_text_simple(x,y-50,timesMelee, {size : .1});
 
 			if(timesShot >= 3 && timesMelee >= 3)		//LUIZ This is bad, since at the moment bullets & melee can hit multiple times -.-
 			{
-				instance_destroy(self);
+				instance_destroy();
 			}
 		break;
 	
 		case "room_tutorialExecutie":
+			draw_self();
 			draw_sprite_simple(spr_UI_button, 0, x, y - 16, { size : 0.8 });
 			
 			draw_text_simple(x,y-25,executedDummy, {size : .1});
@@ -31,7 +33,11 @@ dummyBehaviour = function()
 				}
 			}
 			
-			if(executedDummy) instance_destroy(self);
+			if(executedDummy) instance_destroy();
+		break;
+		
+		case "room_tutorialEnvironment":
+		 if (executedDummy) instance_destroy();
 		break;
 	}
 }

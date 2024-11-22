@@ -139,8 +139,8 @@
   ],
   "name":"room_tutorialShooting",
   "parent":{
-    "name":"Unfinished Levels",
-    "path":"folders/Rooms/Unfinished Levels.yy",
+    "name":"Tutorials",
+    "path":"folders/Rooms/Tutorials.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

@@ -1,12 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_tutorialDummy",
+  "%Name":"obj_tutorialEnvSmall",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_tutorialDummy",
+  "name":"obj_tutorialEnvSmall",
   "overriddenProperties":[],
   "parent":{
     "name":"Tutorial",
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_dummy",
-    "path":"sprites/spr_dummy/spr_dummy.yy",
+    "name":"spr_pipe",
+    "path":"sprites/spr_pipe/spr_pipe.yy",
   },
   "spriteMaskId":null,
   "visible":true,

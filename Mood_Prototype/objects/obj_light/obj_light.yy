@@ -1,16 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_tutorialDummy",
+  "%Name":"obj_light",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_tutorialDummy",
+  "name":"obj_light",
   "overriddenProperties":[],
   "parent":{
-    "name":"Tutorial",
-    "path":"folders/Objects/# Game/Tutorial.yy",
+    "name":"Level Unique",
+    "path":"folders/Objects/# Game/World Objects/Level Unique.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -30,10 +31,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_dummy",
-    "path":"sprites/spr_dummy/spr_dummy.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

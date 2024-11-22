@@ -206,9 +206,7 @@ defaults =
 			unlocked : true,
 			
 			minigames :  [
-				enumMinigame.TUCK,
-				enumMinigame.TUCK,
-				enumMinigame.TUCK,
+
 			],
 			
 			loadoutPillows : 0,
@@ -229,6 +227,18 @@ defaults =
 			loadoutWeapons : 0,
 			
 			weaponUnlocks : [],
+		},
+		{
+			room : room_tutorialEnvironment,
+			name : "Tutorial Environment",
+			unlocked : true,
+			
+			minigames :  [
+
+			],
+			
+			loadoutPillows : 0,
+			loadoutWeapons : 0,
 		},
 		{
 			room : room_00Executie,
