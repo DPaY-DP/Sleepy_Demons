@@ -45,7 +45,8 @@ if (!active) || (!canShoot) exit;
 
 
 //main action
-if (lmb) && (timerFirerate == 0) && (ammo > 0)
+if (lmb)
+if (timerFirerate == 0) && (ammo > 0)
 {
 	timerFirerate = intervalFirerate;
 	ammo--;
@@ -54,10 +55,13 @@ if (lmb) && (timerFirerate == 0) && (ammo > 0)
 	
 	audio_play_sound(snd_defaultFire, 0, 0, gainSFX);
 }
+else if (timerFirerate > 0) audio_play_sound(snd_weaponOnCooldown, 0, 0, gainSFX);
+else if (ammo <= 0) audio_play_sound(snd_weaponEmpty, 0, 0, gainSFX);
 
 
 //secondary action
-if (rmb) && (timerFirerate == 0) && (ammo > 0)
+if (rmb)
+if (timerFirerate == 0) && (ammo > 0)
 {
 	timerFirerate = intervalFirerate;
 	ammo--;
@@ -90,5 +94,7 @@ if (rmb) && (timerFirerate == 0) && (ammo > 0)
 	
 	dirGrapple = point_direction(x, y, targetGrapple[0], targetGrapple[1]);
 	
-	audio_play_sound(snd_grapplingHookHit, 0, 0, gainSFX);
+	audio_play_sound(snd_grapplingHookHit, 0, 0, gainSFX, 0, 1.3);
 }
+else if (timerFirerate > 0) audio_play_sound(snd_weaponOnCooldown, 0, 0, gainSFX);
+else if (ammo <= 0) audio_play_sound(snd_weaponEmpty, 0, 0, gainSFX);

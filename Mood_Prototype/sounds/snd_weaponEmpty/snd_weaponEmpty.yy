@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_lightSwitch",
+  "%Name":"snd_weaponEmpty",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.415918,
-  "name":"snd_lightSwitch",
+  "duration":0.39185,
+  "name":"snd_weaponEmpty",
   "parent":{
-    "name":"Lightswitch",
-    "path":"folders/Sounds/Minigames/Lightswitch.yy",
+    "name":"Weapons",
+    "path":"folders/Sounds/Weapons.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_lightSwitch.wav",
+  "soundFile":"snd_weaponEmpty.mp3",
   "type":0,
-  "volume":1.0,
+  "volume":0.4,
 }

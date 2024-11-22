@@ -12,8 +12,8 @@
   "duration":0.637982,
   "name":"snd_shotgun",
   "parent":{
-    "name":"Unused",
-    "path":"folders/Sounds/Unused.yy",
+    "name":"Main",
+    "path":"folders/Sounds/Weapons/Main.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_shotgun.wav",
   "type":0,
-  "volume":0.3,
+  "volume":0.5,
 }

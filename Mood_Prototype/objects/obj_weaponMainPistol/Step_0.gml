@@ -14,16 +14,20 @@ if (!active) || (!canShoot) exit;
 
 
 //main action
-if (lmb) && (timerFirerate == 0)
+if (lmb)
+if (timerFirerate == 0)
 {
 	timerFirerate = intervalFirerate;
 	
-	instance_create_depth(x, y, depth, obj_projectileDamage, { size : 1, damage : 8, image_angle : image_angle + 5 - random(10), spd : 36, punch : 12 })
+	instance_create_depth(x, y, depth, obj_projectileDamage, { size : 1, damage : 8, image_angle : image_angle + 5 - random(10), spd : 36, punch : 12 });
+	
+	audio_play_sound(snd_pistol, 0, 0, gainSFX);
 }
+else if (timerFirerate > 0) audio_play_sound(snd_weaponOnCooldown, 0, 0, gainSFX);
 
 
 //secondary action
-if (rmb) && (timerFirerate == 0)
-{
-	timerFirerate = intervalFirerate;
-}
+//if (rmb) && (timerFirerate == 0)
+//{
+//	timerFirerate = intervalFirerate;
+//}

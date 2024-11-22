@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_extendoCatch",
+  "%Name":"snd_catchmineDrag",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.431293,
-  "name":"snd_extendoCatch",
+  "duration":0.580499,
+  "name":"snd_catchmineDrag",
   "parent":{
-    "name":"Unimplemented",
-    "path":"folders/Sounds/Unimplemented.yy",
+    "name":"Catchmine",
+    "path":"folders/Sounds/Weapons/Catchmine.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_extendoCatch.wav",
+  "soundFile":"snd_catchmineDrag.wav",
   "type":0,
-  "volume":0.5,
+  "volume":1.0,
 }

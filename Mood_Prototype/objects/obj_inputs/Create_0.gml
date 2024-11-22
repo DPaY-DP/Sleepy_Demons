@@ -42,48 +42,48 @@ evaluate_input = function(_input)
 			//close eye
 		case enumInput.LEFT:	if (keyboard_check_pressed(ord("A"))) || (keyboard_check_pressed(vk_left)) 
 								{
-									return true;
 									audio_play_sound(snd_keyboardLeft, 0, 0, gainSFX);
+									return true;
 								}
 		break;
 		
 			//close eye
 		case enumInput.RIGHT:	if (keyboard_check_pressed(ord("D"))) || (keyboard_check_pressed(vk_right)) 
 								{
-									return true;
 									audio_play_sound(snd_keyboardRight, 0, 0, gainSFX);
+									return true;
 								}
 		break;
 		
 			//cocoa
 		case enumInput.UP:		if (keyboard_check_pressed(ord("W"))) || (keyboard_check_pressed(vk_up)) 
 								{
-									return true;
 									audio_play_sound(snd_InputGameDrink, 0, 0, gainSFX);
+									return true;
 								}
 		break;
 		
 			//pat
 		case enumInput.DOWN:	if (keyboard_check_pressed(ord("S"))) || (keyboard_check_pressed(vk_down)) 
 								{
-									return true;
 									audio_play_sound(snd_InputGamePetHead, 0, 0, gainSFX);
+									return true;
 								}
 		break;
 		
 			//brush
 		case enumInput.LMB:		if (mouse_check_button_pressed(mb_left)) 
 								{
-									return true;
 									audio_play_sound(snd_brushLeft, 0, 0, gainSFX);
+									return true;
 								}
 		break;
 		
 			//read
 		case enumInput.RMB:		if (mouse_check_button_pressed(mb_right)) 
 								{
-									return true;
 									audio_play_sound(snd_InputGameBook2, 0, 0, gainSFX);
+									return true;
 								}
 		break;
 	}

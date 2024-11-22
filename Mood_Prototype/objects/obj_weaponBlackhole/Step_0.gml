@@ -14,19 +14,23 @@ if (!active) || (!canShoot) exit;
 
 
 //main action
-if (lmb) && (timerFirerate == 0) && (ammo > 0)
+if (lmb)
+if (timerFirerate == 0) && (ammo > 0)
 {
 	timerFirerate = intervalFirerate;
 	ammo--;
 	
 	instance_create_depth(x, y, depth, obj_projectileBlackhole, { image_angle : image_angle });
 	
-	audio_play_sound(snd_blackholeFire, 0, 0, gainSFX, 0, 0.7);
+	audio_play_sound(snd_blackholeFire, 0, 0, gainSFX, 0, 1.8);
 }
+else if (timerFirerate > 0) audio_play_sound(snd_weaponOnCooldown, 0, 0, gainSFX);
+else if (ammo <= 0) audio_play_sound(snd_weaponEmpty, 0, 0, gainSFX);
 
 
 //secondary action
-if (rmb) && (timerFirerate == 0) && (ammo > 0)
+if (rmb)
+if (timerFirerate == 0) && (ammo > 0)
 {
 	timerFirerate = intervalFirerate;
 	ammo--;
@@ -36,3 +40,5 @@ if (rmb) && (timerFirerate == 0) && (ammo > 0)
 	
 	audio_play_sound(snd_blackholeFire, 0, 0, gainSFX, 0, 1.3);
 }
+else if (timerFirerate > 0) audio_play_sound(snd_weaponOnCooldown, 0, 0, gainSFX);
+else if (ammo <= 0) audio_play_sound(snd_weaponEmpty, 0, 0, gainSFX);

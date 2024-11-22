@@ -14,14 +14,19 @@ if (!active) || (!canShoot) exit;
 
 
 //main action
-if (lmbHeld) && (timerFirerate == 0) && (ammo > 0) && (spinUp >= 20)
+if (lmbHeld) && (timerFirerate == 0) && (spinUp >= 20)
 {
 	timerFirerate = intervalFirerate;
-	ammo--;
 	
-	instance_create_depth(x, y, depth, obj_projectileCandydart, { image_angle : image_angle - 8 + random(16) });
+	if (ammo > 0)
+	{
+		ammo--;
 	
-	audio_play_sound(snd_miniGunBullet, 0, 0, gainSFX, 0, 0.8 + random(0.4));
+		instance_create_depth(x, y, depth, obj_projectileCandydart, { image_angle : image_angle - 8 + random(16) });
+	
+		audio_play_sound(snd_miniGunBullet, 0, 0, gainSFX, 0, 0.8 + random(0.4));
+	}
+	else audio_play_sound(snd_weaponEmpty, 0, 0, gainSFX, 0, 1.3);
 }
 
 if (lmbHeld) 
@@ -41,7 +46,8 @@ else
 
 
 //secondary action
-if (rmb) && (timerFirerate == 0) && (ammo > 0)
+if (rmb)
+if (timerFirerate == 0) && (ammo > 0)
 {
 	timerFirerate = intervalFirerate;
 	ammo -= min(25, ammo);
@@ -51,3 +57,5 @@ if (rmb) && (timerFirerate == 0) && (ammo > 0)
 	
 	audio_play_sound(snd_miniyumBoost, 0, 0, gainSFX, 0, 0.8 + random(0.4));
 }
+else if (timerFirerate > 0) audio_play_sound(snd_weaponOnCooldown, 0, 0, gainSFX);
+else if (ammo <= 0) audio_play_sound(snd_weaponEmpty, 0, 0, gainSFX);

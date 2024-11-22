@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_emptyWeapon",
+  "%Name":"snd_rifle",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.415918,
-  "name":"snd_emptyWeapon",
+  "duration":0.412708,
+  "name":"snd_rifle",
   "parent":{
-    "name":"Unimplemented",
-    "path":"folders/Sounds/Unimplemented.yy",
+    "name":"Main",
+    "path":"folders/Sounds/Weapons/Main.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_emptyWeapon.wav",
+  "soundFile":"snd_rifle.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.29,
 }

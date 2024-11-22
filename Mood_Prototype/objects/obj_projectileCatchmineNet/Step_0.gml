@@ -50,6 +50,8 @@ else
 			instance_destroy(owner);
 		}
 	}
+	else	
+	if (!audio_is_playing(snd_catchmineDrag)) audio_play_sound(snd_catchmineDrag, 0, 0, gainSFX);
 }
 
 
@@ -59,7 +61,7 @@ if (place_meeting(x, y, obj_wall)) || (x > room_width + boundary) || (x < -bound
 {
 	retract = true;
 
-	audio_play_sound_at(snd_extendoCatch, x, y, 0, 100, 150, 1, 0, 0, gainSFX);
+	audio_play_sound_at(snd_catchmineCatch, x, y, 0, 100, 150, 1, 0, 0, gainSFX);
 }
 
 
@@ -72,7 +74,7 @@ if (_enemy.owner.hp > 0)
 	active = false;
 	
 	//sound
-	audio_play_sound_at(snd_extendoCatch, x, y, 0, 100, 150, 1, 0, 0, gainSFX);	
+	audio_play_sound_at(snd_catchmineCatch, x, y, 0, 100, 150, 1, 0, 0, gainSFX);	
 
 	//catching logic
 	caught = _enemy.owner;

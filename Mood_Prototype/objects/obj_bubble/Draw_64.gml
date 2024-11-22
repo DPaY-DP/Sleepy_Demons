@@ -11,7 +11,7 @@ if(clickedTimes == clickedGoal)
 	audio_play_sound(snd_ClickGamePop, 0, 0, gainSFX);
 }
 
-draw_text_color(GUIwidth / 2, GUIheight / 1.25, "Remaining: "+string(clickedGoal-clickedTimes),c_black,c_black,c_black,c_black,1);
+draw_text_simple(GUIwidth / 2, GUIheight / 2, string(clickedGoal-clickedTimes), { color : c_gray, font : font_upheaval_scalable, size : fontscale * 14});
 
 if(image_index == 4)
 {

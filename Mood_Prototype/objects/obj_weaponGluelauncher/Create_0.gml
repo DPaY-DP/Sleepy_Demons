@@ -3,7 +3,7 @@ name = "Gluegun";
 
 intervalFirerate = 45;
 
-rocketjump = 150;
+rocketjump = 200;
 
 ammoMax = 3;
 ammoBag = 1;

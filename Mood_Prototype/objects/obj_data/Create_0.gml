@@ -243,14 +243,16 @@ defaults =
 			weaponUnlocks : [],
 		},
 		{
+				//DEBUG: replace this entry with the actual level data (directly below) and remove all the test demons from room
 			room : room_00Executie,
 			name : "Executie",
 			unlocked : true,
 		
 			minigames :  [
-				enumMinigame.INPUTS,
-				enumMinigame.INPUTS,
-				enumMinigame.INPUTS,
+				enumMinigame.FASTCLICK,
+				enumMinigame.FASTCLICK,
+				enumMinigame.FASTCLICK,
+				enumMinigame.FASTCLICK,
 			],
 			
 			loadoutPillows : 0,
@@ -258,6 +260,22 @@ defaults =
 			
 			weaponUnlocks : [],
 		},
+		//{
+		//	room : room_00Executie,
+		//	name : "Executie",
+		//	unlocked : true,
+		
+		//	minigames :  [
+		//		enumMinigame.TUCK,
+		//		enumMinigame.TUCK,
+		//		enumMinigame.TUCK,
+		//	],
+			
+		//	loadoutPillows : 0,
+		//	loadoutWeapons : 0,
+			
+		//	weaponUnlocks : [],
+		//},
 		{
 			room : room_01PillowFight,
 			name : "Pillow Fight",

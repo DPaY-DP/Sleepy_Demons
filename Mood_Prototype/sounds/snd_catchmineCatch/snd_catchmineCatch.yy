@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_catchmine",
+  "%Name":"snd_catchmineCatch",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.580499,
-  "name":"snd_catchmine",
+  "duration":0.431293,
+  "name":"snd_catchmineCatch",
   "parent":{
     "name":"Catchmine",
     "path":"folders/Sounds/Weapons/Catchmine.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_catchmine.wav",
+  "soundFile":"snd_catchmineCatch.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.5,
 }

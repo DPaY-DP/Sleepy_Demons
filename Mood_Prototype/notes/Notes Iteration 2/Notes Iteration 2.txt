@@ -1,5 +1,5 @@
 BEFORE DEPLOYMENT:
- - Remove Shooting Range
+ - Remove Shooting Range (or art pass it)
  - Re-enable Sound (uncomment functions)
  - Change Version
 	> Enable version check savewipe
@@ -39,9 +39,12 @@ Bugs:
  - stuff minigame moves with camera lololol											## fixed !
  - stuff minigame BUGGED AGAIN
  - crash: guenther and pablo sabotage env object (something with _broken.applyDamage)
+	>> happens on final damaging?
  - you get back more ammo than max
  - despite not having them unlocked, you can choose from all effect weapons from the start
 		>> ISSUE: obj_loadout_CREATE_l159
+ - crash: guenther doesnt interact with the minigun properly
+ - miniyum can stack alt affects with no cooldown and for no further payoff
  
  
  

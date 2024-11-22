@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_emtyGun",
+  "%Name":"snd_catchmineThrow",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.39185,
-  "name":"snd_emtyGun",
+  "duration":0.35644,
+  "name":"snd_catchmineThrow",
   "parent":{
-    "name":"Unimplemented",
-    "path":"folders/Sounds/Unimplemented.yy",
+    "name":"Catchmine",
+    "path":"folders/Sounds/Weapons/Catchmine.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_emtyGun.mp3",
+  "soundFile":"snd_catchmineThrow.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.29,
 }

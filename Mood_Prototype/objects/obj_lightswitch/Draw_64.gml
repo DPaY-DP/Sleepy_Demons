@@ -8,6 +8,6 @@ if  (mouse_on_me_center_GUI()) &&
 	obj_managerMinigame.switchesActivated++;
 	turnedOn = true;
 	
-	audio_play_sound(choose(snd_lightSwitch, snd_lightSwitch1, snd_lightSwitch3), 0, 0, gainSFX, 0, 0.9 + random(0.2));
+	audio_play_sound(choose(snd_lightSwitch1, snd_lightSwitch3), 0, 0, gainSFX, 0, 0.9 + random(0.2));
 }
 

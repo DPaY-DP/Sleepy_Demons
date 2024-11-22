@@ -12,8 +12,8 @@
   "duration":0.859887,
   "name":"snd_rocketExplode",
   "parent":{
-    "name":"Unimplemented",
-    "path":"folders/Sounds/Unimplemented.yy",
+    "name":"Unused",
+    "path":"folders/Sounds/Unused.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

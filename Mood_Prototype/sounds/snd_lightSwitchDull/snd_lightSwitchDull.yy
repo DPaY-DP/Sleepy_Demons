@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_prowler2",
+  "%Name":"snd_lightSwitchDull",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.412708,
-  "name":"snd_prowler2",
+  "duration":0.415918,
+  "name":"snd_lightSwitchDull",
   "parent":{
-    "name":"Unimplemented",
-    "path":"folders/Sounds/Unimplemented.yy",
+    "name":"Unused",
+    "path":"folders/Sounds/Unused.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_prowler2.wav",
+  "soundFile":"snd_lightSwitchDull.wav",
   "type":0,
-  "volume":0.29,
+  "volume":1.0,
 }

@@ -12,7 +12,7 @@ factorFactorCircle = 0.025;
 
 
 //SETUP AND SPAWNING
-audio_play_sound(snd_blackholeGunStartTief, 0, 0, gainSFX);
+//audio_play_sound(snd_blackholeGunStartTief, 0, 0, gainSFX);
 
 
 //GAME VALUES

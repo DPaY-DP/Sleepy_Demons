@@ -139,8 +139,7 @@ switch (game)
 	break;						
 	
 	
-	case enumMinigame.FASTCLICK:	var _y = GUIheight / 2;	var _x = GUIwidth / 2 ;
-									instance_create_depth(_x, _y, depth -20, obj_guentheranim,);				
+	case enumMinigame.FASTCLICK:	var _y = GUIheight / 2;	var _x = GUIwidth / 2 ;			
 									instance_create_depth(_x, _y, depth -20, obj_bubble);	
 	break;
 }
