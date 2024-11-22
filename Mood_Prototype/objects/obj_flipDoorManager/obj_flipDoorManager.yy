@@ -9,8 +9,8 @@
   "name":"obj_flipDoorManager",
   "overriddenProperties":[],
   "parent":{
-    "name":"Interactables",
-    "path":"folders/Objects/# Game/World Objects/Interactables.yy",
+    "name":"Level Unique",
+    "path":"folders/Objects/# Game/World Objects/Level Unique.yy",
   },
   "parentObjectId":null,
   "persistent":false,

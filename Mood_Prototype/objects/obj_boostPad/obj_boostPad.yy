@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_playerDoor",
-  "eventList":[],
+  "%Name":"obj_boostPad",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_playerDoor",
+  "name":"obj_boostPad",
   "overriddenProperties":[],
   "parent":{
     "name":"Level Unique",
     "path":"folders/Objects/# Game/World Objects/Level Unique.yy",
   },
-  "parentObjectId":{
-    "name":"OBJ_colliderPlayer",
-    "path":"objects/OBJ_colliderPlayer/OBJ_colliderPlayer.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"B_Shesh",
-    "path":"sprites/B_Shesh/B_Shesh.yy",
+    "name":"spr_roomOverlay",
+    "path":"sprites/spr_roomOverlay/spr_roomOverlay.yy",
   },
   "spriteMaskId":null,
   "visible":true,

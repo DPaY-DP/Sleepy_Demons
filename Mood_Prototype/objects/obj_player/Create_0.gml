@@ -14,6 +14,7 @@ spdRepair = 1.5;
 #region GAME VALUES
 acc = accDefault;
 velMaxWalk = velMaxWalkDefault;
+boostMultiplier = 1;
 
 orientation = 0;
 
@@ -109,13 +110,15 @@ stateActive.run = function()
 	
 	if (boosted)
 	{
-		var _acc = accBoosted;
-		var _velMaxWalk = velMaxWalkBoosted;
+		var _acc = accBoosted * boostMultiplier;
+		var _velMaxWalk = velMaxWalkBoosted * boostMultiplier;
+		show_debug_message("Boosted! Speed: " + string(timerBoosted));
 	}
 	else
 	{
 		var _acc = accDefault;
 		var _velMaxWalk = velMaxWalkDefault;
+		boostMultiplier = 1;
 	}
 	
 	if (timerBoosted > 0) timerBoosted--;

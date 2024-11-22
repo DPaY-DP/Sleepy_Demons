@@ -6,8 +6,8 @@
   "name":"obj_flipDoorBlue",
   "overriddenProperties":[],
   "parent":{
-    "name":"Interactables",
-    "path":"folders/Objects/# Game/World Objects/Interactables.yy",
+    "name":"Level Unique",
+    "path":"folders/Objects/# Game/World Objects/Level Unique.yy",
   },
   "parentObjectId":{
     "name":"OBJ_colliderPlayer",
