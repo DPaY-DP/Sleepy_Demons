@@ -443,5 +443,5 @@ global.save = false;
 
 if (!global.save) || (global.save.version != global.version) create_save();
 
-unlock_all();
+//unlock_all();
 #endregion

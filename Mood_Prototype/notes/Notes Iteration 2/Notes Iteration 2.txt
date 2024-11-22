@@ -39,6 +39,9 @@ Bugs:
  - stuff minigame moves with camera lololol											## fixed !
  - stuff minigame BUGGED AGAIN
  - crash: guenther and pablo sabotage env object (something with _broken.applyDamage)
+ - you get back more ammo than max
+ - despite not having them unlocked, you can choose from all effect weapons from the start
+		>> ISSUE: obj_loadout_CREATE_l159
  
  
  

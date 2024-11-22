@@ -180,6 +180,14 @@ stateWin.start = function()
 	var _length = array_length(_levelData.weaponUnlocks);
 	for (var i = 0; i < _length; i++)
 	{
+		if (currentLevel < array_length(global.save.levels) - 1)			//is there another level after this one?
+		if (!global.save.levels[currentLevel + 1].unlocked)					//do we have that unlocked? If NO, show unlocked weapons
+																			// >> this is a hacky fix, but essentially it's meant to prevent the unlock
+																			// weapons from unlocking again after you have already unlocked them previously
+																			// >> better would be to check for the unlock status of each weapon directly, 
+																			// but actually fuck that right now (I should have set it up as an ID based item
+																			// system from the start, but we wont continue development on this prototype and
+																			// it works.)
 		array_push(unlockEvent, obj_data.unlock_weapon(_levelData.weaponUnlocks[i]));
 	}
 	

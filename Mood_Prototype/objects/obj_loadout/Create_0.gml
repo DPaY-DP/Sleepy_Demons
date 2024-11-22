@@ -158,7 +158,6 @@ stateSelect.drawGUI = function()
 	
 	selected[modeSelect] = loop(selected[modeSelect], 0, sprite_get_number(spriteWeapon[modeSelect]) - 1);
 	
-	
 	var _y = GUIheight * 0.9;
 	var _size = 1 * global.GUIScale;
 	var _width = sprite_get_width(spr_confrim)	* _size;
