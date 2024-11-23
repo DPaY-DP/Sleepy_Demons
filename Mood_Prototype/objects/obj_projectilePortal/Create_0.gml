@@ -1,8 +1,8 @@
 //IMMUTABLE VALUES
 spd = 15;
 
-identity = 0;
-if (instance_number(obj_projectilePortal_lingering) == 1) identity = 1;
+
+//SETUP AND SPAWNING
 
 
 
@@ -15,6 +15,8 @@ image_index = identity;
 burst = function()
 {
 	with (obj_projectilePortal_lingering) if (identity == other.identity) instance_destroy();
+	
+	audio_play_sound(snd_portalOpen, 0, 0, gainSFX, 0, 1 + 0.5 * identity);
 	
 	instance_create_depth(x, y, depth, obj_projectilePortal_lingering, { identity : identity });
 	instance_destroy();

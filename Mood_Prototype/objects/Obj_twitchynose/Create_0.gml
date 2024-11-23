@@ -2,13 +2,10 @@ randomize();
 
 instance_create_depth(x,y,2,Obj_feather)
 
-GUIwidthsmall = GUIwidth * 0.5
-GUIheightsmall = GUIheight * 0.5
+x = irandom_range(GUIwidth *  0.2, GUIwidth *  0.8);
+y = irandom_range(GUIheight * 0.2, GUIheight * 0.8);
 
-x = irandom_range(0, GUIwidthsmall);
-y = irandom_range(0, GUIheightsmall);
-
-image_yscale = 3;
-image_xscale = 3;
+image_yscale = 6 * global.GUIScale;
+image_xscale = 6 * global.GUIScale;
 
 ticklescore = 0

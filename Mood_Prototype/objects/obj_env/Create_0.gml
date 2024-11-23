@@ -116,5 +116,9 @@ fix = function()
 	broken = false;
 	hp = hpMax;
 	image_blend = c_white;
+	
+	audio_play_sound(snd_envRepair, 0, 0, gainSFX);
+	alarm[0] = 15;
+	alarm[1] = 30;
 }
 #endregion

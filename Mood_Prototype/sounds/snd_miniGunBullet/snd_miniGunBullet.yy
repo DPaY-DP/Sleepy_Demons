@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_miniGunBullet",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.313469,
+  "name":"snd_miniGunBullet",
+  "parent":{
+    "name":"Miniyum",
+    "path":"folders/Sounds/Weapons/Miniyum.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_miniGunBullet.wav",
+  "type":0,
+  "volume":1.0,
+}

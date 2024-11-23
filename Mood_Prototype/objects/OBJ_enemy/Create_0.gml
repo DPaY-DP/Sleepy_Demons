@@ -31,8 +31,8 @@ slowed = false;
 
 buildupSlowness = 0;
 
-sleepSounds = [sleepy_demon_1_1,sleepy_demon_3_2,sleepy_demon_enno,sleepy_demon_eve]; //LUIZSOUND Array for sleep sounds
-idleSounds = [where_my_teddy,snd_demonSpeaks1,snd_demonSpeak2Deeper,snd_laughD1,snd_laughD2,snd_laughD3,snd_laughE1,snd_laughE2Deep,snd_laughE3]; //LUIZSOUND Array for idle Chatter
+sleepSounds = [snd_sleepyDemon01,snd_sleepyDemon02,snd_sleepyDemon03,snd_sleepyDemon04]; //LUIZSOUND Array for sleep sounds
+idleSounds = [snd_demonChatter01, snd_demonChatter02, snd_demonChatter03, snd_demonChatter04, snd_demonChatter05, snd_demonChatter06, snd_demonChatter07, snd_demonChatter08, snd_demonChatter09, snd_demonChatter10]; //LUIZSOUND Array for idle Chatter
 idleTimer = random_range(10*room_speed,30*room_speed);
 
 gummybear = noone;
@@ -175,9 +175,9 @@ movement_and_navigation = function(_xTo, _yTo)
 	if (hvel != 0) || (vvel != 0) 
 	{
 		var _movedir = point_direction(0, 0, hvel, vvel);
-		if(!audio_is_playing(steppos_demons_half_2))
+		if(!audio_is_playing(snd_stepsDemon))
 		{
-			audio_play_sound_at(steppos_demons_half_2, x, y, 0, 100, 150, 1, 0, 0, gainSFX, 0, 1 + random_range(-.2, .2));		//LUIZSOUND
+			audio_play_sound_at(snd_stepsDemon, x, y, 0, 100, 150, 1, 0, 0, gainSFX, 0, 1 + random_range(-.2, .2));		//LUIZSOUND
 		}
 
 		if (abs(_goaldir - _movedir) > 180)
@@ -209,7 +209,7 @@ movement_and_navigation = function(_xTo, _yTo)
 	{
 		_dir = _goaldir;
 		drawArrow = false;
-		audio_stop_sound(steppos_demons_half_2);	//LUIZSOUND
+		audio_stop_sound(snd_stepsDemon);	//LUIZSOUND
 	}
 	
 	

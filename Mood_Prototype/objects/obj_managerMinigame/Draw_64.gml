@@ -118,13 +118,14 @@ switch (game)
 										instance_destroy(obj_cable_blue_end)
 										instance_destroy()
 										
-										if(enemy == OBJ_enemy)
+										var _target = enemy.object_index;
+										
+										if(object_is_ancestor(_target, OBJ_enemy))
 										{
 											with (enemy) switch_state(stateSleep);
 										}
-										else if(enemy == obj_tutorialDummy)
-										{
-											var _target = layer_instance_get_instance(enemy)
+										else if(_target == obj_tutorialDummy)
+										{										
 											_target.executedDummy = true;	
 										}
 									}

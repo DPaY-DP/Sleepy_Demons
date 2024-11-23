@@ -12,8 +12,8 @@
   "duration":0.576145,
   "name":"snd_grapple",
   "parent":{
-    "name":"Sounds",
-    "path":"folders/Sounds.yy",
+    "name":"Unused",
+    "path":"folders/Sounds/Unused.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
@@ -21,5 +21,5 @@
   "sampleRate":44100,
   "soundFile":"snd_grapple.wav",
   "type":0,
-  "volume":1.0,
+  "volume":0.17,
 }

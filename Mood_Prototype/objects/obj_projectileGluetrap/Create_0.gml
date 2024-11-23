@@ -11,6 +11,8 @@ burst = function()
 {
 	instance_create_depth(x, y, depth, obj_projectileGluetrap_lingering);
 	instance_destroy();
+	
+	audio_play_sound(snd_gummySplat, 0, 0, gainSFX, 0, 1.3);
 }
 
 

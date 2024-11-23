@@ -12,8 +12,8 @@
   "duration":0.986485,
   "name":"snd_foundTeddySecret",
   "parent":{
-    "name":"Implemented",
-    "path":"folders/Sounds/Implemented.yy",
+    "name":"Unused",
+    "path":"folders/Sounds/Unused.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

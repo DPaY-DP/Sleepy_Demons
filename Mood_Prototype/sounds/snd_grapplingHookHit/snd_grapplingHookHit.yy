@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_grapplingHookHit",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.348299,
+  "name":"snd_grapplingHookHit",
+  "parent":{
+    "name":"Catchmine",
+    "path":"folders/Sounds/Weapons/Catchmine.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_grapplingHookHit.wav",
+  "type":0,
+  "volume":1.0,
+}

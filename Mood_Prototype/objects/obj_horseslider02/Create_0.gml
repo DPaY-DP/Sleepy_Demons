@@ -20,8 +20,17 @@ directionMove = "down";
 
 check_horse_collider = function()
 {
-	if (place_meeting(x, y, obj_horsecollider)) obj_horsemanager.indicator++;
-	if (place_meeting(x, y, obj_horsecolliderCrit)) obj_horsemanager.indicator += 3;
+	if (place_meeting(x, y, obj_horsecollider)) 
+	{
+		obj_horsemanager.indicator++;
+		audio_play_sound(snd_horseGameHit, 0, 0, gainSFX);
+	}
+	else if (place_meeting(x, y, obj_horsecolliderCrit)) 
+	{
+		obj_horsemanager.indicator += 3;
+		audio_play_sound(snd_horseGameHit, 0, 0, gainSFX, 0, 1.5);
+	}
+	else audio_play_sound(snd_horseGameMiss, 0, 0, gainSFX);
 	
 	if (obj_horsemanager.indicator < 2)
 	{	
@@ -29,3 +38,5 @@ check_horse_collider = function()
 	}
 	instance_destroy();
 }
+
+sfx = audio_play_sound(snd_HorseSliderRight, 0, 0, gainSFX);

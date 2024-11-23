@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_blackholeGunEndTief",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.20288,
+  "name":"snd_blackholeGunEndTief",
+  "parent":{
+    "name":"Blackhole",
+    "path":"folders/Sounds/Weapons/Blackhole.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_blackholeGunEndTief.wav",
+  "type":0,
+  "volume":1.0,
+}

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_HorseSliderLeft",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.095306,
+  "name":"snd_HorseSliderLeft",
+  "parent":{
+    "name":"Horseshoe",
+    "path":"folders/Sounds/Minigames/Horseshoe.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_HorseSliderLeft.wav",
+  "type":0,
+  "volume":1.0,
+}

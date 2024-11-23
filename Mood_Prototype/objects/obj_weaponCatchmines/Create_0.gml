@@ -17,6 +17,8 @@ grappling = false;
 targetGrapple = [undefined, undefined];
 dirGrapple = undefined;
 
+grapplePitch = 1;
+
 
 timerFirerate = 0;
 

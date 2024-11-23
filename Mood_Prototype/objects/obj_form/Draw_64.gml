@@ -9,7 +9,7 @@ if (obj_managerMinigame.grabbedObject == id)
 	//{
 		var _hole = instance_place(x, y, obj_hole);
 		if (_hole != noone)
-		if (point_distance(x, y, _hole.x, _hole.y) < 30)		//(drop distance
+		if (point_distance(x, y, _hole.x, _hole.y) < 60)		//(drop distance
 		if (_hole.form == form) || (_hole.form == "square")
 		{
 			x = _hole.x;
@@ -20,6 +20,8 @@ if (obj_managerMinigame.grabbedObject == id)
 
 			obj_managerMinigame.grabbedObject = noone;
 			obj_managerMinigame.formsLeft--;
+			
+			audio_play_sound(snd_squareHoleDrop, 0, 0, gainSFX * 3, 0, 0.8 + random(0.2));
 		}
 	//}
 }
@@ -34,7 +36,6 @@ if	(canBeGrabbed) &&
 }
 
 if (mouse_check_button_released(mb_left))
-
 {
 	obj_managerMinigame.grabbedObject = noone;
 }

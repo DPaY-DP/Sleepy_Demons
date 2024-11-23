@@ -14,21 +14,29 @@ if (!active) || (!canShoot) exit;
 
 
 //main action
-if (lmb) && (timerFirerate == 0) && (ammo > 0)
+if (lmb)
+if (timerFirerate == 0) && (ammo > 0)
 {
 	timerFirerate = intervalFirerate;
 	ammo--;
 	
 	instance_create_depth(x, y, depth, obj_projectileStinkbomb, { image_angle : image_angle });
+	
+	audio_play_sound(snd_defaultCannon, 0, 0, gainSFX, 0, 1.1);
+	audio_play_sound(snd_gummySplat, 0, 0, gainSFX, 0, 0.8);
 }
 
 
 //secondary action
-if (rmb) && (timerFirerate == 0) && (ammo > 0)
+if (rmb)
+if (timerFirerate == 0) && (ammo > 0)
 {
 	timerFirerate = intervalFirerate;
 	ammo--;
 	
 	instance_create_depth(x, y, depth, obj_weaponStinkbombMelee, { weaponActive : obj_loadout.weaponActive });
 	active = false;
+	
+	audio_play_sound(snd_steampipeLeaking, 0, 0, gainSFX, 0, 1.5);
+	//audio_play_sound(snd_stinkBombRush, 0, 0, gainSFX, 0, 1.5);
 }
