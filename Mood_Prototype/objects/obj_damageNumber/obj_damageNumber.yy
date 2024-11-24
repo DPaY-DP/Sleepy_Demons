@@ -10,8 +10,8 @@
   "name":"obj_damageNumber",
   "overriddenProperties":[],
   "parent":{
-    "name":"# Game",
-    "path":"folders/Objects/# Game.yy",
+    "name":"Particle Systems",
+    "path":"folders/Particle Systems.yy",
   },
   "parentObjectId":null,
   "persistent":false,
