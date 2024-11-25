@@ -215,7 +215,7 @@ defaults =
 
 			],
 			
-			loadoutPillows : 0,
+			loadoutPillows : 1,
 			loadoutWeapons : 1,
 			
 			weaponUnlocks : [],
@@ -263,20 +263,18 @@ defaults =
 			time : infinity,
 		},
 		{
-				//DEBUG: replace this entry with the actual level data (directly below) and remove all the test demons from room
 			room : room_00Executie,
 			name : "Executie",
 			completed : false,
 			unlocked : true,
 		
 			minigames :  [
-				enumMinigame.FASTCLICK,
-				enumMinigame.FASTCLICK,
-				enumMinigame.FASTCLICK,
-				enumMinigame.FASTCLICK,
+				enumMinigame.TUCK,
+				enumMinigame.TUCK,
+				enumMinigame.TUCK,
 			],
 			
-			loadoutPillows : 0,
+			loadoutPillows : 1,
 			loadoutWeapons : 0,
 			
 			weaponUnlocks : [],
@@ -285,22 +283,6 @@ defaults =
 			sprite : spr_bshesh,
 			time : infinity,
 		},
-		//{
-		//	room : room_00Executie,
-		//	name : "Executie",
-		//	unlocked : true,
-		
-		//	minigames :  [
-		//		enumMinigame.TUCK,
-		//		enumMinigame.TUCK,
-		//		enumMinigame.TUCK,
-		//	],
-			
-		//	loadoutPillows : 0,
-		//	loadoutWeapons : 0,
-			
-		//	weaponUnlocks : [],
-		//},
 		{
 			room : room_01PillowFight,
 			name : "Pillow Fight",
@@ -308,6 +290,7 @@ defaults =
 			unlocked : false,
 		
 			minigames :  [
+				enumMinigame.BRUSH,
 				enumMinigame.BRUSH,
 				enumMinigame.BRUSH,
 			],
@@ -331,6 +314,8 @@ defaults =
 				enumMinigame.STUFF,
 				enumMinigame.STUFF,
 				enumMinigame.STUFF,
+				enumMinigame.HORSESHOE,
+				enumMinigame.HORSESHOE,
 			],
 			
 			loadoutPillows : 1,
@@ -354,7 +339,6 @@ defaults =
 				enumMinigame.TUCK,
 				enumMinigame.BRUSH,
 				enumMinigame.BRUSH,
-				enumMinigame.STUFF,
 				enumMinigame.STUFF,
 				enumMinigame.STUFF,
 			],
@@ -439,6 +423,7 @@ defaults =
 				enumMinigame.TICKLE,
 				enumMinigame.INPUTS,
 				enumMinigame.FASTCLICK,
+				enumMinigame.INPUTS,
 			],
 			
 			loadoutPillows : 1,
@@ -518,7 +503,11 @@ defaults =
 			[0, obj_weaponBlackhole,	"SINGULARITY V.2",			"Prim: Fires a slow moving black\nhole\n\nAlt: Create up to two linked portals"	],
 			[0, obj_weaponMiniyum,		"THE MINIYUM",				"Prim: Fire volleys of slowing candy\ncanes\n\nAlt: Boost yourself to gain speed"		],
 			[0, obj_weaponGummybear,	"GUMMY LURE-AND-BUMPER GUN","Prim: Deploy Gummy Lure\n\nAlt: Deploy Gummy Bumper"		],
+<<<<<<< HEAD
 			[0, obj_weaponStinkbomb,	"\"NOSE-FERATU 2\" OLFACTORY DISINCENTIVIZER",		"Prim: Throw disgusting stink bomb\nto scare away enemies\n\nAlt: Enter berserker melee rush"	],
+=======
+			[0, obj_weaponStinkbomb,	"MILITARY GRADE STINK",		"Prim: Throw disgusting stink bomb\nto scare off enemies\n\nAlt: Enter berserker melee rush"	],
+>>>>>>> 568c3335f865cf648d1332787a8ac9e5ba10e906
 			[0, obj_weaponCatchmines,	"CATCHMINE THROWER",		"Prim: Deploy Catchmine\n\nAlt: Grappling Hook"		],
 		],
 	
@@ -538,5 +527,5 @@ global.save = false;
 
 if (!global.save) || (global.save.version != global.version) create_save();
 
-//unlock_all();
+unlock_all();
 #endregion
