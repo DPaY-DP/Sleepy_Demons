@@ -208,7 +208,7 @@ stateWin.start = function()
 	if (currentLevel < array_length(global.save.levels) - 1) 
 	{
 		global.save.levels[currentLevel + 1].unlocked = true;
-		if (currentLevel == 8) global.save.levels[0].unlocked = true;
+		if (currentLevel == 8) global.save.levels[0].unlocked = true;		//this unlocks the firing range
 	}
 	
 	obj_data.write_save();

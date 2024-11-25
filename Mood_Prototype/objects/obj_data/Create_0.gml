@@ -182,12 +182,17 @@ defaults =
 	volumeMusic : 0, //0.5
 	volumeSFX : 0.25,
 	
+			
+	//				//levels select
+	//			completed : true,
+	//			sprite : spr_bshesh,
+	//			time : infinity,
+	
 	levels :
 	[
 		{
 			room : room_shootingRange,
 			name : "Shooting Range",
-			completed : true,
 			unlocked : false,
 		
 			minigames :  [
@@ -202,13 +207,14 @@ defaults =
 			weaponUnlocks : [],
 			
 				//levels select
+			completed : true,
 			sprite : spr_bshesh,
 			time : infinity,
+			
 		},
 		{
 			room : room_tutorialShooting,
 			name : "TutorialShooting",
-			completed : false,
 			unlocked : true,
 			
 			minigames :  [
@@ -221,13 +227,13 @@ defaults =
 			weaponUnlocks : [],
 			
 				//levels select
+			completed : false,
 			sprite : spr_bshesh,
 			time : infinity,
 		},
 		{
 			room : room_tutorialExecutie,
 			name : "TutorialExecutie",
-			completed : false,
 			unlocked : true,
 			
 			minigames :  [
@@ -240,13 +246,13 @@ defaults =
 			weaponUnlocks : [],
 			
 				//levels select
+			completed : false,
 			sprite : spr_bshesh,
 			time : infinity,
 		},
 		{
 			room : room_tutorialEnvironment,
 			name : "Tutorial Environment",
-			completed : false,
 			unlocked : true,
 			
 			minigames :  [
@@ -259,13 +265,13 @@ defaults =
 			weaponUnlocks : [],
 			
 				//levels select
+			completed : false,
 			sprite : spr_bshesh,
 			time : infinity,
 		},
 		{
 			room : room_00Executie,
 			name : "Executie",
-			completed : false,
 			unlocked : true,
 		
 			minigames :  [
@@ -280,13 +286,13 @@ defaults =
 			weaponUnlocks : [],
 			
 				//levels select
+			completed : false,
 			sprite : spr_bshesh,
 			time : infinity,
 		},
 		{
 			room : room_01PillowFight,
 			name : "Pillow Fight",
-			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -301,13 +307,13 @@ defaults =
 			weaponUnlocks : [obj_weaponMainPistol, obj_weaponMainShotgun, obj_weaponMainRifle],
 			
 				//levels select
+			completed : false,
 			sprite : spr_bshesh,
 			time : infinity,
 		},
 		{
 			room : room_02BabysFirstGun,
 			name : "Baby's First Gun",		//Alt Title: Fun Gun Run
-			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -324,13 +330,13 @@ defaults =
 			weaponUnlocks : [obj_weaponGluelauncher],
 			
 				//levels select
+			completed : false,
 			sprite : spr_bshesh,
 			time : infinity,
 		},
 		{
 			room : room_03PeakABear,
 			name : "Peak-a-Bear",
-			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -349,13 +355,13 @@ defaults =
 			weaponUnlocks : [obj_weaponMiniyum],
 			
 				//levels select
+			completed : false,
 			sprite : spr_bshesh,
 			time : infinity,
 		},
 		{
 			room : room_04ExpandingHorizons,
 			name : "Expanding Horizons",
-			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -376,13 +382,13 @@ defaults =
 			weaponUnlocks : [obj_weaponBlackhole, obj_weaponGummybear],
 			
 				//levels select
+			completed : false,
 			sprite : spr_bshesh,
 			time : infinity,
 		},
 		{
 			room : room_05UnderPressure,
 			name : "Under Pressure",
-			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -403,13 +409,13 @@ defaults =
 			weaponUnlocks : [obj_weaponStinkbomb],
 			
 				//levels select
+			completed : false,
 			sprite : spr_bshesh,
 			time : infinity,
 		},
 		{
 			room : room_06TunnelVision,
 			name : "Tunnel Vision",
-			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -432,13 +438,13 @@ defaults =
 			weaponUnlocks : [obj_weaponCatchmines],
 			
 				//levels select
+			completed : false,
 			sprite : spr_bshesh,
 			time : infinity,
 		},
 		{
 			room : room_07ChaosUnfolds,
 			name : "Chaos Unfolds",
-			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -459,13 +465,13 @@ defaults =
 			weaponUnlocks : [],
 			
 				//levels select
+			completed : false,
 			sprite : spr_bshesh,
 			time : infinity,
 		},
 		{
 			room : room_08DeadEnds,
 			name : "Dead Ends",
-			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -490,6 +496,7 @@ defaults =
 			weaponUnlocks : [],
 			
 				//levels select
+			completed : false,
 			sprite : spr_bshesh,
 			time : infinity,
 		},

@@ -16,6 +16,7 @@ Notes:
  - instakilling guenther with the pillow doesnt seem right
  - guenther active and downed / sleep sprite have different origin points (?)
  - cool new sounds from dennis
+ - new buttons in settings
 
 
 Optimization:
