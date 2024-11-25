@@ -47,15 +47,19 @@ else
 
 //secondary action
 if (rmb)
-if (timerFirerate == 0) && (ammo > 0)
+if (timerFirerate == 0) && (ammo > 0) && (obj_player.movementMods[enumMovementModsPlayer.MINIYUM].timer == 0)
 {
 	timerFirerate = intervalFirerate;
 	ammo -= min(25, ammo);
 	
-	obj_player.boosted = true;
-	obj_player.timerBoosted = 300;
+	with (obj_player.movementMods[enumMovementModsPlayer.MINIYUM])
+	{
+		strength = 2.5;
+		timer = 700;
+		active = true;
+	}
 	
-	audio_play_sound(snd_miniyumBoost, 0, 0, gainSFX, 0, 0.8 + random(0.4));
+	audio_play_sound(snd_miniyumBoost, 0, 0, gainSFX, 0, 1.2);
 }
 else if (timerFirerate > 0) audio_play_sound(snd_weaponOnCooldown, 0, 0, gainSFX);
 else if (ammo <= 0) audio_play_sound(snd_weaponEmpty, 0, 0, gainSFX);

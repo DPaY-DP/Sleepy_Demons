@@ -23,11 +23,37 @@ intervalRecoverFlee = 60;
 intervalRecoverExecute = 300;
 
 limitSlowness = 25;
+payoffSlowness = 300;
 
 intervalRandomWalk = 300;
 timerRandomWalk = 0;
 
 event_inherited();
+
+
+movementMods = [
+		//Slow: Gluetrap
+	{
+		strength : 0,
+		timer : 0,
+		active : 0,
+	},
+		//Slow: Miniyum
+	{
+		strength : 0,
+		timer : 0,
+		active : 0,
+	},
+	0, 
+	0,
+	0,
+		//Fast: Guenther Rush
+	{
+		strength : 0,
+		timer : 0,
+		active : 0,
+	},
+];
 
 
 //unique states

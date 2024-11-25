@@ -26,8 +26,30 @@ lastPoint = undefined;
 
 timerUnstuck = 0;
 
-timerSlowed = 0;
-slowed = false;
+
+enum enumMovementMods
+{
+	GLUETRAP = 0,
+	MINIYUM  = 1,
+	
+	GUENTHER_RUSH = 5,
+}
+
+
+movementMods = [
+		//Slow: Gluetrap
+	{
+		strength : 0,
+		timer : 0,
+		active : 0,
+	},
+		//Slow: Miniyum
+	{
+		strength : 0,
+		timer : 0,
+		active : 0,
+	},
+];
 
 buildupSlowness = 0;
 
@@ -39,32 +61,6 @@ gummybear = noone;
 #endregion
 
 
-
-//spaghetti code
-	//prowler
-hit = 0;
-
-	//slow / stun
-
-slowed = false;
-intervalSlowed = 80;
-timerSlowed = intervalSlowed;
-slowedStarAlpha = 1;
-slowedStarFrame = 0;
-
-get_slowed = function(_length)
-{
-	slowed = true;
-	timerSlowed = _length;
-	
-	acc = accSlowed;
-	velMax = velMaxSlowed;
-}
-
-	//extendo net
-caught = undefined;
-
-
 #region CONSTRUCTORS
 #endregion
 
@@ -74,16 +70,40 @@ apply_physics = function(_hacc, _vacc)
 {	
 	//apply accelleration
 		//if there is an accellerative force exalted by the player...
+	var _velMaxWalk = velMaxWalk;		
+
+	var _length = array_length(movementMods);
+	for (var i = 0; i < _length; i++)
+	{
+		var _effect = movementMods[i];
+		if (is_struct(_effect))
+		if (_effect.active)
+		{
+			_hacc *= (1 + _effect.strength / 10);
+			_vacc *= (1 + _effect.strength / 10);
+			
+			if (_effect.strength > 0) _velMaxWalk *= (1 + _effect.strength / 2);
+			else					  _velMaxWalk *= (10 / (10 - _effect.strength / 2));
+			
+			_effect.timer--;
+			if (_effect.timer == 0) 
+			{
+				_effect.active = 0;
+				_effect.strength = 0;
+			}
+		}
+	}
+	
 	if (_hacc != 0)
 	{
 		if (sign(_hacc) == 1)
 		{
-			if (hvel + _hacc < velMaxWalk) hvel += _hacc;
+			if (hvel + _hacc < _velMaxWalk) hvel += _hacc;
 		}
 	
 		if (sign(_hacc) == -1) 
 		{
-			if (hvel + _hacc > -velMaxWalk) hvel += _hacc;
+			if (hvel + _hacc > - _velMaxWalk) hvel += _hacc;
 		}
 	}
 
@@ -91,12 +111,12 @@ apply_physics = function(_hacc, _vacc)
 	{
 		if (sign(_vacc) == 1)
 		{
-			if (vvel + _vacc < velMaxWalk) vvel += _vacc;
+			if (vvel + _vacc < _velMaxWalk) vvel += _vacc;
 		}
 	
 		if (sign(_vacc) == -1) 
 		{
-			if (vvel + _vacc > -velMaxWalk) vvel += _vacc;
+			if (vvel + _vacc > - _velMaxWalk) vvel += _vacc;
 		}
 	}
 	
@@ -105,12 +125,6 @@ apply_physics = function(_hacc, _vacc)
 	
 	hvel *= fric;
 	vvel *= fric;
-	
-	if (slowed) repeat (3)
-	{
-		hvel *= fric;
-		vvel *= fric;
-	}
 	
 
 	////collision

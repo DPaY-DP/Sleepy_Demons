@@ -1,8 +1,6 @@
 #region IMMUTABLE VALUES
 accDefault = 1.25;
-accBoosted = 1.33;
 velMaxWalkDefault = 8;
-velMaxWalkBoosted = 12;
 velMaxPhys = 60;
 
 fric = 0.86;
@@ -28,8 +26,26 @@ inRoom = undefined;
 
 animateMovement = false;
 
-boosted = false;
-timerBoosted = 0;
+enum enumMovementModsPlayer
+{
+	MINIYUM = 0,
+	BOOSTPAD = 1,
+}
+
+movementMods = [
+		//Fast: Miniyum
+	{
+		strength : 0,
+		timer : 0,
+		active : 0,
+	},
+		//Slow: Miniyum
+	{
+		strength : 0,
+		timer : 0,
+		active : 0,
+	},
+];
 #endregion
 
 
@@ -107,32 +123,45 @@ stateActive.run = function()
 	////speed modification
 	var _updateRoom = instance_place(x, y, obj_room);
 	if (_updateRoom != noone) inRoom = _updateRoom;
-	
-	if (boosted)
-	{
-		var _acc = accBoosted * boostMultiplier;
-		var _velMaxWalk = velMaxWalkBoosted * boostMultiplier;
-		show_debug_message("Boosted! Speed: " + string(timerBoosted));
-	}
-	else
-	{
-		var _acc = accDefault;
-		var _velMaxWalk = velMaxWalkDefault;
-		boostMultiplier = 1;
-	}
-	
-	if (timerBoosted > 0) timerBoosted--;
-	else boosted = false;
 
 	//movement
 	//get accelleration
 		//reads out the players input and converts it into accelleration defined by the acc variable
-	var _hacc = (right - left) * _acc;
-	var _vacc = (down - up) * _acc;
+	var _hacc = (right - left) * accDefault;
+	var _vacc = (down - up) * accDefault;
 
 
 	//apply accelleration
 		//if there is an accellerative force exalted by the player...
+		
+		//movement speed modification
+	var _velMaxWalk = velMaxWalk;		
+
+	var _length = array_length(movementMods);
+	for (var i = 0; i < _length; i++)
+	{
+		var _effect = movementMods[i];
+		if (is_struct(_effect))
+		if (_effect.active)
+		{
+			_hacc *= (1 + _effect.strength / 10);
+			_vacc *= (1 + _effect.strength / 10);
+			
+			if (_effect.strength > 0) _velMaxWalk *= (1 + _effect.strength / 2);
+			else					  _velMaxWalk *= (10 / (10 - _effect.strength / 2));
+			
+			_effect.timer--;
+			if (_effect.timer == 0) 
+			{
+				_effect.active = 0;
+				_effect.strength = 0;
+			}
+		}
+	}
+	
+	//show_debug_message($"{_hacc} / {_velMaxWalk}")
+	
+	
 	if (_hacc != 0)
 	{
 		if (sign(_hacc) == 1)
@@ -142,7 +171,7 @@ stateActive.run = function()
 	
 		if (sign(_hacc) == -1) 
 		{
-			if (hvel + _hacc > -_velMaxWalk) hvel += _hacc;
+			if (hvel + _hacc > - _velMaxWalk) hvel += _hacc;
 		}
 	}
 
@@ -155,7 +184,7 @@ stateActive.run = function()
 	
 		if (sign(_vacc) == -1) 
 		{
-			if (vvel + _vacc > -_velMaxWalk) vvel += _vacc;
+			if (vvel + _vacc > - _velMaxWalk) vvel += _vacc;
 		}
 	}
 	

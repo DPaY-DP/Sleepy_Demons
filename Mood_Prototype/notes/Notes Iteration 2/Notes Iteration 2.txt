@@ -11,13 +11,11 @@ BEFORE DEPLOYMENT:
 
 Notes:
  - reload animation (shells flying)
- - make bullets despawn at the next frame or smth like that (become invisible too soon upon collision)
- - catchtrap holds 1 enemy currently
  - squareholes too far apart bruv
  - no double weapons maybe?
  - instakilling guenther with the pillow doesnt seem right
  - guenther active and downed / sleep sprite have different origin points (?)
-
+ - cool new sounds from dennis
 
 
 Optimization:
@@ -31,20 +29,12 @@ Unitended Behavior:
 
 
 Bugs:
- - trying to switch weapon crashes the game when there are no / not enough weapons  ## fixed ?
- - "Bursh" minigame broken (I think its the pillow one)								## fixed !
- - Brush minigame hitbox weird (make it larger)										## fixed !
- - ESCaping to menu crashes game#													## fixed ?
- - weapon switching is sometimes buggy												
- - stuff minigame moves with camera lololol											## fixed !
- - stuff minigame BUGGED AGAIN
+ - weapon switching is sometimes buggy
+ - you get back more ammo than max
  - crash: guenther and pablo sabotage env object (something with _broken.applyDamage)
 	>> happens on final damaging?
- - you get back more ammo than max
- - despite not having them unlocked, you can choose from all effect weapons from the start
-		>> ISSUE: obj_loadout_CREATE_l159
- - crash: guenther doesnt interact with the minigun properly
- - miniyum can stack alt affects with no cooldown and for no further payoff
+ - gummybear navmesh crash
+ - tickle minigame broken (spawns no feather?) >> lvl 5 or smth
  
  
  

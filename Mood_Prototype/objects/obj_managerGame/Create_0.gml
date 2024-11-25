@@ -110,6 +110,8 @@ stateGame.start = function()
 	currentLevel = get_current_level();
 	
 	arrayMinigames = array_shuffle(ds_clone(global.save.levels[currentLevel].minigames));
+	
+	timeStart = current_time;
 }
 stateGame.run = function()
 {
@@ -177,6 +179,18 @@ stateWin.start = function()
 	displayUnlock = 0;
 	
 	var _levelData = global.save.levels[currentLevel];
+	
+	 newBest = false;
+	_levelData.completed = true;
+	timeFinish = current_time - timeStart;
+	show_debug_message($"timeFinish: {timeFinish}; _levelData: {_levelData.time}")
+	if (timeFinish < _levelData.time) 
+	{
+		if (_levelData.time != infinity) newBest = true;
+		
+		_levelData.time = timeFinish;
+	}
+	
 	var _length = array_length(_levelData.weaponUnlocks);
 	for (var i = 0; i < _length; i++)
 	{
@@ -194,8 +208,10 @@ stateWin.start = function()
 	if (currentLevel < array_length(global.save.levels) - 1) 
 	{
 		global.save.levels[currentLevel + 1].unlocked = true;
-		obj_data.write_save();
+		if (currentLevel == 8) global.save.levels[0].unlocked = true;
 	}
+	
+	obj_data.write_save();
 }
 stateWin.run = function()
 {
@@ -221,26 +237,14 @@ stateWin.run = function()
 }
 stateWin.drawGUI = function()
 {
+		//BASIC WIN UI
 	draw_sprite_simple(spr_window, 0, GUIwidth * 0.05, GUIheight * 0.05, { xscale : GUIwidth * 0.9, yscale : GUIheight * 0.9, alpha : 0.5 });
-
 	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Snooze'd em up!", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
+	if (timerState > 45) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.5, $"{timeFinish / 1000} seconds", { color : c_white, font : font_upheaval_scalable, size : 10 * fontscale });
+	if (timerState > 60) && (newBest) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.45, $"NEW BEST!", { color : c_white, font : font_upheaval_scalable, size : 5 * fontscale });
+	if (timerState > 90) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.85, "Press SPACE to enter the next level\nPress ESC to return to Menu", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
 	
-	//var _size = global.GUIScale * 6;
-	//var _spriteSize = sprite_get_width(spr_weaponMenuEffect) * _size;
-	//var _border = 10 * _size;
-	//var _length = array_length(unlockEvent);
-	//for (var i = 0; i < _length; i++)
-	//{
-	//	var _data = unlockEvent[i];
-		
-	//	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.25, "Weapons Unlocked:", { color : c_white, font : font_upheaval_scalable, size : 8 * fontscale });
-		
-	//	var _x = GUIwidth / 2 + i * (_border + _spriteSize) - (_border + _spriteSize) * ((_length - 1) / 2);
-	//	var _y = GUIheight / 2;
-		
-	//	draw_sprite_simple(_data[0], _data[1], _x, _y, { size : _size });
-	//}	
-	
+		//WEAPON UNLOCK EVENT logic
 	var _length = array_length(unlockEvent);
 	if (displayUnlock < _length)
 	{		
@@ -253,8 +257,6 @@ stateWin.drawGUI = function()
 		draw_sprite_simple(_data[0], _data[1], GUIwidth * 0.5, GUIheight * 0.46, { size : global.GUIScale * 4 });
 		draw_text_simple(GUIwidth * 0.25, GUIheight * 0.68, _data[3], { color : c_white, font : font_upheaval_scalable, size : 4 * fontscale, halign : fa_left });
 	}
-	
-	if (timerState > 90) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.85, "Press SPACE to enter the next level\nPress ESC to return to Menu", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
 }
 
 initialize_state(stateGame);

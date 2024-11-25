@@ -2,9 +2,7 @@
 name = "pablo";
 
 accDefault = 0.74;
-accSlowed = 0.35;
 velMaxWalkDefault = 8;
-velMaxWalkSlowed = 3;
 velMaxPhys = 60;
 
 acc = accDefault;

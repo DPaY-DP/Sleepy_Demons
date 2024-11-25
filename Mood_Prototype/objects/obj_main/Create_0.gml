@@ -4,6 +4,9 @@
 
 //GAME VALUES
 mode = "main";
+selectModes = ["Tutorial", "Levels", "Challenge"];
+selectMode = 0;
+selectPage = 0;
 
 
 //METHODS

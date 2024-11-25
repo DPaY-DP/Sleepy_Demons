@@ -187,7 +187,8 @@ defaults =
 		{
 			room : room_shootingRange,
 			name : "Shooting Range",
-			unlocked : true,
+			completed : true,
+			unlocked : false,
 		
 			minigames :  [
 				enumMinigame.TUCK,
@@ -199,10 +200,15 @@ defaults =
 			loadoutWeapons : 3,
 			
 			weaponUnlocks : [],
+			
+				//levels select
+			sprite : spr_bshesh,
+			time : infinity,
 		},
 		{
 			room : room_tutorialShooting,
 			name : "TutorialShooting",
+			completed : false,
 			unlocked : true,
 			
 			minigames :  [
@@ -213,10 +219,15 @@ defaults =
 			loadoutWeapons : 1,
 			
 			weaponUnlocks : [],
+			
+				//levels select
+			sprite : spr_bshesh,
+			time : infinity,
 		},
 		{
 			room : room_tutorialExecutie,
 			name : "TutorialExecutie",
+			completed : false,
 			unlocked : true,
 			
 			minigames :  [
@@ -227,10 +238,15 @@ defaults =
 			loadoutWeapons : 0,
 			
 			weaponUnlocks : [],
+			
+				//levels select
+			sprite : spr_bshesh,
+			time : infinity,
 		},
 		{
 			room : room_tutorialEnvironment,
 			name : "Tutorial Environment",
+			completed : false,
 			unlocked : true,
 			
 			minigames :  [
@@ -241,11 +257,16 @@ defaults =
 			loadoutWeapons : 0,
 			
 			weaponUnlocks : [],
+			
+				//levels select
+			sprite : spr_bshesh,
+			time : infinity,
 		},
 		{
 				//DEBUG: replace this entry with the actual level data (directly below) and remove all the test demons from room
 			room : room_00Executie,
 			name : "Executie",
+			completed : false,
 			unlocked : true,
 		
 			minigames :  [
@@ -259,6 +280,10 @@ defaults =
 			loadoutWeapons : 0,
 			
 			weaponUnlocks : [],
+			
+				//levels select
+			sprite : spr_bshesh,
+			time : infinity,
 		},
 		//{
 		//	room : room_00Executie,
@@ -279,6 +304,7 @@ defaults =
 		{
 			room : room_01PillowFight,
 			name : "Pillow Fight",
+			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -290,10 +316,15 @@ defaults =
 			loadoutWeapons : 0,
 			
 			weaponUnlocks : [obj_weaponMainPistol, obj_weaponMainShotgun, obj_weaponMainRifle],
+			
+				//levels select
+			sprite : spr_bshesh,
+			time : infinity,
 		},
 		{
 			room : room_02BabysFirstGun,
 			name : "Baby's First Gun",		//Alt Title: Fun Gun Run
+			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -306,10 +337,15 @@ defaults =
 			loadoutWeapons : 1,
 			
 			weaponUnlocks : [obj_weaponGluelauncher],
+			
+				//levels select
+			sprite : spr_bshesh,
+			time : infinity,
 		},
 		{
 			room : room_03PeakABear,
 			name : "Peak-a-Bear",
+			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -327,10 +363,15 @@ defaults =
 			loadoutWeapons : 2,
 			
 			weaponUnlocks : [obj_weaponMiniyum],
+			
+				//levels select
+			sprite : spr_bshesh,
+			time : infinity,
 		},
 		{
 			room : room_04ExpandingHorizons,
 			name : "Expanding Horizons",
+			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -349,10 +390,15 @@ defaults =
 			loadoutWeapons : 3,
 			
 			weaponUnlocks : [obj_weaponBlackhole, obj_weaponGummybear],
+			
+				//levels select
+			sprite : spr_bshesh,
+			time : infinity,
 		},
 		{
 			room : room_05UnderPressure,
 			name : "Under Pressure",
+			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -371,10 +417,15 @@ defaults =
 			loadoutWeapons : 3,
 			
 			weaponUnlocks : [obj_weaponStinkbomb],
+			
+				//levels select
+			sprite : spr_bshesh,
+			time : infinity,
 		},
 		{
 			room : room_06TunnelVision,
 			name : "Tunnel Vision",
+			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -394,10 +445,15 @@ defaults =
 			loadoutWeapons : 3,
 			
 			weaponUnlocks : [obj_weaponCatchmines],
+			
+				//levels select
+			sprite : spr_bshesh,
+			time : infinity,
 		},
 		{
 			room : room_07ChaosUnfolds,
 			name : "Chaos Unfolds",
+			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -416,10 +472,15 @@ defaults =
 			loadoutWeapons : 3,
 			
 			weaponUnlocks : [],
+			
+				//levels select
+			sprite : spr_bshesh,
+			time : infinity,
 		},
 		{
 			room : room_08DeadEnds,
 			name : "Dead Ends",
+			completed : false,
 			unlocked : false,
 		
 			minigames :  [
@@ -442,6 +503,10 @@ defaults =
 			loadoutWeapons : 3,
 			
 			weaponUnlocks : [],
+			
+				//levels select
+			sprite : spr_bshesh,
+			time : infinity,
 		},
 	],
 	
@@ -453,7 +518,7 @@ defaults =
 			[0, obj_weaponBlackhole,	"SINGULARITY V.2",			"Prim: Fires a slow moving black\nhole\n\nAlt: Create up to two linked portals"	],
 			[0, obj_weaponMiniyum,		"THE MINIYUM",				"Prim: Fire volleys of slowing candy\ncanes\n\nAlt: Boost yourself to gain speed"		],
 			[0, obj_weaponGummybear,	"GUMMY LURE-AND-BUMPER GUN","Prim: Deploy Gummy Lure\n\nAlt: Deploy Gummy Bumper"		],
-			[0, obj_weaponStinkbomb,	"\"NOSE-FERATU 2\" OLFACTORY DISINCENTIVIZER",		"Prim: Throw disgusting stink bomb\nto scare off enemies\n\nAlt: Enter berserker melee rush"	],
+			[0, obj_weaponStinkbomb,	"\"NOSE-FERATU 2\" OLFACTORY DISINCENTIVIZER",		"Prim: Throw disgusting stink bomb\nto scare away enemies\n\nAlt: Enter berserker melee rush"	],
 			[0, obj_weaponCatchmines,	"CATCHMINE THROWER",		"Prim: Deploy Catchmine\n\nAlt: Grappling Hook"		],
 		],
 	

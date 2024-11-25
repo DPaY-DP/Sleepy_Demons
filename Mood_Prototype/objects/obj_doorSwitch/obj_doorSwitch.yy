@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"B_Shesh",
-    "path":"sprites/B_Shesh/B_Shesh.yy",
+    "name":"spr_bshesh",
+    "path":"sprites/spr_bshesh/spr_bshesh.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -6,18 +6,7 @@ hp = clamp(hp, 0, hpMax);
 hpLast = hp;
 
 
-//slowness
-if (timerSlowed > 0) timerSlowed--;
-else slowed = false;
-
-if (buildupSlowness >= limitSlowness)
-{	
-	buildupSlowness = 0;
-	timerSlowed = payoffSlowness;
-	
-	slowed = true;
-}
-
+//idle sound
 if(idleTimer <= 0)
 {
 	audio_play_sound_at(array_get(idleSounds,random_range(0,array_length(idleSounds))), x, y, 0, 100, 150, 1, 0, false, gainSFX); //LUIZSOUND

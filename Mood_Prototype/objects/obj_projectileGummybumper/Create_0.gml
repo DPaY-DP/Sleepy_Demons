@@ -3,6 +3,8 @@ spdBase = 20;
 
 intervalBounce = 20;
 
+image_speed = 0;
+
 
 //GAME VALUES
 spd = spdBase;
@@ -56,7 +58,7 @@ stateBounce.run = function()
 stateDebounce = new State();
 stateDebounce.start = function()
 {
-	image_blend = c_grey;
+	image_index = 1;
 }
 stateDebounce.run = function()
 {
@@ -70,7 +72,7 @@ stateDebounce.run = function()
 }
 stateDebounce.stop = function()
 {
-	image_blend = c_white;
+	image_index = 0;
 }
 
 initialize_state(stateShot);

@@ -144,19 +144,43 @@ stateSelect.drawGUI = function()
 	var _keyDown =	(keyboard_check_pressed(ord("S"))) ||	(keyboard_check_pressed(vk_down)) ||	mouse_wheel_down();
 	var _keyUp =	(keyboard_check_pressed(ord("W"))) ||	(keyboard_check_pressed(vk_up))	||		mouse_wheel_up();
 	
+	var _selectionChange = 0;
+	
 	var _x = GUIwidth / 6 * (1 + 2 * modeSelect);
 	
 	var _y = GUIheight * 0.4;
 	draw_sprite_simple(spr_buton, selected[modeSelect], _x, _y,		{ size : _size });
 	if	((mouse_in_area_GUI(_x - _width / 2, _y - _height, _width, _height)) && (mouse_check_button_pressed(mb_left))) ||
-		(_keyUp) selected[modeSelect]++;
+		(_keyUp) _selectionChange++;
 	
 	var _y = GUIheight * 0.6;
 	draw_sprite_simple(spr_buton, selected[modeSelect], _x, _y,		{ xscale : _size, yscale : -_size });
 	if	((mouse_in_area_GUI(_x - _width / 2, _y, _width, _height)) && (mouse_check_button_pressed(mb_left))) ||
-		(_keyDown) selected[modeSelect]--;
+		(_keyDown) _selectionChange--;
 	
+	selected[modeSelect] += _selectionChange;
 	selected[modeSelect] = loop(selected[modeSelect], 0, sprite_get_number(spriteWeapon[modeSelect]) - 1);
+	
+	if (modeSelect == 1)
+	{
+		while (!weaponsEffect[selected[modeSelect]][0])
+		{
+			selected[modeSelect] += _selectionChange;
+			selected[modeSelect] = loop(selected[modeSelect], 0, sprite_get_number(spriteWeapon[modeSelect]) - 1);
+			show_debug_message(selected[modeSelect])
+		}
+	}
+	
+	if (modeSelect == 2)
+	{
+		while (!weaponsEffect[selected[modeSelect]][0]) || (selected[modeSelect] == selected[modeSelect - 1])
+		{
+			selected[modeSelect] += _selectionChange;
+			selected[modeSelect] = loop(selected[modeSelect], 0, sprite_get_number(spriteWeapon[modeSelect]) - 1);
+			show_debug_message(selected[modeSelect])
+		}
+	}
+	
 	
 	var _y = GUIheight * 0.9;
 	var _size = 1 * global.GUIScale;
@@ -167,6 +191,17 @@ stateSelect.drawGUI = function()
 		(keyboard_check_pressed(vk_space)) 
 	{
 		modeSelect++;
+		
+		if (modeSelect == 2)
+		if (selected[modeSelect - 1] == selected[modeSelect])
+		{
+			selected[modeSelect]++;
+			while (!weaponsEffect[selected[modeSelect]][0])
+			{
+				selected[modeSelect]++;
+				selected[modeSelect] = loop(selected[modeSelect], 0, sprite_get_number(spriteWeapon[modeSelect]) - 1);
+			}
+		}
 	}
 	
 	if (modeSelect == weaponsMax) 
@@ -178,6 +213,8 @@ stateSelect.drawGUI = function()
 	
 	//draw main
 	draw_sprite_simple(spriteWeapon[0], selected[0], GUIwidth / 6, GUIheight / 2,		{ size : 6 * global.GUIScale });
+	
+	//draw effect
 	if (weaponsMax > 1) 
 	{
 		draw_sprite_simple(spriteWeapon[1], selected[1], GUIwidth / 6 * 3, GUIheight / 2,	{ size : 6 * global.GUIScale });
