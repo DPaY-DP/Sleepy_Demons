@@ -23,4 +23,3 @@ counterMeleeCharge = 0;
 show_debug_message(global.save.levels[get_level_id(room)])
 show_debug_message(global.save.levels[get_level_id(room)].loadoutPillows)
 ammo = global.save.levels[get_level_id(room)].loadoutPillows;
-if (room == room_00Executie) instance_destroy();
