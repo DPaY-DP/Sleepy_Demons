@@ -6,6 +6,8 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
+    {"name":"inst_38377672","path":"rooms/room_01PillowFight/room_01PillowFight.yy",},
+    {"name":"inst_5FBC9911","path":"rooms/room_01PillowFight/room_01PillowFight.yy",},
     {"name":"inst_79A8F59_1","path":"rooms/room_01PillowFight/room_01PillowFight.yy",},
     {"name":"inst_428B14B7_1","path":"rooms/room_01PillowFight/room_01PillowFight.yy",},
     {"name":"inst_49F3DC18_1","path":"rooms/room_01PillowFight/room_01PillowFight.yy",},
@@ -137,8 +139,6 @@
     {"name":"inst_18240893","path":"rooms/room_01PillowFight/room_01PillowFight.yy",},
     {"name":"inst_1E18C775","path":"rooms/room_01PillowFight/room_01PillowFight.yy",},
     {"name":"inst_8E91DD8","path":"rooms/room_01PillowFight/room_01PillowFight.yy",},
-    {"name":"inst_38377672","path":"rooms/room_01PillowFight/room_01PillowFight.yy",},
-    {"name":"inst_5FBC9911","path":"rooms/room_01PillowFight/room_01PillowFight.yy",},
     {"name":"inst_6877325B","path":"rooms/room_01PillowFight/room_01PillowFight.yy",},
     {"name":"inst_61ABAC12","path":"rooms/room_01PillowFight/room_01PillowFight.yy",},
     {"name":"inst_13E1F770","path":"rooms/room_01PillowFight/room_01PillowFight.yy",},

@@ -372,6 +372,7 @@ defaults =
 				enumMinigame.TICKLE,
 				enumMinigame.INPUTS,
 				enumMinigame.FASTCLICK,
+				enumMinigame.INPUTS,
 			],
 			
 			loadoutPillows : 1,
