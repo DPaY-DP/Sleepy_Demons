@@ -61,7 +61,7 @@ if (timerFirerate == 0) && (ammo > 0) && (obj_player.movementMods[enumMovementMo
 	with (obj_player.movementMods[enumMovementModsPlayer.MINIYUM])
 	{
 		strength = 2.5;
-		timer = 700;
+		timer = 540;
 		active = true;
 	}
 	

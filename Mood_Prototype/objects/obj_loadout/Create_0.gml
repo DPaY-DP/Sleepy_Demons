@@ -216,26 +216,27 @@ stateSelect.drawGUI = function()
 		room_goto(global.roomTo);
 	}
 	
+	var _size = 3 * global.GUIScale;
 	
 	//draw main
-	draw_sprite_simple(spriteWeapon[0], selected[0], GUIwidth / 6, GUIheight / 2,		{ size : 6 * global.GUIScale });
+	draw_sprite_simple(spriteWeapon[0], selected[0], GUIwidth / 6, GUIheight / 2,		{ size : _size });
 	
 	//draw effect
 	if (weaponsMax > 1) 
 	{
-		draw_sprite_simple(spriteWeapon[1], selected[1], GUIwidth / 6 * 3, GUIheight / 2,	{ size : 6 * global.GUIScale });
+		draw_sprite_simple(spriteWeapon[1], selected[1], GUIwidth / 6 * 3, GUIheight / 2,	{ size : _size });
 	}
 	else
 	{
-		draw_sprite_simple(spr_weaponMenuNone, 0, GUIwidth / 6 * 3, GUIheight / 2,	{ size : 6 * global.GUIScale });
+		draw_sprite_simple(spr_weaponMenuNone, 0, GUIwidth / 6 * 3, GUIheight / 2,	{ size : _size });
 	}
 	
 	if (weaponsMax > 2) 
 	{
-		draw_sprite_simple(spriteWeapon[2], selected[2], GUIwidth / 6 * 5, GUIheight / 2,	{ size : 6 * global.GUIScale });
+		draw_sprite_simple(spriteWeapon[2], selected[2], GUIwidth / 6 * 5, GUIheight / 2,	{ size : _size });
 	}
 	else
 	{
-		draw_sprite_simple(spr_weaponMenuNone, 0, GUIwidth / 6 * 5, GUIheight / 2,	{ size : 6 * global.GUIScale });
+		draw_sprite_simple(spr_weaponMenuNone, 0, GUIwidth / 6 * 5, GUIheight / 2,	{ size : _size });
 	}
 }

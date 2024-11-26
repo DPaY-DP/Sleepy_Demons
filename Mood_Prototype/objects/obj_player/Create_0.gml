@@ -26,6 +26,8 @@ inRoom = undefined;
 
 animateMovement = false;
 
+alpha = 0;
+
 enum enumMovementModsPlayer
 {
 	MINIYUM = 0,

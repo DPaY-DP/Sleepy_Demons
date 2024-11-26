@@ -51,6 +51,8 @@ if (timerFirerate == 0) && (ammo > 0)
 		active = true;
 	}
 	
+	instance_create_depth(x, y, depth, obj_projectileRocketjump, { image_angle : random(360) });
+	
 	audio_play_sound(snd_defaultCannonCut, 0, 0, gainSFX * 1.5, 0, 0.5);
 }
 else if (timerFirerate > 0) audio_play_sound(snd_weaponOnCooldown, 0, 0, gainSFX);
