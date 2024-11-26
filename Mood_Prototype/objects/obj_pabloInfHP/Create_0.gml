@@ -2,9 +2,9 @@
 
 event_inherited();
 
-sprite_index = spr_pablo;
+sprite_index = Spr_Pablo;
 
-hpMax =	 99999;	//infinity;
-hpLast = 99999;	//infinity;
+hpMax =	 infinity;
+hpLast = infinity;
 
 hp = hpMax;
