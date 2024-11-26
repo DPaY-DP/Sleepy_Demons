@@ -138,7 +138,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.2.162",
+    "IDEVersion":"2024.8.1.171",
   },
   "name":"Mood_Prototype",
   "resources":[
@@ -806,7 +806,6 @@
     {"roomId":{"name":"room_05UnderPressure","path":"rooms/room_05UnderPressure/room_05UnderPressure.yy",},},
     {"roomId":{"name":"room_06TunnelVision","path":"rooms/room_06TunnelVision/room_06TunnelVision.yy",},},
     {"roomId":{"name":"room_07ChaosUnfolds","path":"rooms/room_07ChaosUnfolds/room_07ChaosUnfolds.yy",},},
-    {"roomId":{"name":"room_08DeadEnds","path":"rooms/room_08DeadEnds/room_08DeadEnds.yy",},},
     {"roomId":{"name":"room_05UnderPressureOLD","path":"rooms/room_05UnderPressureOLD/room_05UnderPressureOLD.yy",},},
     {"roomId":{"name":"room_06TunnelVisionOLD","path":"rooms/room_06TunnelVisionOLD/room_06TunnelVisionOLD.yy",},},
     {"roomId":{"name":"room_07ChaosUnfoldsOLD","path":"rooms/room_07ChaosUnfoldsOLD/room_07ChaosUnfoldsOLD.yy",},},
@@ -815,6 +814,7 @@
     {"roomId":{"name":"room_tutorialEnvironment","path":"rooms/room_tutorialEnvironment/room_tutorialEnvironment.yy",},},
     {"roomId":{"name":"room_tutorialExecutie","path":"rooms/room_tutorialExecutie/room_tutorialExecutie.yy",},},
     {"roomId":{"name":"room_tutorialShooting","path":"rooms/room_tutorialShooting/room_tutorialShooting.yy",},},
+    {"roomId":{"name":"room_08DeadEnds","path":"rooms/room_08DeadEnds/room_08DeadEnds.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

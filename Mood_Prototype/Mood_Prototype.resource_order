@@ -251,7 +251,7 @@
     {"name":"obj_zebediah","order":2,"path":"objects/obj_zebediah/obj_zebediah.yy",},
     {"name":"room_01PillowFight","order":1,"path":"rooms/room_01PillowFight/room_01PillowFight.yy",},
     {"name":"room_02BabysFirstGun","order":2,"path":"rooms/room_02BabysFirstGun/room_02BabysFirstGun.yy",},
-    {"name":"room_03PeakABear","order":3,"path":"rooms/room_03PeakABear/room_03PeakABear.yy",},
+    {"name":"room_03PeakABear","order":9,"path":"rooms/room_03PeakABear/room_03PeakABear.yy",},
     {"name":"room_04ExpandingHorizons","order":4,"path":"rooms/room_04ExpandingHorizons/room_04ExpandingHorizons.yy",},
     {"name":"room_05UnderPressure","order":5,"path":"rooms/room_05UnderPressure/room_05UnderPressure.yy",},
     {"name":"room_06TunnelVision","order":6,"path":"rooms/room_06TunnelVision/room_06TunnelVision.yy",},
