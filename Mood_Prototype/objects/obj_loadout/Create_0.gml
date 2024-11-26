@@ -36,12 +36,18 @@ reload = function()
 			array_push(other.shufflebag, [2, ammoBag]);
 		}
 		
-		array_shuffle(shufflebag)
+		array_shuffle(shufflebag);
 	}
 	
-	var _reload = array_pop(shufflebag);
+	var _shufflebag = array_pop(shufflebag);
 	
-	weaponsEquipped[_reload[0]].ammo += _reload[1];
+	var _weapon = weaponsEquipped[_shufflebag[0]];
+	var _reload = _shufflebag[1];
+	
+	_weapon.ammo += _reload;
+	_weapon.ammo = clamp(_weapon.ammo, 0, _weapon.ammoMax);
+	
+	return _shufflebag;
 }
 
 

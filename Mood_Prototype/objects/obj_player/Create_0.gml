@@ -30,6 +30,7 @@ enum enumMovementModsPlayer
 {
 	MINIYUM = 0,
 	BOOSTPAD = 1,
+	ROCKETJUMP = 2,
 }
 
 movementMods = [
@@ -39,7 +40,13 @@ movementMods = [
 		timer : 0,
 		active : 0,
 	},
-		//Slow: Miniyum
+		//Fast: Boostpad
+	{
+		strength : 0,
+		timer : 0,
+		active : 0,
+	},
+		//Fast: Rocket Jump
 	{
 		strength : 0,
 		timer : 0,

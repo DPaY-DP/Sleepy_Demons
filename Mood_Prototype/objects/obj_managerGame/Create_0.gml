@@ -1,6 +1,8 @@
 //IMMUTABLE VALUES
 global.envHPMax = 1000;
 
+image_speed = 0.1;
+
 
 //GAME VALUES
 global.envHP = global.envHPMax;
@@ -140,6 +142,8 @@ stateLoss.start = function()
 {
 	with (OBJ_agents) switch_state(stateLock);
 	audio_stop_sound(currentSong);
+	
+	image_index = 0;
 }
 stateLoss.run = function()
 {
@@ -149,15 +153,11 @@ stateLoss.drawGUI = function()
 {
 	draw_sprite_simple(spr_window, 0, GUIwidth * 0.05, GUIheight * 0.05, { xscale : GUIwidth * 0.9, yscale : GUIheight * 0.9, alpha : 0.5 });
 	
-	if (timerState <= sprite_get_number(spr_bhop) * get_animation_framelength(spr_bhop)) 
-	{
-		var _frame = get_animation_frame(spr_bhop, timerState);
-		draw_sprite_simple(spr_bhop, _frame, GUIwidth / 2, GUIheight / 2, { size : 4 });
-	}
+	draw_sprite_simple(spr_bhop, -1, GUIwidth / 2, GUIheight / 2, { size : 3 });
+	if (image_index > 18) image_index = 18;
 
 	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Chaos unfolds", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
 	if (timerState > 120) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.85, "Press R to restart.", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
-	
 	
 	if (keyboard_check_pressed(ord("R"))) 
 	{
@@ -194,15 +194,18 @@ stateWin.start = function()
 	var _length = array_length(_levelData.weaponUnlocks);
 	for (var i = 0; i < _length; i++)
 	{
-		if (currentLevel < array_length(global.save.levels) - 1)			//is there another level after this one?
-		if (!global.save.levels[currentLevel + 1].unlocked)					//do we have that unlocked? If NO, show unlocked weapons
-																			// >> this is a hacky fix, but essentially it's meant to prevent the unlock
-																			// weapons from unlocking again after you have already unlocked them previously
-																			// >> better would be to check for the unlock status of each weapon directly, 
-																			// but actually fuck that right now (I should have set it up as an ID based item
-																			// system from the start, but we wont continue development on this prototype and
-																			// it works.)
-		array_push(unlockEvent, obj_data.unlock_weapon(_levelData.weaponUnlocks[i]));
+		//if (currentLevel < array_length(global.save.levels) - 1)			//is there another level after this one?
+		//if (!global.save.levels[currentLevel + 1].unlocked)					//do we have that unlocked? If NO, show unlocked weapons
+		//																	// >> this is a hacky fix, but essentially it's meant to prevent the unlock
+		//																	// weapons from unlocking again after you have already unlocked them previously
+		//																	// >> better would be to check for the unlock status of each weapon directly, 
+		//																	// but actually fuck that right now (I should have set it up as an ID based item
+		//																	// system from the start, but we wont continue development on this prototype and
+		//																	// it works.)
+		//array_push(unlockEvent, obj_data.unlock_weapon(_levelData.weaponUnlocks[i]));
+		
+		var _unlock = array_shift(_levelData.weaponUnlocks);
+		array_push(unlockEvent, obj_data.unlock_weapon(_unlock));
 	}
 	
 	if (currentLevel < array_length(global.save.levels) - 1) 
@@ -247,10 +250,11 @@ stateWin.drawGUI = function()
 		//WEAPON UNLOCK EVENT logic
 	var _length = array_length(unlockEvent);
 	if (displayUnlock < _length)
-	{		
-		draw_set_color(c_grey);
-		draw_rectangle(GUIwidth * 0.2, GUIheight * 0.25, GUIwidth * 0.8, GUIheight * 0.8, false);
-		draw_set_color(c_white);
+	{	
+		var _width = GUIwidth * 0.6 / 135;
+		var _height = GUIheight * 0.55 / 135;
+		
+		draw_sprite_simple(spr_frameSlim, 0, GUIwidth / 2, GUIheight / 2, { xscale : _width, yscale : _height });
 		
 		var _data = unlockEvent[displayUnlock];
 		draw_text_simple(GUIwidth * 0.5, GUIheight * 0.3, "Weapons Unlocked:\n" + _data[2], { color : c_white, font : font_upheaval_scalable, size : 4 * fontscale });

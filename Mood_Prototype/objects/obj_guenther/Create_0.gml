@@ -97,7 +97,7 @@ statePlaying.stop = function()
 
 stateSeek.start = function()
 {		
-	if (gummybear != noone)
+	if (instance_exists(gummybear))
 	{
 		navmesh = get_navmesh(inRoom, gummybear.inRoom);
 		if (array_length(navmesh) > 0)
@@ -295,7 +295,7 @@ stateSabotage.run = function()
 		timerSabotage--;
 		if (timerSabotage == 0) 
 		{
-			with (target)
+			with (target) if (array_length(POIs) > 0)
 			{
 				var _broken = array_shift(POIs);
 				_broken.applyDamage = true;

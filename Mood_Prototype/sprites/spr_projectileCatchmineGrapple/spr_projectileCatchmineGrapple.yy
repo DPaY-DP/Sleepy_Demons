@@ -23,7 +23,7 @@
   ],
   "name":"spr_projectileCatchmineGrapple",
   "nineSlice":null,
-  "origin":4,
+  "origin":3,
   "parent":{
     "name":"Projectile",
     "path":"folders/Sprites/Weapon/Projectile.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":16,
+    "xorigin":0,
     "yorigin":16,
   },
   "swatchColours":null,

@@ -3,7 +3,7 @@ y += lengthdir_y(spd, image_angle);
 
 //sound
 if (!audio_is_playing(snd_blackholeGunStartTief)) && (!audio_is_playing(snd_blackholeGunLoopTief))
-audio_play_sound(snd_blackholeGunLoopTief, 0, 0, gainSFX);
+audio_play_sound_at(snd_blackholeGunLoopTief, x, y, 0, 100, 150, 1, 0, 0, gainSFX);
 
 //spd *= 0.98;
 //if (spd <= 3) spd = 0;

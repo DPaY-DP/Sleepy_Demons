@@ -68,7 +68,7 @@ create_save = function()
 	write_save();
 }
 
-unlock_all = function()
+unlock_levels_all = function()
 {
 	var _length = array_length(global.save.levels);
 	for (var i = 0; i < _length; i++)
@@ -76,6 +76,11 @@ unlock_all = function()
 		global.save.levels[i].unlocked = true;
 	}
 	
+	write_save();
+}
+
+unlock_weapons_all = function()
+{
 	var _length = array_length(global.save.weaponsUnlocked.main);
 	for (var i = 0; i < _length; i++)
 	{
@@ -196,9 +201,12 @@ defaults =
 			unlocked : false,
 		
 			minigames :  [
-				enumMinigame.TUCK,
-				enumMinigame.TUCK,
-				enumMinigame.TUCK,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
 			],
 			
 			loadoutPillows : 2,
@@ -402,6 +410,18 @@ defaults =
 				enumMinigame.TICKLE,
 				enumMinigame.INPUTS,
 			],
+		
+			minigames :  [
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+			],
 			
 			loadoutPillows : 1,
 			loadoutWeapons : 3,
@@ -530,5 +550,6 @@ global.save = false;
 
 if (!global.save) || (global.save.version != global.version) create_save();
 
-//unlock_all();
+unlock_levels_all();
+unlock_weapons_all();
 #endregion

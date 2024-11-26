@@ -5,7 +5,7 @@ inRoom = instance_place(x, y, obj_room);
 
 alarm[0] = 1;
 
-rangeInteract = 25;
+rangeInteract = 45;
 
 
 //GAME VALUES

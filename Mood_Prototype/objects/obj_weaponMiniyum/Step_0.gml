@@ -8,6 +8,12 @@ var rmbHeld = mouse_check_button(mb_right);
 //firerate
 if (timerFirerate > 0) timerFirerate--;
 
+if (timerFirerate == 1)
+{
+	instance_create_depth(x, y, depth, obj_ammoSpent, { image_index : enumWeaponEffect.MINIYUM, dir : image_angle - 70 - random(40) });
+}
+
+
 
 //active filter
 if (!active) || (!canShoot) exit;

@@ -6,7 +6,7 @@ intervalFirerate = 60;
 ammoMax = 5;
 ammoBag = 3;
 
-spdGrapple = 15;
+spdGrapple = 25;
 
 
 //GAME VALUES
