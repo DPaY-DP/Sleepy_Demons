@@ -159,7 +159,6 @@ switch (mode)
 						{
 							_indexLevel += _lengthLevelSelect[i - 1];
 						}
-						show_debug_message(_indexLevel)
 						
 						var _column = 0;
 						var _row = 0;
@@ -283,8 +282,6 @@ switch (mode)
 						
 						draw_sprite_simple(spr_buttonBlankSlim, _hover, _x, _y, { xscale : _xscale, yscale : _yscale })
 						draw_text_simple(_x, _y, "Toggle Fullscreen", { font : font_upheaval_scalable, size : fontscale * 5 });
-						
-						show_debug_message(fontscale)
 
 						draw_text_simple(x + 30, y + 30, "Settings", { font : font_upheaval_scalable, size : 15 * fontscale, halign : fa_left, valign : fa_top })
 	break;

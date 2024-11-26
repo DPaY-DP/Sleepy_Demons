@@ -21,7 +21,7 @@ if (timerFirerate == 0)
 	
 	instance_create_depth(x, y, depth, obj_projectileDamage, { size : 1.5, damage : 14, image_angle : image_angle, spd : 52, punch : 18 });
 	
-	audio_play_sound(snd_rifle, 0, 0, gainSFX);
+	audio_play_sound(snd_rifle, 0, 0, gainSFX, 0, 0.8 + random(0.4));
 }
 else if (timerFirerate > 0) audio_play_sound(snd_weaponOnCooldown, 0, 0, gainSFX);
 

@@ -29,8 +29,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Bathroom",
-    "path":"folders/Sprites/Environment/Bathroom.yy",
+    "name":"Environment Objects",
+    "path":"folders/Sprites/Environment Objects.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

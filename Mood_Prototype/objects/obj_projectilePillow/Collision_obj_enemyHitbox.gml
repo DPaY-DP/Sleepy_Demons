@@ -1,5 +1,7 @@
 var _target = other.owner;
 
+if (_target.hp == 0) exit;
+
 var _damage = min(_target.hp + 1, 25);
 var _punch = _damage * 2;
 

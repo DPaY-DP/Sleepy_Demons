@@ -1,13 +1,11 @@
 BEFORE DEPLOYMENT:
- - Remove Shooting Range (or art pass it)
- - Re-enable Sound (uncomment functions)
  - Change Version
 	> Enable version check savewipe
  - Remove automatic save deletion
- - Remove unlock_all();
  - re-enable fullscreen as default setting
- - remove "unlock all"
  - remove free reload in obj_loadout
+ - remove "unlock levels"
+ - remove "unlock weapons"
 
 
 

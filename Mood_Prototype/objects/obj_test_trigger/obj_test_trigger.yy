@@ -29,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"Laszlo_Teddy_Bear_Sprite",
-    "path":"sprites/Laszlo_Teddy_Bear_Sprite/Laszlo_Teddy_Bear_Sprite.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

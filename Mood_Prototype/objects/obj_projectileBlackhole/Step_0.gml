@@ -5,18 +5,16 @@ y += lengthdir_y(spd, image_angle);
 if (!audio_is_playing(snd_blackholeGunStartTief)) && (!audio_is_playing(snd_blackholeGunLoopTief))
 audio_play_sound_at(snd_blackholeGunLoopTief, x, y, 0, 100, 150, 1, 0, 0, gainSFX);
 
-//spd *= 0.98;
-//if (spd <= 3) spd = 0;
-
-//force = forceBase + forceBoost - (1 - (spd / spdBase));
 range = rangeBase + rangeBoost - (1 - (spd / spdBase));
 
+
 with (OBJ_enemy)
-{	
+{		
 	var _dist = point_distance(x, y, other.x, other.y);
 	
 	if (_dist <= other.range)
 	{
+		if (hp > 0)	
 		if (_dist <= other.force)
 		{
 			hvel = 0;
