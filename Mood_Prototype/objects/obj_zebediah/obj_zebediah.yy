@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_zebediah",
-    "path":"sprites/spr_zebediah/spr_zebediah.yy",
+    "name":"Spr_Marco",
+    "path":"sprites/Spr_Marco/Spr_Marco.yy",
   },
   "spriteMaskId":null,
   "visible":true,

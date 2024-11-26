@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_guenther",
-    "path":"sprites/spr_guenther/spr_guenther.yy",
+    "name":"Spr_Guenther",
+    "path":"sprites/Spr_Guenther/Spr_Guenther.yy",
   },
   "spriteMaskId":null,
   "visible":true,

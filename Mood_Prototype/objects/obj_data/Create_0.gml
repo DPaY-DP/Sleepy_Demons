@@ -182,18 +182,12 @@ defaults =
 	volumeMusic : 0, //0.5
 	volumeSFX : 0.25,
 	
-			
-	//				//levels select
-	//			completed : true,
-	//			sprite : spr_bshesh,
-	//			time : infinity,
-	
 	levels :
 	[
 		{
 			room : room_shootingRange,
 			name : "Shooting Range",
-			unlocked : false,
+			unlocked : true,
 		
 			minigames :  [
 				enumMinigame.TUCK,
@@ -205,12 +199,6 @@ defaults =
 			loadoutWeapons : 3,
 			
 			weaponUnlocks : [],
-			
-				//levels select
-			completed : true,
-			sprite : spr_bshesh,
-			time : infinity,
-			
 		},
 		{
 			room : room_tutorialShooting,
@@ -225,11 +213,6 @@ defaults =
 			loadoutWeapons : 1,
 			
 			weaponUnlocks : [],
-			
-				//levels select
-			completed : false,
-			sprite : spr_bshesh,
-			time : infinity,
 		},
 		{
 			room : room_tutorialExecutie,
@@ -244,11 +227,6 @@ defaults =
 			loadoutWeapons : 0,
 			
 			weaponUnlocks : [],
-			
-				//levels select
-			completed : false,
-			sprite : spr_bshesh,
-			time : infinity,
 		},
 		{
 			room : room_tutorialEnvironment,
@@ -263,11 +241,6 @@ defaults =
 			loadoutWeapons : 0,
 			
 			weaponUnlocks : [],
-			
-				//levels select
-			completed : false,
-			sprite : spr_bshesh,
-			time : infinity,
 		},
 		{
 			room : room_00Executie,
@@ -284,11 +257,6 @@ defaults =
 			loadoutWeapons : 0,
 			
 			weaponUnlocks : [],
-			
-				//levels select
-			completed : false,
-			sprite : spr_bshesh,
-			time : infinity,
 		},
 		{
 			room : room_01PillowFight,
@@ -305,11 +273,6 @@ defaults =
 			loadoutWeapons : 0,
 			
 			weaponUnlocks : [obj_weaponMainPistol, obj_weaponMainShotgun, obj_weaponMainRifle],
-			
-				//levels select
-			completed : false,
-			sprite : spr_bshesh,
-			time : infinity,
 		},
 		{
 			room : room_02BabysFirstGun,
@@ -328,11 +291,6 @@ defaults =
 			loadoutWeapons : 1,
 			
 			weaponUnlocks : [obj_weaponGluelauncher],
-			
-				//levels select
-			completed : false,
-			sprite : spr_bshesh,
-			time : infinity,
 		},
 		{
 			room : room_03PeakABear,
@@ -353,11 +311,6 @@ defaults =
 			loadoutWeapons : 2,
 			
 			weaponUnlocks : [obj_weaponMiniyum],
-			
-				//levels select
-			completed : false,
-			sprite : spr_bshesh,
-			time : infinity,
 		},
 		{
 			room : room_04ExpandingHorizons,
@@ -380,11 +333,6 @@ defaults =
 			loadoutWeapons : 3,
 			
 			weaponUnlocks : [obj_weaponBlackhole, obj_weaponGummybear],
-			
-				//levels select
-			completed : false,
-			sprite : spr_bshesh,
-			time : infinity,
 		},
 		{
 			room : room_05UnderPressure,
@@ -407,11 +355,6 @@ defaults =
 			loadoutWeapons : 3,
 			
 			weaponUnlocks : [obj_weaponStinkbomb],
-			
-				//levels select
-			completed : false,
-			sprite : spr_bshesh,
-			time : infinity,
 		},
 		{
 			room : room_06TunnelVision,
@@ -436,11 +379,6 @@ defaults =
 			loadoutWeapons : 3,
 			
 			weaponUnlocks : [obj_weaponCatchmines],
-			
-				//levels select
-			completed : false,
-			sprite : spr_bshesh,
-			time : infinity,
 		},
 		{
 			room : room_07ChaosUnfolds,
@@ -463,11 +401,6 @@ defaults =
 			loadoutWeapons : 3,
 			
 			weaponUnlocks : [],
-			
-				//levels select
-			completed : false,
-			sprite : spr_bshesh,
-			time : infinity,
 		},
 		{
 			room : room_08DeadEnds,
@@ -494,11 +427,6 @@ defaults =
 			loadoutWeapons : 3,
 			
 			weaponUnlocks : [],
-			
-				//levels select
-			completed : false,
-			sprite : spr_bshesh,
-			time : infinity,
 		},
 	],
 	
@@ -510,7 +438,7 @@ defaults =
 			[0, obj_weaponBlackhole,	"SINGULARITY V.2",			"Prim: Fires a slow moving black\nhole\n\nAlt: Create up to two linked portals"	],
 			[0, obj_weaponMiniyum,		"THE MINIYUM",				"Prim: Fire volleys of slowing candy\ncanes\n\nAlt: Boost yourself to gain speed"		],
 			[0, obj_weaponGummybear,	"GUMMY LURE-AND-BUMPER GUN","Prim: Deploy Gummy Lure\n\nAlt: Deploy Gummy Bumper"		],
-			[0, obj_weaponStinkbomb,	"\"NOSE-FERATU 2\" OLFACTORY DISINCENTIVIZER",		"Prim: Throw disgusting stink bomb\nto scare away enemies\n\nAlt: Enter berserker melee rush"	],
+			[0, obj_weaponStinkbomb,	"MILITARY GRADE STINK",		"Prim: Throw disgusting stink bomb\nto scare off enemies\n\nAlt: Enter berserker melee rush"	],
 			[0, obj_weaponCatchmines,	"CATCHMINE THROWER",		"Prim: Deploy Catchmine\n\nAlt: Grappling Hook"		],
 		],
 	
@@ -530,5 +458,5 @@ global.save = false;
 
 if (!global.save) || (global.save.version != global.version) create_save();
 
-//unlock_all();
+unlock_all();
 #endregion
