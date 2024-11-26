@@ -1,5 +1,6 @@
 //IMMUTABLE VALUES
 global.envHPMax = 1000;
+if (room == room_shootingRange) global.envHPMax = infinity;
 
 
 //GAME VALUES
