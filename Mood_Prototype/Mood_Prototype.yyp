@@ -617,6 +617,7 @@
     {"id":{"name":"spr_loadoutLocked","path":"sprites/spr_loadoutLocked/spr_loadoutLocked.yy",},},
     {"id":{"name":"spr_loadoutScreen","path":"sprites/spr_loadoutScreen/spr_loadoutScreen.yy",},},
     {"id":{"name":"spr_logo","path":"sprites/spr_logo/spr_logo.yy",},},
+    {"id":{"name":"spr_logoRim","path":"sprites/spr_logoRim/spr_logoRim.yy",},},
     {"id":{"name":"spr_logoTitle","path":"sprites/spr_logoTitle/spr_logoTitle.yy",},},
     {"id":{"name":"spr_looseAmmo","path":"sprites/spr_looseAmmo/spr_looseAmmo.yy",},},
     {"id":{"name":"spr_mainBackground","path":"sprites/spr_mainBackground/spr_mainBackground.yy",},},

@@ -99,7 +99,19 @@ stateGame.run = function()
 }
 stateGame.drawGUI = function()
 {
-	if (weaponActive == 0) exit;
+	if (weaponActive == 0) 
+	{
+		var _y = GUIheight * 0.9;
+		var _offset = 10 * global.GUIScale;
+		
+		for(var i = 0; i < obj_weaponPillow.ammo; i++)
+		{
+			var _x = GUIwidth * 0.05 + i * sprite_get_width(spr_pillow) * global.GUIScale + _offset;
+			draw_sprite_simple(spr_pillow, 0, _x, _y, {color : c_dkgray, xscale : 1.1 * global.GUIScale, yscale : 1.1 * global.GUIScale});
+			draw_sprite_simple(spr_pillow, 0, _x, _y,{xscale : global.GUIScale, yscale : global.GUIScale});
+		}
+		exit;
+	}
 	
 		//ammo in game
 	var _weapon = weaponsEquipped[weaponActive];

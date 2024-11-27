@@ -512,6 +512,7 @@
     {"name":"spr_loadoutLocked","order":3,"path":"sprites/spr_loadoutLocked/spr_loadoutLocked.yy",},
     {"name":"spr_loadoutScreen","order":1,"path":"sprites/spr_loadoutScreen/spr_loadoutScreen.yy",},
     {"name":"spr_logo","order":26,"path":"sprites/spr_logo/spr_logo.yy",},
+    {"name":"spr_logoRim","order":41,"path":"sprites/spr_logoRim/spr_logoRim.yy",},
     {"name":"spr_logoTitle","order":28,"path":"sprites/spr_logoTitle/spr_logoTitle.yy",},
     {"name":"spr_looseAmmo","order":9,"path":"sprites/spr_looseAmmo/spr_looseAmmo.yy",},
     {"name":"spr_mainBackground","order":14,"path":"sprites/spr_mainBackground/spr_mainBackground.yy",},

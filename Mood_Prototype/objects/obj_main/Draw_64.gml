@@ -1,7 +1,10 @@
 //modes
 switch (mode)
 {
-	case "main":		
+	case "main":	
+		draw_sprite_simple(spr_logoRim, 0, 460, 185, {xscale : 6.5, yscale : 2.5})
+		draw_sprite_simple(spr_logo, 0, 28, 26, {xscale : 2, yscale : 2})
+		draw_sprite_simple(spr_logoTitle, 0, 288, 32, {xscale : 3.75, yscale : 3.75})
 	break;
 	
 	case "play":			//draw RETURN button at bottom of screen
