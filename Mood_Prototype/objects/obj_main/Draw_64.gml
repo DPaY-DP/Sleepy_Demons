@@ -35,7 +35,7 @@ switch (mode)
 						
 						
 							//draw HEADER with LEVEL CATEGORY (Tutorial, Level, Challenge)
-						var _lengthLevelSelect = [4, 10, 0];
+						var _lengthLevelSelect = [4, 13, 0];
 						
 						var _x = GUIwidth / 2;
 						var _y = GUIheight * 0.14;

@@ -18,7 +18,7 @@ hpMax = 18;
 hp = hpMax;
 hpLast = hpMax;
 
-envDamage = 0.05;
+envDamage = 0.025;
 
 rangeExecute = 80;
 rangePlayerFlee = 120;
