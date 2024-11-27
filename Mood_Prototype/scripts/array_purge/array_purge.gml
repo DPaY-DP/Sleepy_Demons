@@ -8,8 +8,6 @@ function array_purge(_array, _id)
 		if (_array[i] == _id) 
 		{
 			array_delete(_array, i, 1);
-			_id.image_xscale *= 0.5;
-			_id.image_blend = c_white;
 			
 			return _array;
 		}

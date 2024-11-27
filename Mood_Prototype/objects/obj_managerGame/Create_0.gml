@@ -208,6 +208,26 @@ stateWin.start = function()
 		if (currentLevel == 8) global.save.levels[0].unlocked = true;		//this unlocks the firing range
 	}
 	
+	clickThrough = 0;
+	gamewin = false;
+	if (currentLevel == global.save.finalLevel) 
+	{
+		gamewin = true;
+		clickThrough = 1;
+		newBestGame = false;
+		
+		var _finalGameTime = 0;
+		for (var i = 0; i < global.save.finalLevel + 1; i++)
+		{
+			_finalGameTime += global.save.levels[i];
+		}
+		if (_finalGameTime < global.save.finalGameTime) 
+		{
+			global.save.finalGameTime = _finalGameTime;
+			newBestGame = true;
+		}
+	}
+	
 	obj_data.write_save();
 }
 stateWin.run = function()
@@ -217,15 +237,18 @@ stateWin.run = function()
 	{
 		if (displayUnlock >= _length)
 		{
-			var _length = array_length(global.save.levels);
-			if (currentLevel < _length - 1) 
+			if (!gamewin)
 			{
 				global.roomTo = global.save.levels[currentLevel + 1].room;
 				room_goto(room_loadout);
+				
+				//switch_state(stateGame);
 			}
-			else room_goto(room_credits);
-		
-			switch_state(stateGame);
+			else
+			{
+				clickThrough--;
+				if (clickThrough == 0) room_goto(room_credits);
+			}
 		}
 		else displayUnlock++;
 	}
@@ -235,11 +258,32 @@ stateWin.run = function()
 stateWin.drawGUI = function()
 {
 		//BASIC WIN UI
-	draw_sprite_simple(spr_window, 0, GUIwidth * 0.05, GUIheight * 0.05, { xscale : GUIwidth * 0.9, yscale : GUIheight * 0.9, alpha : 0.5 });
-	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Snooze'd em up!", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
-	if (timerState > 45) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.5, $"{timeFinish / 1000} seconds", { color : c_white, font : font_upheaval_scalable, size : 10 * fontscale });
-	if (timerState > 60) && (newBest) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.45, $"NEW BEST!", { color : c_white, font : font_upheaval_scalable, size : 5 * fontscale });
-	if (timerState > 90) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.85, "Press SPACE to enter the next level\nPress ESC to return to Menu", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
+		if (!gamewin)
+		{
+			draw_sprite_simple(spr_window, 0, GUIwidth * 0.05, GUIheight * 0.05, { xscale : GUIwidth * 0.9, yscale : GUIheight * 0.9, alpha : 0.5 });
+			draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Snooze'd em up!", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
+			
+			if (timerState > 45) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.5, $"{timeFinish / 1000} seconds", { color : c_white, font : font_upheaval_scalable, size : 10 * fontscale });
+			if (timerState > 60) && (newBest) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.45, $"NEW BEST!", { color : c_white, font : font_upheaval_scalable, size : 5 * fontscale });
+			
+			if (timerState > 90) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.85, "Press SPACE to enter the next level\nPress ESC to return to Menu", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
+		}
+		else
+		{
+			draw_sprite_simple(spr_window, 0, GUIwidth * 0.05, GUIheight * 0.05, { xscale : GUIwidth * 0.9, yscale : GUIheight * 0.9, alpha : 0.5 });
+			draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Game defeated!", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
+			
+			if (timerState > 45) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.5, $"{timeFinish / 1000} seconds", { color : c_white, font : font_upheaval_scalable, size : 10 * fontscale });
+			if (timerState > 60) && (newBest) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.45, $"NEW BEST!", { color : c_white, font : font_upheaval_scalable, size : 5 * fontscale });
+			
+			if (timerState > 45) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.7, $"{timeFinish / 1000} seconds", { color : c_white, font : font_upheaval_scalable, size : 10 * fontscale });
+			if (timerState > 60) && (newBestGame) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.65, $"NEW BEST GAME TIME!", { color : c_white, font : font_upheaval_scalable, size : 5 * fontscale });
+			
+			if (timerState > 90) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.85, "Press SPACE to enter the next level\nPress ESC to return to Menu", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
+		}
+	
+		//FINAL TIME
+	
 	
 		//WEAPON UNLOCK EVENT logic
 	var _length = array_length(unlockEvent);

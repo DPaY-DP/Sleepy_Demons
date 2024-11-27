@@ -363,7 +363,7 @@ walk_navmesh = function(_dist)
 	
 	var _iterations = 5;
 	var _xIterate = _xDist / _iterations;
-	var _yIterate = _xDist / _iterations;
+	var _yIterate = _yDist / _iterations;
 	
 	for (var i = 0; i < _iterations; i++)
 	{
