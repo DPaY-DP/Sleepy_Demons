@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_creditsButtons",
-    "path":"sprites/spr_creditsButtons/spr_creditsButtons.yy",
+    "name":"spr_buttonCredits",
+    "path":"sprites/spr_buttonCredits/spr_buttonCredits.yy",
   },
   "spriteMaskId":null,
   "visible":true,

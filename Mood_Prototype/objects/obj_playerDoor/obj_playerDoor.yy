@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_timerDoor",
-    "path":"sprites/spr_timerDoor/spr_timerDoor.yy",
+    "name":"spr_bshesh",
+    "path":"sprites/spr_bshesh/spr_bshesh.yy",
   },
   "spriteMaskId":null,
   "visible":true,

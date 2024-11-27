@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_flipDoor_R",
-    "path":"sprites/spr_flipDoor_R/spr_flipDoor_R.yy",
+    "name":"spr_env",
+    "path":"sprites/spr_env/spr_env.yy",
   },
   "spriteMaskId":null,
   "visible":true,
