@@ -520,6 +520,37 @@ defaults =
 			sprite : spr_bshesh,
 			time : infinity,
 		},
+		{
+			room : room_09Unnamed,
+			name : "",
+			unlocked : false,
+		
+			minigames :  [
+				enumMinigame.HORSESHOE,
+				enumMinigame.HORSESHOE,
+				enumMinigame.BRUSH,
+				enumMinigame.TUCK,
+				enumMinigame.STUFF,
+				enumMinigame.INPUTS,
+				enumMinigame.INPUTS,
+				enumMinigame.SQUAREHOLE,
+				enumMinigame.SQUAREHOLE,
+				enumMinigame.FASTCLICK,
+				enumMinigame.CABLE,
+				enumMinigame.CABLE,
+				enumMinigame.TICKLE,
+			],
+			
+			loadoutPillows : 1,
+			loadoutWeapons : 3,
+			
+			weaponUnlocks : [],
+			
+				//levels select
+			completed : false,
+			sprite : spr_bshesh,
+			time : infinity,
+		},
 	],
 	
 	weaponsUnlocked :

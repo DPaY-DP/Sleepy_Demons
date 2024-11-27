@@ -13,7 +13,7 @@ activate = function()
 		{
 			buttonPress = true;
 			image_index++;
-			 instance_deactivate_object(obj_playerDoor);
+			 instance_deactivate_object(obj_timerDoor);
 		}
 	}
 	
@@ -24,6 +24,6 @@ activate = function()
 		buttonPress = false;
 		doorTimer = 0;
 		image_index--;
-		 instance_activate_object(obj_playerDoor);
+		 instance_activate_object(obj_timerDoor);
 	}
 }

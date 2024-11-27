@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_playerDoor",
+  "%Name":"obj_timerDoor",
   "eventList":[],
   "managed":true,
-  "name":"obj_playerDoor",
+  "name":"obj_timerDoor",
   "overriddenProperties":[],
   "parent":{
     "name":"Level Unique",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bshesh",
-    "path":"sprites/spr_bshesh/spr_bshesh.yy",
+    "name":"spr_timerDoor",
+    "path":"sprites/spr_timerDoor/spr_timerDoor.yy",
   },
   "spriteMaskId":null,
   "visible":true,

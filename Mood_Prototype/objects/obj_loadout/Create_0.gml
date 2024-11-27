@@ -244,9 +244,9 @@ stateSelect.drawGUI = function()
 	
 		//Confirm box
 	var _y = GUIheight * 0.9;
-	var _size = 1 * global.GUIScale;
-	var _width = sprite_get_width(spr_confrim)	* _size;
-	var _height = sprite_get_height(spr_confrim)	* _size;
+	var _size = 0.5 * global.GUIScale;
+	var _width = sprite_get_width(spr_tickbox)	* _size;
+	var _height = sprite_get_height(spr_tickbox)	* _size;
 	
 	var _hover = false;
 	
@@ -267,8 +267,8 @@ stateSelect.drawGUI = function()
 		}
 	}
 	
-	draw_sprite_simple(spr_tickbox, _hover, _x, _y,		{ size : _size / 2 });
-	draw_sprite_simple(spr_tick, _hover, _x, _y,		{ size : _size / 2 });
+	draw_sprite_simple(spr_tickbox, _hover, _x, _y,		{ size : _size });
+	draw_sprite_simple(spr_tick, _hover, _x, _y,		{ size : _size });
 	
 	if (modeSelect == weaponsMax) 
 	{
