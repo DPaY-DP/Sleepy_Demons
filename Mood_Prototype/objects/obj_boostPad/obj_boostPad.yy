@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_roomOverlay",
-    "path":"sprites/spr_roomOverlay/spr_roomOverlay.yy",
+    "name":"spr_boostPad",
+    "path":"sprites/spr_boostPad/spr_boostPad.yy",
   },
   "spriteMaskId":null,
   "visible":true,
