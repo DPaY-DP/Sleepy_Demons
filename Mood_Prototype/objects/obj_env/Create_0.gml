@@ -6,7 +6,7 @@ inRoom = instance_place(x, y, obj_room);
 distInteract = 200;
 
 membersMax = 4;
-membersSabo = 1;
+membersSabo = 2;
 
 pointsSabo = [];
 
@@ -70,7 +70,12 @@ add_member = function(_id)
 		//show_debug_message("rejected member (full)")
 		return false
 	}
-	else array_push(members, _id);
+	else 
+	{
+		array_push(members, _id);
+		_id.image_xscale *= 2;
+		_id.image_blend = c_aqua;
+	}
 	
 	if (array_length(members) == 1) pointMeet = array_choose(inRoom.points);
 	
@@ -94,7 +99,7 @@ get_point_sabo = function(_id)
 		_whilesafe++;
 		if (_whilesafe > 100) 
 		{
-			show_message("While Loop Overflow\nOBJ_env > get_points_sabo()");
+			//show_message("While Loop Overflow\nOBJ_env > get_points_sabo()");
 			break;
 		}
 	}

@@ -15,7 +15,28 @@ toggle_sabotaged = function(_true_or_false)
 			case "random": initialize_state(stateRandomTarget);
 			break;
 			
-			case "recover": initialize_state(stateFlee);
+			case "recover": 
+							var _scare = noone;
+    
+							if (obj_player.inRoom == inRoom)
+							{
+							    timerPlaying = 0;
+    
+							    var _distPlayer = point_distance(x, y, obj_player.x, obj_player.y);
+							    if (_distPlayer < rangePlayerFlee) _scare = obj_player;
+							}
+    
+							if (instance_exists(obj_projectileStinkbomb))
+							{
+							    var _stinkbomb = instance_nearest(x, y, obj_projectileStinkbomb);
+            
+							    var _distStink = point_distance(x, y, _stinkbomb.x, _stinkbomb.y);
+							    if (_distStink < obj_projectileStinkbomb.range) _scare = _stinkbomb;
+							}
+    
+							if (hp != hpLast) _scare = obj_player;
+    
+							if (_scare != noone) switch_state(stateFlee, _scare);
 			break;
 			
 			case "instigate": initialize_state(stateSeek);
