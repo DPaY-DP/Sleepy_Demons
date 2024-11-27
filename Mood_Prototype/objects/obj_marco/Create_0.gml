@@ -37,8 +37,8 @@ reset_membership = function()
 {
 	if (target != undefined) 
 	{
-		if (target.object_index == OBJ_env) target.void_member(id);
-		else if (target.object_index == OBJ_enemy) target.targeted = false;
+		if (object_is_ancestor(target.object_index, OBJ_env)) target.void_member(id);
+		else if (object_is_ancestor(target.object_index, OBJ_enemy)) target.targeted = false;
 		
 		target = undefined;
 	}
@@ -47,6 +47,15 @@ reset_membership = function()
 //unique states
 //before sabotaging objects, attempt to instigate other demons
 		//get other demons
+statePlaying.start = function()
+{
+		//lower initial playing time that others
+	timerPlaying = 0;
+	//timerPlaying += irandom(300);
+	timerReady = 3 * 60;
+}
+
+
 stateSeek.start = function()
 {	
 	reset_membership();

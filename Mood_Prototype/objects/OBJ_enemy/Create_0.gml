@@ -412,7 +412,7 @@ walk_navmesh = function(_dist)
 reset_membership = function()
 {
 	if (target != undefined) 
-	if (target.object_index == OBJ_env) target.void_member(id);
+	if (object_is_ancestor(target.object_index, OBJ_env)) target.void_member(id);
 }
 
 do_effect_dust = function(_x, _y)
@@ -563,8 +563,6 @@ stateWalk.stop = function()
 stateSeek = new State("Seek");
 stateSeek.start = function()
 {	
-	show_debug_message("STATE SEEK");
-	
 	reset_membership();
 	
 	if (instance_exists(gummybear))
@@ -597,16 +595,12 @@ stateSeek.start = function()
 	}
 	_envs = array_shuffle(_envs);
 	
-	show_debug_message($"envs found: {_envs}")
-	
 	do
 	{
 		//get random env object (last from shuffled array)
 		var _tryEnv = array_pop(_envs);
 		
-		//see if it is a valid sabotage target (hp remaining)
-		show_debug_message($"POIs: {array_length(_tryEnv.POIs)}; broken: {_tryEnv.broken}")
-		
+		//see if it is a valid sabotage target (hp remaining)		
 		if (array_length(_tryEnv.POIs) != 0) && (!_tryEnv.broken)
 		{
 			//if valid, attempt to join
@@ -807,8 +801,6 @@ stateSabotage.run = function()
 	if (hp != hpLast) _scare = obj_player;
 	
 	if (_scare != noone) switch_state(stateFlee, _scare);
-	
-	
 	
 	if (hp == 0) switch_state(stateExecute);
 }
