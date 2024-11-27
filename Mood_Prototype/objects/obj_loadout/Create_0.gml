@@ -251,7 +251,8 @@ stateSelect.drawGUI = function()
 	var _hover = false;
 	
 	if ((mouse_in_area_GUI(_x - _width / 2, _y - _height / 2, _width, _height))) _hover = true;
-	if (_hover) && ((mouse_check_button_pressed(mb_left)) || (keyboard_check_pressed(vk_space)))
+	
+	if ((_hover) && (mouse_check_button_pressed(mb_left))) || (keyboard_check_pressed(vk_space))
 	{
 		modeSelect++;
 		
