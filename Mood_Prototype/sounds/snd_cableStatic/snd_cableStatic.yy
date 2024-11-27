@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_cableStatic",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.35551,
+  "name":"snd_cableStatic",
+  "parent":{
+    "name":"Cables",
+    "path":"folders/Sounds/Minigames/Cables.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_cableStatic.wav",
+  "type":0,
+  "volume":1.0,
+}

@@ -1,0 +1,1 @@
+audio_play_sound_at(snd_blackholeGunEndTief, x, y, 0, 100, 150, 1, 0, 0, gainSFX);

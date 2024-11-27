@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_swishSoundFeather",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.252834,
+  "name":"snd_swishSoundFeather",
+  "parent":{
+    "name":"Stuff the Pillow",
+    "path":"folders/Sounds/Minigames/Stuff the Pillow.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_swishSoundFeather.wav",
+  "type":0,
+  "volume":1.0,
+}

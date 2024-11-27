@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_minigunLoopTief",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.22381,
+  "name":"snd_minigunLoopTief",
+  "parent":{
+    "name":"Miniyum",
+    "path":"folders/Sounds/Weapons/Miniyum.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_minigunLoopTief.wav",
+  "type":0,
+  "volume":1.0,
+}

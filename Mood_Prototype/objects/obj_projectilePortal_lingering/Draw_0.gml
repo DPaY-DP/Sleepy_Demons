@@ -1,0 +1,1 @@
+draw_sprite_simple(sprite_index, image_index, x, y, { color, size : image_xscale });

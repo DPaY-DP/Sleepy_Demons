@@ -1,0 +1,1 @@
+audio_play_sound(snd_musicCredits,1,true, gainMusic);

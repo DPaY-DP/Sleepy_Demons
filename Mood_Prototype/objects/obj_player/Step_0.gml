@@ -1,0 +1,2 @@
+timerState++;
+state.run();

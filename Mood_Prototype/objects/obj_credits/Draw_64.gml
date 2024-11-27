@@ -1,0 +1,2 @@
+draw_text_simple(GUIwidth * 0.5, GUIheight * 0.5 + yScroll, text, { valign : fa_top, font : font_upheaval_scalable, size : 10 * fontscale, color : c_white });
+//draw_sprite(spr_bathtub, 0, GUIwidth * 0.5, GUIheight * 0.5)

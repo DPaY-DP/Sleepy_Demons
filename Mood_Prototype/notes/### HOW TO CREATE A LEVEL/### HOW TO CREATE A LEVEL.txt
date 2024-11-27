@@ -1,0 +1,14 @@
+
+		### HOW TO CREATE A LEVEL IN THE MOOD PROTOTYPE ###
+		
+	1. Create a Duplicate of room_template. That duplicate will be your level.
+	2. Create all rooms FIRST on the "Rooms" layer.
+	3. Create all doorways for your level on the "Doors" layer.
+	4. Create walls and env objects on the "Rooms" layer.
+	5. Create enemies on the "Enemies" layer
+	6. Create weapons on the "Player" layer
+		6.1 To create a weapon, add obj_gunPickup to the room, then change it's image / frame until it's the gun you are looking for. 
+	
+	+. if you at any point want to add new rooms, make sure they are created before any doorways (re-arrange them in the Instance Creation Order
+		by clicking on your room asset in the asset browser, then clicking "Instance Creation Order" on the left side of the screen in the room
+		inspector.)
