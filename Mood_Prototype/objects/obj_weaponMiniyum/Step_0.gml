@@ -8,6 +8,12 @@ var rmbHeld = mouse_check_button(mb_right);
 //firerate
 if (timerFirerate > 0) timerFirerate--;
 
+if (timerFirerate == 1)
+{
+	instance_create_depth(x, y, depth, obj_ammoSpent, { image_index : enumWeaponEffect.MINIYUM, dir : image_angle - 70 - random(40) });
+}
+
+
 
 //active filter
 if (!active) || (!canShoot) exit;
@@ -55,7 +61,7 @@ if (timerFirerate == 0) && (ammo > 0) && (obj_player.movementMods[enumMovementMo
 	with (obj_player.movementMods[enumMovementModsPlayer.MINIYUM])
 	{
 		strength = 2.5;
-		timer = 700;
+		timer = 540;
 		active = true;
 	}
 	

@@ -29,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"floor_wood",
-    "path":"sprites/floor_wood/floor_wood.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

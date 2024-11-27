@@ -25,6 +25,7 @@ else if (!catching)
 	{
 		var _target = _targets[i];
 		
+		if (_target.hp > 0)
 		if (!collision_line(x, y, _target.x, _target.y, obj_wall, false, false))
 		{
 			catching = true;

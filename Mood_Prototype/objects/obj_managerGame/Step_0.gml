@@ -16,4 +16,4 @@ if (keyboard_check_pressed(vk_escape))
 global.debugtimer++;
 if (keyboard_check_pressed(vk_f9)) with (OBJ_enemy) instance_destroy();
 if (keyboard_check_pressed(vk_f10)) global.debugmode = 1;
-//if (keyboard_check_pressed(vk_f7)) global.envHP = 0;
+if (keyboard_check_pressed(vk_f7)) global.envHP = 0;

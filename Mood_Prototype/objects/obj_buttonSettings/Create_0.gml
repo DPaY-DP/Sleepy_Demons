@@ -5,6 +5,9 @@ func = function()
 {
 	obj_main.mode = "settings";
 	
-	instance_create_depth(room_width * 0.94, room_height * 0.75, depth, obj_sliderSound, { nameGain : "SFX" });
-	instance_create_depth(room_width * 0.94, room_height * 0.65, depth, obj_sliderSound, { nameGain : "Music" });
+	var _height1 = room_height * 0.7;
+	var _height2 = _height1 - room_height * 0.1;
+	
+	instance_create_depth(room_width * 0.94, _height1, depth, obj_sliderSound, { nameGain : "SFX" });
+	instance_create_depth(room_width * 0.94, _height2, depth, obj_sliderSound, { nameGain : "Music" });
 }

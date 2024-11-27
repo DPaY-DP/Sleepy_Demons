@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_weaponMainPistol",
-    "path":"sprites/spr_weaponMainPistol/spr_weaponMainPistol.yy",
+    "name":"spr_weaponMainRifle",
+    "path":"sprites/spr_weaponMainRifle/spr_weaponMainRifle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

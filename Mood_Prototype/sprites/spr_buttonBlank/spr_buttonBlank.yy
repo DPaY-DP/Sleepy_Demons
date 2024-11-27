@@ -25,15 +25,15 @@
   "name":"spr_buttonBlank",
   "nineSlice":{
     "$GMNineSliceData":"",
-    "bottom":24,
+    "bottom":26,
     "enabled":true,
     "guideColour":[4294902015,4294902015,4294902015,4294902015,],
     "highlightColour":1728023040,
     "highlightStyle":1,
-    "left":24,
+    "left":26,
     "resourceType":"GMNineSliceData",
     "resourceVersion":"2.0",
-    "right":24,
+    "right":26,
     "tileMode":[
       0,
       0,
@@ -41,7 +41,7 @@
       0,
       0,
     ],
-    "top":24,
+    "top":26,
   },
   "origin":4,
   "parent":{

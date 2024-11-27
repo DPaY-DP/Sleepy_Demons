@@ -51,7 +51,7 @@ else
 		}
 	}
 	else	
-	if (!audio_is_playing(snd_catchmineDrag)) audio_play_sound(snd_catchmineDrag, 0, 0, gainSFX);
+	if (!audio_is_playing(snd_catchmineDrag)) audio_play_sound_at(snd_catchmineDrag, x, y, 0, 100, 150, 1, 0, 0, gainSFX);
 }
 
 

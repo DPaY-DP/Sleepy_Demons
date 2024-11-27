@@ -39,8 +39,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"Laszlo Weapons",
-    "path":"folders/Sprites/Laszlo Weapons.yy",
+    "name":"New Wepons",
+    "path":"folders/Sprites/New Wepons.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

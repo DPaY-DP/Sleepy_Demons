@@ -24,7 +24,7 @@ else
 		
 		with (OBJ_enemy)
 		{
-			if (gummybear == noone) && (state.name != stateExecute)
+			if (gummybear == noone) && (hp > 0)
 			array_push(_eligible, id);
 		}
 		_eligible = array_shuffle(_eligible);

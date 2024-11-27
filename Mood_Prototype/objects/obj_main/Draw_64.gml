@@ -159,7 +159,6 @@ switch (mode)
 						{
 							_indexLevel += _lengthLevelSelect[i - 1];
 						}
-						show_debug_message(_indexLevel)
 						
 						var _column = 0;
 						var _row = 0;
@@ -170,11 +169,11 @@ switch (mode)
 							var _x = GUIwidth * 0.25 + GUIwidth * 0.25 * _column;
 							var _y = GUIheight * 0.37 + GUIheight * 0.305 * _row;
 							
-							var _xscale = 2;
-							var _yscale = 1.3;
+							var _xscale = 2 * global.GUIScale;
+							var _yscale = 1.3 * global.GUIScale;
 							
-							var _width = sprite_get_width(spr_buttonBlankSlim) * _xscale;
-							var _height = sprite_get_height(spr_buttonBlankSlim) * _yscale;
+							var _width = sprite_get_width(spr_buttonBlankSlimEmpty) * _xscale;
+							var _height = sprite_get_height(spr_buttonBlankSlimEmpty) * _yscale;
 							
 							var _xscaleFactor = _width / sprite_get_width(_levelData.sprite);
 							var _yscaleFactor = _height / sprite_get_height(_levelData.sprite);
@@ -203,7 +202,7 @@ switch (mode)
 							
 									//DRAW the actual LEVEL
 							draw_sprite_simple(_levelData.sprite, 0, _x, _y, { xscale : _xscaleFactor, yscale : _yscaleFactor, color : _color });
-							draw_sprite_simple(spr_buttonBlankSlim, _hover, _x, _y, { xscale : _xscale, yscale : _yscale });
+							draw_sprite_simple(spr_buttonBlankSlimEmpty, _hover, _x, _y, { xscale : _xscale, yscale : _yscale });
 							
 								//Display LEVEL TIME				//edge case: chooting range doesnt need a timer
 							if (selectMode > 0) && (_completed) && (_levelData.room != room_shootingRange)
@@ -232,12 +231,57 @@ switch (mode)
 						}
 	break;
 	
-	case "settings":	buttonheight = 0;
-	
-						draw_menu_button("Return", 8 * fontscale, function() { mode = "main" });
-						draw_menu_button("Toggle Fullscreen", 8 * fontscale, function() { obj_camera.toggle_fullscreen() });
+	case "settings":		//draw RETURN button at bottom of screen
+						var _x = GUIwidth * 0.86;
+						var _y = GUIheight * 0.92;
 						
-						show_debug_message(fontscale)
+						var _xscale = 2 * global.GUIScale;
+						var _yscale = 0.5 * global.GUIScale;
+							
+						var _width = sprite_get_width(spr_buttonBlankSlim) * _xscale;
+						var _height = sprite_get_height(spr_buttonBlankSlim) * _yscale;
+						
+						var _xTop = _x - _width / 2;
+						var _yTop = _y - _height / 2;
+							
+						var _hover = 0;
+						if (mouse_in_area_GUI(_xTop, _yTop, _width, _height))
+						{
+							_hover = 1;
+							if (mouse_check_button_pressed(mb_left)) 
+							{										
+								mode = "main";
+							}
+						}
+						
+						draw_sprite_simple(spr_buttonBlankSlim, _hover, _x, _y, { xscale : _xscale, yscale : _yscale })
+						draw_text_simple(_x, _y, "Return", { font : font_upheaval_scalable, size : fontscale * 5 });
+						
+							//draw FULLSCREEN TOGGLE button
+						var _x = GUIwidth * 0.755;
+						var _y = GUIheight * 0.81;
+						
+						var _xscale = 4 * global.GUIScale;
+						var _yscale = 0.5 * global.GUIScale;
+							
+						var _width = sprite_get_width(spr_buttonBlankSlim) * _xscale;
+						var _height = sprite_get_height(spr_buttonBlankSlim) * _yscale;
+						
+						var _xTop = _x - _width / 2;
+						var _yTop = _y - _height / 2;
+							
+						var _hover = 0;
+						if (mouse_in_area_GUI(_xTop, _yTop, _width, _height))
+						{
+							_hover = 1;
+							if (mouse_check_button_pressed(mb_left)) 
+							{										
+								obj_camera.toggle_fullscreen();
+							}
+						}
+						
+						draw_sprite_simple(spr_buttonBlankSlim, _hover, _x, _y, { xscale : _xscale, yscale : _yscale })
+						draw_text_simple(_x, _y, "Toggle Fullscreen", { font : font_upheaval_scalable, size : fontscale * 5 });
 
 						draw_text_simple(x + 30, y + 30, "Settings", { font : font_upheaval_scalable, size : 15 * fontscale, halign : fa_left, valign : fa_top })
 	break;

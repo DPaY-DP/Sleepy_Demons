@@ -36,12 +36,18 @@ reload = function()
 			array_push(other.shufflebag, [2, ammoBag]);
 		}
 		
-		array_shuffle(shufflebag)
+		array_shuffle(shufflebag);
 	}
 	
-	var _reload = array_pop(shufflebag);
+	var _shufflebag = array_pop(shufflebag);
 	
-	weaponsEquipped[_reload[0]].ammo += _reload[1];
+	var _weapon = weaponsEquipped[_shufflebag[0]];
+	var _reload = _shufflebag[1];
+	
+	_weapon.ammo += _reload;
+	_weapon.ammo = clamp(_weapon.ammo, 0, _weapon.ammoMax);
+	
+	return _shufflebag;
 }
 
 
@@ -210,26 +216,27 @@ stateSelect.drawGUI = function()
 		room_goto(global.roomTo);
 	}
 	
+	var _size = 3 * global.GUIScale;
 	
 	//draw main
-	draw_sprite_simple(spriteWeapon[0], selected[0], GUIwidth / 6, GUIheight / 2,		{ size : 6 * global.GUIScale });
+	draw_sprite_simple(spriteWeapon[0], selected[0], GUIwidth / 6, GUIheight / 2,		{ size : _size });
 	
 	//draw effect
 	if (weaponsMax > 1) 
 	{
-		draw_sprite_simple(spriteWeapon[1], selected[1], GUIwidth / 6 * 3, GUIheight / 2,	{ size : 6 * global.GUIScale });
+		draw_sprite_simple(spriteWeapon[1], selected[1], GUIwidth / 6 * 3, GUIheight / 2,	{ size : _size });
 	}
 	else
 	{
-		draw_sprite_simple(spr_weaponMenuNone, 0, GUIwidth / 6 * 3, GUIheight / 2,	{ size : 6 * global.GUIScale });
+		draw_sprite_simple(spr_weaponMenuNone, 0, GUIwidth / 6 * 3, GUIheight / 2,	{ size : _size });
 	}
 	
 	if (weaponsMax > 2) 
 	{
-		draw_sprite_simple(spriteWeapon[2], selected[2], GUIwidth / 6 * 5, GUIheight / 2,	{ size : 6 * global.GUIScale });
+		draw_sprite_simple(spriteWeapon[2], selected[2], GUIwidth / 6 * 5, GUIheight / 2,	{ size : _size });
 	}
 	else
 	{
-		draw_sprite_simple(spr_weaponMenuNone, 0, GUIwidth / 6 * 5, GUIheight / 2,	{ size : 6 * global.GUIScale });
+		draw_sprite_simple(spr_weaponMenuNone, 0, GUIwidth / 6 * 5, GUIheight / 2,	{ size : _size });
 	}
 }

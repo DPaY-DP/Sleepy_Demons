@@ -29,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_pipe",
-    "path":"sprites/spr_pipe/spr_pipe.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

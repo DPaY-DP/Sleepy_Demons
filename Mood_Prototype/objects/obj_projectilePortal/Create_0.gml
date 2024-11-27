@@ -7,7 +7,8 @@ spd = 15;
 
 
 //GAME VALUES
-image_index = identity;
+if (identity) color = #EE777B;
+else color = #7EBFFF;
 
 
 
@@ -18,7 +19,7 @@ burst = function()
 	
 	audio_play_sound(snd_portalOpen, 0, 0, gainSFX, 0, 1 + 0.5 * identity);
 	
-	instance_create_depth(x, y, depth, obj_projectilePortal_lingering, { identity : identity });
+	instance_create_depth(x, y, depth, obj_projectilePortal_lingering, { identity, color });
 	instance_destroy();
 }
 

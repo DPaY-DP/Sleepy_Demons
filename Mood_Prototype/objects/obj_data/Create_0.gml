@@ -68,7 +68,7 @@ create_save = function()
 	write_save();
 }
 
-unlock_all = function()
+unlock_levels_all = function()
 {
 	var _length = array_length(global.save.levels);
 	for (var i = 0; i < _length; i++)
@@ -76,6 +76,11 @@ unlock_all = function()
 		global.save.levels[i].unlocked = true;
 	}
 	
+	write_save();
+}
+
+unlock_weapons_all = function()
+{
 	var _length = array_length(global.save.weaponsUnlocked.main);
 	for (var i = 0; i < _length; i++)
 	{
@@ -190,9 +195,12 @@ defaults =
 			unlocked : true,
 		
 			minigames :  [
-				enumMinigame.TUCK,
-				enumMinigame.TUCK,
-				enumMinigame.TUCK,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
 			],
 			
 			loadoutPillows : 2,
@@ -350,6 +358,18 @@ defaults =
 				enumMinigame.TICKLE,
 				enumMinigame.INPUTS,
 			],
+		
+			minigames :  [
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+			],
 			
 			loadoutPillows : 1,
 			loadoutWeapons : 3,
@@ -438,7 +458,7 @@ defaults =
 			[0, obj_weaponBlackhole,	"SINGULARITY V.2",			"Prim: Fires a slow moving black\nhole\n\nAlt: Create up to two linked portals"	],
 			[0, obj_weaponMiniyum,		"THE MINIYUM",				"Prim: Fire volleys of slowing candy\ncanes\n\nAlt: Boost yourself to gain speed"		],
 			[0, obj_weaponGummybear,	"GUMMY LURE-AND-BUMPER GUN","Prim: Deploy Gummy Lure\n\nAlt: Deploy Gummy Bumper"		],
-			[0, obj_weaponStinkbomb,	"MILITARY GRADE STINK",		"Prim: Throw disgusting stink bomb\nto scare off enemies\n\nAlt: Enter berserker melee rush"	],
+			[0, obj_weaponStinkbomb,	"\"NOSE-FERATU 2\"\nOLFACTORY DISINCENTIVIZER",		"Prim: Throw disgusting stink bomb\nto scare away enemies\n\nAlt: Enter berserker melee rush"	],
 			[0, obj_weaponCatchmines,	"CATCHMINE THROWER",		"Prim: Deploy Catchmine\n\nAlt: Grappling Hook"		],
 		],
 	
@@ -458,5 +478,6 @@ global.save = false;
 
 if (!global.save) || (global.save.version != global.version) create_save();
 
-unlock_all();
+unlock_levels_all();
+unlock_weapons_all();
 #endregion

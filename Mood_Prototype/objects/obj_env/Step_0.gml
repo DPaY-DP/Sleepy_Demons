@@ -44,13 +44,15 @@ for (var i = 0; i < _length; i++)
 //change stage
 if (hp < 0) && (!broken)
 {
-	POIs = array_shuffle(POIs);
-	var _broken = array_pop(POIs);
-	_broken.applyDamage = true;
-	_broken.image_speed = 1;
+	if (array_length(POIs) > 0)
+	{
+		POIs = array_shuffle(POIs);
+		var _broken = array_pop(POIs);
+		_broken.applyDamage = true;
+		_broken.image_speed = 1;
 	
-	array_push(POIsBroken, _broken);	
-	image_index = array_length(POIsBroken);
+		array_push(POIsBroken, _broken);
+	}
 	
 	if (array_length(POIs) != 0) hp = hpMax;
 	else
@@ -60,5 +62,11 @@ if (hp < 0) && (!broken)
 		image_blend = c_red;
 	}
 	
-	audio_play_sound(snd_envSabotage, 0, 0, gainSFX);
+	audio_play_sound_at(snd_envSabotage, x, y, 0, 100, 150, 1, 0, 0, gainSFX, 0, 0.8 + random(0.4));
 }
+
+//change image
+var _lengthPOI = array_length(POIs);
+var _lengthPOIsBroken = array_length(POIsBroken);
+
+image_index = (_lengthPOIsBroken / (_lengthPOI + _lengthPOIsBroken)) * (image_number - 1)

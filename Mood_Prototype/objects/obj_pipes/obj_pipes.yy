@@ -27,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_pipeMute",
-    "path":"sprites/spr_pipeMute/spr_pipeMute.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

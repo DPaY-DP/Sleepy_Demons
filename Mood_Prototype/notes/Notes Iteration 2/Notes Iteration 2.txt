@@ -1,49 +1,13 @@
 BEFORE DEPLOYMENT:
- - Remove Shooting Range (or art pass it)
- - Re-enable Sound (uncomment functions)
  - Change Version
 	> Enable version check savewipe
  - Remove automatic save deletion
- - Remove unlock_all();
  - re-enable fullscreen as default setting
- - remove "unlock all"
- 
+ - remove free reload in obj_loadout
+ - remove "unlock levels"
+ - remove "unlock weapons"
 
-Notes:
- - reload animation (shells flying)
- - squareholes too far apart bruv
- - no double weapons maybe?
- - instakilling guenther with the pillow doesnt seem right
- - guenther active and downed / sleep sprite have different origin points (?)
- - cool new sounds from dennis
- - new buttons in settings
 
 
 Optimization:
  - damage numbers should be created by the enemy upon taking damage, not by the instance causing the damage
-
-
-
-Unitended Behavior:
- - You can softlock yourself in pillow fight with throw pillows (because they get consumed)
-
-
-
-Bugs:
- - weapon switching is sometimes buggy
- - you get back more ammo than max
- - crash: guenther and pablo sabotage env object (something with _broken.applyDamage)
-	>> happens on final damaging?
- - gummybear navmesh crash
- - tickle minigame broken (spawns no feather?) >> lvl 5 or smth
- 
- 
- 
-Mystery Bugs:
-Unable to find instance for object index 103543
- at gml_Script_anon@13426@gml_Object_OBJ_enemy_Create_0 (line 584) -               navmesh = get_navmesh(inRoom, gummybear.inRoom);
-############################################################################################
-gml_Script_anon@13426@gml_Object_OBJ_enemy_Create_0 (line 584)
-gml_Script_anon@318@setup_state_machine@setup_state_machine (line 27) -               state.start(_argument);
-gml_Script_anon@19557@gml_Object_OBJ_enemy_Create_0 (line 846) -        if (timerRecover <= 0) switch_state(stateSeek);
-gml_Object_OBJ_enemy_Step_0 (line 2) - state.run();
