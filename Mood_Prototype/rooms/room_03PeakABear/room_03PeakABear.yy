@@ -132,6 +132,16 @@
           0,-5,-2147483648,-58,0,-383,-2147483648,
         ],"TileDataFormat":1,},"tilesetId":{"name":"ts_floorsWallsTunnels","path":"tilesets/ts_floorsWallsTunnels/ts_floorsWallsTunnels.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRTileLayer":"","%Name":"MoreFloorsWallsRims","depth":800,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"MoreFloorsWallsRims","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":38,"SerialiseWidth":63,"TileCompressedData":[
+          0,2,40,49,-17,0,1,1879048232,-3,0,-5,-2147483648,-12,0,3,1073741861,0,0,-10,805306406,-4,0,-8,805306406,
+          -17,0,1,1879048232,-3,0,-5,-2147483648,-13,0,-2,37,-39,0,1,1879048232,-3,0,-5,-2147483648,-54,0,1,1879048232,
+          -3,0,-5,-2147483648,-54,0,1,1879048232,-3,0,-5,-2147483648,-54,0,1,1879048232,-3,0,-5,-2147483648,-54,
+          0,1,1879048232,-3,0,-5,-2147483648,-32,0,1,268435503,-4,38,-3,40,1,49,-4,0,1,268435505,-8,40,-4,0,-5,
+          -2147483648,-32,0,1,1879048230,-25,0,-5,-2147483648,-32,0,1,1879048230,-25,0,-5,-2147483648,-32,0,1,
+          1879048230,-4,0,1,1073741860,-20,0,-5,-2147483648,-58,0,-5,-2147483648,-58,0,-5,-2147483648,-58,0,-5,
+          -2147483648,-58,0,-5,-2147483648,-58,0,-5,-2147483648,-58,0,-5,-2147483648,-58,0,-5,-2147483648,-58,
+          0,-5,-2147483648,-58,0,-5,-2147483648,-58,0,-383,-2147483648,
+        ],"TileDataFormat":1,},"tilesetId":{"name":"ts_floorsWallsTunnels","path":"tilesets/ts_floorsWallsTunnels/ts_floorsWallsTunnels.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+    {"$GMRTileLayer":"","%Name":"Tiles_2","depth":700,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_2","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":38,"SerialiseWidth":63,"TileCompressedData":[
           -12,-2147483648,1,0,-20,805306405,-40,-2147483648,-2,805306409,1,805306405,-20,0,1,1879048229,-30,-2147483648,
           -11,0,1,1073741861,-20,0,1,1879048229,-29,-2147483648,-33,0,2,1879048229,0,-28,-2147483648,-33,0,1,1879048229,
           -3,0,-17,31,1,0,-8,-2147483648,-33,0,1,1879048229,-3,0,-17,6,1,0,-8,-2147483648,-33,0,4,805306414,805306405,
