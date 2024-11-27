@@ -99,20 +99,63 @@ stateGame.run = function()
 }
 stateGame.drawGUI = function()
 {
+	if (weaponActive == 0) exit;
+	
 		//ammo in game
-	var _size = 1;
-	var _y = GUIheight * 0.7;
-	for (var i = 1; i < weaponsMax; i++)
+	var _weapon = weaponsEquipped[weaponActive];
+	
+	var _ammo = _weapon.ammo;
+	var _ammoMax = _weapon.ammoMax;
+	
+	var _image = _weapon.ammoImage;
+	var _sizeAmmo = _weapon.ammoImageSize;
+	var _spaceAmmo = 0;
+	
+	var _widthAmmo = 4.5 * _sizeAmmo * global.GUIScale;
+	var _abacusSpace = 10 * global.GUIScale;
+	var _abacusOffset = 12 * global.GUIScale + _widthAmmo / 2;
+	
+	var _width = 150 * global.GUIScale;      //_widthAmmo * _ammoMax + _abacusSpace;
+	var _abacusSize = (_width + _abacusSpace) / sprite_get_width(spr_abacus);
+	
+	var _x = GUIwidth * 0.05;
+	var _y = GUIheight * 0.9;
+
+	var _rows = 1;
+	var _ammoPerRow = _ammoMax;
+	var _fullWidth = _ammoMax * _widthAmmo + _abacusSpace + _abacusOffset * 2;
+	if (_width < _fullWidth) 
 	{
-		if (i == weaponActive) var _size = 2;
-		//else var _size = 1;
-		
-		draw_text_simple(GUIwidth * 0.05, _y, $"{weaponsEquipped[i].ammo} / {weaponsEquipped[i].ammoMax}", { size : _size / 2, halign : fa_left, valign : fa_top, font : font_dmg });
-		_y += 80 * _size;
+		_rows = ceil(_fullWidth / _width);
+		_ammoPerRow = ceil(_ammoMax / _rows);
 	}
-	if (instance_exists(obj_weaponPillow)) var _ammo = obj_weaponPillow.ammo;
-	else var _ammo = 0;
-	draw_text_simple(GUIwidth * 0.05, _y, $"pilo: {_ammo}", { size : _size / 2, halign : fa_left, valign : fa_top, font : font_dmg });
+	
+	var _spent = array_create(_rows, 0);
+	for (var i = 0; i < _rows; i++)
+	{
+		draw_sprite_simple(spr_abacus, 0, _x, _y, { xscale : _abacusSize });
+		
+		for (var l = 0; l < _ammoPerRow; l++)
+		{
+			show_debug_message(i * _ammoPerRow + l)
+			
+			if (i * _ammoPerRow + l >= _ammoMax) break;
+			
+			if (i * _ammoPerRow + l < _ammo)
+			{	
+				draw_sprite_simple(spr_looseAmmo, _image, _x + _abacusSpace + _width - _abacusOffset - (_widthAmmo + _spaceAmmo) * l, _y, { angle : 90, size : _sizeAmmo });
+			}
+			else
+			{
+				draw_sprite_simple(spr_looseAmmo, _image, _abacusOffset + _x + _widthAmmo * _spent[i], _y, { angle : 90, size : _sizeAmmo, color : c_grey });				
+				_spent[i]++;
+				
+				show_debug_message(_spent[i])
+			}
+		}
+	
+		_y -= GUIheight * 0.04;
+	}
 }
 
 
@@ -143,9 +186,11 @@ stateSelect.drawGUI = function()
 	draw_text_simple(GUIwidth / 2, GUIheight * 0.1, "SELECT LOADOUT", { font : font_upheaval_scalable, size : fontscale * 12 });
 	
 	//draw buttons
+	var _spriteButton = spr_loadoutArrow;
+	
 	var _size = 2 * global.GUIScale;
-	var _width = sprite_get_width(spr_buton)	* _size;
-	var _height = sprite_get_height(spr_buton)	* _size;
+	var _width = sprite_get_width(_spriteButton)	* _size;
+	var _height = sprite_get_height(_spriteButton)	* _size;
 	
 	var _keyDown =	(keyboard_check_pressed(ord("S"))) ||	(keyboard_check_pressed(vk_down)) ||	mouse_wheel_down();
 	var _keyUp =	(keyboard_check_pressed(ord("W"))) ||	(keyboard_check_pressed(vk_up))	||		mouse_wheel_up();
@@ -153,16 +198,25 @@ stateSelect.drawGUI = function()
 	var _selectionChange = 0;
 	
 	var _x = GUIwidth / 6 * (1 + 2 * modeSelect);
-	
 	var _y = GUIheight * 0.4;
-	draw_sprite_simple(spr_buton, selected[modeSelect], _x, _y,		{ size : _size });
-	if	((mouse_in_area_GUI(_x - _width / 2, _y - _height, _width, _height)) && (mouse_check_button_pressed(mb_left))) ||
-		(_keyUp) _selectionChange++;
+	var _hover = false;
+	
+	if	((mouse_in_area_GUI(_x - _width / 2, _y - _height, _width, _height)))
+	{
+		_hover = true;
+	}
+	if ((_hover) && (mouse_check_button_pressed(mb_left))) || (_keyUp) _selectionChange++;
+	draw_sprite_simple(_spriteButton, _hover, _x, _y,		{ size : _size });
 	
 	var _y = GUIheight * 0.6;
-	draw_sprite_simple(spr_buton, selected[modeSelect], _x, _y,		{ xscale : _size, yscale : -_size });
-	if	((mouse_in_area_GUI(_x - _width / 2, _y, _width, _height)) && (mouse_check_button_pressed(mb_left))) ||
-		(_keyDown) _selectionChange--;
+	var _hover = false;
+	
+	if	((mouse_in_area_GUI(_x - _width / 2, _y, _width, _height)))
+	{
+		_hover = true;
+	}
+	if ((_hover) && (mouse_check_button_pressed(mb_left))) || (_keyDown) _selectionChange--;
+	draw_sprite_simple(_spriteButton, _hover, _x, _y,		{ xscale : _size, yscale : -_size });
 	
 	selected[modeSelect] += _selectionChange;
 	selected[modeSelect] = loop(selected[modeSelect], 0, sprite_get_number(spriteWeapon[modeSelect]) - 1);
@@ -188,13 +242,16 @@ stateSelect.drawGUI = function()
 	}
 	
 	
+		//Confirm box
 	var _y = GUIheight * 0.9;
 	var _size = 1 * global.GUIScale;
 	var _width = sprite_get_width(spr_confrim)	* _size;
 	var _height = sprite_get_height(spr_confrim)	* _size;
-	draw_sprite_simple(spr_confrim, 0, _x, _y,		{ size : _size });
-	if	((mouse_in_area_GUI(_x - _width / 2, _y - _height / 2, _width, _height)) && (mouse_check_button_pressed(mb_left))) ||
-		(keyboard_check_pressed(vk_space)) 
+	
+	var _hover = false;
+	
+	if ((mouse_in_area_GUI(_x - _width / 2, _y - _height / 2, _width, _height))) _hover = true;
+	if (_hover) && ((mouse_check_button_pressed(mb_left)) || (keyboard_check_pressed(vk_space)))
 	{
 		modeSelect++;
 		
@@ -210,6 +267,9 @@ stateSelect.drawGUI = function()
 		}
 	}
 	
+	draw_sprite_simple(spr_tickbox, _hover, _x, _y,		{ size : _size / 2 });
+	draw_sprite_simple(spr_tick, _hover, _x, _y,		{ size : _size / 2 });
+	
 	if (modeSelect == weaponsMax) 
 	{
 		show_debug_message("weaponsMax")
@@ -217,26 +277,30 @@ stateSelect.drawGUI = function()
 	}
 	
 	var _size = 3 * global.GUIScale;
+	var _sizeFrame = 2 * global.GUIScale
 	
 	//draw main
-	draw_sprite_simple(spriteWeapon[0], selected[0], GUIwidth / 6, GUIheight / 2,		{ size : _size });
+	draw_sprite_simple(spr_loadoutBox, 0, GUIwidth / 6, GUIheight / 2, { size : _sizeFrame });
+	draw_sprite_simple(spriteWeapon[0], selected[0], GUIwidth / 6, GUIheight / 2, { size : _size });
 	
 	//draw effect
 	if (weaponsMax > 1) 
 	{
+		draw_sprite_simple(spr_loadoutBox, 0, GUIwidth / 6 * 3, GUIheight / 2, { size : _sizeFrame });
 		draw_sprite_simple(spriteWeapon[1], selected[1], GUIwidth / 6 * 3, GUIheight / 2,	{ size : _size });
 	}
 	else
 	{
-		draw_sprite_simple(spr_weaponMenuNone, 0, GUIwidth / 6 * 3, GUIheight / 2,	{ size : _size });
+		draw_sprite_simple(spr_loadoutLocked, 0, GUIwidth / 6 * 3, GUIheight / 2, { size : _sizeFrame });
 	}
 	
 	if (weaponsMax > 2) 
 	{
+		draw_sprite_simple(spr_loadoutBox, 0, GUIwidth / 6 * 5, GUIheight / 2, { size : _sizeFrame });
 		draw_sprite_simple(spriteWeapon[2], selected[2], GUIwidth / 6 * 5, GUIheight / 2,	{ size : _size });
 	}
 	else
 	{
-		draw_sprite_simple(spr_weaponMenuNone, 0, GUIwidth / 6 * 5, GUIheight / 2,	{ size : _size });
+		draw_sprite_simple(spr_loadoutLocked, 0, GUIwidth / 6 * 5, GUIheight / 2, { size : _sizeFrame });
 	}
 }

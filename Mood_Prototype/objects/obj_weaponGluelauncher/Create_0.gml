@@ -8,6 +8,9 @@ rocketjump = 200;
 ammoMax = 3;
 ammoBag = 1;
 
+ammoImage = enumWeaponEffect.GLUELAUNCHER;
+ammoImageSize = 6;
+
 
 //GAME VALUES
 active = false;

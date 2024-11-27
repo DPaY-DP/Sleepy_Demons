@@ -214,8 +214,8 @@ switch (game)
 										instance_destroy(obj_inputs_raw);
 										instance_destroy();
 										
-										if(broken.object_index == obj_env) with (broken) fix();
-										else if(broken.object_index == obj_tutorialEnvBig) with (broken) inputsDone();
+										if (broken.object_index == obj_tutorialEnvBig) with (broken) inputsDone();
+										else with (broken) fix();
 										
 									}
 									

@@ -33,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_roomOverlay",
+    "path":"sprites/spr_roomOverlay/spr_roomOverlay.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

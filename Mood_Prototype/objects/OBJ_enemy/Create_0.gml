@@ -182,7 +182,7 @@ apply_physics = function(_hacc, _vacc)
 }
 
 movement_and_navigation = function(_xTo, _yTo)
-{
+{	
 	var _dir = undefined;
 		
 	var _goaldir = point_direction(x, y, _xTo, _yTo);
@@ -242,8 +242,6 @@ movement_and_navigation = function(_xTo, _yTo)
 
 get_navmesh = function(_idInRoom, _idTargetRoom)
 {
-	//show_debug_message($"\n\n	##########\n	Beginning navmesh calculations\n	##########\n\n	From room {_idInRoom.number} to room {_idTargetRoom.number}\n\n");
-	
 	if (_idInRoom == _idTargetRoom) return [_idInRoom.centerpoint];
 	
 	var _checked = array_create(global.countRooms, false);
@@ -258,8 +256,6 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 		if (!_door.object.sabotaged) array_push(_routes, [_door.entrypoint, _door.exitpoint, _door.toRoom]);
 	}
 	
-	//show_debug_message($"START OF CALC, visited rooms (should only be current room):\n{_checked}")
-	
 	var _whilesafe = 0;
 	while (true)
 	{
@@ -268,14 +264,10 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 		var _lengthRoutes = array_length(_routes);
 		
 		for (var i = 0; i < _lengthRoutes; i++)
-		{
-			//show_debug_message(_routes)
-			
+		{			
 			//get current route; current room and doors
 			var _currentRoute = _routes[i];
-				//show_debug_message($"\nloop {i}, currentRoute: {_currentRoute}");
 			var _currentRoom = array_pop(_currentRoute);
-				//show_debug_message($"currentRoom: {_currentRoom.number}");
 			
 				//is checked room target room?
 			if (_currentRoom == _idTargetRoom)
@@ -293,7 +285,6 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 				{
 					array_push(_debugCurrentDoors, _currentDoors[l].toRoom.number);
 				}
-				//show_debug_message($"currentDoors: {_debugCurrentDoors}");
 			
 			_checked[_currentRoom.number] = true;
 			
@@ -308,12 +299,9 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 				var _currentDoor = _currentDoors[l];
 				var _idToRoom = _currentDoor.toRoom;
 				
-					//show_debug_message($"\nChecking if room has been travelled to: {_checked} for room {_idToRoom.number}");
-				
 				if	(_currentDoor.object.sabotaged) ||
 					(_checked[_idToRoom.number]) 
 				{
-						//show_debug_message($"		Has been travelled, looping"); 
 					continue;
 				}
 				
@@ -326,13 +314,10 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 				{
 					_routes[i] = _copyRoute;
 					_modifyRoute = false;
-					
-						//show_debug_message($"		Appended Route: {_copyRoute} to room {array_last(_copyRoute).number}")
 				}
 				else 
 				{
 					array_push(_routes, _copyRoute);
-						//show_debug_message($"		Pushed new Route: {_copyRoute}")
 				}
 				
 				if (_idToRoom == _idTargetRoom)
@@ -346,18 +331,14 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 			
 			if (_deadEnd) 
 			{
-					//show_debug_message("\n		Dead End Detected")
-					//show_debug_message($"			DELETING FROM ARRAY _routes:\n		Before: {_routes}");
 				array_delete(_routes, i, 1);
 				_lengthRoutes--;
 				i--;
-					//show_debug_message($"		After: {_routes}");
 			}
 			
 			_forsafe++;
 			if (_forsafe > 100)
 			{
-					//show_message("overflow FOR");
 				break;
 			}
 		}
@@ -365,15 +346,9 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 		_whilesafe++;
 		if (_whilesafe > 100)
 		{
-			//show_message("overflow WHILE");
 			break;
 		}
 	}
-	
-	//show_debug_message("	### ERROR ###\n	get_navmesh returned no navmesh array")
-	//image_blend = c_red;
-	//image_xscale = 2;
-	//image_yscale = 2;
 }
 
 walk_navmesh = function(_dist)
@@ -415,15 +390,12 @@ walk_navmesh = function(_dist)
 					iterationsUnstuck = 0;
 					xLast = x;
 					yLast = y;
-					
-					if (global.debugmode) show_message($"Pablo {id} in room {inRoom.number}\nNavigating back to previous waypoint:\n{lastPoint}");
 				}
 				else 
 				{
 					iterationsUnstuck = 0;
 					xLast = x;
 					yLast = y;
-					if (global.debugmode) show_message($"Pablo {id} in room {inRoom.number}\ntrying to navigate to a fallback point that is not defined");
 				}
 			}
 		}
@@ -440,7 +412,7 @@ walk_navmesh = function(_dist)
 reset_membership = function()
 {
 	if (target != undefined) 
-	if (target.object_index == obj_env) target.void_member(id);
+	if (target.object_index == OBJ_env) target.void_member(id);
 }
 
 do_effect_dust = function(_x, _y)
@@ -591,6 +563,8 @@ stateWalk.stop = function()
 stateSeek = new State("Seek");
 stateSeek.start = function()
 {	
+	show_debug_message("STATE SEEK");
+	
 	reset_membership();
 	
 	if (instance_exists(gummybear))
@@ -606,7 +580,7 @@ stateSeek.start = function()
 	
 	//select env object
 		//get total number of env objects
-	var _number = instance_number(obj_env);
+	var _number = instance_number(OBJ_env);
 	var _envs = [];
 		
 		//if there are none, begin random walk
@@ -619,9 +593,11 @@ stateSeek.start = function()
 		//add all env objects into an array and shuffle	
 	for (var i = 0; i < _number; i++)
 	{
-		_envs[i] = instance_find(obj_env, i);
+		_envs[i] = instance_find(OBJ_env, i);
 	}
 	_envs = array_shuffle(_envs);
+	
+	show_debug_message($"envs found: {_envs}")
 	
 	do
 	{
@@ -629,10 +605,7 @@ stateSeek.start = function()
 		var _tryEnv = array_pop(_envs);
 		
 		//see if it is a valid sabotage target (hp remaining)
-		show_debug_message($"{name} looking for sabotage target:\nPOIs: {array_length(_tryEnv.POIs)}; broken: {_tryEnv.broken}")
-		
-		//if (array_length(_tryEnv.POIs) != 0)	show_debug_message("1")
-		//if (!_tryEnv.broken)					show_debug_message("2")
+		show_debug_message($"POIs: {array_length(_tryEnv.POIs)}; broken: {_tryEnv.broken}")
 		
 		if (array_length(_tryEnv.POIs) != 0) && (!_tryEnv.broken)
 		{

@@ -6,6 +6,9 @@ intervalFirerate = 120;
 ammoMax = 3;
 ammoBag = 1;
 
+ammoImage = enumWeaponEffect.STINKBOMB;
+ammoImageSize = 4;
+
 
 //GAME VALUES
 active = false;

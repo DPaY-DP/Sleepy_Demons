@@ -37,7 +37,7 @@ reset_membership = function()
 {
 	if (target != undefined) 
 	{
-		if (target.object_index == obj_env) target.void_member(id);
+		if (target.object_index == OBJ_env) target.void_member(id);
 		else if (target.object_index == OBJ_enemy) target.targeted = false;
 		
 		target = undefined;
@@ -107,7 +107,7 @@ stateSeek.start = function()
 	
 	//select env object
 		//get total number of env objects
-	var _number = instance_number(obj_env);
+	var _number = instance_number(OBJ_env);
 	var _envs = [];
 		
 		//if there are none, begin random walk
@@ -120,7 +120,7 @@ stateSeek.start = function()
 		//add all env objects into an array and shuffle	
 	for (var i = 0; i < _number; i++)
 	{
-		_envs[i] = instance_find(obj_env, i);
+		_envs[i] = instance_find(OBJ_env, i);
 	}
 	_envs = array_shuffle(_envs);
 	

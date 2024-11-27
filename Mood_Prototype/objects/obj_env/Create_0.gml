@@ -94,7 +94,7 @@ get_point_sabo = function(_id)
 		_whilesafe++;
 		if (_whilesafe > 100) 
 		{
-			show_message("While Loop Overflow\nobj_env > get_points_sabo()");
+			show_message("While Loop Overflow\nOBJ_env > get_points_sabo()");
 			break;
 		}
 	}

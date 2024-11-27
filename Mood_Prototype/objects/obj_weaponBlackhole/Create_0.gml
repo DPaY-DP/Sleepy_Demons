@@ -8,6 +8,9 @@ rocketjump = 30;
 ammoMax = 6;
 ammoBag = 2;
 
+ammoImage = enumWeaponEffect.BLACKHOLE;
+ammoImageSize = 4;
+
 
 //GAME VALUES
 active = false;

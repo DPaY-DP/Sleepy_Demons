@@ -9,7 +9,10 @@
     "name":"Environment Objects",
     "path":"folders/Objects/# Game/World Objects/Environment Objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"OBJ_env",
+    "path":"objects/OBJ_env/OBJ_env.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,

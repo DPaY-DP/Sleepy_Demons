@@ -6,6 +6,9 @@ intervalFirerate = 120;
 ammoMax = 2;
 ammoBag = 1;
 
+ammoImage = enumWeaponEffect.GUMMYBEAR;
+ammoImageSize = 6;
+
 
 //GAME VALUES
 active = false;

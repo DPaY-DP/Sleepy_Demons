@@ -9,7 +9,7 @@ image_speed = 0.1;
 global.envHP = global.envHPMax;
 
 drawEnvHP = false;
-if (instance_exists(obj_env)) drawEnvHP = true;
+if (instance_exists(OBJ_env)) drawEnvHP = true;
 
 
 currentSong = choose(snd_musicLevel1, snd_musicLevel2);
@@ -76,7 +76,7 @@ draw_minimap = function(_scale)
 		
 		if (flood) draw_sprite_simple(spr_roomFlooded, 0, _x, _y, { xscale : image_xscale *_mapscale, yscale : image_yscale *_mapscale, alpha : 0.5 * floodAmount });
 	}
-	with (obj_env)	
+	with (OBJ_env)	
 	{
 		var _x = _offsetX + x * _mapscale - other.mapLeftCompensate;
 		var _y = _offsetY + y * _mapscale - other.mapTopCompensate;
@@ -88,18 +88,11 @@ draw_minimap = function(_scale)
 draw_hpbar = function()
 {
 	var _factorHP = (global.envHP / global.envHPMax);
+	var _size = 1;
 	
-	var _maxHeight = (GUIheight * 0.94);
-	var _height = _maxHeight * _factorHP;
-	if (_height < 0) _height = 0;
-	var _barX = GUIwidth * 0.96;
-	var _barY = GUIheight * 0.03;
-	var _width = GUIwidth * 0.02;
-
-	draw_set_color(c_green);
-	if (global.envHP > 0) draw_rectangle_color(_barX - 10, _barY + _maxHeight - _height - 10, _barX + _width + 10, _barY + _maxHeight +10,c_black ,c_black ,c_black ,c_black , false);
-	if (global.envHP > 0) draw_rectangle(_barX, _barY + _maxHeight - _height, _barX + _width, _barY + _maxHeight, false);
-	draw_set_color(c_white);
+	draw_sprite_simple(spr_hpbar, 0, GUIwidth / 2, 0);
+	draw_sprite_simple(spr_hpbarFilled, 0, GUIwidth / 2, 0, { xscale : 0.22 + 0.78 * _factorHP });
+	draw_sprite_simple(spr_hpbarFace, (sprite_get_number(spr_hpbarFace)) - (sprite_get_number(spr_hpbarFace)) * _factorHP, GUIwidth / 2, 0, { size : 1.1 });
 }
 #endregion
 

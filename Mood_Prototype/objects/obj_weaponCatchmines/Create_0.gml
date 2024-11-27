@@ -8,6 +8,9 @@ ammoBag = 3;
 
 spdGrapple = 25;
 
+ammoImage = enumWeaponEffect.CATCHMINE;
+ammoImageSize = 5;
+
 
 //GAME VALUES
 active = false;

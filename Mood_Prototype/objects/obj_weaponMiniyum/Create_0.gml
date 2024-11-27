@@ -6,6 +6,9 @@ intervalFirerate = 4;
 ammoMax = 100;
 ammoBag = 50;
 
+ammoImage = enumWeaponEffect.MINIYUM;
+ammoImageSize = 1;
+
 
 //GAME VALUES
 active = false;
