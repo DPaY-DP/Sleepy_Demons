@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_bshesh",
-    "path":"sprites/spr_bshesh/spr_bshesh.yy",
+    "name":"spr_timerButton",
+    "path":"sprites/spr_timerButton/spr_timerButton.yy",
   },
   "spriteMaskId":null,
   "visible":true,

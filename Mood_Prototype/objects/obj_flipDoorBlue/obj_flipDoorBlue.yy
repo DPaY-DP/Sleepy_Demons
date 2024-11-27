@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_roomFlooded",
-    "path":"sprites/spr_roomFlooded/spr_roomFlooded.yy",
+    "name":"spr_flipDoor_B",
+    "path":"sprites/spr_flipDoor_B/spr_flipDoor_B.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Spr_Pablo",
-    "path":"sprites/Spr_Pablo/Spr_Pablo.yy",
+    "name":"spr_pablo",
+    "path":"sprites/spr_pablo/spr_pablo.yy",
   },
   "spriteMaskId":null,
   "visible":true,
