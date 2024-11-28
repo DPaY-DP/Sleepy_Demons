@@ -222,7 +222,7 @@ defaults =
 		},
 		{
 			room : room_tutorialShooting,
-			name : "TutorialShooting",
+			name : "Tutorial: Shooting",
 			unlocked : true,
 			
 			minigames :  [
@@ -241,7 +241,7 @@ defaults =
 		},
 		{
 			room : room_tutorialExecutie,
-			name : "TutorialExecutie",
+			name : "Tutorial: Executie",
 			unlocked : true,
 			
 			minigames :  [
@@ -260,7 +260,7 @@ defaults =
 		},
 		{
 			room : room_tutorialEnvironment,
-			name : "Tutorial Environment",
+			name : "Tutorial: Environment",
 			unlocked : true,
 			
 			minigames :  [
@@ -343,8 +343,8 @@ defaults =
 			time : infinity,
 		},
 		{
-			room : room_03PeakABear,
-			name : "Peak-a-Bear",
+			room : room_03GettingFamiliar,
+			name : "Getting Familiar",
 			unlocked : false,
 		
 			minigames :  [
@@ -368,8 +368,8 @@ defaults =
 			time : infinity,
 		},
 		{
-			room : room_04ExpandingHorizons,
-			name : "Expanding Horizons",
+			room : room_04PeakABear,
+			name : "Peak-a-Bear",
 			unlocked : false,
 		
 			minigames :  [
@@ -395,8 +395,8 @@ defaults =
 			time : infinity,
 		},
 		{
-			room : room_05UnderPressure,
-			name : "Under Pressure",
+			room : room_05ExpandingHorizons,
+			name : "Expanding Horizons",
 			unlocked : false,
 		
 			minigames :  [
@@ -434,8 +434,8 @@ defaults =
 			time : infinity,
 		},
 		{
-			room : room_06TunnelVision,
-			name : "Tunnel Vision",
+			room : room_06Playpark,
+			name : "Playpark",
 			unlocked : false,
 		
 			minigames :  [
@@ -463,8 +463,8 @@ defaults =
 			time : infinity,
 		},
 		{
-			room : room_07ChaosUnfolds,
-			name : "Chaos Unfolds",
+			room : room_07BoxedIn,
+			name : "Boxed In",
 			unlocked : false,
 		
 			minigames :  [
@@ -521,8 +521,8 @@ defaults =
 			time : infinity,
 		},
 		{
-			room : room_09Unnamed,
-			name : "",
+			room : room_09FixMyTeddy,
+			name : "Fix my teddy",
 			unlocked : false,
 		
 			minigames :  [
@@ -552,8 +552,8 @@ defaults =
 			time : infinity,
 		},
 		{
-			room : room_10Unnamed,
-			name : "",
+			room : room_10ChaosUnfolds,
+			name : "Chaos Unfolds",
 			unlocked : false,
 		
 			minigames :  [
@@ -583,8 +583,8 @@ defaults =
 			time : infinity,
 		},
 		{
-			room : room_11Unnamed,
-			name : "",
+			room : room_11UnderPressure,
+			name : "Under Pressure",
 			unlocked : false,
 		
 			minigames :  [
@@ -614,8 +614,8 @@ defaults =
 			time : infinity,
 		},
 		{
-			room : room_12Unnamed,
-			name : "",
+			room : room_12GoingInCircles,
+			name : "Going In Circles",
 			unlocked : false,
 		
 			minigames :  [
@@ -646,7 +646,7 @@ defaults =
 		},
 	],
 	
-	finalLevel : 13,
+	finalLevel : 16,
 	finalGameTime : infinity,
 	
 	weaponsUnlocked :

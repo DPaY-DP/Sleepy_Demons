@@ -177,14 +177,13 @@ stateWin.start = function()
 	
 	var _levelData = global.save.levels[currentLevel];
 	
-	 newBest = false;
+	newBest = false;
 	_levelData.completed = true;
 	timeFinish = current_time - timeStart;
 	show_debug_message($"timeFinish: {timeFinish}; _levelData: {_levelData.time}")
-	if (timeFinish < _levelData.time) 
+	if (timeFinish < _levelData.time)
 	{
-		if (_levelData.time != infinity) newBest = true;
-		
+		newBest = true;
 		_levelData.time = timeFinish;
 	}
 	
@@ -222,7 +221,7 @@ stateWin.start = function()
 		var _finalGameTime = 0;
 		for (var i = 0; i < global.save.finalLevel + 1; i++)
 		{
-			_finalGameTime += global.save.levels[i];
+			_finalGameTime += global.save.levels[i].time;
 		}
 		if (_finalGameTime < global.save.finalGameTime) 
 		{
@@ -282,7 +281,7 @@ stateWin.drawGUI = function()
 			if (timerState > 45) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.7, $"{timeFinish / 1000} seconds", { color : c_white, font : font_upheaval_scalable, size : 10 * fontscale });
 			if (timerState > 60) && (newBestGame) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.65, $"NEW BEST GAME TIME!", { color : c_white, font : font_upheaval_scalable, size : 5 * fontscale });
 			
-			if (timerState > 90) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.85, "Press SPACE to enter the next level\nPress ESC to return to Menu", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
+			if (timerState > 90) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.85, "Press SPACE to continue", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
 		}
 	
 		//FINAL TIME
