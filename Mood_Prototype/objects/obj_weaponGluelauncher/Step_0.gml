@@ -25,7 +25,7 @@ if (timerFirerate == 0) && (ammo > 0)
 	timerFirerate = intervalFirerate;
 	ammo--;
 	
-	instance_create_depth(x, y, depth, obj_projectileGluetrap, { image_angle : image_angle });
+	instance_create_layer(x, y, "Glue", obj_projectileGluetrap, { image_angle : image_angle });
 	
 	audio_play_sound(snd_defaultCannon, 0, 0, gainSFX);
 }

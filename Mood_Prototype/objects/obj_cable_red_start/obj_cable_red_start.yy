@@ -27,7 +27,7 @@
   "physicsShapePoints":[],
   "physicsStartAwake":true,
   "properties":[
-    {"$GMObjectProperty":"v1","%Name":"cablecolor","filters":[],"listItems":[],"multiselect":false,"name":"cablecolor","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"$FF0000FF","varType":7,},
+    {"$GMObjectProperty":"v1","%Name":"cablecolor","filters":[],"listItems":[],"multiselect":false,"name":"cablecolor","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"$FF241CEE","varType":7,},
     {"$GMObjectProperty":"v1","%Name":"obj_cable_color","filters":[],"listItems":[],"multiselect":false,"name":"obj_cable_color","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"obj_cable_red_end","path":"objects/obj_cable_red_end/obj_cable_red_end.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"obj_cable_red_end","varType":5,},
   ],
   "resourceType":"GMObject",
