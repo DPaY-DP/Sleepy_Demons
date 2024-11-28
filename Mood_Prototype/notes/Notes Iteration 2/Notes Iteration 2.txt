@@ -6,6 +6,7 @@ BEFORE DEPLOYMENT:
  - remove free reload in obj_loadout
  - remove "unlock levels"
  - remove "unlock weapons"
+ - disable debug hotkeys
 
 
 
