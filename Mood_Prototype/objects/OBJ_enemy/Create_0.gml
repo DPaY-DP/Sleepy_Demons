@@ -928,6 +928,8 @@ stateSleep.start = function()
 	instance_create_depth(x, y, depth, obj_enemySleeping, { sprite_index : asset_get_index("spr_" + name + "Sleep") } );
 	
 	var _shufflebag = obj_loadout.reload();
+	
+	show_debug_message(_shufflebag)
 	if (_shufflebag != undefined) 
 	{
 		var _image = 0;

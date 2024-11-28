@@ -76,7 +76,7 @@ switch (mode)
 							draw_sprite_simple(spr_arrow, _hover, _xArrow, _y, { size : -0.5 * global.GUIScale }); //yscale : 0.5 * global.GUIScale });
 						}
 						
-						if (selectMode < 2)
+						if (selectMode < amountModes)
 						{
 							var _xArrow = _x + 135 * 1.9 * global.GUIScale + 10 * global.GUIScale;
 							
@@ -175,11 +175,11 @@ switch (mode)
 							var _xscale = 2 * global.GUIScale;
 							var _yscale = 1.3 * global.GUIScale;
 							
-							var _width = sprite_get_width(spr_buttonBlankSlimEmpty) * _xscale;
-							var _height = sprite_get_height(spr_buttonBlankSlimEmpty) * _yscale;
+							var _width = sprite_get_width(spr_buttonBlankSlimThumb) * _xscale;
+							var _height = sprite_get_height(spr_buttonBlankSlimThumb) * _yscale;
 							
-							var _xscaleFactor = _width / sprite_get_width(_levelData.sprite);
-							var _yscaleFactor = _height / sprite_get_height(_levelData.sprite);
+							var _xscaleFactor = _width / sprite_get_width(spr_thumbnail);
+							var _yscaleFactor = _height / sprite_get_height(spr_thumbnail);
 								
 									//Check for COMPLETION
 							var _unlocked = _levelData.unlocked;
@@ -204,8 +204,8 @@ switch (mode)
 								}
 							
 									//DRAW the actual LEVEL
-							draw_sprite_simple(_levelData.sprite, 0, _x, _y, { xscale : _xscaleFactor, yscale : _yscaleFactor, color : _color });
-							draw_sprite_simple(spr_buttonBlankSlimEmpty, _hover, _x, _y, { xscale : _xscale, yscale : _yscale });
+							draw_sprite_simple(spr_thumbnail, i, _x, _y, { xscale : _xscaleFactor, yscale : _yscaleFactor, color : _color });
+							draw_sprite_simple(spr_buttonBlankSlimThumb, _hover, _x, _y, { xscale : _xscale, yscale : _yscale });
 							
 								//Display LEVEL TIME				//edge case: chooting range doesnt need a timer
 							if (selectMode > 0) && (_completed) && (_levelData.room != room_shootingRange)

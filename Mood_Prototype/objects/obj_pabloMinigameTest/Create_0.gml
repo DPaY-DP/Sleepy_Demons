@@ -39,7 +39,43 @@ stateSleep.start = function()
 {
 	audio_play_sound_at(array_get(sleepSounds, random_range(0,array_length(sleepSounds))), x, y, 0, 100, 150, 1, 0, false, gainSFX);
 	
-	obj_loadout.reload();
+	var _shufflebag = obj_loadout.reload();
+	if (_shufflebag != undefined) 
+	{
+		var _image = 0;
+		switch (obj_loadout.weaponsEquipped[_shufflebag[0]].object_index)
+		{
+			case obj_weaponGluelauncher:	_image = 0;
+											get_size = function() { return 3 }
+			break;							
+											
+			case obj_weaponBlackhole:		_image = 1;
+											get_size = function() { return 2 }
+			break;							
+											
+			case obj_weaponMiniyum:			_image = 2;
+											get_size = function() { return 0.6 + random(0.4) }
+			break;							
+											
+			case obj_weaponGummybear:		_image = 3;
+											get_size = function() { return 3 }
+			break;							
+											
+			case obj_weaponStinkbomb:		_image = 4;
+											get_size = function() { return 3 }
+			break;							
+											
+			case obj_weaponCatchmines:		_image = 5;
+											get_size = function() { return 2 }
+			break;
+			
+		}
+		
+		repeat (min(_shufflebag[1], 8)) 
+		{
+			instance_create_depth(x, y, depth, obj_ammoAnim, { size : get_size(), image_index : _image });
+		}
+	}
 	
 	switch_state(stateExecute);
 }

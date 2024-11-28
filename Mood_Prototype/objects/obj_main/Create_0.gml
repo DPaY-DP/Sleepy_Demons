@@ -4,7 +4,8 @@
 
 //GAME VALUES
 mode = "main";
-selectModes = ["Tutorial", "Levels", "Challenge"];
+selectModes = ["Tutorial", "Levels"];
+amountModes = array_length(selectModes) - 1;
 selectMode = 0;
 selectPage = 0;
 
