@@ -29,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_wireStraight",
+    "path":"sprites/spr_wireStraight/spr_wireStraight.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
