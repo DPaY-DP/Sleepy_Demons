@@ -722,6 +722,7 @@
     {"id":{"name":"spr_tunnelSide","path":"sprites/spr_tunnelSide/spr_tunnelSide.yy",},},
     {"id":{"name":"spr_tunnelSkin","path":"sprites/spr_tunnelSkin/spr_tunnelSkin.yy",},},
     {"id":{"name":"spr_tunnelTop","path":"sprites/spr_tunnelTop/spr_tunnelTop.yy",},},
+    {"id":{"name":"spr_tutorialEnvObject","path":"sprites/spr_tutorialEnvObject/spr_tutorialEnvObject.yy",},},
     {"id":{"name":"Spr_twitchynose","path":"sprites/Spr_twitchynose/Spr_twitchynose.yy",},},
     {"id":{"name":"spr_twitter","path":"sprites/spr_twitter/spr_twitter.yy",},},
     {"id":{"name":"spr_UI_button","path":"sprites/spr_UI_button/spr_UI_button.yy",},},

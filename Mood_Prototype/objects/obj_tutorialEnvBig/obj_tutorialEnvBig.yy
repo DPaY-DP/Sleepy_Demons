@@ -30,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_envToilet",
-    "path":"sprites/spr_envToilet/spr_envToilet.yy",
+    "name":"spr_tutorialEnvObject",
+    "path":"sprites/spr_tutorialEnvObject/spr_tutorialEnvObject.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -613,6 +613,7 @@
     {"name":"spr_tunnelSide","order":29,"path":"sprites/spr_tunnelSide/spr_tunnelSide.yy",},
     {"name":"spr_tunnelSkin","order":23,"path":"sprites/spr_tunnelSkin/spr_tunnelSkin.yy",},
     {"name":"spr_tunnelTop","order":30,"path":"sprites/spr_tunnelTop/spr_tunnelTop.yy",},
+    {"name":"spr_tutorialEnvObject","order":9,"path":"sprites/spr_tutorialEnvObject/spr_tutorialEnvObject.yy",},
     {"name":"Spr_twitchynose","order":2,"path":"sprites/Spr_twitchynose/Spr_twitchynose.yy",},
     {"name":"spr_twitter","order":17,"path":"sprites/spr_twitter/spr_twitter.yy",},
     {"name":"spr_UI_button","order":38,"path":"sprites/spr_UI_button/spr_UI_button.yy",},
