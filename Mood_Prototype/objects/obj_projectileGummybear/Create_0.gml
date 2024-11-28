@@ -1,5 +1,5 @@
 //IMMUTABLE VALUES
-spdBase = 10;
+spdBase = 20;
 
 range = 200;
 

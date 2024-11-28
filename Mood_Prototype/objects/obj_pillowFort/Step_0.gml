@@ -1,9 +1,15 @@
-if (point_distance(x + sprite_width / 2, y + sprite_height / 2, obj_player.x, obj_player.y) < rangeInteract)
+if (point_distance(x, y, obj_player.x, obj_player.y) < rangeInteract)
 {
-	if (keyboard_check(ord("F"))) 
+	if (keyboard_check_pressed(ord("F"))) 
 	{
-		hp -= 0.2;
+		boost += factorBoost;
 	}
 }
 
-if (hp <= 0) instance_destroy();
+if (boost > 0) 
+{
+	boost -= factorDeboost;
+	boost = clamp(boost, 0, hpMax);
+}
+
+if (hp <= 0) || (boost >= hp) instance_destroy();

@@ -190,7 +190,7 @@ defaults =
 			
 	//				//levels select
 	//			completed : true,
-	//			sprite : spr_bshesh,
+	//			sprite : spr_thumbnail,
 	//			time : infinity,
 	
 	levels :
@@ -216,7 +216,7 @@ defaults =
 			
 				//levels select
 			completed : true,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 			
 		},
@@ -236,7 +236,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -255,7 +255,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -274,7 +274,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -295,7 +295,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -316,7 +316,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -339,7 +339,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -364,7 +364,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -391,7 +391,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -430,7 +430,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -459,7 +459,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -486,7 +486,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -517,7 +517,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -548,7 +548,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -579,7 +579,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -610,7 +610,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 		{
@@ -641,7 +641,7 @@ defaults =
 			
 				//levels select
 			completed : false,
-			sprite : spr_bshesh,
+			sprite : spr_thumbnail,
 			time : infinity,
 		},
 	],

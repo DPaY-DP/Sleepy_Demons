@@ -9,6 +9,7 @@ image_speed = 0.1;
 global.envHP = global.envHPMax;
 
 drawEnvHP = false;
+drawMinimap = true;
 if (instance_exists(OBJ_env)) drawEnvHP = true;
 
 
@@ -108,6 +109,8 @@ stateGame.start = function()
 	arrayMinigames = array_shuffle(ds_clone(global.save.levels[currentLevel].minigames));
 	
 	timeStart = current_time;
+	
+	if (room == room_shootingRange) drawMinimap = false;
 }
 stateGame.run = function()
 {
@@ -127,7 +130,7 @@ stateGame.run = function()
 stateGame.drawGUI = function()
 {
 	if (drawEnvHP) draw_hpbar();
-	draw_minimap(0.3);
+	if (drawMinimap) draw_minimap(0.3);
 }
 
 

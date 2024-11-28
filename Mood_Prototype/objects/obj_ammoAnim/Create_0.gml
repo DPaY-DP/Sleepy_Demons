@@ -1,5 +1,5 @@
 //IMMUTABLE VALUES
-
+show_debug_message("ammo gain spawned")
 
 
 //GAME VALUES

@@ -1,6 +1,6 @@
 buttonPress = false;
 doorTimer = 0;
-timerGoal = 2 * room_speed; 
+timerGoal = 5 * room_speed; 
 
 activate = function()
 {

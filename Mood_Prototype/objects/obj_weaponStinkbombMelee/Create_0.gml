@@ -1,6 +1,6 @@
 //IMMUTABLE VALUES
-intervalCooldown = 45;
-intervalDespawn = 300;
+intervalCooldown = 40;
+intervalDespawn = 500;
 
 damage = 10;
 punch = 10;
