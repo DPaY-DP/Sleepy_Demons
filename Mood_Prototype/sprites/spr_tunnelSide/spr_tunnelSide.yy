@@ -32,8 +32,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"Tunnels",
+    "path":"folders/Sprites/Tunnels.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
