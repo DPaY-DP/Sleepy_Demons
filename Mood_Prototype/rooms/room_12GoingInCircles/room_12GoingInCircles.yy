@@ -6,10 +6,10 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_428B14B7_7_1","path":"rooms/room_12GoingInCircles/room_12GoingInCircles.yy",},
     {"name":"inst_585D9300_8_1","path":"rooms/room_12GoingInCircles/room_12GoingInCircles.yy",},
     {"name":"inst_1C3DBFC9_6_1","path":"rooms/room_12GoingInCircles/room_12GoingInCircles.yy",},
     {"name":"inst_64F484E6_6_1","path":"rooms/room_12GoingInCircles/room_12GoingInCircles.yy",},
+    {"name":"inst_428B14B7_7_1","path":"rooms/room_12GoingInCircles/room_12GoingInCircles.yy",},
     {"name":"inst_98E5168_1","path":"rooms/room_12GoingInCircles/room_12GoingInCircles.yy",},
     {"name":"inst_25EEE5C7_1","path":"rooms/room_12GoingInCircles/room_12GoingInCircles.yy",},
     {"name":"inst_67F62312_1","path":"rooms/room_12GoingInCircles/room_12GoingInCircles.yy",},
