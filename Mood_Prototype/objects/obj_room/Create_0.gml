@@ -1,16 +1,8 @@
 //immutable values
 doors = [];
 
-if (!variable_global_exists("countRooms")) 
-{
-	number = 0;
-	global.countRooms = 1;
-}
-else
-{
-	number = global.countRooms;
-	global.countRooms++;
-}
+number = global.countRooms;
+global.countRooms++;
 
 global.playerHere = 0;
 	//delayed setup

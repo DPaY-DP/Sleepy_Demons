@@ -22,14 +22,14 @@
   "height":64,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"8380a933-c568-43be-ada6-3c4af3868fe5","blendMode":0,"displayName":"default","isLocked":false,"name":"8380a933-c568-43be-ada6-3c4af3868fe5","opacity":65.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"8380a933-c568-43be-ada6-3c4af3868fe5","blendMode":0,"displayName":"default","isLocked":false,"name":"8380a933-c568-43be-ada6-3c4af3868fe5","opacity":75.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_UI_button",
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"ZZZ Other (Needs Sorting !!)",
-    "path":"folders/Sprites/ZZZ Other (Needs Sorting !!).yy",
+    "name":"UI",
+    "path":"folders/Sprites/UI.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -62,7 +62,7 @@ if (hp < 0) && (!broken)
 		image_blend = c_red;
 	}
 	
-	audio_play_sound_at(snd_envSabotage, x, y, 0, 100, 150, 1, 0, 0, gainSFX, 0, 0.8 + random(0.4));
+	audio_play_sound_at(snd_envSabotage, x, y, 0, 100, 150, 1, 0, 0, gainSFX, 0, 0.8 + random(0.2));
 }
 
 //change image

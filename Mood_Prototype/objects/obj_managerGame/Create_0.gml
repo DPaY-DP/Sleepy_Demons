@@ -6,6 +6,7 @@ image_speed = 0.1;
 
 
 //GAME VALUES
+global.countRooms = 0;
 global.envHP = global.envHPMax;
 
 drawEnvHP = false;
