@@ -201,12 +201,12 @@ defaults =
 			unlocked : false,
 		
 			minigames :  [
-				enumMinigame.TICKLE,
-				enumMinigame.TICKLE,
-				enumMinigame.TICKLE,
-				enumMinigame.TICKLE,
-				enumMinigame.TICKLE,
-				enumMinigame.TICKLE,
+				enumMinigame.LIGHTSWITCH,
+				enumMinigame.LIGHTSWITCH,
+				enumMinigame.LIGHTSWITCH,
+				enumMinigame.LIGHTSWITCH,
+				enumMinigame.LIGHTSWITCH,
+				enumMinigame.LIGHTSWITCH,
 			],
 			
 			loadoutPillows : 2,

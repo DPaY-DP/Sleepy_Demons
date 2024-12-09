@@ -272,7 +272,7 @@ stateSabotage.start = function()
 {
 	timerSabotage = intervalSabotage;
 	
-	if (array_length(target.POIs) > 0) targetPOI = target.POIs[0];
+	if (array_length(target.POIs) > 0) targetPOI = array_choose(target.POIs);
 	else switch_state(stateRandomTarget);
 }
 stateSabotage.run = function()
@@ -280,7 +280,7 @@ stateSabotage.run = function()
 	var _updateRoom = instance_place(x, y, obj_room);
 	if (_updateRoom != noone) inRoom = _updateRoom;
 	
-	var _dist = point_distance(x, y, targetPOI.x, targetPOI.y);	
+	var _dist = point_distance(x, y, targetPOI.x, targetPOI.y);
 	if (_dist > 32)	movement_and_navigation(targetPOI.x, targetPOI.y);
 	else
 	{
@@ -301,31 +301,32 @@ stateSabotage.run = function()
 				_broken.applyDamage = true;
 				_broken.image_speed = 1;
 	
-				array_push(POIsBroken, _broken);	
+				array_push(POIsBroken, _broken);
+				
+				audio_play_sound_at(snd_envSabotage, x, y, 0, 100, 150, 1, 0, 0, gainSFX * 0.5, 0, 1 + random(0.2));
 			}
 			
 			timerRandomWalk = intervalRandomWalk;
 			switch_state(stateRandomTarget);
 		}	
-	
-		var _scare = noone;
-	
-		if (instance_exists(obj_projectileStinkbomb))
-		{
-			var _stinkbomb = instance_nearest(x, y, obj_projectileStinkbomb);
-			
-			var _distStink = point_distance(x, y, _stinkbomb.x, _stinkbomb.y);
-			if (_distStink < obj_projectileStinkbomb.range) _scare = _stinkbomb;
-		}
-	
-		if (hp != hpLast) _scare = obj_player;
-	
-		if (_scare != noone) switch_state(stateFlee, _scare);
-	
-	
-	
-		if (hp == 0) switch_state(stateExecute);
 	}
+	
+	var _scare = noone;
+	
+	if (instance_exists(obj_projectileStinkbomb))
+	{
+		var _stinkbomb = instance_nearest(x, y, obj_projectileStinkbomb);
+			
+		var _distStink = point_distance(x, y, _stinkbomb.x, _stinkbomb.y);
+		if (_distStink < obj_projectileStinkbomb.range) _scare = _stinkbomb;
+	}
+	
+	if (hp != hpLast) _scare = obj_player;
+	
+	if (_scare != noone) switch_state(stateFlee, _scare);
+	
+	
+	if (hp == 0) switch_state(stateExecute);
 }
 stateSabotage.stop = function()
 {

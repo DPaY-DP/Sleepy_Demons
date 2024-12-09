@@ -26,6 +26,8 @@ lastPoint = undefined;
 
 timerUnstuck = 0;
 
+navmesh = [];
+
 
 enum enumMovementMods
 {

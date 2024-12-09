@@ -6,10 +6,10 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_428B14B7_6","path":"rooms/room_07BoxedIn/room_07BoxedIn.yy",},
     {"name":"inst_585D9300_7","path":"rooms/room_07BoxedIn/room_07BoxedIn.yy",},
     {"name":"inst_1C3DBFC9_5","path":"rooms/room_07BoxedIn/room_07BoxedIn.yy",},
     {"name":"inst_64F484E6_5","path":"rooms/room_07BoxedIn/room_07BoxedIn.yy",},
+    {"name":"inst_428B14B7_6","path":"rooms/room_07BoxedIn/room_07BoxedIn.yy",},
     {"name":"inst_54E08B52","path":"rooms/room_07BoxedIn/room_07BoxedIn.yy",},
     {"name":"inst_45683A4A","path":"rooms/room_07BoxedIn/room_07BoxedIn.yy",},
     {"name":"inst_263A98AE","path":"rooms/room_07BoxedIn/room_07BoxedIn.yy",},

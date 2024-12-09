@@ -3,6 +3,7 @@
   "%Name":"obj_doorway",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"obj_doorway",
@@ -33,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_envOverlay",
-    "path":"sprites/spr_envOverlay/spr_envOverlay.yy",
+    "name":"spr_doorway",
+    "path":"sprites/spr_doorway/spr_doorway.yy",
   },
   "spriteMaskId":null,
   "visible":true,
