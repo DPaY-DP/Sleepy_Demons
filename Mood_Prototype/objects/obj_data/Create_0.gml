@@ -410,18 +410,6 @@ defaults =
 				enumMinigame.TICKLE,
 				enumMinigame.INPUTS,
 			],
-		
-			minigames :  [
-				enumMinigame.TICKLE,
-				enumMinigame.TICKLE,
-				enumMinigame.TICKLE,
-				enumMinigame.TICKLE,
-				enumMinigame.TICKLE,
-				enumMinigame.TICKLE,
-				enumMinigame.TICKLE,
-				enumMinigame.TICKLE,
-				enumMinigame.TICKLE,
-			],
 			
 			loadoutPillows : 1,
 			loadoutWeapons : 3,
@@ -475,8 +463,6 @@ defaults =
 				enumMinigame.CABLE,
 				enumMinigame.CABLE,
 				enumMinigame.FASTCLICK,
-				enumMinigame.FASTCLICK,
-				enumMinigame.FASTCLICK,
 			],
 			
 			loadoutPillows : 1,
@@ -503,11 +489,9 @@ defaults =
 				enumMinigame.INPUTS,
 				enumMinigame.INPUTS,
 				enumMinigame.SQUAREHOLE,
-				enumMinigame.SQUAREHOLE,
+				enumMinigame.TICKLE,
 				enumMinigame.FASTCLICK,
 				enumMinigame.CABLE,
-				enumMinigame.CABLE,
-				enumMinigame.TICKLE,
 			],
 			
 			loadoutPillows : 1,
@@ -535,10 +519,6 @@ defaults =
 				enumMinigame.INPUTS,
 				enumMinigame.SQUAREHOLE,
 				enumMinigame.SQUAREHOLE,
-				enumMinigame.FASTCLICK,
-				enumMinigame.CABLE,
-				enumMinigame.CABLE,
-				enumMinigame.TICKLE,
 			],
 			
 			loadoutPillows : 1,
@@ -566,10 +546,6 @@ defaults =
 				enumMinigame.INPUTS,
 				enumMinigame.SQUAREHOLE,
 				enumMinigame.SQUAREHOLE,
-				enumMinigame.FASTCLICK,
-				enumMinigame.CABLE,
-				enumMinigame.CABLE,
-				enumMinigame.TICKLE,
 			],
 			
 			loadoutPillows : 1,
@@ -598,9 +574,6 @@ defaults =
 				enumMinigame.SQUAREHOLE,
 				enumMinigame.SQUAREHOLE,
 				enumMinigame.FASTCLICK,
-				enumMinigame.CABLE,
-				enumMinigame.CABLE,
-				enumMinigame.TICKLE,
 			],
 			
 			loadoutPillows : 1,
