@@ -10,7 +10,7 @@ if (timerFirerate > 0) timerFirerate--;
 
 if (timerFirerate == 1)
 {
-	instance_create_depth(x, y, depth, obj_ammoSpent, { image_index : enumWeaponEffect.BLACKHOLE, dir : image_angle - 70 - random(40) })
+	instance_create_depth(x, y, depth, obj_ammoSpent, { image_index : enumWeaponEffect.BLACKHOLE, dir : image_angle - 70 - random(40), size : 1 })
 }
 
 

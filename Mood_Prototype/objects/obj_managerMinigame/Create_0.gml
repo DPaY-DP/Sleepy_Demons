@@ -4,7 +4,15 @@ with (OBJ_weapon) canShoot = false;
 
 //initialize game
 if (!variable_instance_exists(id, "game"))
-game = array_pop(obj_managerGame.arrayMinigames);
+{
+	game = array_shift(obj_managerGame.arrayMinigames);
+	if (room == room_000shootingRange) 
+	{
+		array_push(obj_managerGame.arrayMinigames, game);
+		obj_managerGame.arrayMinigames = array_shuffle(obj_managerGame.arrayMinigames);
+	}
+}
+
 
 switch (game)
 {	

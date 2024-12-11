@@ -4,8 +4,8 @@ spdBase = 5;
 //forceBase = 1;
 //forceBoost = forceBase * 5;
 
-rangeBase = 100;
-rangeBoost = 200;
+rangeBase = 50;
+rangeBoost = 100;
 
 factorCircleBase = 1;
 factorFactorCircle = 0.025;
@@ -20,7 +20,7 @@ timerDuration = 300;
 
 spd = spdBase;
 
-force = 6;
+force = 3;
 
 range = rangeBase;
 

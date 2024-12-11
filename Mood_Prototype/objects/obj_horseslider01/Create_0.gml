@@ -20,15 +20,15 @@ directionMove = "down";
 
 check_horse_collider = function()
 {
-	if (place_meeting(x, y, obj_horsecollider)) 
-	{
-		obj_horsemanager.indicator++;
-		audio_play_sound(snd_horseGameHit, 0, 0, gainSFX);
-	}
-	else if (place_meeting(x, y, obj_horsecolliderCrit)) 
+	if (place_meeting(x, y, obj_horsecolliderCrit)) 
 	{
 		obj_horsemanager.indicator += 3;
 		audio_play_sound(snd_horseGameHit, 0, 0, gainSFX, 0, 1.5);
+	}
+	else if (place_meeting(x, y, obj_horsecollider)) 
+	{
+		obj_horsemanager.indicator++;
+		audio_play_sound(snd_horseGameHit, 0, 0, gainSFX);
 	}
 	else audio_play_sound(snd_horseGameMiss, 0, 0, gainSFX);
 	

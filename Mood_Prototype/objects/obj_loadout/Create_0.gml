@@ -192,13 +192,18 @@ stateSelect.start = function()
 	{
 		weaponsMax = _level.loadoutWeapons;
 	}
+	
+	levelname = global.save.levels[get_level_id(global.roomTo)].name;
 }
 stateSelect.run = function()
 {	
 }
 stateSelect.drawGUI = function()
 {
-	draw_text_simple(GUIwidth / 2, GUIheight * 0.1, "SELECT LOADOUT", { font : font_upheaval_scalable, size : fontscale * 12 });
+	draw_text_simple(GUIwidth / 2, GUIheight * 0.065, $"NOW ENTERING: {levelname}", { font : font_upheaval_scalable, size : fontscale * 4 });
+	draw_text_simple(GUIwidth / 2, GUIheight * 0.135, "CHOOSE LOADOUT", { font : font_upheaval_scalable, size : fontscale * 8 });
+	
+	
 	
 	//draw buttons
 	var _spriteButton = spr_loadoutArrow;
@@ -220,7 +225,11 @@ stateSelect.drawGUI = function()
 	{
 		_hover = true;
 	}
-	if ((_hover) && (mouse_check_button_pressed(mb_left))) || (_keyUp) _selectionChange++;
+	if ((_hover) && (mouse_check_button_pressed(mb_left))) || (_keyUp) 
+	{
+		_selectionChange++;
+		audio_play_sound(snd_mouseClick, 0, 0, gainSFX, 0, 1.1 - random(0.05));
+	}
 	draw_sprite_simple(_spriteButton, _hover, _x, _y,		{ size : _size });
 	
 	var _y = GUIheight * 0.6;
@@ -230,7 +239,11 @@ stateSelect.drawGUI = function()
 	{
 		_hover = true;
 	}
-	if ((_hover) && (mouse_check_button_pressed(mb_left))) || (_keyDown) _selectionChange--;
+	if ((_hover) && (mouse_check_button_pressed(mb_left))) || (_keyDown) 
+	{
+		_selectionChange--;
+		audio_play_sound(snd_mouseClick, 0, 0, gainSFX, 0, 0.9 + random(0.05));
+	}
 	draw_sprite_simple(_spriteButton, _hover, _x, _y,		{ xscale : _size, yscale : -_size });
 	
 	selected[modeSelect] += _selectionChange;
@@ -281,6 +294,8 @@ stateSelect.drawGUI = function()
 				selected[modeSelect] = loop(selected[modeSelect], 0, sprite_get_number(spriteWeapon[modeSelect]) - 1);
 			}
 		}
+		
+		audio_play_sound(snd_cablebreak, 0, 0, gainSFX, 0, 1.8 + random(0.05));
 	}
 	
 	draw_sprite_simple(spr_tickbox, _hover, _x, _y,		{ size : _size });

@@ -15,9 +15,14 @@ toggle_sabotaged = function(_true_or_false)
 			case "random": initialize_state(stateRandomTarget);
 			break;
 			
-			case "recover": 
-							var _scare = noone;
-    
+			//the below case makes sure that enemies recalculate their path on the spot, as to avoid
+			//them going through the (now closed off) tunnel
+			//a better / less resource intensive way would be to flag enemies currently intending
+			//to use this tunnel and only apply this statement to them
+			
+			case "recover": var _scare = noone;
+							
+							if (fleeFromPlayer)
 							if (obj_player.inRoom == inRoom)
 							{
 							    timerPlaying = 0;

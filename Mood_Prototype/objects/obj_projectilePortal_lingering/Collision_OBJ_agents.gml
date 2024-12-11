@@ -23,10 +23,16 @@ if (instance_number(obj_projectilePortal_lingering) == 2)
 		if (_dir == 360) _dir = 45;
 	}
 	
-	with (other) while (place_meeting(x, y, obj_wall))
+	with (other) 
 	{
-		x += lengthdir_x(1, _dir);
-		y += lengthdir_y(1, _dir);
+		while (place_meeting(x, y, obj_wall))
+		{
+			x += lengthdir_x(1, _dir);
+			y += lengthdir_y(1, _dir);
+		}
+		
+		hvel += lengthdir_x(20, _dir);
+		vvel += lengthdir_y(20, _dir);
 	}
 	
 	_portal.image_blend = c_grey;

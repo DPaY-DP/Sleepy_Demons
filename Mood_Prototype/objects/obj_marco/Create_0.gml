@@ -18,7 +18,7 @@ hpMax = 18;
 hp = hpMax;
 hpLast = hpMax;
 
-envDamage = 0.045;
+envDamage = 0.01;
 
 rangeExecute = 80;
 rangePlayerFlee = 120;
@@ -27,7 +27,7 @@ intervalCackle = 300;
 intervalRecoverFlee = 60;
 intervalRecoverExecute = 300;
 
-intervalInstigate = 180;
+intervalInstigate = 90;
 
 limitSlowness = 10;
 payoffSlowness = 300;
@@ -52,7 +52,7 @@ statePlaying.start = function()
 		//lower initial playing time that others
 	timerPlaying = 0;
 	//timerPlaying += irandom(300);
-	timerReady = 3 * 60;
+	timerReady = 0; //3 * 60;
 }
 
 

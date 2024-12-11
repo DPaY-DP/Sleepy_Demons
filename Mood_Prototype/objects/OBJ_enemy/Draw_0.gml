@@ -2,19 +2,7 @@ draw_self();
 state.draw();
 
 //hp bar
-var _width = 64;
-var _height = 16;
-
-var _widthReal = _width * (hp / hpMax);
-
-var _xBar = x - _width / 2;
-var _yBar = y + 32;
-
-draw_set_color(c_dkgray);
-draw_rectangle(_xBar, _yBar, _xBar + _width, _yBar + _height, false);
-draw_set_color(c_red);
-if (_widthReal) draw_rectangle(_xBar, _yBar, _xBar + _widthReal, _yBar + _height, false);
-draw_set_color(c_white);
+draw_hpbar(1);
 
 if (global.debugmode)
 {	

@@ -28,6 +28,8 @@ payoffSlowness = 300;
 intervalRandomWalk = 300;
 timerRandomWalk = 0;
 
+fleeFromPlayer = false;
+
 event_inherited();
 
 
@@ -157,26 +159,32 @@ stateSeek.start = function()
 	}
 	
 	navmesh = get_navmesh(inRoom, target.inRoom);
+	show_debug_message($"Guenther targetting: {inRoom.number} to {target.inRoom.number}");
+	show_debug_message($"Guenther navmesh: {navmesh}");
 	if (array_length(navmesh) == 0) switch_state(stateRandomTarget);
 	else 
 	{
 		intent = "sabotage";
 		switch_state(stateWalk);
 	}
+	
+			//GUENTHER DEBUG
+			//When coming fromStateRandomTarget, instead of getting the whole navmesh from the current room to his target room he, for some reason,
+			//only gets the final door into the room where he wants to go. The rest does not get transferred and it ONLY happens on the switch from
+			// random to seek. Idk why.
 }
 
 
 stateRandomTarget = new State("RandomTarget");
 stateRandomTarget.start = function()
-{	
-	reset_membership();
-	
+{		
 	if (instance_number(obj_room) > 1)
 	{
 		do var _roomSeek = instance_find(obj_room, irandom(instance_number(obj_room) - 1));
 		until (_roomSeek != inRoom)
 		
 		navmesh = get_navmesh(inRoom, _roomSeek);
+		array_push(navmesh, _roomSeek.centerpoint);
 	}
 	
 	if (array_length(navmesh) == 0) navmesh[0] = array_choose(inRoom.points);
@@ -204,39 +212,41 @@ stateWalk.run = function()
 	{
 		switch (intent)
 		{
-			case "sabotage": switch_state(stateSabotage);
+			case "sabotage":	switch_state(stateSabotage);
 			break;
 			
-			case "random":	if (timerRandomWalk <= 0) switch_state(stateSeek);
-							else switch_state(stateRandomTarget);
+			case "random":		if (timerRandomWalk <= 0) switch_state(stateSeek);
+								else switch_state(stateRandomTarget);
 			break;
 			
-			case "recover": switch_state(stateRecover);
+			case "recover":		switch_state(stateRecover);
 			break;
 			
-			case "instigate": switch_state(stateInstigate);
+			case "instigate":	switch_state(stateInstigate);
 			break;
 			
-			case "gummybear": switch_state(stateGummybear);
+			case "gummybear":	switch_state(stateGummybear);
 			break;
 		}
 	}
-	
-	var _scare = noone;
-	
-	if (instance_exists(obj_projectileStinkbomb))
+	else
 	{
-		var _stinkbomb = instance_nearest(x, y, obj_projectileStinkbomb);
+		var _scare = noone;
+	
+		if (instance_exists(obj_projectileStinkbomb))
+		{
+			var _stinkbomb = instance_nearest(x, y, obj_projectileStinkbomb);
 			
-		var _distStink = point_distance(x, y, _stinkbomb.x, _stinkbomb.y);
-		if (_distStink < obj_projectileStinkbomb.range) _scare = _stinkbomb;
+			var _distStink = point_distance(x, y, _stinkbomb.x, _stinkbomb.y);
+			if (_distStink < obj_projectileStinkbomb.range) _scare = _stinkbomb;
+		}
+	
+		if (hp != hpLast) _scare = obj_player;
+	
+		if (_scare != noone) switch_state(stateFlee, _scare);
+	
+		if (hp == 0) switch_state(stateExecute);
 	}
-	
-	if (hp != hpLast) _scare = obj_player;
-	
-	if (_scare != noone) switch_state(stateFlee, _scare);
-	
-	if (hp == 0) switch_state(stateExecute);
 }
 stateWalk.stop = function()
 {

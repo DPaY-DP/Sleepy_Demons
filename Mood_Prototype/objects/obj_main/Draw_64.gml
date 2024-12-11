@@ -208,7 +208,7 @@ switch (mode)
 							draw_sprite_simple(spr_buttonBlankSlimThumb, _hover, _x, _y, { xscale : _xscale, yscale : _yscale });
 							
 								//Display LEVEL TIME				//edge case: chooting range doesnt need a timer
-							if (selectMode > 0) && (_completed) && (_levelData.room != room_shootingRange)
+							if (selectMode > 0) && (_completed) && (_levelData.room != room_000shootingRange)
 							{
 								var _xClock = _x - _width / 2 + 14 * global.GUIScale;
 								var _yClock = _y - _height / 2 + 14 * global.GUIScale;

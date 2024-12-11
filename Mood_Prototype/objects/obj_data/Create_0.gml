@@ -149,14 +149,14 @@ enum enumMinigame
 	BRUSH,
 	STUFF,
 	
-	CABLE,
 	HORSESHOE,
 	LIGHTSWITCH,
-	
 	TICKLE,
+	
 	INPUTS,
 	SQUAREHOLE,
 	FASTCLICK,
+	CABLE,
 	
 	//this gets used exclusively for env object repairs
 	INPUTS_RAW,
@@ -183,8 +183,8 @@ defaults =
 {
 	version : global.version,
 	
-	fullscreen : false,
-	volumeMusic : 0, //0.5
+	fullscreen : false, //true,
+	volumeMusic : 0,	//0.5,
 	volumeSFX : 0.25,
 	
 			
@@ -196,17 +196,21 @@ defaults =
 	levels :
 	[
 		{
-			room : room_shootingRange,
+			room : room_000shootingRange,
 			name : "Shooting Range",
 			unlocked : false,
 		
 			minigames :  [
+				enumMinigame.TUCK,
+				enumMinigame.BRUSH,
+				enumMinigame.STUFF,
 				enumMinigame.LIGHTSWITCH,
-				enumMinigame.LIGHTSWITCH,
-				enumMinigame.LIGHTSWITCH,
-				enumMinigame.LIGHTSWITCH,
-				enumMinigame.LIGHTSWITCH,
-				enumMinigame.LIGHTSWITCH,
+				enumMinigame.HORSESHOE,
+				enumMinigame.TICKLE,
+				enumMinigame.INPUTS,
+				enumMinigame.SQUAREHOLE,
+				enumMinigame.FASTCLICK,
+				enumMinigame.CABLE,
 			],
 			
 			loadoutPillows : 2,
@@ -328,8 +332,8 @@ defaults =
 				enumMinigame.STUFF,
 				enumMinigame.STUFF,
 				enumMinigame.STUFF,
-				enumMinigame.HORSESHOE,
-				enumMinigame.HORSESHOE,
+				enumMinigame.TUCK,
+				enumMinigame.TUCK,
 			],
 			
 			loadoutPillows : 1,
@@ -348,13 +352,13 @@ defaults =
 			unlocked : false,
 		
 			minigames :  [
-				enumMinigame.TUCK,
-				enumMinigame.TUCK,
-				enumMinigame.TUCK,
 				enumMinigame.BRUSH,
 				enumMinigame.BRUSH,
-				enumMinigame.STUFF,
-				enumMinigame.STUFF,
+				enumMinigame.BRUSH,
+				enumMinigame.BRUSH,
+				enumMinigame.TUCK,
+				enumMinigame.TUCK,
+				enumMinigame.TUCK,
 			],
 			
 			loadoutPillows : 1,
@@ -373,15 +377,14 @@ defaults =
 			unlocked : false,
 		
 			minigames :  [
-				enumMinigame.CABLE,
-				enumMinigame.CABLE,
-				enumMinigame.CABLE,
-				enumMinigame.HORSESHOE,
-				enumMinigame.HORSESHOE,
-				enumMinigame.HORSESHOE,
-				enumMinigame.LIGHTSWITCH,
-				enumMinigame.LIGHTSWITCH,
-				enumMinigame.LIGHTSWITCH,
+				enumMinigame.STUFF,
+				enumMinigame.STUFF,
+				enumMinigame.STUFF,
+				enumMinigame.BRUSH,
+				enumMinigame.BRUSH,
+				enumMinigame.BRUSH,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
 			],
 			
 			loadoutPillows : 1,
@@ -401,14 +404,18 @@ defaults =
 		
 			minigames :  [
 				enumMinigame.TUCK,
-				enumMinigame.BRUSH,
-				enumMinigame.STUFF,
+				enumMinigame.TUCK,
+				enumMinigame.TUCK,
 				enumMinigame.HORSESHOE,
-				enumMinigame.CABLE,
+				enumMinigame.HORSESHOE,
+				
+				enumMinigame.HORSESHOE,
 				enumMinigame.LIGHTSWITCH,
-				enumMinigame.SQUAREHOLE,
+				enumMinigame.LIGHTSWITCH,
+				enumMinigame.LIGHTSWITCH,
 				enumMinigame.TICKLE,
-				enumMinigame.INPUTS,
+				
+				enumMinigame.TICKLE,
 			],
 			
 			loadoutPillows : 1,
@@ -427,17 +434,22 @@ defaults =
 			unlocked : false,
 		
 			minigames :  [
-				enumMinigame.TUCK,
-				enumMinigame.BRUSH,
-				enumMinigame.STUFF,
-				enumMinigame.HORSESHOE,
-				enumMinigame.CABLE,
-				enumMinigame.LIGHTSWITCH,
-				enumMinigame.SQUAREHOLE,
 				enumMinigame.TICKLE,
-				enumMinigame.INPUTS,
-				enumMinigame.FASTCLICK,
-				enumMinigame.INPUTS,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.HORSESHOE,
+				enumMinigame.HORSESHOE,
+				
+				enumMinigame.HORSESHOE,
+				enumMinigame.HORSESHOE,
+				enumMinigame.LIGHTSWITCH,
+				enumMinigame.LIGHTSWITCH,
+				enumMinigame.LIGHTSWITCH,
+				
+				enumMinigame.LIGHTSWITCH,
+				enumMinigame.STUFF,
+				enumMinigame.STUFF,
+				enumMinigame.STUFF,
 			],
 			
 			loadoutPillows : 1,
@@ -456,13 +468,16 @@ defaults =
 			unlocked : false,
 		
 			minigames :  [
-				enumMinigame.SQUAREHOLE,
-				enumMinigame.SQUAREHOLE,
-				enumMinigame.INPUTS,
-				enumMinigame.INPUTS,
 				enumMinigame.CABLE,
 				enumMinigame.CABLE,
-				enumMinigame.FASTCLICK,
+				enumMinigame.SQUAREHOLE,
+				enumMinigame.SQUAREHOLE,
+				enumMinigame.SQUAREHOLE,
+				
+				enumMinigame.HORSESHOE,
+				enumMinigame.HORSESHOE,
+				enumMinigame.LIGHTSWITCH,
+				enumMinigame.LIGHTSWITCH,
 			],
 			
 			loadoutPillows : 1,
@@ -481,17 +496,25 @@ defaults =
 			unlocked : false,
 		
 			minigames :  [
-				enumMinigame.HORSESHOE,
-				enumMinigame.HORSESHOE,
-				enumMinigame.BRUSH,
-				enumMinigame.TUCK,
-				enumMinigame.STUFF,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.CABLE,
+				enumMinigame.CABLE,
+				
+				enumMinigame.FASTCLICK,
+				enumMinigame.FASTCLICK,
+				enumMinigame.FASTCLICK,
+				enumMinigame.FASTCLICK,
+				enumMinigame.INPUTS,
+				
 				enumMinigame.INPUTS,
 				enumMinigame.INPUTS,
 				enumMinigame.SQUAREHOLE,
-				enumMinigame.TICKLE,
-				enumMinigame.FASTCLICK,
-				enumMinigame.CABLE,
+				enumMinigame.SQUAREHOLE,
+				enumMinigame.SQUAREHOLE,
+				
+				enumMinigame.SQUAREHOLE,
 			],
 			
 			loadoutPillows : 1,
@@ -506,19 +529,29 @@ defaults =
 		},
 		{
 			room : room_09FixMyTeddy,
-			name : "Fix my teddy",
+			name : "Fix My Teddy",
 			unlocked : false,
 		
 			minigames :  [
-				enumMinigame.HORSESHOE,
-				enumMinigame.HORSESHOE,
-				enumMinigame.BRUSH,
 				enumMinigame.TUCK,
+				enumMinigame.BRUSH,
+				enumMinigame.TICKLE,
 				enumMinigame.STUFF,
-				enumMinigame.INPUTS,
-				enumMinigame.INPUTS,
+				enumMinigame.CABLE,
+				
+				enumMinigame.HORSESHOE,
+				enumMinigame.LIGHTSWITCH,
 				enumMinigame.SQUAREHOLE,
-				enumMinigame.SQUAREHOLE,
+				enumMinigame.FASTCLICK,
+				enumMinigame.INPUTS,
+				
+				enumMinigame.TUCK,
+				enumMinigame.BRUSH,
+				enumMinigame.TICKLE,
+				enumMinigame.STUFF,
+				enumMinigame.CABLE,
+				
+				enumMinigame.FASTCLICK,
 			],
 			
 			loadoutPillows : 1,
@@ -537,13 +570,13 @@ defaults =
 			unlocked : false,
 		
 			minigames :  [
-				enumMinigame.HORSESHOE,
-				enumMinigame.HORSESHOE,
-				enumMinigame.BRUSH,
-				enumMinigame.TUCK,
-				enumMinigame.STUFF,
 				enumMinigame.INPUTS,
 				enumMinigame.INPUTS,
+				enumMinigame.INPUTS,
+				enumMinigame.INPUTS,
+				enumMinigame.INPUTS,
+				enumMinigame.SQUAREHOLE,
+				enumMinigame.SQUAREHOLE,
 				enumMinigame.SQUAREHOLE,
 				enumMinigame.SQUAREHOLE,
 			],
@@ -564,16 +597,19 @@ defaults =
 			unlocked : false,
 		
 			minigames :  [
+				enumMinigame.CABLE,
+				enumMinigame.CABLE,
+				enumMinigame.CABLE,
+				enumMinigame.CABLE,
+				enumMinigame.HORSESHOE,
+				
+				enumMinigame.HORSESHOE,
 				enumMinigame.HORSESHOE,
 				enumMinigame.HORSESHOE,
 				enumMinigame.BRUSH,
-				enumMinigame.TUCK,
-				enumMinigame.STUFF,
-				enumMinigame.INPUTS,
-				enumMinigame.INPUTS,
-				enumMinigame.SQUAREHOLE,
-				enumMinigame.SQUAREHOLE,
-				enumMinigame.FASTCLICK,
+				enumMinigame.BRUSH,
+				
+				enumMinigame.BRUSH,
 			],
 			
 			loadoutPillows : 1,
@@ -592,19 +628,28 @@ defaults =
 			unlocked : false,
 		
 			minigames :  [
-				enumMinigame.HORSESHOE,
-				enumMinigame.HORSESHOE,
-				enumMinigame.BRUSH,
 				enumMinigame.TUCK,
+				enumMinigame.BRUSH,
+				enumMinigame.TICKLE,
 				enumMinigame.STUFF,
-				enumMinigame.INPUTS,
-				enumMinigame.INPUTS,
-				enumMinigame.SQUAREHOLE,
+				enumMinigame.CABLE,
+				
+				enumMinigame.HORSESHOE,
+				enumMinigame.LIGHTSWITCH,
 				enumMinigame.SQUAREHOLE,
 				enumMinigame.FASTCLICK,
-				enumMinigame.CABLE,
-				enumMinigame.CABLE,
+				enumMinigame.INPUTS,
+				
+				enumMinigame.TUCK,
+				enumMinigame.BRUSH,
 				enumMinigame.TICKLE,
+				enumMinigame.STUFF,
+				enumMinigame.CABLE,
+				
+				enumMinigame.FASTCLICK,
+				enumMinigame.HORSESHOE,
+				enumMinigame.LIGHTSWITCH,
+				enumMinigame.SQUAREHOLE,
 			],
 			
 			loadoutPillows : 1,

@@ -12,4 +12,6 @@ _target.vvel += lengthdir_y(_punch, dir);
 
 _target.hp -= _damage;
 
+audio_play_sound_at(snd_punch, x, y, 0, 100, 150, 1, 0, 0, gainSFX, 0, 1.6 + random(0.1));
+
 instance_destroy();

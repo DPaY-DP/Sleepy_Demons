@@ -12,8 +12,8 @@
   "duration":0.25542,
   "name":"snd_pickUpAmmo",
   "parent":{
-    "name":"# To Be Implemented",
-    "path":"folders/Sounds/# To Be Implemented.yy",
+    "name":"Weapons",
+    "path":"folders/Sounds/Weapons.yy",
   },
   "preload":false,
   "resourceType":"GMSound",

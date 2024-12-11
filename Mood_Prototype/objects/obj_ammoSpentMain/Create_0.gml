@@ -3,8 +3,8 @@
 
 
 //GAME VALUES
-image_xscale = 2 * size;
-image_yscale = 2 * size;
+image_xscale = 2;
+image_yscale = 2;
 
 
 

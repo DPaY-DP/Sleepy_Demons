@@ -44,7 +44,14 @@ for (var i = 0; i < 8; i++)
 	var _x = x + lengthdir_x(64, _dir);
 	var _y = y + lengthdir_y(64, _dir);
 	
-	if (!instance_position(_x, _y, [obj_wall, obj_wallPlayer])) array_push(pointsSabo, [{ x : _x, y : _y }, 0]);
+	var _placePoint = false;
+	if  (!instance_position(_x, _y, [obj_wall, obj_wallPlayer])) &&
+		(!instance_position(_x + 5, _y, [obj_wall, obj_wallPlayer])) &&
+		(!instance_position(_x - 5, _y, [obj_wall, obj_wallPlayer])) &&
+		(!instance_position(_x, _y + 5, [obj_wall, obj_wallPlayer])) &&
+		(!instance_position(_x, _y - 5, [obj_wall, obj_wallPlayer])) _placePoint = true;
+	
+	if (_placePoint) array_push(pointsSabo, [{ x : _x, y : _y }, 0]);
 	
 	_dir += 45;
 }

@@ -1,18 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"obj_data",
+  "%Name":"obj_ammoSpentMain",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_data",
+  "name":"obj_ammoSpentMain",
   "overriddenProperties":[],
   "parent":{
-    "name":"Admin",
-    "path":"folders/Objects/# Game/Admin.yy",
+    "name":"Weapon",
+    "path":"folders/Objects/# Game/Player/Weapon.yy",
   },
   "parentObjectId":null,
-  "persistent":true,
+  "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
@@ -29,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_spentAmmoMain",
+    "path":"sprites/spr_spentAmmoMain/spr_spentAmmoMain.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

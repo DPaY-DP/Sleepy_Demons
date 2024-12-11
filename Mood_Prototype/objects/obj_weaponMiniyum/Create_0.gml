@@ -7,7 +7,7 @@ ammoMax = 100;
 ammoBag = 50;
 
 ammoImage = enumWeaponEffect.MINIYUM;
-ammoImageSize = 1;
+ammoImageSize = 1.25;
 
 
 //GAME VALUES

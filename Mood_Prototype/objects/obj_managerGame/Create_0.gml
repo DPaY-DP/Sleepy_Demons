@@ -1,6 +1,6 @@
 //IMMUTABLE VALUES
 global.envHPMax = 1000;
-if (room == room_shootingRange) global.envHPMax = infinity;
+if (room == room_000shootingRange) global.envHPMax = infinity;
 
 image_speed = 0.1;
 
@@ -13,9 +13,13 @@ drawEnvHP = false;
 drawMinimap = true;
 if (instance_exists(OBJ_env)) drawEnvHP = true;
 
-
-currentSong = choose(snd_musicLevel1, snd_musicLevel2);
-audio_play_sound(currentSong,1,false, gainMusic);
+if (audio_is_playing(snd_musicLevel1)) currentSong = snd_musicLevel1;
+else if (audio_is_playing(snd_musicLevel2)) currentSong = snd_musicLevel2;
+else
+{
+	currentSong = choose(snd_musicLevel1, snd_musicLevel2);
+	audio_play_sound(currentSong,1,false, gainMusic);
+}
 
 mapAlpha = 0;
 alarm[0] = 1;
@@ -31,6 +35,13 @@ randomize();
 
 
 #region METHODS
+restart_room = function()
+{
+	room_restart();
+	global.countRooms = 0;
+	global.countEnv = 0;
+}
+
 get_current_level = function()
 {
 	var _length = array_length(global.save.levels);
@@ -90,10 +101,9 @@ draw_minimap = function(_scale)
 draw_hpbar = function()
 {
 	var _factorHP = (global.envHP / global.envHPMax);
-	var _size = 1;
 	
 	draw_sprite_simple(spr_hpbar, 0, GUIwidth / 2, 0);
-	draw_sprite_simple(spr_hpbarFilled, 0, GUIwidth / 2, 0, { xscale : 0.22 + 0.78 * _factorHP });
+	draw_sprite_simple(spr_hpbarFilled, 0, GUIwidth / 2, 0, { xscale : (0.22 + 0.78 * _factorHP) });
 	draw_sprite_simple(spr_hpbarFace, (sprite_get_number(spr_hpbarFace)) - (sprite_get_number(spr_hpbarFace)) * _factorHP, GUIwidth / 2, 0, { size : 1.1 });
 }
 #endregion
@@ -110,8 +120,6 @@ stateGame.start = function()
 	arrayMinigames = array_shuffle(ds_clone(global.save.levels[currentLevel].minigames));
 	
 	timeStart = current_time;
-	
-	if (room == room_shootingRange) drawMinimap = false;
 }
 stateGame.run = function()
 {
@@ -127,6 +135,9 @@ stateGame.run = function()
 	{
 		switch_state(stateWin);
 	}
+	
+	if (keyboard_check_pressed(ord("R"))) restart_room();
+	if (keyboard_check_pressed(vk_escape)) switch_state(stateEsc);
 }
 stateGame.drawGUI = function()
 {
@@ -144,8 +155,9 @@ stateLoss.start = function()
 	image_index = 0;
 }
 stateLoss.run = function()
-{
-	
+{	
+	if (keyboard_check_pressed(ord("R"))) restart_room();
+	if (keyboard_check_pressed(vk_escape)) room_goto(room_main);
 }
 stateLoss.drawGUI = function()
 {
@@ -157,12 +169,7 @@ stateLoss.drawGUI = function()
 	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Chaos unfolds", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
 	if (timerState > 120) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.85, "Press R to restart.", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
 	
-	if (keyboard_check_pressed(ord("R"))) 
-	{
-		room_restart();
-		global.countRooms = 0;
-		global.countEnv = 0;
-	}
+	if (keyboard_check_pressed(ord("R"))) restart_room();
 }
 
 
@@ -257,6 +264,9 @@ stateWin.run = function()
 	}
 	
 	if (mouse_check_button_pressed(mb_left)) displayUnlock++;
+	
+	if (keyboard_check_pressed(ord("R"))) restart_room();
+	if (keyboard_check_pressed(vk_escape)) room_goto(room_main);
 }
 stateWin.drawGUI = function()
 {
@@ -301,6 +311,37 @@ stateWin.drawGUI = function()
 		draw_text_simple(GUIwidth * 0.5, GUIheight * 0.3, "Weapons Unlocked:\n" + _data[2], { color : c_white, font : font_upheaval_scalable, size : 4 * fontscale });
 		draw_sprite_simple(_data[0], _data[1], GUIwidth * 0.5, GUIheight * 0.46, { size : global.GUIScale * 3 });
 		draw_text_simple(GUIwidth * 0.25, GUIheight * 0.68, _data[3], { color : c_white, font : font_upheaval_scalable, size : 4 * fontscale, halign : fa_left });
+	}
+}
+
+
+stateEsc = new State();
+stateEsc.start = function()
+{
+	with (OBJ_agents) switch_state(stateLock);
+	audio_stop_sound(currentSong);
+	
+	image_index = 0;
+}
+stateEsc.run = function()
+{
+	if (keyboard_check_pressed(ord("R"))) restart_room();
+	if (keyboard_check_pressed(vk_escape)) room_goto(room_main);
+}
+stateEsc.drawGUI = function()
+{
+	draw_sprite_simple(spr_window, 0, GUIwidth * 0.05, GUIheight * 0.05, { xscale : GUIwidth * 0.9, yscale : GUIheight * 0.9, alpha : 0.5 });
+
+	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Game Ended", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
+	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.225, "(Sorry there's no Pause)", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
+	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.85, "R (at any time) to restart level", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
+	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.75, "ESC to return to Main", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });
+	
+	if (keyboard_check_pressed(ord("R"))) 
+	{
+		room_restart();
+		global.countRooms = 0;
+		global.countEnv = 0;
 	}
 }
 

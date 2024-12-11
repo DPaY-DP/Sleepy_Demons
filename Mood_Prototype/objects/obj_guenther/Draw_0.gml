@@ -2,22 +2,12 @@ draw_self();
 state.draw();
 
 //hp bar
-var _width = 64;
-var _height = 16;
-
-var _widthReal = _width * (hp / hpMax);
-
-var _xBar = x - _width / 2;
-var _yBar = y + 32;
-
-draw_set_color(c_dkgray);
-draw_rectangle(_xBar, _yBar, _xBar + _width, _yBar + _height, false);
-draw_set_color(c_red);
-if (_widthReal) draw_rectangle(_xBar, _yBar, _xBar + _widthReal, _yBar + _height, false);
-draw_set_color(c_white);
+draw_hpbar(2);
 
 if (global.debugmode)
 {	
+	draw_text_simple(x, y - 16, inRoom.number, { color : c_red, font : font_upheaval_scalable, size : fontscale * 4 });
+	
 	draw_text_simple(x, y, state.name, { color : c_red, font : font_upheaval_scalable, size : fontscale * 4 });
 	if (state.name == "Playing") draw_text_simple(x, y + 64, $"{timerPlaying}\n{timerReady}", { color : c_red, font : font_upheaval_scalable, size : fontscale * 1 });
 	if (state.name == "Walk") draw_text_simple(x, y + 64, intent, { color : c_red, font : font_upheaval_scalable, size : fontscale * 2 });

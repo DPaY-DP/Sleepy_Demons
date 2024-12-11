@@ -5,6 +5,8 @@ distanceUnstuck = 10;
 intervalUnstuck = 10;
 iterationsUnstuck = 0;
 
+fleeFromPlayer = true;
+
 myHitbox = instance_create_depth(x, y, depth, obj_enemyHitbox, { owner : id });
 #endregion
 
@@ -68,6 +70,23 @@ gummybear = noone;
 
 
 #region METHODS
+draw_hpbar = function(_size)
+{
+	var _width = 48 * 1 + (_size - 1) / 2;
+	var _height = 6 * _size;
+
+	var _widthReal = _width * (hp / hpMax);
+
+	var _xBar = x - _width / 2;
+	var _yBar = y + 12;
+
+	draw_set_color(c_dkgray);
+	draw_rectangle(_xBar, _yBar, _xBar + _width, _yBar + _height, false);
+	draw_set_color(c_red);
+	if (_widthReal) draw_rectangle(_xBar, _yBar, _xBar + _widthReal, _yBar + _height, false);
+	draw_set_color(c_white);
+}
+
 apply_physics = function(_hacc, _vacc)
 {	
 	//apply accelleration
@@ -258,6 +277,31 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 		if (!_door.object.sabotaged) array_push(_routes, [_door.entrypoint, _door.exitpoint, _door.toRoom]);
 	}
 	
+			//FLAW:
+			//Currently we are not checking ALL of of the routes for instant completion, but only each per iteration
+			//This means that if route[1] is an instant completion, but route[0] finds a completion after 1 step, it will
+			//prefer and return route[0] as solution, because it never got to check route[1] in the first place
+			//
+			//PROPOSED FIX:
+			//Add 1 for statement before this while loop checking the ends of all proposed routes before going into the
+			//pathfinding algorithm
+	
+	var _lengthRoutes = array_length(_routes);
+	for (var i = 0; i < _lengthRoutes; i++)
+	{			
+		//get current route; current room and doors
+		var _currentRoute = _routes[i];
+		var _currentRoom = array_last(_currentRoute);
+			
+			//is checked room target room?
+		if (_currentRoom == _idTargetRoom)
+		{
+			array_pop(_currentRoute)
+			return _currentRoute
+		}
+	}
+	
+	
 	var _whilesafe = 0;
 	while (true)
 	{
@@ -279,19 +323,20 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 			
 				//if not
 				//get doors of current room
+				show_debug_message(_currentRoom)
 			var _currentDoors = _currentRoom.doors;
 			
-				var _debugCurrentDoors = [];
-				var _lengthDoorsCurrentRoom = array_length(_currentDoors);
-				for (var l = 0; l < _lengthDoorsCurrentRoom; l++)
-				{
-					array_push(_debugCurrentDoors, _currentDoors[l].toRoom.number);
-				}
+				//var _debugCurrentDoors = [];
+				//var _lengthDoorsCurrentRoom = array_length(_currentDoors);
+				//for (var l = 0; l < _lengthDoorsCurrentRoom; l++)
+				//{
+				//	array_push(_debugCurrentDoors, _currentDoors[l].toRoom.number);
+				//}
 			
 			_checked[_currentRoom.number] = true;
 			
 			var _deadEnd = true;
-			var _modifyRoute = true;
+			var _modifyRoute = true;		//boolean meant to check whether we want to modify the current route or create a new one
 			
 			//iterate through connected rooms of current route room
 			var _lengthDoorsCurrentRoom = array_length(_currentDoors);
@@ -312,20 +357,37 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 				array_push(_copyRoute, _currentDoor.exitpoint);
 				array_push(_copyRoute, _idToRoom);
 					
-				if (_modifyRoute) 
+				if (_modifyRoute)			//if true - modify current route
+											//if false - create a new route instead
 				{
 					_routes[i] = _copyRoute;
 					_modifyRoute = false;
+					
+					var _checkRoute = _routes[i];
+				
+						//if (_idToRoom == _idTargetRoom)
+						//{
+						//	array_pop(_routes[i]);
+						//	return _routes[i];
+						//}
 				}
 				else 
 				{
 					array_push(_routes, _copyRoute);
+					
+					var _checkRoute = _routes[array_length(_routes) - 1];
+					
+						//if (_idToRoom == _idTargetRoom)
+						//{
+						//	array_pop(_routes[array_length(_routes) - 1]);
+						//	return _routes[array_length(_routes) - 1];
+						//}
 				}
 				
 				if (_idToRoom == _idTargetRoom)
-				{
-					array_pop(_routes[i]);
-					return _routes[i];
+				{					
+					array_pop(_checkRoute);
+					return _checkRoute;
 				}
 				
 				_deadEnd = false;
@@ -570,7 +632,7 @@ stateSeek.start = function()
 	if (instance_exists(gummybear))
 	{
 		navmesh = get_navmesh(inRoom, gummybear.inRoom);
-		if (array_length(navmesh) == 0) switch_state(stateRandomTarget);
+		//if (array_length(navmesh) == 0) switch_state(stateRandomTarget);
 		
 		intent = "gummybear";
 		switch_state(stateWalk);
