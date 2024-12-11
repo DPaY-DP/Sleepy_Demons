@@ -2,7 +2,7 @@
 global.version = "V0.1.2";
 randomize();
 window_set_cursor(cr_none)
-cursor_sprite = spr_cursor;
+cursor_sprite = spr_cursor0;
 #endregion
 
 
