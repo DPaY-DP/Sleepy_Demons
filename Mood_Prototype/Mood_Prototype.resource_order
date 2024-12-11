@@ -274,7 +274,7 @@
     {"name":"room_02BabysFirstGun","order":2,"path":"rooms/room_02BabysFirstGun/room_02BabysFirstGun.yy",},
     {"name":"room_03GettingFamiliar","order":3,"path":"rooms/room_03GettingFamiliar/room_03GettingFamiliar.yy",},
     {"name":"room_04PeakABear","order":12,"path":"rooms/room_04PeakABear/room_04PeakABear.yy",},
-    {"name":"room_05ExpandingHorizons","order":4,"path":"rooms/room_05ExpandingHorizons/room_05ExpandingHorizons.yy",},
+    {"name":"room_05ExpandingHorizons","order":14,"path":"rooms/room_05ExpandingHorizons/room_05ExpandingHorizons.yy",},
     {"name":"room_06Playpark","order":5,"path":"rooms/room_06Playpark/room_06Playpark.yy",},
     {"name":"room_07BoxedIn","order":6,"path":"rooms/room_07BoxedIn/room_07BoxedIn.yy",},
     {"name":"room_08DeadEnds","order":7,"path":"rooms/room_08DeadEnds/room_08DeadEnds.yy",},

@@ -823,7 +823,6 @@
     {"roomId":{"name":"room_01PillowFight","path":"rooms/room_01PillowFight/room_01PillowFight.yy",},},
     {"roomId":{"name":"room_02BabysFirstGun","path":"rooms/room_02BabysFirstGun/room_02BabysFirstGun.yy",},},
     {"roomId":{"name":"room_03GettingFamiliar","path":"rooms/room_03GettingFamiliar/room_03GettingFamiliar.yy",},},
-    {"roomId":{"name":"room_05ExpandingHorizons","path":"rooms/room_05ExpandingHorizons/room_05ExpandingHorizons.yy",},},
     {"roomId":{"name":"room_06Playpark","path":"rooms/room_06Playpark/room_06Playpark.yy",},},
     {"roomId":{"name":"room_07BoxedIn","path":"rooms/room_07BoxedIn/room_07BoxedIn.yy",},},
     {"roomId":{"name":"room_08DeadEnds","path":"rooms/room_08DeadEnds/room_08DeadEnds.yy",},},
@@ -833,6 +832,7 @@
     {"roomId":{"name":"room_12GoingInCircles","path":"rooms/room_12GoingInCircles/room_12GoingInCircles.yy",},},
     {"roomId":{"name":"room_000shootingRange","path":"rooms/room_000shootingRange/room_000shootingRange.yy",},},
     {"roomId":{"name":"room_04PeakABear","path":"rooms/room_04PeakABear/room_04PeakABear.yy",},},
+    {"roomId":{"name":"room_05ExpandingHorizons","path":"rooms/room_05ExpandingHorizons/room_05ExpandingHorizons.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
