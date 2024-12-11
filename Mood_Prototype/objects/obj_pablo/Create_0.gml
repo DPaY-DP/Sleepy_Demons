@@ -14,8 +14,6 @@ hpMax = 24;
 hp = hpMax;
 hpLast = hpMax;
 
-envDamage = 0.025;
-
 rangeExecute = 120;
 rangePlayerFlee = 120;
 
@@ -27,3 +25,5 @@ limitSlowness = 10;
 payoffSlowness = 300;
 
 event_inherited();
+
+envDamage = damageBase * 1;

@@ -72,6 +72,13 @@ stateGame.start = function()
 	if (weaponsMax > 0) weaponsEquipped[0] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", weaponsMain[selected[0]][1]);
 	if (weaponsMax > 1) weaponsEquipped[1] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", weaponsEffect[selected[1]][1]);
 	if (weaponsMax > 2) weaponsEquipped[2] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", weaponsEffect[selected[2]][1]);
+	
+	if (room == room_tutorialShooting)
+	{
+		weaponsMax = 1;
+		if (weaponsMax > 0) weaponsEquipped[0] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", obj_weaponMainPistol);
+		exit;
+	}
 }
 stateGame.run = function()
 {
@@ -105,18 +112,33 @@ stateGame.run = function()
 }
 stateGame.drawGUI = function()
 {
+	//selected weapon
+	var _x = GUIwidth * 0.05;
+	var _y = GUIheight * 0.9;
+	
+	var _offsetX = 27 * global.GUIScale;
+	var _slotwidth = 54 * global.GUIScale
+	
+	draw_sprite_simple(spr_UIweaponSelect, weaponActive, _x, _y, { size : global.GUIScale });
+	if (weaponsMax > 0) draw_sprite_simple(spriteWeapon[0], selected[0], _x + _offsetX, _y, { size : global.GUIScale * 0.5 });
+	if (weaponsMax > 1) draw_sprite_simple(spriteWeapon[1], selected[1], _x + _offsetX + _slotwidth, _y, { size : global.GUIScale * 0.5 });
+	if (weaponsMax > 2) draw_sprite_simple(spriteWeapon[1], selected[2], _x + _offsetX + _slotwidth * 2, _y, { size : global.GUIScale * 0.5 });
+	
+	
+	//pillow count
 	if (weaponActive == 0) 
 	{
 		if (instance_exists(obj_weaponPillow))
 		{
-			var _y = GUIheight * 0.9;
+			var _y = GUIheight * 0.82;
 			var _offset = 10 * global.GUIScale;
+			var _pillowSize = 0.8 * global.GUIScale;
 		
 			for(var i = 0; i < obj_weaponPillow.ammo; i++)
-			{
-				var _x = GUIwidth * 0.05 + i * sprite_get_width(spr_pillow) * global.GUIScale + _offset;
-				draw_sprite_simple(spr_pillow, 0, _x, _y, {color : c_dkgray, xscale : 1.1 * global.GUIScale, yscale : 1.1 * global.GUIScale});
-				draw_sprite_simple(spr_pillow, 0, _x, _y,{xscale : global.GUIScale, yscale : global.GUIScale});
+			{				
+				var _x = GUIwidth * 0.055 + i * sprite_get_width(spr_pillow) * global.GUIScale + _offset;
+				draw_sprite_simple(spr_pillow, 0, _x, _y, {color : c_dkgray, xscale : 1.1 * _pillowSize, yscale : 1.1 * _pillowSize});
+				draw_sprite_simple(spr_pillow, 0, _x, _y,{xscale : _pillowSize, yscale : _pillowSize});
 			}
 		}
 		exit;
@@ -140,7 +162,7 @@ stateGame.drawGUI = function()
 	var _abacusSize = (_width + _abacusSpace) / sprite_get_width(spr_abacus);
 	
 	var _x = GUIwidth * 0.05;
-	var _y = GUIheight * 0.9;
+	var _y = GUIheight * 0.82;
 
 	var _rows = 1;
 	var _ammoPerRow = _ammoMax;
@@ -346,12 +368,15 @@ stateSelect.drawGUI = function()
 stateTutorial = new State();
 stateTutorial.start = function()
 {
-	weaponActive = 0;
+	weaponActive = 1;
 	weaponsMax = 3;
 	
 	weaponsEquipped[0] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", obj_weaponMainPistol);
 	weaponsEquipped[1] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", obj_weaponGluelauncher);
 	weaponsEquipped[2] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", obj_weaponBlackhole);
+	
+	weaponsEquipped[0].active = false;
+	weaponsEquipped[1].active = true;
 }
 stateTutorial.run = function()
 {	
@@ -384,22 +409,42 @@ stateTutorial.run = function()
 stateTutorial.drawGUI = function()
 {
 	//tutorial messaging
-	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.73, "< your ammo",   { font : font_upheaval_scalable, size : fontscale * 8, halign : fa_center, valign: fa_top, color : c_black });
-	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.83, "reloads >", { font : font_upheaval_scalable, size : fontscale * 8, halign : fa_center, valign: fa_top, color : c_black });
+	var _size = fontscale * 6
+	draw_text_simple(GUIwidth * 0.69, GUIheight * 0.16, "Primary", { font : font_upheaval_scalable, size : _size, halign : fa_left, valign: fa_top, color : c_black });	
+	draw_text_simple(GUIwidth * 0.69, GUIheight * 0.29, "Secondary", { font : font_upheaval_scalable, size : _size, halign : fa_left, valign: fa_top, color : c_black });	
+	draw_text_simple(GUIwidth * 0.145, GUIheight * 0.16, "Switch", { font : font_upheaval_scalable, size : _size, halign : fa_left, valign: fa_top, color : c_black });	
+	
+	draw_text_simple(GUIwidth * 0.32, GUIheight * 0.795, "< your ammo",   { font : font_upheaval_scalable, size : _size, halign : fa_center, valign: fa_top, color : c_black });
+	draw_text_simple(GUIwidth * 0.81, GUIheight * 0.62, "reloads", { font : font_upheaval_scalable, size : _size, halign : fa_center, valign: fa_top, color : c_black });	
 	
 	
+	//selected weapon
+	var _x = GUIwidth * 0.05;
+	var _y = GUIheight * 0.9;
+	
+	var _offsetX = 27 * global.GUIScale;
+	var _slotwidth = 54 * global.GUIScale
+	
+	draw_sprite_simple(spr_UIweaponSelect, weaponActive, _x, _y, { size : global.GUIScale });
+	if (weaponsMax > 0) draw_sprite_simple(spriteWeapon[0], 0, _x + _offsetX, _y, { size : global.GUIScale * 0.5 });
+	if (weaponsMax > 1) draw_sprite_simple(spriteWeapon[1], 0, _x + _offsetX + _slotwidth, _y, { size : global.GUIScale * 0.5 });
+	if (weaponsMax > 2) draw_sprite_simple(spriteWeapon[1], 1, _x + _offsetX + _slotwidth * 2, _y, { size : global.GUIScale * 0.5 });
+	
+	
+	//pillow count
 	if (weaponActive == 0) 
 	{
 		if (instance_exists(obj_weaponPillow))
 		{
-			var _y = GUIheight * 0.9;
+			var _y = GUIheight * 0.82;
 			var _offset = 10 * global.GUIScale;
+			var _pillowSize = 0.8 * global.GUIScale;
 		
 			for(var i = 0; i < obj_weaponPillow.ammo; i++)
 			{				
-				var _x = GUIwidth * 0.05 + i * sprite_get_width(spr_pillow) * global.GUIScale + _offset;
-				draw_sprite_simple(spr_pillow, 0, _x, _y, {color : c_dkgray, xscale : 1.1 * global.GUIScale, yscale : 1.1 * global.GUIScale});
-				draw_sprite_simple(spr_pillow, 0, _x, _y,{xscale : global.GUIScale, yscale : global.GUIScale});
+				var _x = GUIwidth * 0.055 + i * sprite_get_width(spr_pillow) * global.GUIScale + _offset;
+				draw_sprite_simple(spr_pillow, 0, _x, _y, {color : c_dkgray, xscale : 1.1 * _pillowSize, yscale : 1.1 * _pillowSize});
+				draw_sprite_simple(spr_pillow, 0, _x, _y,{xscale : _pillowSize, yscale : _pillowSize});
 			}
 		}
 		exit;
@@ -424,7 +469,7 @@ stateTutorial.drawGUI = function()
 	show_debug_message(_abacusSize)
 	
 	var _x = GUIwidth * 0.05;
-	var _y = GUIheight * 0.9;
+	var _y = GUIheight * 0.82;
 
 	var _rows = 1;
 	var _ammoPerRow = _ammoMax;
@@ -434,16 +479,6 @@ stateTutorial.drawGUI = function()
 		_rows = ceil(_fullWidth / _width);
 		_ammoPerRow = ceil(_ammoMax / _rows);
 	}
-	
-	var _offsetX = 27 * global.GUIScale;
-	var _slotwidth = 54 * global.GUIScale
-	
-	draw_sprite_simple(spr_UIweaponSelect, weaponActive, _x, _y, { size : global.GUIScale });
-	draw_sprite_simple(spriteWeapon[0], 0, _x + _offsetX, _y, { size : global.GUIScale * 0.5 });
-	draw_sprite_simple(spriteWeapon[1], 0, _x + _offsetX + _slotwidth, _y, { size : global.GUIScale * 0.5 });
-	draw_sprite_simple(spriteWeapon[1], 0, _x + _offsetX + _slotwidth * 2, _y, { size : global.GUIScale * 0.5 });
-	
-	_y = GUIheight * 0.81;
 	
 	var _spent = array_create(_rows, 0);
 	for (var i = 0; i < _rows; i++)

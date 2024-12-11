@@ -274,7 +274,7 @@ stateWin.drawGUI = function()
 		if (!gamewin)
 		{
 			draw_sprite_simple(spr_window, 0, GUIwidth * 0.05, GUIheight * 0.05, { xscale : GUIwidth * 0.9, yscale : GUIheight * 0.9, alpha : 0.5 });
-			draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Snooze'd em up!", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
+			draw_text_simple(GUIwidth * 0.5, GUIheight * 0.15, "Snoozed 'em up!", { color : c_white, font : font_upheaval_scalable, size : 12 * fontscale });
 			
 			if (timerState > 45) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.5, $"{timeFinish / 1000} seconds", { color : c_white, font : font_upheaval_scalable, size : 10 * fontscale });
 			if (timerState > 60) && (newBest) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.45, $"NEW BEST!", { color : c_white, font : font_upheaval_scalable, size : 5 * fontscale });

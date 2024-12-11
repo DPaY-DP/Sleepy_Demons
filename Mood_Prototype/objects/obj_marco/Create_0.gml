@@ -1,5 +1,7 @@
 event_inherited();
 
+envDamage = damageBase * 0.35;
+
 //unique values
 name = "marco";
 
@@ -17,8 +19,6 @@ hpMax = 18;
 
 hp = hpMax;
 hpLast = hpMax;
-
-envDamage = 0.01;
 
 rangeExecute = 80;
 rangePlayerFlee = 120;

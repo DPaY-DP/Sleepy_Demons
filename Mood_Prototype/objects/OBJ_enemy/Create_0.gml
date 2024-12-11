@@ -7,6 +7,8 @@ iterationsUnstuck = 0;
 
 fleeFromPlayer = true;
 
+damageBase = 0.04;
+
 myHitbox = instance_create_depth(x, y, depth, obj_enemyHitbox, { owner : id });
 #endregion
 

@@ -1,5 +1,5 @@
 #region GAME SETUP
-global.version = "V0.1.2";
+global.version = "V0.2";
 randomize();
 window_set_cursor(cr_none)
 cursor_sprite = spr_cursor0;
@@ -183,8 +183,8 @@ defaults =
 {
 	version : global.version,
 	
-	fullscreen : false, //true,
-	volumeMusic : 0,	//0.5,
+	fullscreen : true,
+	volumeMusic : 0.5,
 	volumeSFX : 0.25,
 	
 			
@@ -276,7 +276,7 @@ defaults =
 				enumMinigame.FASTCLICK,
 			],
 			
-			loadoutPillows : 1,
+			loadoutPillows : 3,
 			loadoutWeapons : 0,
 			
 			weaponUnlocks : [],
@@ -699,7 +699,7 @@ defaults =
 			[0, obj_weaponBlackhole,	"SINGULARITY V.2",			"Prim: Fires a slow moving black\nhole\n\nAlt: Create up to two linked portals"	],
 			[0, obj_weaponMiniyum,		"THE MINIYUM",				"Prim: Fire volleys of slowing candy\ncanes\n\nAlt: Boost yourself to gain speed"		],
 			[0, obj_weaponGummybear,	"GUMMY LURE-AND-BUMPER GUN","Prim: Deploy Gummy Lure\n\nAlt: Deploy Gummy Bumper"		],
-			[0, obj_weaponStinkbomb,	"\"NOSE-FERATU 2\"\nOLFACTORY DISINCENTIVIZER",		"Prim: Throw disgusting stink bomb\nto scare away enemies\n\nAlt: Enter berserker melee rush"	],
+			[0, obj_weaponStinkbomb,	"\"NOSE-FERATU 2\"\nOLFACTORY DISINCENTIVIZER",		"Prim: Throw disgusting stink bombs\nto scare away enemies\n\nAlt: Enter berserker melee rush"	],
 			[0, obj_weaponCatchmines,	"CATCHMINE THROWER",		"Prim: Deploy Catchmine\n\nAlt: Grappling Hook"		],
 		],
 	
@@ -715,10 +715,10 @@ defaults =
 
 //get save or set up fresh save
 global.save = file_load(global.saveName);
-global.save = false;
+//global.save = false;
 
 if (!global.save) || (global.save.version != global.version) create_save();
 
-unlock_levels_all();
-unlock_weapons_all();
+//unlock_levels_all();
+//unlock_weapons_all();
 #endregion

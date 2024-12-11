@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"Tutorial",
-    "path":"folders/Objects/# Game/Player/Weapon/Tutorial.yy",
+    "path":"folders/Objects/# Game/Tutorial.yy",
   },
   "parentObjectId":{
     "name":"OBJ_weapon",

@@ -21,6 +21,7 @@
   "height":54,
   "HTile":false,
   "layers":[
+    {"$GMImageLayer":"","%Name":"450d6993-766e-4361-b02d-0ed3776d9cf7","blendMode":0,"displayName":"Layer 1","isLocked":false,"name":"450d6993-766e-4361-b02d-0ed3776d9cf7","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
     {"$GMImageLayer":"","%Name":"4ce299c0-8a54-4df3-853e-17d9c656b873","blendMode":0,"displayName":"default","isLocked":false,"name":"4ce299c0-8a54-4df3-853e-17d9c656b873","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_UIweaponSelect",

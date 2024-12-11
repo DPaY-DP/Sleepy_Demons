@@ -1,6 +1,6 @@
 draw_self();
 
-if(instance_number(obj_tutorialEnvSmall) == 0)
+if(POIsFixed == 3)
 {
 	draw_sprite_simple(spr_UI_button, 0, x, y - 16, { size : 0.8 });
 
@@ -18,5 +18,7 @@ if(instance_number(obj_tutorialEnvSmall) == 0)
 		var _dummy = instance_find(obj_tutorialDummy,0);
 		show_debug_message("Found and destroyed dummy: " + string(_dummy))
 		_dummy.executedDummy = true;
+		
+		image_blend = c_white;
 	}
 }
