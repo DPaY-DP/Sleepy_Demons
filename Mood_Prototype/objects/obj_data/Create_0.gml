@@ -188,10 +188,12 @@ defaults =
 	volumeSFX : 0.25,
 	
 			
-	//				//levels select
-	//			completed : true,
-	//			sprite : spr_thumbnail,
-	//			time : infinity,
+	//For LEVEL DATA:
+	//
+	//	Each time another level is added, make sure to...
+	//	update finallevel (at the end of the levels struct)
+	//	update the shooting range unlock criteria (obj_managerGame_CREATE_line218 // "if (currentLevel == 9)" )
+	//  update level select length (obj_main_DRAW64_line38 // "var _lengthLevelSelect = [5, 13, 0]" )
 	
 	levels :
 	[
@@ -234,7 +236,7 @@ defaults =
 			],
 			
 			loadoutPillows : 1,
-			loadoutWeapons : 1,
+			loadoutWeapons : 0,
 			
 			weaponUnlocks : [],
 			
@@ -253,6 +255,28 @@ defaults =
 			],
 			
 			loadoutPillows : 0,
+			loadoutWeapons : 0,
+			
+			weaponUnlocks : [],
+			
+				//levels select
+			completed : false,
+			sprite : spr_thumbnail,
+			time : infinity,
+		},
+		{
+			room : room_tutorialWeaponswitching,
+			name : "Tutorial: Weapons",
+			unlocked : true,
+			
+			minigames :  [
+				enumMinigame.TUCK,
+				enumMinigame.BRUSH,
+				enumMinigame.STUFF,
+				enumMinigame.FASTCLICK,
+			],
+			
+			loadoutPillows : 1,
 			loadoutWeapons : 0,
 			
 			weaponUnlocks : [],
@@ -664,7 +688,7 @@ defaults =
 		},
 	],
 	
-	finalLevel : 16,
+	finalLevel : 17,
 	finalGameTime : infinity,
 	
 	weaponsUnlocked :

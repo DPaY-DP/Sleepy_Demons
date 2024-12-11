@@ -215,7 +215,7 @@ stateWin.start = function()
 	if (currentLevel < array_length(global.save.levels) - 1) 
 	{
 		global.save.levels[currentLevel + 1].unlocked = true;
-		if (currentLevel == 8) global.save.levels[0].unlocked = true;		//this unlocks the firing range
+		if (currentLevel == 9) global.save.levels[0].unlocked = true;		//this unlocks the firing range
 	}
 	
 	clickThrough = 0;

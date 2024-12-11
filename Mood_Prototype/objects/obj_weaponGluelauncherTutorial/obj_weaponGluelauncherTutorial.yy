@@ -1,19 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"obj_horsemanager",
+  "%Name":"obj_weaponGluelauncherTutorial",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_horsemanager",
+  "name":"obj_weaponGluelauncherTutorial",
   "overriddenProperties":[],
   "parent":{
-    "name":"Horseshoe",
-    "path":"folders/Objects/# Game/Minigames/Horseshoe.yy",
+    "name":"Tutorial",
+    "path":"folders/Objects/# Game/Player/Weapon/Tutorial.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"OBJ_weapon",
+    "path":"objects/OBJ_weapon/OBJ_weapon.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,7 +33,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_weaponGluelauncher",
+    "path":"sprites/spr_weaponGluelauncher/spr_weaponGluelauncher.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

@@ -61,6 +61,12 @@ setup_state_machine();
 stateGame = new State();
 stateGame.start = function()
 {
+	if (room == room_tutorialWeaponswitching)
+	{
+		switch_state(stateTutorial);
+		exit;
+	}
+	
 	weaponActive = 0;
 	
 	if (weaponsMax > 0) weaponsEquipped[0] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", weaponsMain[selected[0]][1]);
@@ -333,5 +339,136 @@ stateSelect.drawGUI = function()
 	else
 	{
 		draw_sprite_simple(spr_loadoutLocked, 0, GUIwidth / 6 * 5, GUIheight / 2, { size : _sizeFrame });
+	}
+}
+
+
+stateTutorial = new State();
+stateTutorial.start = function()
+{
+	weaponActive = 0;
+	weaponsMax = 3;
+	
+	weaponsEquipped[0] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", obj_weaponMainPistol);
+	weaponsEquipped[1] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", obj_weaponGluelauncher);
+	weaponsEquipped[2] = instance_create_layer(obj_player.x, obj_player.y, "Weapons", obj_weaponBlackhole);
+}
+stateTutorial.run = function()
+{	
+	var mwUp = mouse_wheel_up();
+	var mwDown = mouse_wheel_down();
+	
+	//switch
+	var _switch = mwDown - mwUp;
+	if (_switch != 0)
+	{
+		weaponsEquipped[weaponActive].active = false;
+		
+		weaponActive += _switch;
+		weaponActive = loop(weaponActive, 0, weaponsMax - 1);
+	
+		weaponsEquipped[weaponActive].active = true;
+	}
+	
+	if (keyboard_check_pressed(vk_anykey))
+	{
+		var _digit = string_digits(keyboard_lastchar)
+		if (_digit != "") && (_digit <= weaponsMax) && (_digit != 0)
+		{
+			weaponsEquipped[weaponActive].active = false;
+			weaponActive = _digit - 1;
+			weaponsEquipped[weaponActive].active = true;
+		}
+	}
+}
+stateTutorial.drawGUI = function()
+{
+	//tutorial messaging
+	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.73, "< your ammo",   { font : font_upheaval_scalable, size : fontscale * 8, halign : fa_center, valign: fa_top, color : c_black });
+	draw_text_simple(GUIwidth * 0.5, GUIheight * 0.83, "reloads >", { font : font_upheaval_scalable, size : fontscale * 8, halign : fa_center, valign: fa_top, color : c_black });
+	
+	
+	if (weaponActive == 0) 
+	{
+		if (instance_exists(obj_weaponPillow))
+		{
+			var _y = GUIheight * 0.9;
+			var _offset = 10 * global.GUIScale;
+		
+			for(var i = 0; i < obj_weaponPillow.ammo; i++)
+			{				
+				var _x = GUIwidth * 0.05 + i * sprite_get_width(spr_pillow) * global.GUIScale + _offset;
+				draw_sprite_simple(spr_pillow, 0, _x, _y, {color : c_dkgray, xscale : 1.1 * global.GUIScale, yscale : 1.1 * global.GUIScale});
+				draw_sprite_simple(spr_pillow, 0, _x, _y,{xscale : global.GUIScale, yscale : global.GUIScale});
+			}
+		}
+		exit;
+	}
+	
+		//ammo in game
+	var _weapon = weaponsEquipped[weaponActive];
+	
+	var _ammo = _weapon.ammo;
+	var _ammoMax = _weapon.ammoMax;
+	
+	var _image = _weapon.ammoImage;
+	var _sizeAmmo = _weapon.ammoImageSize;
+	var _spaceAmmo = 0;
+	
+	var _widthAmmo = 4.5 * _sizeAmmo * global.GUIScale;
+	var _abacusSpace = 10 * global.GUIScale;
+	var _abacusOffset = 12 * global.GUIScale + _widthAmmo / 2;
+	
+	var _width = 150 * global.GUIScale;      //_widthAmmo * _ammoMax + _abacusSpace;
+	var _abacusSize = (_width + _abacusSpace) / sprite_get_width(spr_abacus);
+	show_debug_message(_abacusSize)
+	
+	var _x = GUIwidth * 0.05;
+	var _y = GUIheight * 0.9;
+
+	var _rows = 1;
+	var _ammoPerRow = _ammoMax;
+	var _fullWidth = _ammoMax * _widthAmmo + _abacusSpace + _abacusOffset * 2;
+	if (_width < _fullWidth) 
+	{
+		_rows = ceil(_fullWidth / _width);
+		_ammoPerRow = ceil(_ammoMax / _rows);
+	}
+	
+	var _offsetX = 27 * global.GUIScale;
+	var _slotwidth = 54 * global.GUIScale
+	
+	draw_sprite_simple(spr_UIweaponSelect, weaponActive, _x, _y, { size : global.GUIScale });
+	draw_sprite_simple(spriteWeapon[0], 0, _x + _offsetX, _y, { size : global.GUIScale * 0.5 });
+	draw_sprite_simple(spriteWeapon[1], 0, _x + _offsetX + _slotwidth, _y, { size : global.GUIScale * 0.5 });
+	draw_sprite_simple(spriteWeapon[1], 0, _x + _offsetX + _slotwidth * 2, _y, { size : global.GUIScale * 0.5 });
+	
+	_y = GUIheight * 0.81;
+	
+	var _spent = array_create(_rows, 0);
+	for (var i = 0; i < _rows; i++)
+	{
+		draw_sprite_simple(spr_abacus, 0, _x, _y, { xscale : _abacusSize });
+		
+		for (var l = 0; l < _ammoPerRow; l++)
+		{
+			show_debug_message(i * _ammoPerRow + l)
+			
+			if (i * _ammoPerRow + l >= _ammoMax) break;
+			
+			if (i * _ammoPerRow + l < _ammo)
+			{	
+				draw_sprite_simple(spr_looseAmmo, _image, _x + _abacusSpace + _width - _abacusOffset - (_widthAmmo + _spaceAmmo) * l, _y, { angle : 90, size : _sizeAmmo });
+			}
+			else
+			{
+				draw_sprite_simple(spr_looseAmmo, _image, _abacusOffset + _x + _widthAmmo * _spent[i], _y, { angle : 90, size : _sizeAmmo, color : c_grey });				
+				_spent[i]++;
+				
+				show_debug_message(_spent[i])
+			}
+		}
+	
+		_y -= GUIheight * 0.04;
 	}
 }
