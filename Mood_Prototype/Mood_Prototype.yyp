@@ -631,6 +631,7 @@
     {"id":{"name":"spr_looseAmmo","path":"sprites/spr_looseAmmo/spr_looseAmmo.yy",},},
     {"id":{"name":"spr_mainBackground","path":"sprites/spr_mainBackground/spr_mainBackground.yy",},},
     {"id":{"name":"spr_marco","path":"sprites/spr_marco/spr_marco.yy",},},
+    {"id":{"name":"spr_marcoSleep","path":"sprites/spr_marcoSleep/spr_marcoSleep.yy",},},
     {"id":{"name":"spr_marshmallow","path":"sprites/spr_marshmallow/spr_marshmallow.yy",},},
     {"id":{"name":"spr_moodGuyFist_Pillow","path":"sprites/spr_moodGuyFist_Pillow/spr_moodGuyFist_Pillow.yy",},},
     {"id":{"name":"spr_moodGuyFist_Stinkbomb","path":"sprites/spr_moodGuyFist_Stinkbomb/spr_moodGuyFist_Stinkbomb.yy",},},
@@ -768,7 +769,6 @@
     {"id":{"name":"spr_wireStraight","path":"sprites/spr_wireStraight/spr_wireStraight.yy",},},
     {"id":{"name":"spr_wireStraight2","path":"sprites/spr_wireStraight2/spr_wireStraight2.yy",},},
     {"id":{"name":"spr_zebediah","path":"sprites/spr_zebediah/spr_zebediah.yy",},},
-    {"id":{"name":"spr_zebediahSleep","path":"sprites/spr_zebediahSleep/spr_zebediahSleep.yy",},},
     {"id":{"name":"spr_zzz","path":"sprites/spr_zzz/spr_zzz.yy",},},
     {"id":{"name":"Sprite_Armchairs","path":"sprites/Sprite_Armchairs/Sprite_Armchairs.yy",},},
     {"id":{"name":"Sprite_Bench","path":"sprites/Sprite_Bench/Sprite_Bench.yy",},},
@@ -836,6 +836,7 @@
     {"roomId":{"name":"room_000shootingRange","path":"rooms/room_000shootingRange/room_000shootingRange.yy",},},
     {"roomId":{"name":"room_04PeakABear","path":"rooms/room_04PeakABear/room_04PeakABear.yy",},},
     {"roomId":{"name":"room_05ExpandingHorizons","path":"rooms/room_05ExpandingHorizons/room_05ExpandingHorizons.yy",},},
+    {"roomId":{"name":"room_tutorialTunnels","path":"rooms/room_tutorialTunnels/room_tutorialTunnels.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

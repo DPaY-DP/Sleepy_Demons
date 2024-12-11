@@ -70,9 +70,10 @@ stateIdle.run = function()
 }
 stateIdle.draw = function()
 {
-	if (sabotaged) && (point_distance(xCenter, yCenter, obj_player.x, obj_player.y) < 120) draw_sprite_simple(spr_UI_button, 3, xCenter, yCenter);
 	
-	image_index = sabotaged;
+}
+stateIdle.drawGUI = function()
+{
 }
 stateIdle.stop = function()
 {
