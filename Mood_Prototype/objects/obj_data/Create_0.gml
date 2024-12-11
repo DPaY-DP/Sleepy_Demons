@@ -198,7 +198,7 @@ defaults =
 		{
 			room : room_000shootingRange,
 			name : "Shooting Range",
-			unlocked : false,
+			unlocked : true,
 		
 			minigames :  [
 				enumMinigame.TUCK,
@@ -695,6 +695,6 @@ global.save = false;
 
 if (!global.save) || (global.save.version != global.version) create_save();
 
-unlock_levels_all();
-unlock_weapons_all();
+//unlock_levels_all();
+//unlock_weapons_all();
 #endregion
