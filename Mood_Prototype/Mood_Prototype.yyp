@@ -338,7 +338,6 @@
     {"id":{"name":"room_tutorialEnvironment","path":"rooms/room_tutorialEnvironment/room_tutorialEnvironment.yy",},},
     {"id":{"name":"room_tutorialExecutie","path":"rooms/room_tutorialExecutie/room_tutorialExecutie.yy",},},
     {"id":{"name":"room_tutorialShooting","path":"rooms/room_tutorialShooting/room_tutorialShooting.yy",},},
-    {"id":{"name":"room_tutorialTunnels","path":"rooms/room_tutorialTunnels/room_tutorialTunnels.yy",},},
     {"id":{"name":"array_append","path":"scripts/array_append/array_append.yy",},},
     {"id":{"name":"array_choose","path":"scripts/array_choose/array_choose.yy",},},
     {"id":{"name":"array_find","path":"scripts/array_find/array_find.yy",},},

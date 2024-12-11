@@ -287,7 +287,6 @@
     {"name":"room_main","order":4,"path":"rooms/room_main/room_main.yy",},
     {"name":"room_tutorialExecutie","order":1,"path":"rooms/room_tutorialExecutie/room_tutorialExecutie.yy",},
     {"name":"room_tutorialShooting","order":2,"path":"rooms/room_tutorialShooting/room_tutorialShooting.yy",},
-    {"name":"room_tutorialTunnels","order":3,"path":"rooms/room_tutorialTunnels/room_tutorialTunnels.yy",},
     {"name":"array_choose","order":1,"path":"scripts/array_choose/array_choose.yy",},
     {"name":"array_find","order":2,"path":"scripts/array_find/array_find.yy",},
     {"name":"array_invert","order":3,"path":"scripts/array_invert/array_invert.yy",},
