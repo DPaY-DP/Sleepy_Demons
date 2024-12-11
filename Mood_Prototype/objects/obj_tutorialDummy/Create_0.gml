@@ -37,7 +37,7 @@ dummyBehaviour = function()
 		break;
 		
 		case "room_tutorialEnvironment":
-		 if (executedDummy) instance_destroy();
+			if (executedDummy) instance_destroy();
 		break;
 	}
 }
