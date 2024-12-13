@@ -183,7 +183,7 @@ defaults =
 {
 	version : global.version,
 	
-	fullscreen : true,
+	fullscreen : false,
 	volumeMusic : 0.5,
 	volumeSFX : 0.25,
 	
@@ -576,6 +576,8 @@ defaults =
 				enumMinigame.CABLE,
 				
 				enumMinigame.FASTCLICK,
+				enumMinigame.LIGHTSWITCH,
+				enumMinigame.SQUAREHOLE,
 			],
 			
 			loadoutPillows : 1,
@@ -719,6 +721,6 @@ global.save = file_load(global.saveName);
 
 if (!global.save) || (global.save.version != global.version) create_save();
 
-//unlock_levels_all();
-//unlock_weapons_all();
+unlock_levels_all();
+unlock_weapons_all();
 #endregion

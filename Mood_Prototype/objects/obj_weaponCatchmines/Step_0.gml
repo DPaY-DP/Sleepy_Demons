@@ -88,8 +88,6 @@ if (timerFirerate == 0) && (ammo > 0)
 			
 			exit;
 		}
-		
-		show_debug_message(_checkDist)
 	}
 	
 	targetGrapple = [_x, _y];

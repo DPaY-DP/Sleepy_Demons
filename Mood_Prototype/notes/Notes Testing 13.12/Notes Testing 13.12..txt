@@ -1,0 +1,24 @@
+Stuff:
+ - Crash Dennis (Marco, finish, lvl: fix my teddy, black hole gun)
+ - level 12 cant close lower tunnel
+ 
+
+
+
+Balancing:
+ - Game too hard lol
+ - Minigun feels pretty bad
+
+
+
+
+Crashes:
+level12
+############################################################################################
+ERROR in action number 1
+of  Step Event0 for object obj_weaponPillow:
+Variable <unknown_object>.rangePlayerFlee(100380, -2147483648) not set before reading it.
+at gml_Script_anon@52@gml_Object_obj_tunnel_Create_0
+############################################################################################
+gml_Script_anon@52@gml_Object_obj_tunnel_Create_0 (line -1)
+gml_Object_obj_weaponPillow_Step_0

@@ -106,7 +106,6 @@ stateSeek.start = function()
 		target = _enemies[0][0];
 		target.targeted = true;
 		navmesh = get_navmesh(inRoom, target.inRoom);
-		show_debug_message($"Zebediah: {inRoom.number}, {target.name}, {target.inRoom.number}, {navmesh}")
 		
 		intent = "instigate";
 		switch_state(stateWalk);
@@ -139,7 +138,7 @@ stateSeek.start = function()
 		var _tryEnv = array_pop(_envs);
 		
 		//see if it is a valid sabotage target (hp remaining)
-		show_debug_message($"{name} looking for sabotage target:\nPOIs: {array_length(_tryEnv.POIs)}; broken: {_tryEnv.broken}")
+		//show_debug_message($"{name} looking for sabotage target:\nPOIs: {array_length(_tryEnv.POIs)}; broken: {_tryEnv.broken}")
 		
 		//if (array_length(_tryEnv.POIs) != 0)	show_debug_message("1")
 		//if (!_tryEnv.broken)					show_debug_message("2")
