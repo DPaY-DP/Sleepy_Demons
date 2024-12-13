@@ -28,9 +28,9 @@ payoffSlowness = 300;
 intervalRandomWalk = 300;
 timerRandomWalk = 0;
 
-fleeFromPlayer = false;
-
 event_inherited();
+
+fleeFromPlayer = false;
 
 
 movementMods = [

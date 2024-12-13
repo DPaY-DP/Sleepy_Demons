@@ -17,7 +17,7 @@ if (instance_number(obj_projectilePortal_lingering) == 2)
 		var _x = other.x + lengthdir_x(_threshold, _dir);
 		var _y = other.y + lengthdir_y(_threshold, _dir);
 		
-		with (other) if (!place_meeting(_x, _y, obj_wall)) break;
+		with (other) if (!place_meeting(_x, _y, OBJ_colliderPlayer)) break;
 		else _dir += 90;
 		
 		if (_dir == 360) _dir = 45;
@@ -25,7 +25,7 @@ if (instance_number(obj_projectilePortal_lingering) == 2)
 	
 	with (other) 
 	{
-		while (place_meeting(x, y, obj_wall))
+		while (place_meeting(x, y, OBJ_colliderPlayer))
 		{
 			x += lengthdir_x(1, _dir);
 			y += lengthdir_y(1, _dir);

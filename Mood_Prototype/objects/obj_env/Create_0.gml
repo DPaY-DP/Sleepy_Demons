@@ -11,7 +11,7 @@ membersSabo = 2;
 pointsSabo = [];
 
 hpMax = 50;
-hpDrain = 0.5;
+hpDrain = 0.2;
 
 stageMax = image_number - 1;
 #endregion
