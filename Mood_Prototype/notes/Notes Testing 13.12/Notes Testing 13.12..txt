@@ -8,6 +8,7 @@ Stuff:
 Balancing:
  - Game too hard lol
  - Minigun feels pretty bad
+ - increase POI range
 
 
 
