@@ -523,22 +523,16 @@ defaults =
 				enumMinigame.TICKLE,
 				enumMinigame.TICKLE,
 				enumMinigame.TICKLE,
+				enumMinigame.INPUTS,
+				enumMinigame.INPUTS,
+				
+				enumMinigame.SQUAREHOLE,
+				enumMinigame.SQUAREHOLE,
+				enumMinigame.SQUAREHOLE,
+				enumMinigame.SQUAREHOLE,
+				enumMinigame.INPUTS,
+				
 				enumMinigame.CABLE,
-				enumMinigame.CABLE,
-				
-				enumMinigame.FASTCLICK,
-				enumMinigame.FASTCLICK,
-				enumMinigame.FASTCLICK,
-				enumMinigame.FASTCLICK,
-				enumMinigame.INPUTS,
-				
-				enumMinigame.INPUTS,
-				enumMinigame.INPUTS,
-				enumMinigame.SQUAREHOLE,
-				enumMinigame.SQUAREHOLE,
-				enumMinigame.SQUAREHOLE,
-				
-				enumMinigame.SQUAREHOLE,
 			],
 			
 			loadoutPillows : 1,
@@ -558,26 +552,21 @@ defaults =
 		
 			minigames :  [
 				enumMinigame.TUCK,
-				enumMinigame.BRUSH,
-				enumMinigame.TICKLE,
-				enumMinigame.STUFF,
-				enumMinigame.CABLE,
+				enumMinigame.TUCK,
+				enumMinigame.TUCK,
+				enumMinigame.HORSESHOE,
+				enumMinigame.HORSESHOE,
 				
 				enumMinigame.HORSESHOE,
 				enumMinigame.LIGHTSWITCH,
-				enumMinigame.SQUAREHOLE,
-				enumMinigame.FASTCLICK,
-				enumMinigame.INPUTS,
-				
-				enumMinigame.TUCK,
-				enumMinigame.BRUSH,
-				enumMinigame.TICKLE,
-				enumMinigame.STUFF,
-				enumMinigame.CABLE,
-				
-				enumMinigame.FASTCLICK,
 				enumMinigame.LIGHTSWITCH,
-				enumMinigame.SQUAREHOLE,
+				enumMinigame.LIGHTSWITCH,
+				enumMinigame.STUFF,
+				
+				enumMinigame.STUFF,
+				enumMinigame.STUFF,
+				enumMinigame.FASTCLICK,
+				enumMinigame.FASTCLICK,
 			],
 			
 			loadoutPillows : 1,
@@ -601,10 +590,11 @@ defaults =
 				enumMinigame.INPUTS,
 				enumMinigame.INPUTS,
 				enumMinigame.INPUTS,
-				enumMinigame.SQUAREHOLE,
-				enumMinigame.SQUAREHOLE,
-				enumMinigame.SQUAREHOLE,
-				enumMinigame.SQUAREHOLE,
+				
+				enumMinigame.STUFF,
+				enumMinigame.STUFF,
+				enumMinigame.STUFF,
+				enumMinigame.STUFF,
 			],
 			
 			loadoutPillows : 1,
@@ -623,19 +613,21 @@ defaults =
 			unlocked : false,
 		
 			minigames :  [
-				enumMinigame.CABLE,
-				enumMinigame.CABLE,
-				enumMinigame.CABLE,
-				enumMinigame.CABLE,
-				enumMinigame.HORSESHOE,
-				
 				enumMinigame.HORSESHOE,
 				enumMinigame.HORSESHOE,
 				enumMinigame.HORSESHOE,
-				enumMinigame.BRUSH,
-				enumMinigame.BRUSH,
+				enumMinigame.HORSESHOE,
+				enumMinigame.TICKLE,
 				
 				enumMinigame.BRUSH,
+				enumMinigame.BRUSH,
+				enumMinigame.BRUSH,
+				enumMinigame.CABLE,
+				enumMinigame.CABLE,
+				
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
+				enumMinigame.TICKLE,
 			],
 			
 			loadoutPillows : 1,
@@ -669,13 +661,6 @@ defaults =
 				enumMinigame.TUCK,
 				enumMinigame.BRUSH,
 				enumMinigame.TICKLE,
-				enumMinigame.STUFF,
-				enumMinigame.CABLE,
-				
-				enumMinigame.FASTCLICK,
-				enumMinigame.HORSESHOE,
-				enumMinigame.LIGHTSWITCH,
-				enumMinigame.SQUAREHOLE,
 			],
 			
 			loadoutPillows : 1,
@@ -717,7 +702,7 @@ defaults =
 
 //get save or set up fresh save
 global.save = file_load(global.saveName);
-//global.save = false;
+global.save = false;
 
 if (!global.save) || (global.save.version != global.version) create_save();
 

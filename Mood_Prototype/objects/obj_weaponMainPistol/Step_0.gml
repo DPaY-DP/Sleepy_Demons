@@ -24,7 +24,7 @@ if (timerFirerate == 0)
 {
 	timerFirerate = intervalFirerate;
 	
-	instance_create_depth(x, y, depth, obj_projectileDamage, { size : 1, damage : 8, image_angle : image_angle + 5 - random(10), spd : 36, punch : 12 });
+	instance_create_depth(x, y, depth, obj_projectileDamage, { size : 1, damage, image_angle : image_angle + 5 - random(10), spd : 36, punch : 12 });
 	
 	audio_play_sound(snd_pistol, 0, 0, gainSFX, 0, 0.8 + random(0.4));
 }

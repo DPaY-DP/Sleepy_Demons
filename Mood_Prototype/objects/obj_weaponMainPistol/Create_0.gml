@@ -1,9 +1,10 @@
 //IMMUTABLE VALUES
 name = "Main: Pistol";
 
-intervalFirerate = 45;
+intervalFirerate = 30;
 
 rocketjump = 30;
+damage = 6;
 
 
 //GAME VALUES

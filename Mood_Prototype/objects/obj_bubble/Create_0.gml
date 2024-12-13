@@ -1,5 +1,5 @@
 clickedTimes = 0;
-clickedGoal = irandom_range(15,20);
+clickedGoal = irandom_range(8, 14);
 
 image_speed = 0;
 
