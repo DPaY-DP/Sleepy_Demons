@@ -11,7 +11,7 @@ De-prioritized:
  - portal gun glitches you or enemies out of map (imprecise exit collision)
  - minigames can still be interacted with and played on level fail
  - cant go back to change ur gun
- - final game time not shown
+ - final game time not shown in main menu
 
 
 
