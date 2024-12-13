@@ -319,14 +319,21 @@ stateEsc = new State();
 stateEsc.start = function()
 {
 	with (OBJ_agents) switch_state(stateLock);
-	audio_stop_sound(currentSong);
 	
 	image_index = 0;
 }
 stateEsc.run = function()
 {
-	if (keyboard_check_pressed(ord("R"))) restart_room();
-	if (keyboard_check_pressed(vk_escape)) room_goto(room_main);
+	if (keyboard_check_pressed(ord("R"))) 
+	{
+		restart_room();
+		audio_stop_sound(currentSong);
+	}
+	if (keyboard_check_pressed(vk_escape)) 
+	{
+		room_goto(room_main);
+		audio_stop_sound(currentSong);
+	}
 }
 stateEsc.drawGUI = function()
 {
