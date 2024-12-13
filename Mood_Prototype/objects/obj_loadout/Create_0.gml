@@ -179,9 +179,7 @@ stateGame.drawGUI = function()
 		draw_sprite_simple(spr_abacus, 0, _x, _y, { xscale : _abacusSize });
 		
 		for (var l = 0; l < _ammoPerRow; l++)
-		{
-			show_debug_message(i * _ammoPerRow + l)
-			
+		{	
 			if (i * _ammoPerRow + l >= _ammoMax) break;
 			
 			if (i * _ammoPerRow + l < _ammo)
@@ -192,8 +190,6 @@ stateGame.drawGUI = function()
 			{
 				draw_sprite_simple(spr_looseAmmo, _image, _abacusOffset + _x + _widthAmmo * _spent[i], _y, { angle : 90, size : _sizeAmmo, color : c_grey });				
 				_spent[i]++;
-				
-				show_debug_message(_spent[i])
 			}
 		}
 	
@@ -283,7 +279,6 @@ stateSelect.drawGUI = function()
 		{
 			selected[modeSelect] += _selectionChange;
 			selected[modeSelect] = loop(selected[modeSelect], 0, sprite_get_number(spriteWeapon[modeSelect]) - 1);
-			show_debug_message(selected[modeSelect])
 		}
 	}
 	
@@ -293,7 +288,6 @@ stateSelect.drawGUI = function()
 		{
 			selected[modeSelect] += _selectionChange;
 			selected[modeSelect] = loop(selected[modeSelect], 0, sprite_get_number(spriteWeapon[modeSelect]) - 1);
-			show_debug_message(selected[modeSelect])
 		}
 	}
 	
@@ -466,7 +460,6 @@ stateTutorial.drawGUI = function()
 	
 	var _width = 150 * global.GUIScale;      //_widthAmmo * _ammoMax + _abacusSpace;
 	var _abacusSize = (_width + _abacusSpace) / sprite_get_width(spr_abacus);
-	show_debug_message(_abacusSize)
 	
 	var _x = GUIwidth * 0.05;
 	var _y = GUIheight * 0.82;
@@ -486,9 +479,7 @@ stateTutorial.drawGUI = function()
 		draw_sprite_simple(spr_abacus, 0, _x, _y, { xscale : _abacusSize });
 		
 		for (var l = 0; l < _ammoPerRow; l++)
-		{
-			show_debug_message(i * _ammoPerRow + l)
-			
+		{			
 			if (i * _ammoPerRow + l >= _ammoMax) break;
 			
 			if (i * _ammoPerRow + l < _ammo)
@@ -499,8 +490,6 @@ stateTutorial.drawGUI = function()
 			{
 				draw_sprite_simple(spr_looseAmmo, _image, _abacusOffset + _x + _widthAmmo * _spent[i], _y, { angle : 90, size : _sizeAmmo, color : c_grey });				
 				_spent[i]++;
-				
-				show_debug_message(_spent[i])
 			}
 		}
 	

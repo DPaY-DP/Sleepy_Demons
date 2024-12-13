@@ -325,7 +325,6 @@ get_navmesh = function(_idInRoom, _idTargetRoom)
 			
 				//if not
 				//get doors of current room
-				show_debug_message(_currentRoom)
 			var _currentDoors = _currentRoom.doors;
 			
 				//var _debugCurrentDoors = [];
@@ -633,8 +632,11 @@ stateSeek.start = function()
 	
 	if (instance_exists(gummybear))
 	{
+		show_debug_message($"room info: room: {inRoom}, gummyRoom: {gummybear.inRoom}");
 		navmesh = get_navmesh(inRoom, gummybear.inRoom);
 		//if (array_length(navmesh) == 0) switch_state(stateRandomTarget);
+		show_debug_message($"navmesh: {navmesh}");
+		
 		
 		intent = "gummybear";
 		switch_state(stateWalk);
@@ -995,7 +997,6 @@ stateSleep.start = function()
 	
 	var _shufflebag = obj_loadout.reload();
 	
-	show_debug_message(_shufflebag)
 	if (_shufflebag != undefined) 
 	{
 		var _image = 0;

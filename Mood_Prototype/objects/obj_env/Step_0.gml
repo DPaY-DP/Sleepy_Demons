@@ -36,7 +36,7 @@ for (var i = 0; i < _length; i++)
 {
 	var _member = members[i];
 	
-	show_debug_message($"sabotaging: {_member.name}")
+	//show_debug_message($"sabotaging: {_member.name}")
 	hp -= _member.envDamage;
 }
 

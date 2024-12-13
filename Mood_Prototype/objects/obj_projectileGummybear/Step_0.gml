@@ -4,14 +4,7 @@ if (spd > 0)
 	y += lengthdir_y(spd, image_angle);
 	
 	spd *= 0.95;
-	if (spd < 0.05) 
-	{
-		spd = 0;
-		if (inRoom == noone) inRoom = instance_find(obj_room, irandom(instance_number(obj_room) - 1));
-	}
-	
-	var _roomCheck = instance_place(x, y, obj_room);
-	if (_roomCheck != noone) inRoom = _roomCheck;
+	if (spd < 0.05) stop();
 }
 else
 {
