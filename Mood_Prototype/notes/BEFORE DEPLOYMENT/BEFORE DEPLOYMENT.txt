@@ -2,8 +2,8 @@ BEFORE DEPLOYMENT:
  - Change Version								y
 	> Enable version check savewipe				y
  - Remove automatic save deletion				y
- - re-enable fullscreen as default setting		n
- - remove "unlock levels"						n
- - remove "unlock weapons"						n
+ - re-enable fullscreen as default setting		y
+ - remove "unlock levels"						y
+ - remove "unlock weapons"						y
  - disable debug hotkeys						n
  - re-enable music								y

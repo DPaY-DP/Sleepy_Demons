@@ -1,5 +1,5 @@
 #region GAME SETUP
-global.version = "V0.2";
+global.version = "V0.2.1";
 randomize();
 window_set_cursor(cr_none)
 cursor_sprite = spr_cursor0;
@@ -183,7 +183,7 @@ defaults =
 {
 	version : global.version,
 	
-	fullscreen : false,
+	fullscreen : true,
 	volumeMusic : 0.5,
 	volumeSFX : 0.25,
 	
@@ -702,10 +702,10 @@ defaults =
 
 //get save or set up fresh save
 global.save = file_load(global.saveName);
-global.save = false;
+//global.save = false;
 
 if (!global.save) || (global.save.version != global.version) create_save();
 
-unlock_levels_all();
-unlock_weapons_all();
+//unlock_levels_all();
+//unlock_weapons_all();
 #endregion
