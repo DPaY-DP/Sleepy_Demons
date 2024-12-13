@@ -1,14 +1,14 @@
 if (dragged)
 {
-	x = mouse_x + xOffset;
-	y = mouse_y + yOffset;
+	x = device_mouse_x_to_gui(0) + xOffset;
+	y = device_mouse_y_to_gui(0) + yOffset;
 }
 
 if (mouse_on_me_center_GUI()) && (mouse_check_button_pressed(mb_left))
 {
 	dragged = true;
-	xOffset = x - mouse_x;
-	yOffset = y - mouse_y;
+	xOffset = x - device_mouse_x_to_gui(0);
+	yOffset = y - device_mouse_y_to_gui(0);
 	
 	audio_play_sound(snd_swishSoundFeather, 0, 0, gainSFX, 0, 0.9 + random(0.2));
 }

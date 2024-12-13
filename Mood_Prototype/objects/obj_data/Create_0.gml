@@ -576,6 +576,8 @@ defaults =
 				enumMinigame.CABLE,
 				
 				enumMinigame.FASTCLICK,
+				enumMinigame.LIGHTSWITCH,
+				enumMinigame.SQUAREHOLE,
 			],
 			
 			loadoutPillows : 1,

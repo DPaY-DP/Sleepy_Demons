@@ -1,0 +1,10 @@
+Stuff:
+ - Crash Dennis (Marco, finish, lvl: fix my teddy, black hole gun)
+ - Feather minigame
+	> move many at once
+	> feathers dont stick to mouse
+
+
+
+Balancing:
+ - Minigun feels pretty bad
