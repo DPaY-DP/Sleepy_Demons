@@ -6,9 +6,9 @@ if (instance_exists(OBJ_enemy))
 	
 	if (point_distance(x, y, obj_player.x, obj_player.y) < 120) && (_lineCheck == noone)
 	{
-		if (!instance_exists(obj_managerMinigame)) draw_sprite_simple(spr_UI_button, 0, x, y - 16, { size : 0.8 });
+		if (!instance_exists(obj_managerMinigame)) draw_sprite_simple(spr_UI_button, 1, x, y - 16, { size : 0.8 });
 		
-		if (keyExecute) 
+		if (keyRepair) 
 		{
 			buttonPress = true;
 			image_index++;

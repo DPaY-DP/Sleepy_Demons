@@ -7,7 +7,7 @@ if (applyDamage)
 		var _x = x + lengthdir_x(16, image_angle);
 		var _y = y + lengthdir_y(16, image_angle);
 	
-		draw_sprite_simple(spr_UI_button, 0, _x, _y, { size : 0.8 });
+		draw_sprite_simple(spr_UI_button, 1, _x, _y, { size : 0.8 });
 	}
 	image_blend = c_red;
 }

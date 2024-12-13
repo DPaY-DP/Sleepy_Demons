@@ -232,6 +232,14 @@ switch (mode)
 								if (_row == 2) break;
 							}
 						}
+						
+						//if (global.save.finalGameTime != infinity)
+						//{
+						//	draw_sprite_simple(spr_clock, 0, _xClock, _yClock, { size : _sizeClock });
+						//	draw_text_simple(_xClock + _xOffsetTime, _yClock + _yOffsetTime, $"{_levelData.time / 1000}", { font : font_upheaval_scalable, size : fontscale * 4, color : c_red, halign : fa_left } );
+						//}
+						
+						
 	break;
 	
 	case "settings":		//draw RETURN button at bottom of screen

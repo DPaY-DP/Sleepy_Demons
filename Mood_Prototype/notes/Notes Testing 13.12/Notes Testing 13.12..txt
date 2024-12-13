@@ -2,15 +2,16 @@ Stuff:
 
 
 
-
 Balancing:
 
 
 
 
 De-prioritized:
- - portal gun glitches you out of map (imprecise exit collision)
+ - portal gun glitches you or enemies out of map (imprecise exit collision)
  - minigames can still be interacted with and played on level fail
+ - cant go back to change ur gun
+ - final game time not shown
 
 
 

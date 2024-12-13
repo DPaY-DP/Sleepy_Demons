@@ -993,7 +993,7 @@ stateSleep = new State("Sleep");
 stateSleep.start = function()
 {
 	audio_play_sound_at(array_get(sleepSounds, random_range(0,array_length(sleepSounds))), x, y, 0, 100, 150, 1, 0, false, gainSFX);
-	instance_create_depth(x, y, depth, obj_enemySleeping, { sprite_index : asset_get_index("spr_" + name + "Sleep") } );
+	instance_create_layer(x, y, "Glue", obj_enemySleeping, { sprite_index : asset_get_index("spr_" + name + "Sleep"), image_alpha : 0.75 } );
 	
 	var _shufflebag = obj_loadout.reload();
 	

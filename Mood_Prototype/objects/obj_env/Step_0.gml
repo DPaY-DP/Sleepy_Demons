@@ -36,7 +36,8 @@ for (var i = 0; i < _length; i++)
 {
 	var _member = members[i];
 	
-	hp -= _member.envDamage / (i + 1);
+	var _damage = _member.envDamage * (1 - (i / membersMax));
+	hp -= _damage;
 }
 
 

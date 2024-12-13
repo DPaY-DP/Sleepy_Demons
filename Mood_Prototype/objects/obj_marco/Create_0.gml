@@ -1,6 +1,6 @@
 event_inherited();
 
-envDamage = damageBase * 0.35;
+envDamage = damageBase * 0.5;
 
 //unique values
 name = "marco";

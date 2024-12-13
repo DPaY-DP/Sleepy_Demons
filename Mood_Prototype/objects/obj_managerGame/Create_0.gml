@@ -227,11 +227,14 @@ stateWin.start = function()
 		newBestGame = false;
 		
 		var _finalGameTime = 0;
-		for (var i = 0; i < global.save.finalLevel + 1; i++)
+		for (var i = 5; i < global.save.finalLevel + 1; i++)
 		{
 			_finalGameTime += global.save.levels[i].time;
+			show_debug_message($"leveltime: {global.save.levels[i].time}")
 		}
-		if (_finalGameTime < global.save.finalGameTime) 
+		
+		show_debug_message($"fgt: {_finalGameTime}; savetime: {global.save.finalGameTime}")
+		if (_finalGameTime < global.save.finalGameTime)
 		{
 			global.save.finalGameTime = _finalGameTime;
 			newBestGame = true;
@@ -289,7 +292,7 @@ stateWin.drawGUI = function()
 			if (timerState > 45) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.5, $"{timeFinish / 1000} seconds", { color : c_white, font : font_upheaval_scalable, size : 10 * fontscale });
 			if (timerState > 60) && (newBest) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.45, $"NEW BEST!", { color : c_white, font : font_upheaval_scalable, size : 5 * fontscale });
 			
-			if (timerState > 45) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.7, $"{timeFinish / 1000} seconds", { color : c_white, font : font_upheaval_scalable, size : 10 * fontscale });
+			if (timerState > 45) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.7, $"{global.save.finalGameTime / 1000} seconds", { color : c_white, font : font_upheaval_scalable, size : 10 * fontscale });
 			if (timerState > 60) && (newBestGame) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.65, $"NEW BEST GAME TIME!", { color : c_white, font : font_upheaval_scalable, size : 5 * fontscale });
 			
 			if (timerState > 90) draw_text_simple(GUIwidth * 0.5, GUIheight * 0.85, "Press SPACE to continue", { color : c_white, font : font_upheaval_scalable, size : 6 * fontscale });

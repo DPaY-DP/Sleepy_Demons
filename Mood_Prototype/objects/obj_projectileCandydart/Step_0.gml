@@ -4,5 +4,5 @@ y += lengthdir_y(spd, image_angle);
 timerDuration--;
 if (timerDuration == 0)
 {
-	burst();
+	instance_destroy();
 }
