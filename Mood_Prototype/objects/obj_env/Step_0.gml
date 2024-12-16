@@ -4,7 +4,7 @@ if	(broken) &&
 	(point_distance(x, y, obj_player.x, obj_player.y) < distInteract) &&
 	(obj_player.inRoom == inRoom)
 {
-	if (keyRepair) 
+	if (keyRepair) && (!instance_exists(obj_managerMinigame))
 	{
 		instance_create_depth(x, y, depth, obj_managerMinigame, { broken : id, game : enumMinigame.INPUTS_RAW });
 		applyDamage = false;
